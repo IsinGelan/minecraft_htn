@@ -5,7 +5,7 @@ from typing import Iterator, Literal, Self
 
 from pydantic import BaseModel
 
-from tools.get_names import domain_item_name
+from .get_names import domain_item_name
 
 # RECIPE_DIR = path.join(path.dirname(__file__), "..", "minecraft", "data", "minecraft", "recipes")
 RECIPE_DIR = "minecraft/data/minecraft/recipes/"
@@ -41,8 +41,8 @@ class StonecuttingRecipe(Recipe):
         )
     def generate_action(self):
         return f"action recipe_{self.recipe_name}\n" \
-                "    > near_block(b_stonecutter)\n" \
-               f"    > item_nr({domain_item_name(self.ingredient)}) >= 1\n" \
+                "    < near_block(b_stonecutter)\n" \
+               f"    < item_nr({domain_item_name(self.ingredient)}) >= 1\n" \
                f"    => item_nr({domain_item_name(self.ingredient)}) -= 1\n" \
                f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
                 
@@ -108,9 +108,9 @@ class CraftingRecipe(Recipe):
             pattern=pat
         )
     def generate_action(self):
-        block_prec = "    > near_block(b_crafting_table)\n" if self.large_interface else ""
+        block_prec = "    < near_block(b_crafting_table)\n" if self.large_interface else ""
         item_prec = "".join(
-            f"    > item_nr({domain_item_name(ing)}) >= {count}\n"
+            f"    < item_nr({domain_item_name(ing)}) >= {count}\n"
             for ing, count in self.ingredients
             )
         item_post = "".join(
@@ -136,8 +136,8 @@ class CampfireRecipe(Recipe):
         )
     def generate_action(self):
         return f"action recipe_{self.recipe_name}\n" \
-                "    > near_block(b_campfire)\n" \
-               f"    > item_nr({domain_item_name(self.ingredient)}) >= 1\n" \
+                "    < near_block(b_campfire)\n" \
+               f"    < item_nr({domain_item_name(self.ingredient)}) >= 1\n" \
                f"    => item_nr({domain_item_name(self.ingredient)}) -= 1\n" \
                f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
 
@@ -164,8 +164,8 @@ class FurnaceRecipe(Recipe):
             "smoking": "b_smoker",
             "blasting": "b_blast_furnace"}
         return f"action recipe_{self.recipe_name}\n" \
-               f"    > near_block({block_name[self.furnace_type]})\n" \
-               f"    > item_nr({domain_item_name(self.ingredient)}) >= 1\n" \
+               f"    < near_block({block_name[self.furnace_type]})\n" \
+               f"    < item_nr({domain_item_name(self.ingredient)}) >= 1\n" \
                f"    => item_nr({domain_item_name(self.ingredient)}) -= 1\n" \
                f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
 
@@ -175,7 +175,6 @@ class SmithingRecipe(Recipe):
 
     @classmethod
     def from_dict(cls, dic: dict, name: str) -> Self:
-        print("Smithing recipe", name)
         return cls(
             recipe_name=name,
             result_item=dic["result"]["item"],
@@ -184,7 +183,36 @@ class SmithingRecipe(Recipe):
             addition=item_tag_desc(dic["addition"])
         )
     def generate_action(self):
-        return "" # TODO: Implement smithing recipe
+        return f"action recipe_{self.recipe_name}\n" \
+               f"    < near_block(b_smithing_table)\n" \
+               f"    < item_nr({domain_item_name(self.base)}) >= 1\n" \
+               f"    < item_nr({domain_item_name(self.addition)}) >= 1\n" \
+               f"    => item_nr({domain_item_name(self.base)}) -= 1\n" \
+               f"    => item_nr({domain_item_name(self.addition)}) -= 1\n" \
+               f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
+
+# ================================
+STANDARD_ATTR = {
+    "recipe": "Recipe"
+}
+
+def generate_crafting_task(
+        recipe_names: list[str],
+        task_name: str = "craft",
+        params: dict[str, str] = STANDARD_ATTR) -> str:
+
+    param_str = ", ".join(f"{param}: {typ}" for param, typ in params.items())
+    arg_str = ", ".join(param for param in params.keys())
+
+    task_str = f"task {task_name}({param_str})\n"
+    method_strs = [
+        f"{task_name} : {recipe_name}({param_str})\n" \
+        f"    - recipe_{recipe_name}({arg_str})\n"
+        for recipe_name in recipe_names
+    ]
+
+    return task_str + "".join(method_strs)
+
 
 # ================================
 def read_recipe_file(filename: str) -> Recipe:
@@ -213,13 +241,27 @@ def read_recipe_file(filename: str) -> Recipe:
             print("Different type:", typ, "for recipe", recipe_name)
             return None
 
-def main():
+def read_all_recipes() -> Iterator[Recipe]:
     for filename in listdir(RECIPE_DIR):
         filepath = path.join(RECIPE_DIR, filename)
         rec = read_recipe_file(filepath)
-        if rec is None:
-            continue
-        # print(rec.generate_action())
-        # print()
+        if rec is not None:
+            yield rec
 
-main()
+def export_recipes_to_file(filename: str):
+    recipes = list(read_all_recipes())
+    recipe_names = [rec.recipe_name for rec in recipes]
+    task_str = generate_crafting_task(recipe_names)
+
+    with open(filename, "w") as file:
+        file.write(task_str)
+        file.write("\n\n")
+        for rec in recipes:
+            file.write(rec.generate_action())
+            file.write("\n")
+
+def main():
+    export_recipes_to_file("recipes.shit")
+
+if __name__ == "__main__":
+    main()
