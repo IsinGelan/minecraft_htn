@@ -1,0 +1,248 @@
+domain minecraft
+
+type Block
+type Container < Block
+type Dim
+type Item
+type Tool < Item
+type Structure
+type Building < Structure
+type Portal < Building
+type Entity 
+type Recipe
+
+const nether end overworld : Dim
+const nether_portal end_portal lit_end_portal : Portal
+const eye_of_ender obsidian_item : Item
+# MACRO CONSTS
+
+pred in_dim(dim: Dim)
+pred has_item(item: Item)
+pred near_block(btype: Block)
+pred near_structure(structure: Structure)
+pred findable_block_in_dim(btype: Block, dim: Dim)
+pred can_mine(tool: Tool, btype: Block)
+pred can_reap_block(tool: Tool, btype: Block)
+pred can_reap_entity(tool: Tool, etype: Entity)
+pred reaped_block_becomes(btype: Block, item: Item)
+pred reaped_entity_becomes(etype: Entity, item: Item)
+pred mined_becomes(btype: Block, item: Item)
+pred placed_becomes(item: Item, btype: Block)
+pred leads_to(portal: Portal, dim: Dim)
+pred recipe_produces(recipe: Recipe, item: Item)
+pred killed_becomes(entity: Entity, item: Item)
+pred near_entity(entity: Entity)
+pred findable_structure_in_dim(structure: Structure, dim: Dim)
+pred near_container_containing(ctype: Container, item: Item)
+pred findable_entity_in_dim(entity: Entity, dim: Dim)
+pred structure_memorized(stype: Structure)
+pred near_item_entity(item: Item)
+
+
+action dono
+
+
+# Blocks
+
+task reach_block(btype: Block)
+
+reach_block : find(btype: Block)
+    - find-block(btype)
+reach_block : place(btype: Block, item: Item)
+    - place-block(btype, item)
+reach_block : craft-n-place(btype: Block, item: Item)
+    - craft(item)
+    - place-block(btype, item)
+
+
+task find-block(btype: Block)
+
+find-block : find(btype: Block, dim: Dim)
+    < findable_block_in_dim(btype, dim)
+    - goto-dim(dim)
+    - find-block-in-dim(btype, dim)
+
+
+# task mine-block(btype: Block)
+
+action mine-block(btype: Block, tool: Tool, res_item: Item)
+    < near_block(btype)
+    < can_mine(tool, btype)
+    < has_item(tool)
+    < mined_becomes(btype, res_item)
+    => has_item(res_item)
+
+action reap-block(btype: Block, tool: Tool, res_item: Item)
+    < near_block(btype)
+    < can_reap_block(tool, btype)
+    < reaped_block_becomes(btype, res_item)
+    => has_item(res_item)
+
+# integrate the effect of reduction in the item nr
+action place-block(btype: Block, item: Item)
+    < has_item(item)
+    < placed_becomes(item, btype)
+    => near_block(btype)
+
+# move precondition from task find-block?
+action find-block-in-dim(btype: Block, dim: Dim)
+    < in_dim(dim)
+    => near_block(btype)
+
+action container-put(ctype: Container, item: Item)
+    < near_block(ctype)
+    < has_item(item)
+
+action container-take(ctype: Container, item: Item)
+    < near_container_containing(ctype, item)
+    => has_item(item)
+
+
+
+# Entity
+
+action kill-entity(entity: Entity, res_item: Item)
+    < killed_becomes(entity, res_item)
+
+action reap-entity(entity: Entity, tool: Tool, res_item: Item)
+    < reaped_entity_becomes(entity, res_item)
+    < can_reap_entity(tool, entity)
+    < has_item(tool)
+
+task find-entity(etype: Entity)
+
+find-entity : find(etype: Entity, dim: Dim)
+    < findable_entity_in_dim(etype, dim)
+    - find-entity-in-dim(etype, dim)
+
+action find-entity-in-dim(etype: Entity, dim: Dim)
+    < in_dim(dim)
+    => near_entity(etype)
+
+
+# Travel
+
+task goto-dim(dim: Dim)
+
+goto-dim : dono(dim: Dim)
+    < in_dim(dim)
+    - dono
+
+goto-dim : overworld-nether(dim: Dim)
+    < in_dim(overworld)
+    < dim = nether
+    - reach-building(nether_portal)
+    - enter-portal(nether_portal)
+goto-dim : overworld-end(dim: Dim)
+    < in_dim(overworld)
+    < dim = end
+    - reach-building(lit_end_portal)
+    - enter-portal(lit_end_portal)
+goto-dim : nether-overworld(dim: Dim)
+    < in_dim(nether)
+    < dim = overworld
+    - reach-building(nether_portal)
+    - enter-portal(nether_portal)
+goto-dim : end-overworld(dim: Dim)
+    < in_dim(end)
+    < dim = overworld
+    - reach-building(nether_portal)
+    - enter-portal(nether_portal)
+
+task enter-portal(portal_type: Portal)
+enter-portal : po(portal_type: Portal, dim: Dim)
+    - enter-portal-dim(portal_type, dim)
+
+action enter-portal-dim(portal_type: Portal, dim: Dim)
+    < near_structure(portal_type)
+    < leads_to(portal_type, dim)
+    => in_dim(dim)
+
+
+
+# Structures
+
+task reach-building(b: Building)
+
+reach-building : revisit(b: Building)
+    - goto-memorized-structure(b)
+
+reach-building : build(b: Building)
+    - build-building(b)
+
+action goto-memorized-structure(b: Building)
+    < structure_memorized(b)
+    => near_structure(b)
+
+task build-building(b: Building)
+
+build-building : nether_portal(b: Building)
+    < b = nether_portal
+    - build-nether-portal()
+    
+action build-nether-portal
+    < has_item(obsidian_item)
+    => near_structure(nether_portal)
+    => structure_memorized(nether_portal)
+
+build-building : lit_end_portal(b: Building)
+    < b = lit_end_portal
+    - build-lit-end-portal
+
+action build-lit-end-portal
+    < near_structure(end_portal)
+    < has_item(eye_of_ender)
+    => near_structure(lit_end_portal)
+    => structure_memorized(lit_end_portal)
+
+
+task find-structure(s: Structure)
+
+task find-structure-in-dim(s: Structure, dim: Dim)
+
+find-structure : find(s: Structure, dim: Dim)
+    < findable_structure_in_dim(s, dim)
+    - goto-dim(dim)
+    - find-structure-in-dim(s, dim)
+
+
+
+# Items
+
+task acquire-item(item: Item)
+
+acquire-item : pickup(item: Item)
+    - pickup-item(item)
+
+action pickup-item(item: Item)
+    < near_item_entity(item)
+    => has_item(item)
+
+acquire-item : mine-block(item: Item, block: Block, tool: Tool)
+    - mine-block(block, tool, item)
+
+acquire-item : reap-block(item: Item, block: Block, tool: Tool)
+    - reap-block(block, tool, item)
+
+acquire-item : container-take(item: Item, ctype: Container)
+    - container-take(ctype, item)
+
+acquire-item : kill-entity(item: Item, entity: Entity)
+    - kill-entity(entity, item)
+
+acquire-item : reap-entity(item: Item, tool: Tool, entity: Entity)
+    - reap-entity(entity, tool, item)
+
+acquire-item : craft(item: Item)
+    - craft(item)
+
+
+task craft(item: Item)
+
+craft : craft(item: Item, recipe: Recipe)
+    < recipe_produces(recipe, item)
+    - craft-recipe(item, recipe)
+
+task craft-recipe(item: Item, recipe: Recipe)
+
+
