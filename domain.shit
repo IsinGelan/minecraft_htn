@@ -10,10 +10,12 @@ type Building < Structure
 type Portal < Building
 type Entity 
 type Recipe
+type ToolTier
 
 const nether end overworld : Dim
 const nether_portal end_portal lit_end_portal : Portal
-const eye_of_ender obsidian_item : Item
+const i_eye_of_ender i_obsidian : Item
+const tool_tier_1 tool_tier_2 tool_tier_3 : ToolTier
 # MACRO CONSTS
 
 pred in_dim(dim: Dim)
@@ -21,7 +23,6 @@ pred has_item(item: Item)
 pred near_block(btype: Block)
 pred near_structure(structure: Structure)
 pred findable_block_in_dim(btype: Block, dim: Dim)
-pred can_mine(tool: Tool, btype: Block)
 pred can_reap_block(tool: Tool, btype: Block)
 pred can_reap_entity(tool: Tool, etype: Entity)
 pred reaped_block_becomes(btype: Block, item: Item)
@@ -37,6 +38,9 @@ pred near_container_containing(ctype: Container, item: Item)
 pred findable_entity_in_dim(entity: Entity, dim: Dim)
 pred structure_memorized(stype: Structure)
 pred near_item_entity(item: Item)
+pred is_pickaxe(tool: Tool)
+pred can_mine_tier(tool: Tool, tier: ToolTier)
+pred mining_requires_tier(btype: Block, tier: ToolTier)
 
 
 action dono
@@ -63,11 +67,38 @@ find-block : find(btype: Block, dim: Dim)
     - find-block-in-dim(btype, dim)
 
 
-# task mine-block(btype: Block)
+# Mining requires a certain level for drops for certain items
+# A little more methods, otherwise every tool x item combination would need
+# a can_mine(tool: Tool, btype: Block) entry
+task mine-block(btype: Block, tool: Tool, res_item: Item)
 
-action mine-block(btype: Block, tool: Tool, res_item: Item)
+mine-block : no-pickaxe(btype: Block, tool: Tool, res_item: Item)
+    < ~is_pickaxe(tool)
+    - mine-block-directly(btype, tool, res_item)
+mine-block : pickaxe-3(btype: Block, tool: Tool, res_item: Item)
+    < is_pickaxe(tool)
+    < can_mine_tier(tool, tool_tier_3)
+    < mining_requires_tier(btype, tool_tier_3)
+    - mine-block-directly(btype, tool, res_item)
+mine-block : pickaxe-2(btype: Block, tool: Tool, res_item: Item)
+    < is_pickaxe(tool)
+    < can_mine_tier(tool, tool_tier_2)
+    < mining_requires_tier(btype, tool_tier_2)
+    - mine-block-directly(btype, tool, res_item)
+mine-block : pickaxe-1(btype: Block, tool: Tool, res_item: Item)
+    < is_pickaxe(tool)
+    < can_mine_tier(tool, tool_tier_1)
+    < mining_requires_tier(btype, tool_tier_1)
+    - mine-block-directly(btype, tool, res_item)
+mine-block : pickaxe-0(btype: Block, tool: Tool, res_item: Item)
+    < is_pickaxe(tool)
+    < ~mining_requires_tier(btype, tool_tier_3)
+    < ~mining_requires_tier(btype, tool_tier_2)
+    < ~mining_requires_tier(btype, tool_tier_1)
+    - mine-block-directly(btype, tool, res_item)
+
+action mine-block-directly(btype: Block, tool: Tool, res_item: Item)
     < near_block(btype)
-    < can_mine(tool, btype)
     < has_item(tool)
     < mined_becomes(btype, res_item)
     => has_item(res_item)
@@ -181,7 +212,7 @@ build-building : nether_portal(b: Building)
     - build-nether-portal()
     
 action build-nether-portal
-    < has_item(obsidian_item)
+    < has_item(i_obsidian)
     => near_structure(nether_portal)
     => structure_memorized(nether_portal)
 
@@ -191,7 +222,7 @@ build-building : lit_end_portal(b: Building)
 
 action build-lit-end-portal
     < near_structure(end_portal)
-    < has_item(eye_of_ender)
+    < has_item(i_eye_of_ender)
     => near_structure(lit_end_portal)
     => structure_memorized(lit_end_portal)
 
