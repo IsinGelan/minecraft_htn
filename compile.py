@@ -44,11 +44,13 @@ MACRO_FUNS = [
     add_consts,
 ]
 
-transpile_file_to_file(
-    "domain.shit",
-    "domain.hddl",
-    macro_funs=MACRO_FUNS,
-    show_macro_result=True)
-# text = "Um 1930 etablierte sich schließlich die gegenwärtige Verwendung von Crooning als Bezeichnung für einen vorwiegend durch männliche Sänger repräsentierten weichen Gesangsstil, der im Zuge der gesangstechnischen Anpassung an die spezifischen Anforderungen des Mikrofons entstand"
-# lines = split_into_lines(text, 30)
-# print(*lines, sep="\n")
+# ================================
+def main():
+    transpile_file_to_file(
+        "domain.shit",
+        "domain.hddl",
+        macro_funs=MACRO_FUNS,
+        show_macro_result=True)
+
+if __name__ == "__main__":
+    main()

@@ -13,40 +13,41 @@ type Recipe
 type ToolTier
 
 const nether end overworld : Dim
-const nether_portal end_portal lit_end_portal : Portal
+const nether_portal_nether nether_portal_overworld : Portal
+const end_portal lit_end_portal center_portal lit_center_portal : Portal
 const i_eye_of_ender i_obsidian : Item
 const tool_tier_1 tool_tier_2 tool_tier_3 : ToolTier
 # MACRO CONSTS
 
-pred in_dim(dim: Dim)
-pred has_item(item: Item)
-pred near_block(btype: Block)
-pred near_structure(structure: Structure)
-pred findable_block_in_dim(btype: Block, dim: Dim)
-pred can_reap_block(tool: Tool, btype: Block)
-pred can_reap_entity(tool: Tool, etype: Entity)
-pred reaped_block_becomes(btype: Block, item: Item)
-pred reaped_entity_becomes(etype: Entity, item: Item)
-pred mined_becomes(btype: Block, item: Item)
-pred placed_becomes(item: Item, btype: Block)
-pred leads_to(portal: Portal, dim: Dim)
-pred recipe_produces(recipe: Recipe, item: Item)
-pred killed_becomes(entity: Entity, item: Item)
-pred near_entity(entity: Entity)
-pred findable_structure_in_dim(structure: Structure, dim: Dim)
-pred near_container_containing(ctype: Container, item: Item)
-pred findable_entity_in_dim(entity: Entity, dim: Dim)
-pred structure_memorized(stype: Structure)
-pred near_item_entity(item: Item)
-pred is_pickaxe(tool: Tool)
-pred can_mine_tier(tool: Tool, tier: ToolTier)
-pred mining_requires_tier(btype: Block, tier: ToolTier)
+pred in_dim(dim: Dim)                               # state
+pred has_item(item: Item)                           # state
+pred near_block(btype: Block)                       # state
+pred near_entity(entity: Entity)                    # state
+pred near_item_entity(item: Item)                   # state
+pred near_structure(structure: Structure)           # state
+pred near_container_containing(ctype: Container, item: Item) # state
+pred structure_memorized(stype: Structure)          # state
+pred findable_block_in_dim(btype: Block, dim: Dim)  # domain
+pred can_reap_block(tool: Tool, btype: Block)       # domain
+pred can_reap_entity(tool: Tool, etype: Entity)     # domain
+pred reaped_block_becomes(btype: Block, item: Item) # domain
+pred reaped_entity_becomes(etype: Entity, item: Item) # domain
+pred mined_becomes(btype: Block, item: Item)        # domain
+pred placed_becomes(item: Item, btype: Block)       # domain
+pred leads_to(portal: Portal, dim: Dim)             # domain
+pred recipe_produces(recipe: Recipe, item: Item)    # domain
+pred killed_becomes(entity: Entity, item: Item)     # domain
+pred findable_structure_in_dim(structure: Structure, dim: Dim)  # domain
+pred findable_entity_in_dim(entity: Entity, dim: Dim) # domain
+pred is_pickaxe(tool: Tool)                         # domain
+pred can_mine_tier(tool: Tool, tier: ToolTier)      # domain
+pred mining_requires_tier(btype: Block, tier: ToolTier) # domain
 
 
 action dono
 
 
-# Blocks
+## Blocks
 
 task reach_block(btype: Block)
 
@@ -67,9 +68,9 @@ find-block : find(btype: Block, dim: Dim)
     - find-block-in-dim(btype, dim)
 
 
-# Mining requires a certain level for drops for certain items
-# A little more methods, otherwise every tool x item combination would need
-# a can_mine(tool: Tool, btype: Block) entry
+## Mining requires a certain level for drops for certain items
+## A little more methods, otherwise every tool x item combination would need
+## a can_mine(tool: Tool, btype: Block) entry
 task mine-block(btype: Block, tool: Tool, res_item: Item)
 
 mine-block : no-pickaxe(btype: Block, tool: Tool, res_item: Item)
@@ -109,13 +110,13 @@ action reap-block(btype: Block, tool: Tool, res_item: Item)
     < reaped_block_becomes(btype, res_item)
     => has_item(res_item)
 
-# integrate the effect of reduction in the item nr
+## integrate the effect of reduction in the item nr
 action place-block(btype: Block, item: Item)
     < has_item(item)
     < placed_becomes(item, btype)
     => near_block(btype)
 
-# move precondition from task find-block?
+## move precondition from task find-block?
 action find-block-in-dim(btype: Block, dim: Dim)
     < in_dim(dim)
     => near_block(btype)
@@ -130,7 +131,7 @@ action container-take(ctype: Container, item: Item)
 
 
 
-# Entity
+## Entity
 
 action kill-entity(entity: Entity, res_item: Item)
     < killed_becomes(entity, res_item)
@@ -151,7 +152,7 @@ action find-entity-in-dim(etype: Entity, dim: Dim)
     => near_entity(etype)
 
 
-# Travel
+## Travel
 
 task goto-dim(dim: Dim)
 
@@ -191,7 +192,7 @@ action enter-portal-dim(portal_type: Portal, dim: Dim)
 
 
 
-# Structures
+## Structures
 
 task reach-building(b: Building)
 
@@ -238,7 +239,7 @@ find-structure : find(s: Structure, dim: Dim)
 
 
 
-# Items
+## Items
 
 task acquire-item(item: Item)
 
