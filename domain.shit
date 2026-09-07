@@ -16,7 +16,9 @@ const nether end overworld : Dim
 const nether_portal_nether nether_portal_overworld : Portal
 const end_portal lit_end_portal center_portal lit_center_portal : Portal
 const i_eye_of_ender i_obsidian : Item
-const tool_tier_1 tool_tier_2 tool_tier_3 : ToolTier
+const i_wooden_pickaxe i_stone_pickaxe i_iron_pickaxe : Tool
+const i_diamond_pickaxe i_gold_pickaxe i_netherite_pickaxe : Tool
+const tool_tier_0 tool_tier_1 tool_tier_2 tool_tier_3 : ToolTier
 # MACRO CONSTS
 
 pred in_dim(dim: Dim)                               # state
@@ -163,8 +165,8 @@ goto-dim : dono(dim: Dim)
 goto-dim : overworld-nether(dim: Dim)
     < in_dim(overworld)
     < dim = nether
-    - reach-building(nether_portal)
-    - enter-portal(nether_portal)
+    - reach-building(nether_portal_overworld)
+    - enter-portal(nether_portal_overworld)
 goto-dim : overworld-end(dim: Dim)
     < in_dim(overworld)
     < dim = end
@@ -173,13 +175,13 @@ goto-dim : overworld-end(dim: Dim)
 goto-dim : nether-overworld(dim: Dim)
     < in_dim(nether)
     < dim = overworld
-    - reach-building(nether_portal)
-    - enter-portal(nether_portal)
+    - reach-building(nether_portal_nether)
+    - enter-portal(nether_portal_nether)
 goto-dim : end-overworld(dim: Dim)
     < in_dim(end)
     < dim = overworld
-    - reach-building(nether_portal)
-    - enter-portal(nether_portal)
+    - reach-building(lit_center_portal)
+    - enter-portal(lit_center_portal)
 
 task enter-portal(portal_type: Portal)
 enter-portal : po(portal_type: Portal, dim: Dim)
@@ -208,14 +210,24 @@ action goto-memorized-structure(b: Building)
 
 task build-building(b: Building)
 
-build-building : nether_portal(b: Building)
-    < b = nether_portal
-    - build-nether-portal()
+build-building : nether_portal_overworld(b: Building)
+    < b = nether_portal_overworld
+    - build-nether-portal-overworld()
+build-building : nether_portal_nether(b: Building)
+    < b = nether_portal_nether
+    - build-nether-portal-nether()
     
-action build-nether-portal
+action build-nether-portal-overworld
     < has_item(i_obsidian)
-    => near_structure(nether_portal)
-    => structure_memorized(nether_portal)
+    < in_dim(overworld)
+    => near_structure(nether_portal_overworld)
+    => structure_memorized(nether_portal_overworld)
+
+action build-nether-portal-nether
+    < has_item(i_obsidian)
+    < in_dim(nether)
+    => near_structure(nether_portal_nether)
+    => structure_memorized(nether_portal_nether)
 
 build-building : lit_end_portal(b: Building)
     < b = lit_end_portal

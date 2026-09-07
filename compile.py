@@ -1,14 +1,17 @@
 from typing import Iterator
 
-from shit_transpiler import transpile_file_to_file
+from shit_transpiler import transpile_domain, transpile_problem
 from tools.get_names import get_block_names, get_item_names
-# import shit_transpiler
+
+from tools.generate_facts import generate
 
 MACRO_CONSTS_MARKER = "# MACRO CONSTS"
+MACRO_FACTS_MARKER = "# MACRO FACTS"
 BLOCK_TYPENAME = "Block"
 ITEM_TYPENAME = "Item"
 CONST_LINEWIDTH = 70
 
+# ================================
 def split_into_lines(text: str, line_length: int) -> Iterator[str]:
     """yields line and starts new one as soon as the line length is exceeded.
     Splits on spaces"""
@@ -40,17 +43,29 @@ def add_consts(code: str) -> str:
     const_string = "".join(blocks_lines) + "".join(items_lines)
     return code.replace(MACRO_CONSTS_MARKER, const_string)
 
-MACRO_FUNS = [
+def add_domain_facts(code: str) -> str:
+    facts_string = "\n".join(generate())
+    return code.replace(MACRO_FACTS_MARKER, facts_string)
+
+DOMAIN_MACRO_FUNS = [
     add_consts,
+]
+PROBLEM_MACRO_FUNS = [
+    add_domain_facts,
 ]
 
 # ================================
 def main():
-    transpile_file_to_file(
+    domain = transpile_domain(
         "domain.shit",
-        "domain.hddl",
-        macro_funs=MACRO_FUNS,
-        show_macro_result=True)
+        macro_funs=DOMAIN_MACRO_FUNS,
+        show_macro_result=False)
+    problem = transpile_problem(
+        "idea_problem.shit",
+        macro_funs=PROBLEM_MACRO_FUNS,
+        show_macro_result=False)
+    domain.write_to_file("domain.hddl")
+    problem.write_to_file("problem.hddl")
 
 if __name__ == "__main__":
     main()
