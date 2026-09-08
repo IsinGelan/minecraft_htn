@@ -28,6 +28,8 @@ def split_into_lines(text: str, line_length: int) -> Iterator[str]:
         if line_end_index - line_start_index > line_length:
             yield text[line_start_index:line_end_index-1]
             line_start_index = line_end_index
+    if line_start_index >= text_len:
+        return
     yield text[line_start_index:next_space_index]
 
 def add_consts(code: str) -> str:
