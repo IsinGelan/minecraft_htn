@@ -1,6 +1,16 @@
 
-from typing import Callable, Iterator
+from typing import Callable, Iterable, Iterator, Optional
 
+# ================================
+def find[T](iter: Iterable[T], pred: Callable[[T], bool]) -> Optional[T]:
+    for item in iter:
+        if pred(item):
+            return item
+    return None
+
+
+# ================================
+# Decorators
 def as_list[T](fun: Callable[..., Iterator[T]]) -> Callable[..., list[T]]:
     def wrapper(*args, **kwargs):
         res = fun(*args, **kwargs)

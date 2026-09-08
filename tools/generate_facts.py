@@ -1,8 +1,10 @@
 
 from typing import Iterator
 
-from .get_names import get_block_names
+from .get_names import block_to_item_name, get_block_names, get_item_names
+from .code_extraction import BLOCK_REGISTRY
 
+# ================================
 MINING_TIER_3 = [
     "b_obsidian",
     "b_crying_obsidian",
@@ -25,6 +27,12 @@ MINING_TIER_1 = [
     "b_lapis_block",
     "b_lapis_ore"
 ]
+MINING_TIER_0 = {
+    f"b_{name}"
+    for (_, name, material) in BLOCK_REGISTRY.values()
+    if material in ("STONE", "METAL", "HEAVY_METAL")
+    or name == "nether_gold_ore"
+}
 PICKAXES = [
     "i_wooden_pickaxe",
     "i_stone_pickaxe",
@@ -41,13 +49,23 @@ MAX_TIER = {
     "i_gold_pickaxe": 0,
     "i_netherite_pickaxe": 3
 }
+BLOCK_MATERIALS = {
+    f"b_{name}": material
+    for (_, name, material) in BLOCK_REGISTRY.values()
+}
 PORTAL_LEADS_TO = {
     "nether_portal_nether": "overworld",
     "nether_portal_overworld": "nether",
     "lit_end_portal": "end",
     "lit_center_portal": "overworld"
 }
+# For most blocks, there is no corresponding item with a translation entry
+PLACED_BECOMES = {
+    block_to_item_name(block) : block
+    for block in get_block_names()
+}
 
+# ================================
 # pred findable_block_in_dim(btype: Block, dim: Dim)
 def generate_findable_block_in_dim() -> Iterator[str]:
     # TODO: where to find this?
@@ -69,13 +87,6 @@ def generate_mined_becomes() -> Iterator[str]:
     yield from []
 
 # pred mining_requires_tier(btype: Block, tier: ToolTier)
-def requires_tier_0(block: str):
-    """blocks that require a wooden pickaxe"""
-    # stone
-    # metal
-    # heavy metal
-    # gold_ore
-    return False
 def generate_mining_requires_tier() -> Iterator[str]:
     """would be nicer to generate directly from the assets,
     but this info is only found in the source code"""
@@ -89,9 +100,8 @@ def generate_mining_requires_tier() -> Iterator[str]:
     for block in MINING_TIER_1:
         # stone
         yield f"mining_requires_tier({block}, tool_tier_1)"
-    for block in get_block_names():
-        if requires_tier_0(block):
-            yield f"mining_requires_tier({block}, tool_tier_0)"
+    for block in MINING_TIER_0:
+        yield f"mining_requires_tier({block}, tool_tier_0)"
 
 # pred is_pickaxe(tool: Tool)
 def generate_is_pickaxe() -> Iterator[str]:
@@ -107,7 +117,8 @@ def generate_can_mine_tier() -> Iterator[str]:
 # pred placed_becomes(item: Item, btype: Block)
 def generate_placed_becomes() -> Iterator[str]:
     # TODO: where to find this?
-    yield from []
+    for item, block in PLACED_BECOMES.items():
+        yield f"placed_becomes({item}, {block})"
 
 # pred findable_entity_in_dim(entity: Entity, dim: Dim)
 def generate_findable_entity_in_dim() -> Iterator[str]:

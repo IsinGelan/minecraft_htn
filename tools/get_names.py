@@ -14,11 +14,17 @@ def domain_item_name(mc_item_name: str) -> str:
 def domain_block_name(mc_block_name: str) -> str:
     it = mc_block_name.removeprefix("minecraft:")
     return f"b_{it}"
+def block_to_item_name(block_name: str) -> str:
+    """Get the corresponding item name for a block name"""
+    assert block_name.startswith("b_")
+    return "i_" + block_name.removeprefix("b_")
 
 # ================================
 @remember
 @as_list
-def get_item_names() -> Iterator[str]:
+def get_item_item_names() -> Iterator[str]:
+    """Get all item names that have a translation entry in the language file.\n
+    This corresponds roughly to those items that do not have a block with the same name"""
     with open(TRANSLATION_FILEPATH, "r", encoding="utf-8") as f:
         data: dict[str, str] = json.load(f)
     for key, _ in data.items():
@@ -44,3 +50,10 @@ def get_block_names() -> Iterator[str]:
             continue
         yield domain_block_name(it)
 
+@remember
+def get_item_names() -> list[str]:
+    """Get all existing item names, including
+    items gotten from mining a block with the same name"""
+    block_item_names = {block_to_item_name(block) for block in get_block_names()}
+    as_set = set(get_item_item_names()) | block_item_names
+    return list(as_set)
