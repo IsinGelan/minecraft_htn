@@ -176,3 +176,8 @@ def count_generated_facts() -> int:
     for _ in generate():
         i += 1
     return i
+
+def domain_facts_to_file(path: str = "domain_facts.txt"):
+    with open(path, "w", encoding="utf-8") as file:
+        for fact in generate():
+            file.write(f"{fact}\n")

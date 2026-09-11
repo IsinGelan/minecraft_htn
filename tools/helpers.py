@@ -8,6 +8,15 @@ def find[T](iter: Iterable[T], pred: Callable[[T], bool]) -> Optional[T]:
             return item
     return None
 
+def into_bins[T, Hashable](iter: Iterable[T], bin_key: Callable[[T], Hashable]) -> dict[Hashable, list[T]]:
+    bins: dict[Hashable, list[T]] = {}
+    for item in iter:
+        key = bin_key(item)
+        if key not in bins:
+            bins[key] = []
+        bins[key].append(item)
+    return bins
+
 
 # ================================
 # Decorators
