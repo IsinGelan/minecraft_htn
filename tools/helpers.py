@@ -20,11 +20,19 @@ def into_bins[T, Hashable](iter: Iterable[T], bin_key: Callable[[T], Hashable]) 
 
 # ================================
 # Decorators
-def as_list[T](fun: Callable[..., Iterator[T]]) -> Callable[..., list[T]]:
+def as_list[T](fun: Callable[..., Iterable[T]]) -> Callable[..., list[T]]:
     def wrapper(*args, **kwargs):
         res = fun(*args, **kwargs)
         if not isinstance(res, list):
             res = list(res)
+        return res
+    return wrapper
+
+def as_dict[T1, T2](fun: Callable[..., Iterable[tuple[T1, T2]]]) -> Callable[..., dict[T1, T2]]:
+    def wrapper(*args, **kwargs):
+        res = fun(*args, **kwargs)
+        if not isinstance(res, dict):
+            res = dict(res)
         return res
     return wrapper
 

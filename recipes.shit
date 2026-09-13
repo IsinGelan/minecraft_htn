@@ -1,1696 +1,2548 @@
-task craft(recipe: Recipe)
-craft : wooden_shovel(recipe: Recipe)
-    - recipe_wooden_shovel(recipe)
-craft : lapis_lazuli(recipe: Recipe)
-    - recipe_lapis_lazuli(recipe)
-craft : quartz_from_blasting(recipe: Recipe)
-    - recipe_quartz_from_blasting(recipe)
-craft : stripped_spruce_wood(recipe: Recipe)
-    - recipe_stripped_spruce_wood(recipe)
-craft : fletching_table(recipe: Recipe)
-    - recipe_fletching_table(recipe)
-craft : green_dye(recipe: Recipe)
-    - recipe_green_dye(recipe)
-craft : beehive(recipe: Recipe)
-    - recipe_beehive(recipe)
-craft : orange_carpet_from_white_carpet(recipe: Recipe)
-    - recipe_orange_carpet_from_white_carpet(recipe)
-craft : granite_stairs(recipe: Recipe)
-    - recipe_granite_stairs(recipe)
-craft : birch_door(recipe: Recipe)
-    - recipe_birch_door(recipe)
-craft : chiseled_quartz_block(recipe: Recipe)
-    - recipe_chiseled_quartz_block(recipe)
-craft : end_stone_brick_wall(recipe: Recipe)
-    - recipe_end_stone_brick_wall(recipe)
-craft : cobblestone_wall(recipe: Recipe)
-    - recipe_cobblestone_wall(recipe)
-craft : diamond_pickaxe(recipe: Recipe)
-    - recipe_diamond_pickaxe(recipe)
-craft : crimson_stairs(recipe: Recipe)
-    - recipe_crimson_stairs(recipe)
-craft : chiseled_red_sandstone_from_red_sandstone_stonecutting(recipe: Recipe)
-    - recipe_chiseled_red_sandstone_from_red_sandstone_stonecutting(recipe)
-craft : polished_andesite_stairs(recipe: Recipe)
-    - recipe_polished_andesite_stairs(recipe)
-craft : purple_glazed_terracotta(recipe: Recipe)
-    - recipe_purple_glazed_terracotta(recipe)
-craft : paper(recipe: Recipe)
-    - recipe_paper(recipe)
-craft : lectern(recipe: Recipe)
-    - recipe_lectern(recipe)
-craft : stone_stairs(recipe: Recipe)
-    - recipe_stone_stairs(recipe)
-craft : black_wool(recipe: Recipe)
-    - recipe_black_wool(recipe)
-craft : slime_block(recipe: Recipe)
-    - recipe_slime_block(recipe)
-craft : mossy_stone_brick_wall(recipe: Recipe)
-    - recipe_mossy_stone_brick_wall(recipe)
-craft : blackstone_slab(recipe: Recipe)
-    - recipe_blackstone_slab(recipe)
-craft : iron_hoe(recipe: Recipe)
-    - recipe_iron_hoe(recipe)
-craft : smooth_stone(recipe: Recipe)
-    - recipe_smooth_stone(recipe)
-craft : polished_diorite_slab(recipe: Recipe)
-    - recipe_polished_diorite_slab(recipe)
-craft : leather(recipe: Recipe)
-    - recipe_leather(recipe)
-craft : jungle_stairs(recipe: Recipe)
-    - recipe_jungle_stairs(recipe)
-craft : light_blue_stained_glass(recipe: Recipe)
-    - recipe_light_blue_stained_glass(recipe)
-craft : jungle_sign(recipe: Recipe)
-    - recipe_jungle_sign(recipe)
-craft : granite_wall_from_granite_stonecutting(recipe: Recipe)
-    - recipe_granite_wall_from_granite_stonecutting(recipe)
-craft : purple_carpet_from_white_carpet(recipe: Recipe)
-    - recipe_purple_carpet_from_white_carpet(recipe)
-craft : stripped_crimson_hyphae(recipe: Recipe)
-    - recipe_stripped_crimson_hyphae(recipe)
-craft : light_gray_dye_from_gray_white_dye(recipe: Recipe)
-    - recipe_light_gray_dye_from_gray_white_dye(recipe)
-craft : netherite_axe_smithing(recipe: Recipe)
-    - recipe_netherite_axe_smithing(recipe)
-craft : lime_banner(recipe: Recipe)
-    - recipe_lime_banner(recipe)
-craft : gray_wool(recipe: Recipe)
-    - recipe_gray_wool(recipe)
-craft : crossbow(recipe: Recipe)
-    - recipe_crossbow(recipe)
-craft : oak_wood(recipe: Recipe)
-    - recipe_oak_wood(recipe)
-craft : end_stone_brick_slab(recipe: Recipe)
-    - recipe_end_stone_brick_slab(recipe)
-craft : warped_slab(recipe: Recipe)
-    - recipe_warped_slab(recipe)
-craft : lime_concrete_powder(recipe: Recipe)
-    - recipe_lime_concrete_powder(recipe)
-craft : redstone_block(recipe: Recipe)
-    - recipe_redstone_block(recipe)
-craft : diorite_slab(recipe: Recipe)
-    - recipe_diorite_slab(recipe)
-craft : iron_helmet(recipe: Recipe)
-    - recipe_iron_helmet(recipe)
-craft : jungle_button(recipe: Recipe)
-    - recipe_jungle_button(recipe)
-craft : cyan_wool(recipe: Recipe)
-    - recipe_cyan_wool(recipe)
-craft : granite_slab(recipe: Recipe)
-    - recipe_granite_slab(recipe)
-craft : warped_fence_gate(recipe: Recipe)
-    - recipe_warped_fence_gate(recipe)
-craft : diamond_boots(recipe: Recipe)
-    - recipe_diamond_boots(recipe)
-craft : blue_bed(recipe: Recipe)
-    - recipe_blue_bed(recipe)
-craft : wooden_pickaxe(recipe: Recipe)
-    - recipe_wooden_pickaxe(recipe)
-craft : light_blue_carpet(recipe: Recipe)
-    - recipe_light_blue_carpet(recipe)
-craft : purple_bed(recipe: Recipe)
-    - recipe_purple_bed(recipe)
-craft : blackstone_stairs(recipe: Recipe)
-    - recipe_blackstone_stairs(recipe)
-craft : red_dye_from_tulip(recipe: Recipe)
-    - recipe_red_dye_from_tulip(recipe)
-craft : popped_chorus_fruit(recipe: Recipe)
-    - recipe_popped_chorus_fruit(recipe)
-craft : black_concrete_powder(recipe: Recipe)
-    - recipe_black_concrete_powder(recipe)
-craft : melon(recipe: Recipe)
-    - recipe_melon(recipe)
-craft : polished_blackstone_wall_from_blackstone_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_wall_from_blackstone_stonecutting(recipe)
-craft : mossy_stone_brick_slab_from_mossy_stone_brick_stonecutting(recipe: Recipe)
-    - recipe_mossy_stone_brick_slab_from_mossy_stone_brick_stonecutting(recipe)
-craft : lime_dye(recipe: Recipe)
-    - recipe_lime_dye(recipe)
-craft : crimson_sign(recipe: Recipe)
-    - recipe_crimson_sign(recipe)
-craft : cut_sandstone_slab_from_sandstone_stonecutting(recipe: Recipe)
-    - recipe_cut_sandstone_slab_from_sandstone_stonecutting(recipe)
-craft : oak_boat(recipe: Recipe)
-    - recipe_oak_boat(recipe)
-craft : emerald_from_blasting(recipe: Recipe)
-    - recipe_emerald_from_blasting(recipe)
-craft : oak_planks(recipe: Recipe)
-    - recipe_oak_planks(recipe)
-craft : warped_fence(recipe: Recipe)
-    - recipe_warped_fence(recipe)
-craft : painting(recipe: Recipe)
-    - recipe_painting(recipe)
-craft : dried_kelp_from_campfire_cooking(recipe: Recipe)
-    - recipe_dried_kelp_from_campfire_cooking(recipe)
-craft : prismarine_slab(recipe: Recipe)
-    - recipe_prismarine_slab(recipe)
-craft : andesite_slab_from_andesite_stonecutting(recipe: Recipe)
-    - recipe_andesite_slab_from_andesite_stonecutting(recipe)
-craft : cracked_polished_blackstone_bricks(recipe: Recipe)
-    - recipe_cracked_polished_blackstone_bricks(recipe)
-craft : coal(recipe: Recipe)
-    - recipe_coal(recipe)
-craft : chiseled_quartz_block_from_quartz_block_stonecutting(recipe: Recipe)
-    - recipe_chiseled_quartz_block_from_quartz_block_stonecutting(recipe)
-craft : nether_brick_slab_from_nether_bricks_stonecutting(recipe: Recipe)
-    - recipe_nether_brick_slab_from_nether_bricks_stonecutting(recipe)
-craft : spruce_trapdoor(recipe: Recipe)
-    - recipe_spruce_trapdoor(recipe)
-craft : light_blue_dye_from_blue_orchid(recipe: Recipe)
-    - recipe_light_blue_dye_from_blue_orchid(recipe)
-craft : soul_campfire(recipe: Recipe)
-    - recipe_soul_campfire(recipe)
-craft : stone_brick_slab_from_stone_stonecutting(recipe: Recipe)
-    - recipe_stone_brick_slab_from_stone_stonecutting(recipe)
-craft : dark_oak_trapdoor(recipe: Recipe)
-    - recipe_dark_oak_trapdoor(recipe)
-craft : end_stone_brick_wall_from_end_stone_stonecutting(recipe: Recipe)
-    - recipe_end_stone_brick_wall_from_end_stone_stonecutting(recipe)
-craft : quartz_pillar_from_quartz_block_stonecutting(recipe: Recipe)
-    - recipe_quartz_pillar_from_quartz_block_stonecutting(recipe)
-craft : prismarine_bricks(recipe: Recipe)
-    - recipe_prismarine_bricks(recipe)
-craft : anvil(recipe: Recipe)
-    - recipe_anvil(recipe)
-craft : dark_prismarine_stairs_from_dark_prismarine_stonecutting(recipe: Recipe)
-    - recipe_dark_prismarine_stairs_from_dark_prismarine_stonecutting(recipe)
-craft : polished_granite_slab_from_polished_granite_stonecutting(recipe: Recipe)
-    - recipe_polished_granite_slab_from_polished_granite_stonecutting(recipe)
-craft : stone_slab(recipe: Recipe)
-    - recipe_stone_slab(recipe)
-craft : acacia_fence(recipe: Recipe)
-    - recipe_acacia_fence(recipe)
-craft : gray_bed(recipe: Recipe)
-    - recipe_gray_bed(recipe)
-craft : pink_dye_from_pink_tulip(recipe: Recipe)
-    - recipe_pink_dye_from_pink_tulip(recipe)
-craft : iron_leggings(recipe: Recipe)
-    - recipe_iron_leggings(recipe)
-craft : baked_potato(recipe: Recipe)
-    - recipe_baked_potato(recipe)
-craft : brown_dye(recipe: Recipe)
-    - recipe_brown_dye(recipe)
-craft : repeater(recipe: Recipe)
-    - recipe_repeater(recipe)
-craft : orange_dye_from_red_yellow(recipe: Recipe)
-    - recipe_orange_dye_from_red_yellow(recipe)
-craft : dark_prismarine_stairs(recipe: Recipe)
-    - recipe_dark_prismarine_stairs(recipe)
-craft : brick_stairs(recipe: Recipe)
-    - recipe_brick_stairs(recipe)
-craft : cooked_chicken_from_campfire_cooking(recipe: Recipe)
-    - recipe_cooked_chicken_from_campfire_cooking(recipe)
-craft : leather_leggings(recipe: Recipe)
-    - recipe_leather_leggings(recipe)
-craft : smooth_quartz(recipe: Recipe)
-    - recipe_smooth_quartz(recipe)
-craft : netherite_ingot(recipe: Recipe)
-    - recipe_netherite_ingot(recipe)
-craft : light_gray_terracotta(recipe: Recipe)
-    - recipe_light_gray_terracotta(recipe)
-craft : pink_banner(recipe: Recipe)
-    - recipe_pink_banner(recipe)
-craft : cyan_stained_glass_pane_from_glass_pane(recipe: Recipe)
-    - recipe_cyan_stained_glass_pane_from_glass_pane(recipe)
-craft : oak_stairs(recipe: Recipe)
-    - recipe_oak_stairs(recipe)
-craft : arrow(recipe: Recipe)
-    - recipe_arrow(recipe)
-craft : golden_leggings(recipe: Recipe)
-    - recipe_golden_leggings(recipe)
-craft : stripped_warped_hyphae(recipe: Recipe)
-    - recipe_stripped_warped_hyphae(recipe)
-craft : red_stained_glass_pane_from_glass_pane(recipe: Recipe)
-    - recipe_red_stained_glass_pane_from_glass_pane(recipe)
-craft : orange_carpet(recipe: Recipe)
-    - recipe_orange_carpet(recipe)
-craft : oak_fence_gate(recipe: Recipe)
-    - recipe_oak_fence_gate(recipe)
-craft : purpur_pillar(recipe: Recipe)
-    - recipe_purpur_pillar(recipe)
-craft : gray_carpet_from_white_carpet(recipe: Recipe)
-    - recipe_gray_carpet_from_white_carpet(recipe)
-craft : polished_andesite_slab(recipe: Recipe)
-    - recipe_polished_andesite_slab(recipe)
-craft : diamond_from_smelting(recipe: Recipe)
-    - recipe_diamond_from_smelting(recipe)
-craft : oak_trapdoor(recipe: Recipe)
-    - recipe_oak_trapdoor(recipe)
-craft : gray_stained_glass_pane_from_glass_pane(recipe: Recipe)
-    - recipe_gray_stained_glass_pane_from_glass_pane(recipe)
-craft : stripped_birch_wood(recipe: Recipe)
-    - recipe_stripped_birch_wood(recipe)
-craft : netherite_scrap_from_blasting(recipe: Recipe)
-    - recipe_netherite_scrap_from_blasting(recipe)
-craft : sponge(recipe: Recipe)
-    - recipe_sponge(recipe)
-craft : stone_axe(recipe: Recipe)
-    - recipe_stone_axe(recipe)
-craft : black_dye_from_wither_rose(recipe: Recipe)
-    - recipe_black_dye_from_wither_rose(recipe)
-craft : diorite_stairs_from_diorite_stonecutting(recipe: Recipe)
-    - recipe_diorite_stairs_from_diorite_stonecutting(recipe)
-craft : enchanting_table(recipe: Recipe)
-    - recipe_enchanting_table(recipe)
-craft : light_blue_dye_from_blue_white_dye(recipe: Recipe)
-    - recipe_light_blue_dye_from_blue_white_dye(recipe)
-craft : gold_nugget_from_blasting(recipe: Recipe)
-    - recipe_gold_nugget_from_blasting(recipe)
-craft : black_bed_from_white_bed(recipe: Recipe)
-    - recipe_black_bed_from_white_bed(recipe)
-craft : chiseled_nether_bricks(recipe: Recipe)
-    - recipe_chiseled_nether_bricks(recipe)
-craft : golden_helmet(recipe: Recipe)
-    - recipe_golden_helmet(recipe)
-craft : light_blue_stained_glass_pane(recipe: Recipe)
-    - recipe_light_blue_stained_glass_pane(recipe)
-craft : hay_block(recipe: Recipe)
-    - recipe_hay_block(recipe)
-craft : polished_blackstone_button(recipe: Recipe)
-    - recipe_polished_blackstone_button(recipe)
-craft : birch_stairs(recipe: Recipe)
-    - recipe_birch_stairs(recipe)
-craft : nether_wart_block(recipe: Recipe)
-    - recipe_nether_wart_block(recipe)
-craft : dark_oak_boat(recipe: Recipe)
-    - recipe_dark_oak_boat(recipe)
-craft : cooked_cod_from_smoking(recipe: Recipe)
-    - recipe_cooked_cod_from_smoking(recipe)
-craft : cooked_porkchop(recipe: Recipe)
-    - recipe_cooked_porkchop(recipe)
-craft : diamond_sword(recipe: Recipe)
-    - recipe_diamond_sword(recipe)
-craft : light_blue_glazed_terracotta(recipe: Recipe)
-    - recipe_light_blue_glazed_terracotta(recipe)
-craft : tnt_minecart(recipe: Recipe)
-    - recipe_tnt_minecart(recipe)
-craft : white_glazed_terracotta(recipe: Recipe)
-    - recipe_white_glazed_terracotta(recipe)
-craft : polished_andesite_from_andesite_stonecutting(recipe: Recipe)
-    - recipe_polished_andesite_from_andesite_stonecutting(recipe)
-craft : pink_dye_from_red_white_dye(recipe: Recipe)
-    - recipe_pink_dye_from_red_white_dye(recipe)
-craft : blackstone_wall_from_blackstone_stonecutting(recipe: Recipe)
-    - recipe_blackstone_wall_from_blackstone_stonecutting(recipe)
-craft : warped_pressure_plate(recipe: Recipe)
-    - recipe_warped_pressure_plate(recipe)
-craft : yellow_bed_from_white_bed(recipe: Recipe)
-    - recipe_yellow_bed_from_white_bed(recipe)
-craft : iron_nugget(recipe: Recipe)
-    - recipe_iron_nugget(recipe)
-craft : diorite_wall(recipe: Recipe)
-    - recipe_diorite_wall(recipe)
-craft : smooth_red_sandstone_slab(recipe: Recipe)
-    - recipe_smooth_red_sandstone_slab(recipe)
-craft : pink_glazed_terracotta(recipe: Recipe)
-    - recipe_pink_glazed_terracotta(recipe)
-craft : blackstone_wall(recipe: Recipe)
-    - recipe_blackstone_wall(recipe)
-craft : trapped_chest(recipe: Recipe)
-    - recipe_trapped_chest(recipe)
-craft : polished_blackstone_brick_slab_from_blackstone_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_brick_slab_from_blackstone_stonecutting(recipe)
-craft : green_carpet_from_white_carpet(recipe: Recipe)
-    - recipe_green_carpet_from_white_carpet(recipe)
-craft : beacon(recipe: Recipe)
-    - recipe_beacon(recipe)
-craft : red_dye_from_poppy(recipe: Recipe)
-    - recipe_red_dye_from_poppy(recipe)
-craft : red_bed(recipe: Recipe)
-    - recipe_red_bed(recipe)
-craft : dark_oak_button(recipe: Recipe)
-    - recipe_dark_oak_button(recipe)
-craft : yellow_terracotta(recipe: Recipe)
-    - recipe_yellow_terracotta(recipe)
-craft : blue_dye_from_cornflower(recipe: Recipe)
-    - recipe_blue_dye_from_cornflower(recipe)
-craft : dried_kelp(recipe: Recipe)
-    - recipe_dried_kelp(recipe)
-craft : green_banner(recipe: Recipe)
-    - recipe_green_banner(recipe)
-craft : red_carpet(recipe: Recipe)
-    - recipe_red_carpet(recipe)
-craft : end_rod(recipe: Recipe)
-    - recipe_end_rod(recipe)
-craft : white_concrete_powder(recipe: Recipe)
-    - recipe_white_concrete_powder(recipe)
-craft : cooked_mutton(recipe: Recipe)
-    - recipe_cooked_mutton(recipe)
-craft : magenta_concrete_powder(recipe: Recipe)
-    - recipe_magenta_concrete_powder(recipe)
-craft : rail(recipe: Recipe)
-    - recipe_rail(recipe)
-craft : chiseled_stone_bricks_from_stone_bricks_stonecutting(recipe: Recipe)
-    - recipe_chiseled_stone_bricks_from_stone_bricks_stonecutting(recipe)
-craft : dark_oak_door(recipe: Recipe)
-    - recipe_dark_oak_door(recipe)
-craft : gold_ingot(recipe: Recipe)
-    - recipe_gold_ingot(recipe)
-craft : honey_block(recipe: Recipe)
-    - recipe_honey_block(recipe)
-craft : soul_torch(recipe: Recipe)
-    - recipe_soul_torch(recipe)
-craft : tripwire_hook(recipe: Recipe)
-    - recipe_tripwire_hook(recipe)
-craft : gold_ingot_from_nuggets(recipe: Recipe)
-    - recipe_gold_ingot_from_nuggets(recipe)
-craft : pink_concrete_powder(recipe: Recipe)
-    - recipe_pink_concrete_powder(recipe)
-craft : magenta_bed(recipe: Recipe)
-    - recipe_magenta_bed(recipe)
-craft : brown_stained_glass(recipe: Recipe)
-    - recipe_brown_stained_glass(recipe)
-craft : polished_diorite(recipe: Recipe)
-    - recipe_polished_diorite(recipe)
-craft : furnace(recipe: Recipe)
-    - recipe_furnace(recipe)
-craft : netherite_shovel_smithing(recipe: Recipe)
-    - recipe_netherite_shovel_smithing(recipe)
-craft : rabbit_stew_from_red_mushroom(recipe: Recipe)
-    - recipe_rabbit_stew_from_red_mushroom(recipe)
-craft : nether_brick_stairs_from_nether_bricks_stonecutting(recipe: Recipe)
-    - recipe_nether_brick_stairs_from_nether_bricks_stonecutting(recipe)
-craft : smooth_sandstone_slab(recipe: Recipe)
-    - recipe_smooth_sandstone_slab(recipe)
-craft : spruce_wood(recipe: Recipe)
-    - recipe_spruce_wood(recipe)
-craft : end_stone_brick_stairs_from_end_stone_brick_stonecutting(recipe: Recipe)
-    - recipe_end_stone_brick_stairs_from_end_stone_brick_stonecutting(recipe)
-craft : magenta_stained_glass(recipe: Recipe)
-    - recipe_magenta_stained_glass(recipe)
-craft : shulker_box(recipe: Recipe)
-    - recipe_shulker_box(recipe)
-craft : iron_axe(recipe: Recipe)
-    - recipe_iron_axe(recipe)
-craft : polished_granite(recipe: Recipe)
-    - recipe_polished_granite(recipe)
-craft : polished_andesite(recipe: Recipe)
-    - recipe_polished_andesite(recipe)
-craft : cut_red_sandstone_from_red_sandstone_stonecutting(recipe: Recipe)
-    - recipe_cut_red_sandstone_from_red_sandstone_stonecutting(recipe)
-craft : red_glazed_terracotta(recipe: Recipe)
-    - recipe_red_glazed_terracotta(recipe)
-craft : mossy_cobblestone_slab(recipe: Recipe)
-    - recipe_mossy_cobblestone_slab(recipe)
-craft : quartz(recipe: Recipe)
-    - recipe_quartz(recipe)
-craft : flint_and_steel(recipe: Recipe)
-    - recipe_flint_and_steel(recipe)
-craft : golden_sword(recipe: Recipe)
-    - recipe_golden_sword(recipe)
-craft : sticky_piston(recipe: Recipe)
-    - recipe_sticky_piston(recipe)
-craft : blue_stained_glass_pane(recipe: Recipe)
-    - recipe_blue_stained_glass_pane(recipe)
-craft : cooked_chicken_from_smoking(recipe: Recipe)
-    - recipe_cooked_chicken_from_smoking(recipe)
-craft : creeper_banner_pattern(recipe: Recipe)
-    - recipe_creeper_banner_pattern(recipe)
-craft : hopper(recipe: Recipe)
-    - recipe_hopper(recipe)
-craft : white_terracotta(recipe: Recipe)
-    - recipe_white_terracotta(recipe)
-craft : light_blue_wool(recipe: Recipe)
-    - recipe_light_blue_wool(recipe)
-craft : birch_fence_gate(recipe: Recipe)
-    - recipe_birch_fence_gate(recipe)
-craft : cut_red_sandstone_slab_from_red_sandstone_stonecutting(recipe: Recipe)
-    - recipe_cut_red_sandstone_slab_from_red_sandstone_stonecutting(recipe)
-craft : light_gray_dye_from_azure_bluet(recipe: Recipe)
-    - recipe_light_gray_dye_from_azure_bluet(recipe)
-craft : diamond_shovel(recipe: Recipe)
-    - recipe_diamond_shovel(recipe)
-craft : warped_sign(recipe: Recipe)
-    - recipe_warped_sign(recipe)
-craft : magenta_dye_from_blue_red_white_dye(recipe: Recipe)
-    - recipe_magenta_dye_from_blue_red_white_dye(recipe)
-craft : netherite_boots_smithing(recipe: Recipe)
-    - recipe_netherite_boots_smithing(recipe)
-craft : smooth_stone_slab_from_smooth_stone_stonecutting(recipe: Recipe)
-    - recipe_smooth_stone_slab_from_smooth_stone_stonecutting(recipe)
-craft : iron_pickaxe(recipe: Recipe)
-    - recipe_iron_pickaxe(recipe)
-craft : hopper_minecart(recipe: Recipe)
-    - recipe_hopper_minecart(recipe)
-craft : smooth_quartz_stairs_from_smooth_quartz_stonecutting(recipe: Recipe)
-    - recipe_smooth_quartz_stairs_from_smooth_quartz_stonecutting(recipe)
-craft : smooth_quartz_stairs(recipe: Recipe)
-    - recipe_smooth_quartz_stairs(recipe)
-craft : yellow_concrete_powder(recipe: Recipe)
-    - recipe_yellow_concrete_powder(recipe)
-craft : white_banner(recipe: Recipe)
-    - recipe_white_banner(recipe)
-craft : gold_block(recipe: Recipe)
-    - recipe_gold_block(recipe)
-craft : gold_ingot_from_gold_block(recipe: Recipe)
-    - recipe_gold_ingot_from_gold_block(recipe)
-craft : compass(recipe: Recipe)
-    - recipe_compass(recipe)
-craft : bread(recipe: Recipe)
-    - recipe_bread(recipe)
-craft : oak_fence(recipe: Recipe)
-    - recipe_oak_fence(recipe)
-craft : smooth_sandstone_slab_from_smooth_sandstone_stonecutting(recipe: Recipe)
-    - recipe_smooth_sandstone_slab_from_smooth_sandstone_stonecutting(recipe)
-craft : mushroom_stew(recipe: Recipe)
-    - recipe_mushroom_stew(recipe)
-craft : smoker(recipe: Recipe)
-    - recipe_smoker(recipe)
-craft : loom(recipe: Recipe)
-    - recipe_loom(recipe)
-craft : brown_carpet(recipe: Recipe)
-    - recipe_brown_carpet(recipe)
-craft : polished_blackstone_from_blackstone_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_from_blackstone_stonecutting(recipe)
-craft : netherite_hoe_smithing(recipe: Recipe)
-    - recipe_netherite_hoe_smithing(recipe)
-craft : magenta_stained_glass_pane(recipe: Recipe)
-    - recipe_magenta_stained_glass_pane(recipe)
-craft : red_banner(recipe: Recipe)
-    - recipe_red_banner(recipe)
-craft : iron_ingot_from_iron_block(recipe: Recipe)
-    - recipe_iron_ingot_from_iron_block(recipe)
-craft : sandstone_slab_from_sandstone_stonecutting(recipe: Recipe)
-    - recipe_sandstone_slab_from_sandstone_stonecutting(recipe)
-craft : blaze_powder(recipe: Recipe)
-    - recipe_blaze_powder(recipe)
-craft : cooked_rabbit_from_campfire_cooking(recipe: Recipe)
-    - recipe_cooked_rabbit_from_campfire_cooking(recipe)
-craft : purple_bed_from_white_bed(recipe: Recipe)
-    - recipe_purple_bed_from_white_bed(recipe)
-craft : polished_blackstone_brick_slab_from_polished_blackstone_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_brick_slab_from_polished_blackstone_stonecutting(recipe)
-craft : orange_wool(recipe: Recipe)
-    - recipe_orange_wool(recipe)
-craft : cooked_porkchop_from_campfire_cooking(recipe: Recipe)
-    - recipe_cooked_porkchop_from_campfire_cooking(recipe)
-craft : purple_stained_glass_pane_from_glass_pane(recipe: Recipe)
-    - recipe_purple_stained_glass_pane_from_glass_pane(recipe)
-craft : andesite_stairs_from_andesite_stonecutting(recipe: Recipe)
-    - recipe_andesite_stairs_from_andesite_stonecutting(recipe)
-craft : prismarine_stairs(recipe: Recipe)
-    - recipe_prismarine_stairs(recipe)
-craft : brown_banner(recipe: Recipe)
-    - recipe_brown_banner(recipe)
-craft : cartography_table(recipe: Recipe)
-    - recipe_cartography_table(recipe)
-craft : golden_axe(recipe: Recipe)
-    - recipe_golden_axe(recipe)
-craft : netherite_block(recipe: Recipe)
-    - recipe_netherite_block(recipe)
-craft : spruce_planks(recipe: Recipe)
-    - recipe_spruce_planks(recipe)
-craft : red_sandstone(recipe: Recipe)
-    - recipe_red_sandstone(recipe)
-craft : prismarine_slab_from_prismarine_stonecutting(recipe: Recipe)
-    - recipe_prismarine_slab_from_prismarine_stonecutting(recipe)
-craft : prismarine(recipe: Recipe)
-    - recipe_prismarine(recipe)
-craft : brick_wall(recipe: Recipe)
-    - recipe_brick_wall(recipe)
-craft : white_bed(recipe: Recipe)
-    - recipe_white_bed(recipe)
-craft : stone_pressure_plate(recipe: Recipe)
-    - recipe_stone_pressure_plate(recipe)
-craft : golden_carrot(recipe: Recipe)
-    - recipe_golden_carrot(recipe)
-craft : cooked_salmon(recipe: Recipe)
-    - recipe_cooked_salmon(recipe)
-craft : polished_granite_stairs(recipe: Recipe)
-    - recipe_polished_granite_stairs(recipe)
-craft : birch_wood(recipe: Recipe)
-    - recipe_birch_wood(recipe)
-craft : birch_slab(recipe: Recipe)
-    - recipe_birch_slab(recipe)
-craft : brick_slab(recipe: Recipe)
-    - recipe_brick_slab(recipe)
-craft : warped_trapdoor(recipe: Recipe)
-    - recipe_warped_trapdoor(recipe)
-craft : cooked_cod_from_campfire_cooking(recipe: Recipe)
-    - recipe_cooked_cod_from_campfire_cooking(recipe)
-craft : bricks(recipe: Recipe)
-    - recipe_bricks(recipe)
-craft : warped_fungus_on_a_stick(recipe: Recipe)
-    - recipe_warped_fungus_on_a_stick(recipe)
-craft : brown_concrete_powder(recipe: Recipe)
-    - recipe_brown_concrete_powder(recipe)
-craft : baked_potato_from_campfire_cooking(recipe: Recipe)
-    - recipe_baked_potato_from_campfire_cooking(recipe)
-craft : oak_button(recipe: Recipe)
-    - recipe_oak_button(recipe)
-craft : stone_brick_walls_from_stone_stonecutting(recipe: Recipe)
-    - recipe_stone_brick_walls_from_stone_stonecutting(recipe)
-craft : netherite_helmet_smithing(recipe: Recipe)
-    - recipe_netherite_helmet_smithing(recipe)
-craft : magma_block(recipe: Recipe)
-    - recipe_magma_block(recipe)
-craft : chiseled_stone_bricks(recipe: Recipe)
-    - recipe_chiseled_stone_bricks(recipe)
-craft : jungle_slab(recipe: Recipe)
-    - recipe_jungle_slab(recipe)
-craft : stone_brick_wall_from_stone_bricks_stonecutting(recipe: Recipe)
-    - recipe_stone_brick_wall_from_stone_bricks_stonecutting(recipe)
-craft : lime_carpet(recipe: Recipe)
-    - recipe_lime_carpet(recipe)
-craft : dark_oak_fence(recipe: Recipe)
-    - recipe_dark_oak_fence(recipe)
-craft : fermented_spider_eye(recipe: Recipe)
-    - recipe_fermented_spider_eye(recipe)
-craft : redstone_from_smelting(recipe: Recipe)
-    - recipe_redstone_from_smelting(recipe)
-craft : sugar_from_sugar_cane(recipe: Recipe)
-    - recipe_sugar_from_sugar_cane(recipe)
-craft : fishing_rod(recipe: Recipe)
-    - recipe_fishing_rod(recipe)
-craft : composter(recipe: Recipe)
-    - recipe_composter(recipe)
-craft : chiseled_stone_bricks_stone_from_stonecutting(recipe: Recipe)
-    - recipe_chiseled_stone_bricks_stone_from_stonecutting(recipe)
-craft : map(recipe: Recipe)
-    - recipe_map(recipe)
-craft : red_sandstone_wall(recipe: Recipe)
-    - recipe_red_sandstone_wall(recipe)
-craft : jukebox(recipe: Recipe)
-    - recipe_jukebox(recipe)
-craft : blue_banner(recipe: Recipe)
-    - recipe_blue_banner(recipe)
-craft : oak_sign(recipe: Recipe)
-    - recipe_oak_sign(recipe)
-craft : iron_door(recipe: Recipe)
-    - recipe_iron_door(recipe)
-craft : purpur_stairs_from_purpur_block_stonecutting(recipe: Recipe)
-    - recipe_purpur_stairs_from_purpur_block_stonecutting(recipe)
-craft : stone_hoe(recipe: Recipe)
-    - recipe_stone_hoe(recipe)
-craft : diamond_from_blasting(recipe: Recipe)
-    - recipe_diamond_from_blasting(recipe)
-craft : light_gray_carpet_from_white_carpet(recipe: Recipe)
-    - recipe_light_gray_carpet_from_white_carpet(recipe)
-craft : stripped_acacia_wood(recipe: Recipe)
-    - recipe_stripped_acacia_wood(recipe)
-craft : fire_charge(recipe: Recipe)
-    - recipe_fire_charge(recipe)
-craft : blackstone_slab_from_blackstone_stonecutting(recipe: Recipe)
-    - recipe_blackstone_slab_from_blackstone_stonecutting(recipe)
-craft : light_gray_dye_from_white_tulip(recipe: Recipe)
-    - recipe_light_gray_dye_from_white_tulip(recipe)
-craft : red_stained_glass(recipe: Recipe)
-    - recipe_red_stained_glass(recipe)
-craft : andesite(recipe: Recipe)
-    - recipe_andesite(recipe)
-craft : quartz_slab_from_stonecutting(recipe: Recipe)
-    - recipe_quartz_slab_from_stonecutting(recipe)
-craft : iron_boots(recipe: Recipe)
-    - recipe_iron_boots(recipe)
-craft : red_nether_brick_wall_from_red_nether_bricks_stonecutting(recipe: Recipe)
-    - recipe_red_nether_brick_wall_from_red_nether_bricks_stonecutting(recipe)
-craft : spruce_slab(recipe: Recipe)
-    - recipe_spruce_slab(recipe)
-craft : mossy_cobblestone_stairs_from_mossy_cobblestone_stonecutting(recipe: Recipe)
-    - recipe_mossy_cobblestone_stairs_from_mossy_cobblestone_stonecutting(recipe)
-craft : polished_blackstone_stairs_from_blackstone_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_stairs_from_blackstone_stonecutting(recipe)
-craft : iron_ingot_from_nuggets(recipe: Recipe)
-    - recipe_iron_ingot_from_nuggets(recipe)
-craft : granite(recipe: Recipe)
-    - recipe_granite(recipe)
-craft : pumpkin_pie(recipe: Recipe)
-    - recipe_pumpkin_pie(recipe)
-craft : glowstone(recipe: Recipe)
-    - recipe_glowstone(recipe)
-craft : gold_nugget_from_smelting(recipe: Recipe)
-    - recipe_gold_nugget_from_smelting(recipe)
-craft : shield(recipe: Recipe)
-    - recipe_shield(recipe)
-craft : mossy_cobblestone_wall_from_mossy_cobblestone_stonecutting(recipe: Recipe)
-    - recipe_mossy_cobblestone_wall_from_mossy_cobblestone_stonecutting(recipe)
-craft : glass_pane(recipe: Recipe)
-    - recipe_glass_pane(recipe)
-craft : lead(recipe: Recipe)
-    - recipe_lead(recipe)
-craft : acacia_button(recipe: Recipe)
-    - recipe_acacia_button(recipe)
-craft : smooth_stone_slab(recipe: Recipe)
-    - recipe_smooth_stone_slab(recipe)
-craft : chest(recipe: Recipe)
-    - recipe_chest(recipe)
-craft : oak_slab(recipe: Recipe)
-    - recipe_oak_slab(recipe)
-craft : coal_from_smelting(recipe: Recipe)
-    - recipe_coal_from_smelting(recipe)
-craft : green_stained_glass_pane(recipe: Recipe)
-    - recipe_green_stained_glass_pane(recipe)
-craft : dark_prismarine_slab_from_dark_prismarine_stonecutting(recipe: Recipe)
-    - recipe_dark_prismarine_slab_from_dark_prismarine_stonecutting(recipe)
-craft : oak_door(recipe: Recipe)
-    - recipe_oak_door(recipe)
-craft : gray_concrete_powder(recipe: Recipe)
-    - recipe_gray_concrete_powder(recipe)
-craft : polished_andesite_stairs_from_polished_andesite_stonecutting(recipe: Recipe)
-    - recipe_polished_andesite_stairs_from_polished_andesite_stonecutting(recipe)
-craft : cooked_salmon_from_campfire_cooking(recipe: Recipe)
-    - recipe_cooked_salmon_from_campfire_cooking(recipe)
-craft : smooth_red_sandstone_stairs_from_smooth_red_sandstone_stonecutting(recipe: Recipe)
-    - recipe_smooth_red_sandstone_stairs_from_smooth_red_sandstone_stonecutting(recipe)
-craft : black_dye(recipe: Recipe)
-    - recipe_black_dye(recipe)
-craft : smooth_quartz_slab_from_smooth_quartz_stonecutting(recipe: Recipe)
-    - recipe_smooth_quartz_slab_from_smooth_quartz_stonecutting(recipe)
-craft : brick_slab_from_bricks_stonecutting(recipe: Recipe)
-    - recipe_brick_slab_from_bricks_stonecutting(recipe)
-craft : cyan_glazed_terracotta(recipe: Recipe)
-    - recipe_cyan_glazed_terracotta(recipe)
-craft : cut_red_sandstone_slab_from_cut_red_sandstone_stonecutting(recipe: Recipe)
-    - recipe_cut_red_sandstone_slab_from_cut_red_sandstone_stonecutting(recipe)
-craft : stone_brick_slab_from_stone_bricks_stonecutting(recipe: Recipe)
-    - recipe_stone_brick_slab_from_stone_bricks_stonecutting(recipe)
-craft : polished_blackstone_wall_from_polished_blackstone_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_wall_from_polished_blackstone_stonecutting(recipe)
-craft : brown_wool(recipe: Recipe)
-    - recipe_brown_wool(recipe)
-craft : nether_bricks(recipe: Recipe)
-    - recipe_nether_bricks(recipe)
-craft : red_nether_brick_slab_from_red_nether_bricks_stonecutting(recipe: Recipe)
-    - recipe_red_nether_brick_slab_from_red_nether_bricks_stonecutting(recipe)
-craft : sandstone_stairs(recipe: Recipe)
-    - recipe_sandstone_stairs(recipe)
-craft : blue_glazed_terracotta(recipe: Recipe)
-    - recipe_blue_glazed_terracotta(recipe)
-craft : dark_oak_pressure_plate(recipe: Recipe)
-    - recipe_dark_oak_pressure_plate(recipe)
-craft : honey_bottle(recipe: Recipe)
-    - recipe_honey_bottle(recipe)
-craft : stone_pickaxe(recipe: Recipe)
-    - recipe_stone_pickaxe(recipe)
-craft : tnt(recipe: Recipe)
-    - recipe_tnt(recipe)
-craft : gray_terracotta(recipe: Recipe)
-    - recipe_gray_terracotta(recipe)
-craft : stick(recipe: Recipe)
-    - recipe_stick(recipe)
-craft : dark_oak_slab(recipe: Recipe)
-    - recipe_dark_oak_slab(recipe)
-craft : light_weighted_pressure_plate(recipe: Recipe)
-    - recipe_light_weighted_pressure_plate(recipe)
-craft : light_gray_wool(recipe: Recipe)
-    - recipe_light_gray_wool(recipe)
-craft : cookie(recipe: Recipe)
-    - recipe_cookie(recipe)
-craft : jungle_fence_gate(recipe: Recipe)
-    - recipe_jungle_fence_gate(recipe)
-craft : iron_nugget_from_blasting(recipe: Recipe)
-    - recipe_iron_nugget_from_blasting(recipe)
-craft : polished_blackstone_slab_from_blackstone_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_slab_from_blackstone_stonecutting(recipe)
-craft : jungle_fence(recipe: Recipe)
-    - recipe_jungle_fence(recipe)
-craft : light_blue_bed_from_white_bed(recipe: Recipe)
-    - recipe_light_blue_bed_from_white_bed(recipe)
-craft : cooked_porkchop_from_smoking(recipe: Recipe)
-    - recipe_cooked_porkchop_from_smoking(recipe)
-craft : snow(recipe: Recipe)
-    - recipe_snow(recipe)
-craft : andesite_wall(recipe: Recipe)
-    - recipe_andesite_wall(recipe)
-craft : stripped_jungle_wood(recipe: Recipe)
-    - recipe_stripped_jungle_wood(recipe)
-craft : black_stained_glass_pane(recipe: Recipe)
-    - recipe_black_stained_glass_pane(recipe)
-craft : diamond(recipe: Recipe)
-    - recipe_diamond(recipe)
-craft : pumpkin_seeds(recipe: Recipe)
-    - recipe_pumpkin_seeds(recipe)
-craft : stick_from_bamboo_item(recipe: Recipe)
-    - recipe_stick_from_bamboo_item(recipe)
-craft : light_gray_dye_from_black_white_dye(recipe: Recipe)
-    - recipe_light_gray_dye_from_black_white_dye(recipe)
-craft : cyan_bed_from_white_bed(recipe: Recipe)
-    - recipe_cyan_bed_from_white_bed(recipe)
-craft : yellow_stained_glass_pane_from_glass_pane(recipe: Recipe)
-    - recipe_yellow_stained_glass_pane_from_glass_pane(recipe)
-craft : netherite_sword_smithing(recipe: Recipe)
-    - recipe_netherite_sword_smithing(recipe)
-craft : redstone_torch(recipe: Recipe)
-    - recipe_redstone_torch(recipe)
-craft : cooked_mutton_from_campfire_cooking(recipe: Recipe)
-    - recipe_cooked_mutton_from_campfire_cooking(recipe)
-craft : stone_shovel(recipe: Recipe)
-    - recipe_stone_shovel(recipe)
-craft : lime_glazed_terracotta(recipe: Recipe)
-    - recipe_lime_glazed_terracotta(recipe)
-craft : polished_andesite_slab_from_andesite_stonecutting(recipe: Recipe)
-    - recipe_polished_andesite_slab_from_andesite_stonecutting(recipe)
-craft : detector_rail(recipe: Recipe)
-    - recipe_detector_rail(recipe)
-craft : red_terracotta(recipe: Recipe)
-    - recipe_red_terracotta(recipe)
-craft : magenta_dye_from_blue_red_pink(recipe: Recipe)
-    - recipe_magenta_dye_from_blue_red_pink(recipe)
-craft : spruce_button(recipe: Recipe)
-    - recipe_spruce_button(recipe)
-craft : cooked_mutton_from_smoking(recipe: Recipe)
-    - recipe_cooked_mutton_from_smoking(recipe)
-craft : polished_blackstone_brick_stairs_from_polished_blackstone_bricks_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_brick_stairs_from_polished_blackstone_bricks_stonecutting(recipe)
-craft : crimson_door(recipe: Recipe)
-    - recipe_crimson_door(recipe)
-craft : yellow_carpet(recipe: Recipe)
-    - recipe_yellow_carpet(recipe)
-craft : birch_fence(recipe: Recipe)
-    - recipe_birch_fence(recipe)
-craft : pink_bed_from_white_bed(recipe: Recipe)
-    - recipe_pink_bed_from_white_bed(recipe)
-craft : netherite_leggings_smithing(recipe: Recipe)
-    - recipe_netherite_leggings_smithing(recipe)
-craft : ladder(recipe: Recipe)
-    - recipe_ladder(recipe)
-craft : stonecutter(recipe: Recipe)
-    - recipe_stonecutter(recipe)
-craft : light_gray_bed(recipe: Recipe)
-    - recipe_light_gray_bed(recipe)
-craft : blue_concrete_powder(recipe: Recipe)
-    - recipe_blue_concrete_powder(recipe)
-craft : red_sandstone_stairs_from_red_sandstone_stonecutting(recipe: Recipe)
-    - recipe_red_sandstone_stairs_from_red_sandstone_stonecutting(recipe)
-craft : red_sandstone_slab_from_red_sandstone_stonecutting(recipe: Recipe)
-    - recipe_red_sandstone_slab_from_red_sandstone_stonecutting(recipe)
-craft : white_stained_glass_pane(recipe: Recipe)
-    - recipe_white_stained_glass_pane(recipe)
-craft : black_terracotta(recipe: Recipe)
-    - recipe_black_terracotta(recipe)
-craft : magma_cream(recipe: Recipe)
-    - recipe_magma_cream(recipe)
-craft : green_bed(recipe: Recipe)
-    - recipe_green_bed(recipe)
-craft : green_concrete_powder(recipe: Recipe)
-    - recipe_green_concrete_powder(recipe)
-craft : cut_red_sandstone_slab(recipe: Recipe)
-    - recipe_cut_red_sandstone_slab(recipe)
-craft : purple_concrete_powder(recipe: Recipe)
-    - recipe_purple_concrete_powder(recipe)
-craft : flower_pot(recipe: Recipe)
-    - recipe_flower_pot(recipe)
-craft : pink_dye_from_peony(recipe: Recipe)
-    - recipe_pink_dye_from_peony(recipe)
-craft : carrot_on_a_stick(recipe: Recipe)
-    - recipe_carrot_on_a_stick(recipe)
-craft : diorite_stairs(recipe: Recipe)
-    - recipe_diorite_stairs(recipe)
-craft : polished_blackstone_brick_wall_from_polished_blackstone_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_brick_wall_from_polished_blackstone_stonecutting(recipe)
-craft : mossy_cobblestone(recipe: Recipe)
-    - recipe_mossy_cobblestone(recipe)
-craft : stone_slab_from_stone_stonecutting(recipe: Recipe)
-    - recipe_stone_slab_from_stone_stonecutting(recipe)
-craft : chain(recipe: Recipe)
-    - recipe_chain(recipe)
-craft : iron_shovel(recipe: Recipe)
-    - recipe_iron_shovel(recipe)
-craft : stone_button(recipe: Recipe)
-    - recipe_stone_button(recipe)
-craft : iron_block(recipe: Recipe)
-    - recipe_iron_block(recipe)
-craft : honeycomb_block(recipe: Recipe)
-    - recipe_honeycomb_block(recipe)
-craft : lodestone(recipe: Recipe)
-    - recipe_lodestone(recipe)
-craft : gray_banner(recipe: Recipe)
-    - recipe_gray_banner(recipe)
-craft : crimson_trapdoor(recipe: Recipe)
-    - recipe_crimson_trapdoor(recipe)
-craft : nether_brick_stairs(recipe: Recipe)
-    - recipe_nether_brick_stairs(recipe)
-craft : quartz_block(recipe: Recipe)
-    - recipe_quartz_block(recipe)
-craft : cyan_concrete_powder(recipe: Recipe)
-    - recipe_cyan_concrete_powder(recipe)
-craft : cake(recipe: Recipe)
-    - recipe_cake(recipe)
-craft : skull_banner_pattern(recipe: Recipe)
-    - recipe_skull_banner_pattern(recipe)
-craft : sea_lantern(recipe: Recipe)
-    - recipe_sea_lantern(recipe)
-craft : orange_concrete_powder(recipe: Recipe)
-    - recipe_orange_concrete_powder(recipe)
-craft : armor_stand(recipe: Recipe)
-    - recipe_armor_stand(recipe)
-craft : polished_granite_from_granite_stonecutting(recipe: Recipe)
-    - recipe_polished_granite_from_granite_stonecutting(recipe)
-craft : flower_banner_pattern(recipe: Recipe)
-    - recipe_flower_banner_pattern(recipe)
-craft : smithing_table(recipe: Recipe)
-    - recipe_smithing_table(recipe)
-craft : pink_bed(recipe: Recipe)
-    - recipe_pink_bed(recipe)
-craft : acacia_slab(recipe: Recipe)
-    - recipe_acacia_slab(recipe)
-craft : brick_stairs_from_bricks_stonecutting(recipe: Recipe)
-    - recipe_brick_stairs_from_bricks_stonecutting(recipe)
-craft : book(recipe: Recipe)
-    - recipe_book(recipe)
-craft : quartz_stairs_from_quartz_block_stonecutting(recipe: Recipe)
-    - recipe_quartz_stairs_from_quartz_block_stonecutting(recipe)
-craft : magenta_stained_glass_pane_from_glass_pane(recipe: Recipe)
-    - recipe_magenta_stained_glass_pane_from_glass_pane(recipe)
-craft : purple_stained_glass(recipe: Recipe)
-    - recipe_purple_stained_glass(recipe)
-craft : crimson_slab(recipe: Recipe)
-    - recipe_crimson_slab(recipe)
-craft : bone_meal_from_bone_block(recipe: Recipe)
-    - recipe_bone_meal_from_bone_block(recipe)
-craft : crimson_button(recipe: Recipe)
-    - recipe_crimson_button(recipe)
-craft : cooked_chicken(recipe: Recipe)
-    - recipe_cooked_chicken(recipe)
-craft : conduit(recipe: Recipe)
-    - recipe_conduit(recipe)
-craft : purple_stained_glass_pane(recipe: Recipe)
-    - recipe_purple_stained_glass_pane(recipe)
-craft : jungle_pressure_plate(recipe: Recipe)
-    - recipe_jungle_pressure_plate(recipe)
-craft : comparator(recipe: Recipe)
-    - recipe_comparator(recipe)
-craft : crimson_pressure_plate(recipe: Recipe)
-    - recipe_crimson_pressure_plate(recipe)
-craft : red_sandstone_slab(recipe: Recipe)
-    - recipe_red_sandstone_slab(recipe)
-craft : blue_bed_from_white_bed(recipe: Recipe)
-    - recipe_blue_bed_from_white_bed(recipe)
-craft : magenta_glazed_terracotta(recipe: Recipe)
-    - recipe_magenta_glazed_terracotta(recipe)
-craft : birch_button(recipe: Recipe)
-    - recipe_birch_button(recipe)
-craft : acacia_fence_gate(recipe: Recipe)
-    - recipe_acacia_fence_gate(recipe)
-craft : purple_terracotta(recipe: Recipe)
-    - recipe_purple_terracotta(recipe)
-craft : red_stained_glass_pane(recipe: Recipe)
-    - recipe_red_stained_glass_pane(recipe)
-craft : green_stained_glass(recipe: Recipe)
-    - recipe_green_stained_glass(recipe)
-craft : mossy_stone_brick_stairs_from_mossy_stone_brick_stonecutting(recipe: Recipe)
-    - recipe_mossy_stone_brick_stairs_from_mossy_stone_brick_stonecutting(recipe)
-craft : black_carpet_from_white_carpet(recipe: Recipe)
-    - recipe_black_carpet_from_white_carpet(recipe)
-craft : bowl(recipe: Recipe)
-    - recipe_bowl(recipe)
-craft : pink_stained_glass(recipe: Recipe)
-    - recipe_pink_stained_glass(recipe)
-craft : cyan_terracotta(recipe: Recipe)
-    - recipe_cyan_terracotta(recipe)
-craft : polished_andesite_stairs_from_andesite_stonecutting(recipe: Recipe)
-    - recipe_polished_andesite_stairs_from_andesite_stonecutting(recipe)
-craft : blue_carpet_from_white_carpet(recipe: Recipe)
-    - recipe_blue_carpet_from_white_carpet(recipe)
-craft : lime_stained_glass_pane(recipe: Recipe)
-    - recipe_lime_stained_glass_pane(recipe)
-craft : brick(recipe: Recipe)
-    - recipe_brick(recipe)
-craft : magenta_bed_from_white_bed(recipe: Recipe)
-    - recipe_magenta_bed_from_white_bed(recipe)
-craft : mossy_stone_bricks(recipe: Recipe)
-    - recipe_mossy_stone_bricks(recipe)
-craft : spruce_door(recipe: Recipe)
-    - recipe_spruce_door(recipe)
-craft : activator_rail(recipe: Recipe)
-    - recipe_activator_rail(recipe)
-craft : jack_o_lantern(recipe: Recipe)
-    - recipe_jack_o_lantern(recipe)
-craft : leather_chestplate(recipe: Recipe)
-    - recipe_leather_chestplate(recipe)
-craft : yellow_dye_from_sunflower(recipe: Recipe)
-    - recipe_yellow_dye_from_sunflower(recipe)
-craft : torch(recipe: Recipe)
-    - recipe_torch(recipe)
-craft : light_gray_concrete_powder(recipe: Recipe)
-    - recipe_light_gray_concrete_powder(recipe)
-craft : purpur_stairs(recipe: Recipe)
-    - recipe_purpur_stairs(recipe)
-craft : purpur_block(recipe: Recipe)
-    - recipe_purpur_block(recipe)
-craft : lime_carpet_from_white_carpet(recipe: Recipe)
-    - recipe_lime_carpet_from_white_carpet(recipe)
-craft : cut_sandstone_slab(recipe: Recipe)
-    - recipe_cut_sandstone_slab(recipe)
-craft : orange_dye_from_orange_tulip(recipe: Recipe)
-    - recipe_orange_dye_from_orange_tulip(recipe)
-craft : smooth_red_sandstone_stairs(recipe: Recipe)
-    - recipe_smooth_red_sandstone_stairs(recipe)
-craft : iron_nugget_from_smelting(recipe: Recipe)
-    - recipe_iron_nugget_from_smelting(recipe)
-craft : beetroot_soup(recipe: Recipe)
-    - recipe_beetroot_soup(recipe)
-craft : light_blue_banner(recipe: Recipe)
-    - recipe_light_blue_banner(recipe)
-craft : end_stone_brick_slab_from_end_stone_stonecutting(recipe: Recipe)
-    - recipe_end_stone_brick_slab_from_end_stone_stonecutting(recipe)
-craft : golden_boots(recipe: Recipe)
-    - recipe_golden_boots(recipe)
-craft : polished_diorite_slab_from_polished_diorite_stonecutting(recipe: Recipe)
-    - recipe_polished_diorite_slab_from_polished_diorite_stonecutting(recipe)
-craft : redstone_from_blasting(recipe: Recipe)
-    - recipe_redstone_from_blasting(recipe)
-craft : polished_granite_slab(recipe: Recipe)
-    - recipe_polished_granite_slab(recipe)
-craft : cooked_rabbit(recipe: Recipe)
-    - recipe_cooked_rabbit(recipe)
-craft : clay(recipe: Recipe)
-    - recipe_clay(recipe)
-craft : cobblestone_stairs(recipe: Recipe)
-    - recipe_cobblestone_stairs(recipe)
-craft : polished_basalt(recipe: Recipe)
-    - recipe_polished_basalt(recipe)
-craft : dark_oak_planks(recipe: Recipe)
-    - recipe_dark_oak_planks(recipe)
-craft : red_nether_brick_stairs(recipe: Recipe)
-    - recipe_red_nether_brick_stairs(recipe)
-craft : black_stained_glass_pane_from_glass_pane(recipe: Recipe)
-    - recipe_black_stained_glass_pane_from_glass_pane(recipe)
-craft : clock(recipe: Recipe)
-    - recipe_clock(recipe)
-craft : light_gray_dye_from_oxeye_daisy(recipe: Recipe)
-    - recipe_light_gray_dye_from_oxeye_daisy(recipe)
-craft : brown_glazed_terracotta(recipe: Recipe)
-    - recipe_brown_glazed_terracotta(recipe)
-craft : red_bed_from_white_bed(recipe: Recipe)
-    - recipe_red_bed_from_white_bed(recipe)
-craft : light_gray_stained_glass_pane(recipe: Recipe)
-    - recipe_light_gray_stained_glass_pane(recipe)
-craft : crafting_table(recipe: Recipe)
-    - recipe_crafting_table(recipe)
-craft : nether_brick_slab(recipe: Recipe)
-    - recipe_nether_brick_slab(recipe)
-craft : stone_brick_stairs(recipe: Recipe)
-    - recipe_stone_brick_stairs(recipe)
-craft : purple_dye(recipe: Recipe)
-    - recipe_purple_dye(recipe)
-craft : chiseled_polished_blackstone(recipe: Recipe)
-    - recipe_chiseled_polished_blackstone(recipe)
-craft : diamond_block(recipe: Recipe)
-    - recipe_diamond_block(recipe)
-craft : pink_carpet_from_white_carpet(recipe: Recipe)
-    - recipe_pink_carpet_from_white_carpet(recipe)
-craft : prismarine_brick_slab_from_prismarine_stonecutting(recipe: Recipe)
-    - recipe_prismarine_brick_slab_from_prismarine_stonecutting(recipe)
-craft : wheat(recipe: Recipe)
-    - recipe_wheat(recipe)
-craft : cooked_beef_from_smoking(recipe: Recipe)
-    - recipe_cooked_beef_from_smoking(recipe)
-craft : wooden_sword(recipe: Recipe)
-    - recipe_wooden_sword(recipe)
-craft : end_stone_bricks_from_end_stone_stonecutting(recipe: Recipe)
-    - recipe_end_stone_bricks_from_end_stone_stonecutting(recipe)
-craft : smooth_quartz_slab(recipe: Recipe)
-    - recipe_smooth_quartz_slab(recipe)
-craft : coarse_dirt(recipe: Recipe)
-    - recipe_coarse_dirt(recipe)
-craft : jungle_trapdoor(recipe: Recipe)
-    - recipe_jungle_trapdoor(recipe)
-craft : emerald_from_smelting(recipe: Recipe)
-    - recipe_emerald_from_smelting(recipe)
-craft : brown_stained_glass_pane_from_glass_pane(recipe: Recipe)
-    - recipe_brown_stained_glass_pane_from_glass_pane(recipe)
-craft : writable_book(recipe: Recipe)
-    - recipe_writable_book(recipe)
-craft : blue_ice(recipe: Recipe)
-    - recipe_blue_ice(recipe)
-craft : polished_diorite_slab_from_diorite_stonecutting(recipe: Recipe)
-    - recipe_polished_diorite_slab_from_diorite_stonecutting(recipe)
-craft : magenta_terracotta(recipe: Recipe)
-    - recipe_magenta_terracotta(recipe)
-craft : birch_pressure_plate(recipe: Recipe)
-    - recipe_birch_pressure_plate(recipe)
-craft : polished_granite_slab_from_granite_stonecutting(recipe: Recipe)
-    - recipe_polished_granite_slab_from_granite_stonecutting(recipe)
-craft : netherite_pickaxe_smithing(recipe: Recipe)
-    - recipe_netherite_pickaxe_smithing(recipe)
-craft : brown_bed_from_white_bed(recipe: Recipe)
-    - recipe_brown_bed_from_white_bed(recipe)
-craft : redstone(recipe: Recipe)
-    - recipe_redstone(recipe)
-craft : diorite_slab_from_diorite_stonecutting(recipe: Recipe)
-    - recipe_diorite_slab_from_diorite_stonecutting(recipe)
-craft : acacia_trapdoor(recipe: Recipe)
-    - recipe_acacia_trapdoor(recipe)
-craft : nether_brick(recipe: Recipe)
-    - recipe_nether_brick(recipe)
-craft : end_stone_brick_stairs_from_end_stone_stonecutting(recipe: Recipe)
-    - recipe_end_stone_brick_stairs_from_end_stone_stonecutting(recipe)
-craft : cracked_stone_bricks(recipe: Recipe)
-    - recipe_cracked_stone_bricks(recipe)
-craft : prismarine_wall(recipe: Recipe)
-    - recipe_prismarine_wall(recipe)
-craft : red_dye_from_rose_bush(recipe: Recipe)
-    - recipe_red_dye_from_rose_bush(recipe)
-craft : gold_ingot_from_blasting(recipe: Recipe)
-    - recipe_gold_ingot_from_blasting(recipe)
-craft : brown_terracotta(recipe: Recipe)
-    - recipe_brown_terracotta(recipe)
-craft : magenta_wool(recipe: Recipe)
-    - recipe_magenta_wool(recipe)
-craft : leather_helmet(recipe: Recipe)
-    - recipe_leather_helmet(recipe)
-craft : red_carpet_from_white_carpet(recipe: Recipe)
-    - recipe_red_carpet_from_white_carpet(recipe)
-craft : grindstone(recipe: Recipe)
-    - recipe_grindstone(recipe)
-craft : light_gray_stained_glass(recipe: Recipe)
-    - recipe_light_gray_stained_glass(recipe)
-craft : dark_oak_sign(recipe: Recipe)
-    - recipe_dark_oak_sign(recipe)
-craft : sandstone_slab(recipe: Recipe)
-    - recipe_sandstone_slab(recipe)
-craft : magenta_banner(recipe: Recipe)
-    - recipe_magenta_banner(recipe)
-craft : mossy_cobblestone_wall(recipe: Recipe)
-    - recipe_mossy_cobblestone_wall(recipe)
-craft : gray_stained_glass_pane(recipe: Recipe)
-    - recipe_gray_stained_glass_pane(recipe)
-craft : nether_brick_wall(recipe: Recipe)
-    - recipe_nether_brick_wall(recipe)
-craft : brown_carpet_from_white_carpet(recipe: Recipe)
-    - recipe_brown_carpet_from_white_carpet(recipe)
-craft : stripped_oak_wood(recipe: Recipe)
-    - recipe_stripped_oak_wood(recipe)
-craft : polished_blackstone_slab_from_polished_blackstone_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_slab_from_polished_blackstone_stonecutting(recipe)
-craft : item_frame(recipe: Recipe)
-    - recipe_item_frame(recipe)
-craft : quartz_slab(recipe: Recipe)
-    - recipe_quartz_slab(recipe)
-craft : polished_blackstone_stairs(recipe: Recipe)
-    - recipe_polished_blackstone_stairs(recipe)
-craft : quartz_pillar(recipe: Recipe)
-    - recipe_quartz_pillar(recipe)
-craft : diorite_wall_from_diorite_stonecutting(recipe: Recipe)
-    - recipe_diorite_wall_from_diorite_stonecutting(recipe)
-craft : glistering_melon_slice(recipe: Recipe)
-    - recipe_glistering_melon_slice(recipe)
-craft : acacia_stairs(recipe: Recipe)
-    - recipe_acacia_stairs(recipe)
-craft : polished_basalt_from_basalt_stonecutting(recipe: Recipe)
-    - recipe_polished_basalt_from_basalt_stonecutting(recipe)
-craft : golden_pickaxe(recipe: Recipe)
-    - recipe_golden_pickaxe(recipe)
-craft : green_bed_from_white_bed(recipe: Recipe)
-    - recipe_green_bed_from_white_bed(recipe)
-craft : orange_stained_glass(recipe: Recipe)
-    - recipe_orange_stained_glass(recipe)
-craft : blue_carpet(recipe: Recipe)
-    - recipe_blue_carpet(recipe)
-craft : yellow_banner(recipe: Recipe)
-    - recipe_yellow_banner(recipe)
-craft : blast_furnace(recipe: Recipe)
-    - recipe_blast_furnace(recipe)
-craft : quartz_bricks_from_quartz_block_stonecutting(recipe: Recipe)
-    - recipe_quartz_bricks_from_quartz_block_stonecutting(recipe)
-craft : yellow_glazed_terracotta(recipe: Recipe)
-    - recipe_yellow_glazed_terracotta(recipe)
-craft : mossy_cobblestone_slab_from_mossy_cobblestone_stonecutting(recipe: Recipe)
-    - recipe_mossy_cobblestone_slab_from_mossy_cobblestone_stonecutting(recipe)
-craft : cut_red_sandstone(recipe: Recipe)
-    - recipe_cut_red_sandstone(recipe)
-craft : netherite_ingot_from_netherite_block(recipe: Recipe)
-    - recipe_netherite_ingot_from_netherite_block(recipe)
-craft : dark_prismarine_slab(recipe: Recipe)
-    - recipe_dark_prismarine_slab(recipe)
-craft : rabbit_stew_from_brown_mushroom(recipe: Recipe)
-    - recipe_rabbit_stew_from_brown_mushroom(recipe)
-craft : brown_bed(recipe: Recipe)
-    - recipe_brown_bed(recipe)
-craft : spruce_fence(recipe: Recipe)
-    - recipe_spruce_fence(recipe)
-craft : stone_brick_slab(recipe: Recipe)
-    - recipe_stone_brick_slab(recipe)
-craft : magenta_carpet_from_white_carpet(recipe: Recipe)
-    - recipe_magenta_carpet_from_white_carpet(recipe)
-craft : black_carpet(recipe: Recipe)
-    - recipe_black_carpet(recipe)
-craft : glass_bottle(recipe: Recipe)
-    - recipe_glass_bottle(recipe)
-craft : iron_bars(recipe: Recipe)
-    - recipe_iron_bars(recipe)
-craft : red_sandstone_stairs(recipe: Recipe)
-    - recipe_red_sandstone_stairs(recipe)
-craft : cut_sandstone(recipe: Recipe)
-    - recipe_cut_sandstone(recipe)
-craft : crimson_planks(recipe: Recipe)
-    - recipe_crimson_planks(recipe)
-craft : smooth_sandstone_stairs_from_smooth_sandstone_stonecutting(recipe: Recipe)
-    - recipe_smooth_sandstone_stairs_from_smooth_sandstone_stonecutting(recipe)
-craft : chiseled_sandstone(recipe: Recipe)
-    - recipe_chiseled_sandstone(recipe)
-craft : diamond_chestplate(recipe: Recipe)
-    - recipe_diamond_chestplate(recipe)
-craft : light_gray_banner(recipe: Recipe)
-    - recipe_light_gray_banner(recipe)
-craft : red_nether_brick_wall(recipe: Recipe)
-    - recipe_red_nether_brick_wall(recipe)
-craft : granite_slab_from_granite_stonecutting(recipe: Recipe)
-    - recipe_granite_slab_from_granite_stonecutting(recipe)
-craft : stone_brick_stairs_from_stone_bricks_stonecutting(recipe: Recipe)
-    - recipe_stone_brick_stairs_from_stone_bricks_stonecutting(recipe)
-craft : polished_granite_stairs_from_polished_granite_stonecutting(recipe: Recipe)
-    - recipe_polished_granite_stairs_from_polished_granite_stonecutting(recipe)
-craft : stone_sword(recipe: Recipe)
-    - recipe_stone_sword(recipe)
-craft : end_stone_brick_wall_from_end_stone_brick_stonecutting(recipe: Recipe)
-    - recipe_end_stone_brick_wall_from_end_stone_brick_stonecutting(recipe)
-craft : red_nether_brick_slab(recipe: Recipe)
-    - recipe_red_nether_brick_slab(recipe)
-craft : spectral_arrow(recipe: Recipe)
-    - recipe_spectral_arrow(recipe)
-craft : polished_blackstone_brick_slab_from_polished_blackstone_bricks_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_brick_slab_from_polished_blackstone_bricks_stonecutting(recipe)
-craft : sandstone(recipe: Recipe)
-    - recipe_sandstone(recipe)
-craft : melon_seeds(recipe: Recipe)
-    - recipe_melon_seeds(recipe)
-craft : acacia_pressure_plate(recipe: Recipe)
-    - recipe_acacia_pressure_plate(recipe)
-craft : magenta_carpet(recipe: Recipe)
-    - recipe_magenta_carpet(recipe)
-craft : orange_stained_glass_pane_from_glass_pane(recipe: Recipe)
-    - recipe_orange_stained_glass_pane_from_glass_pane(recipe)
-craft : ender_eye(recipe: Recipe)
-    - recipe_ender_eye(recipe)
-craft : lever(recipe: Recipe)
-    - recipe_lever(recipe)
-craft : bone_meal(recipe: Recipe)
-    - recipe_bone_meal(recipe)
-craft : andesite_stairs(recipe: Recipe)
-    - recipe_andesite_stairs(recipe)
-craft : end_stone_brick_stairs(recipe: Recipe)
-    - recipe_end_stone_brick_stairs(recipe)
-craft : end_stone_bricks(recipe: Recipe)
-    - recipe_end_stone_bricks(recipe)
-craft : furnace_minecart(recipe: Recipe)
-    - recipe_furnace_minecart(recipe)
-craft : cyan_stained_glass(recipe: Recipe)
-    - recipe_cyan_stained_glass(recipe)
-craft : iron_sword(recipe: Recipe)
-    - recipe_iron_sword(recipe)
-craft : red_sandstone_wall_from_red_sandstone_stonecutting(recipe: Recipe)
-    - recipe_red_sandstone_wall_from_red_sandstone_stonecutting(recipe)
-craft : lime_terracotta(recipe: Recipe)
-    - recipe_lime_terracotta(recipe)
-craft : cobblestone_stairs_from_cobblestone_stonecutting(recipe: Recipe)
-    - recipe_cobblestone_stairs_from_cobblestone_stonecutting(recipe)
-craft : birch_boat(recipe: Recipe)
-    - recipe_birch_boat(recipe)
-craft : coal_block(recipe: Recipe)
-    - recipe_coal_block(recipe)
-craft : blue_stained_glass_pane_from_glass_pane(recipe: Recipe)
-    - recipe_blue_stained_glass_pane_from_glass_pane(recipe)
-craft : white_stained_glass_pane_from_glass_pane(recipe: Recipe)
-    - recipe_white_stained_glass_pane_from_glass_pane(recipe)
-craft : spruce_stairs(recipe: Recipe)
-    - recipe_spruce_stairs(recipe)
-craft : leather_boots(recipe: Recipe)
-    - recipe_leather_boots(recipe)
-craft : diorite(recipe: Recipe)
-    - recipe_diorite(recipe)
-craft : green_wool(recipe: Recipe)
-    - recipe_green_wool(recipe)
-craft : iron_ingot(recipe: Recipe)
-    - recipe_iron_ingot(recipe)
-craft : charcoal(recipe: Recipe)
-    - recipe_charcoal(recipe)
-craft : stone_brick_stairs_from_stone_stonecutting(recipe: Recipe)
-    - recipe_stone_brick_stairs_from_stone_stonecutting(recipe)
-craft : chiseled_red_sandstone(recipe: Recipe)
-    - recipe_chiseled_red_sandstone(recipe)
-craft : emerald(recipe: Recipe)
-    - recipe_emerald(recipe)
-craft : sandstone_stairs_from_sandstone_stonecutting(recipe: Recipe)
-    - recipe_sandstone_stairs_from_sandstone_stonecutting(recipe)
-craft : pink_terracotta(recipe: Recipe)
-    - recipe_pink_terracotta(recipe)
-craft : diamond_hoe(recipe: Recipe)
-    - recipe_diamond_hoe(recipe)
-craft : lapis_from_blasting(recipe: Recipe)
-    - recipe_lapis_from_blasting(recipe)
-craft : polished_blackstone_brick_wall_from_polished_blackstone_bricks_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_brick_wall_from_polished_blackstone_bricks_stonecutting(recipe)
-craft : purpur_slab(recipe: Recipe)
-    - recipe_purpur_slab(recipe)
-craft : brown_stained_glass_pane(recipe: Recipe)
-    - recipe_brown_stained_glass_pane(recipe)
-craft : dropper(recipe: Recipe)
-    - recipe_dropper(recipe)
-craft : gray_carpet(recipe: Recipe)
-    - recipe_gray_carpet(recipe)
-craft : cooked_beef(recipe: Recipe)
-    - recipe_cooked_beef(recipe)
-craft : black_glazed_terracotta(recipe: Recipe)
-    - recipe_black_glazed_terracotta(recipe)
-craft : powered_rail(recipe: Recipe)
-    - recipe_powered_rail(recipe)
-craft : mossy_cobblestone_stairs(recipe: Recipe)
-    - recipe_mossy_cobblestone_stairs(recipe)
-craft : stripped_dark_oak_wood(recipe: Recipe)
-    - recipe_stripped_dark_oak_wood(recipe)
-craft : polished_blackstone(recipe: Recipe)
-    - recipe_polished_blackstone(recipe)
-craft : polished_blackstone_brick_wall_from_blackstone_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_brick_wall_from_blackstone_stonecutting(recipe)
-craft : lime_stained_glass(recipe: Recipe)
-    - recipe_lime_stained_glass(recipe)
-craft : leather_horse_armor(recipe: Recipe)
-    - recipe_leather_horse_armor(recipe)
-craft : polished_blackstone_stairs_from_polished_blackstone_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_stairs_from_polished_blackstone_stonecutting(recipe)
-craft : orange_terracotta(recipe: Recipe)
-    - recipe_orange_terracotta(recipe)
-craft : spruce_pressure_plate(recipe: Recipe)
-    - recipe_spruce_pressure_plate(recipe)
-craft : turtle_helmet(recipe: Recipe)
-    - recipe_turtle_helmet(recipe)
-craft : light_blue_stained_glass_pane_from_glass_pane(recipe: Recipe)
-    - recipe_light_blue_stained_glass_pane_from_glass_pane(recipe)
-craft : smooth_sandstone(recipe: Recipe)
-    - recipe_smooth_sandstone(recipe)
-craft : cobblestone_wall_from_cobblestone_stonecutting(recipe: Recipe)
-    - recipe_cobblestone_wall_from_cobblestone_stonecutting(recipe)
-craft : iron_trapdoor(recipe: Recipe)
-    - recipe_iron_trapdoor(recipe)
-craft : yellow_bed(recipe: Recipe)
-    - recipe_yellow_bed(recipe)
-craft : dark_oak_fence_gate(recipe: Recipe)
-    - recipe_dark_oak_fence_gate(recipe)
-craft : orange_stained_glass_pane(recipe: Recipe)
-    - recipe_orange_stained_glass_pane(recipe)
-craft : acacia_door(recipe: Recipe)
-    - recipe_acacia_door(recipe)
-craft : target(recipe: Recipe)
-    - recipe_target(recipe)
-craft : golden_hoe(recipe: Recipe)
-    - recipe_golden_hoe(recipe)
-craft : golden_shovel(recipe: Recipe)
-    - recipe_golden_shovel(recipe)
-craft : birch_sign(recipe: Recipe)
-    - recipe_birch_sign(recipe)
-craft : diamond_leggings(recipe: Recipe)
-    - recipe_diamond_leggings(recipe)
-craft : light_gray_bed_from_white_bed(recipe: Recipe)
-    - recipe_light_gray_bed_from_white_bed(recipe)
-craft : cut_sandstone_from_sandstone_stonecutting(recipe: Recipe)
-    - recipe_cut_sandstone_from_sandstone_stonecutting(recipe)
-craft : polished_blackstone_bricks_from_polished_blackstone_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_bricks_from_polished_blackstone_stonecutting(recipe)
-craft : acacia_boat(recipe: Recipe)
-    - recipe_acacia_boat(recipe)
-craft : spruce_fence_gate(recipe: Recipe)
-    - recipe_spruce_fence_gate(recipe)
-craft : purpur_pillar_from_purpur_block_stonecutting(recipe: Recipe)
-    - recipe_purpur_pillar_from_purpur_block_stonecutting(recipe)
-craft : light_blue_carpet_from_white_carpet(recipe: Recipe)
-    - recipe_light_blue_carpet_from_white_carpet(recipe)
-craft : mossy_stone_brick_slab(recipe: Recipe)
-    - recipe_mossy_stone_brick_slab(recipe)
-craft : pink_carpet(recipe: Recipe)
-    - recipe_pink_carpet(recipe)
-craft : blue_dye(recipe: Recipe)
-    - recipe_blue_dye(recipe)
-craft : shears(recipe: Recipe)
-    - recipe_shears(recipe)
-craft : granite_wall(recipe: Recipe)
-    - recipe_granite_wall(recipe)
-craft : crimson_hyphae(recipe: Recipe)
-    - recipe_crimson_hyphae(recipe)
-craft : warped_hyphae(recipe: Recipe)
-    - recipe_warped_hyphae(recipe)
-craft : red_nether_bricks(recipe: Recipe)
-    - recipe_red_nether_bricks(recipe)
-craft : netherite_chestplate_smithing(recipe: Recipe)
-    - recipe_netherite_chestplate_smithing(recipe)
-craft : polished_blackstone_pressure_plate(recipe: Recipe)
-    - recipe_polished_blackstone_pressure_plate(recipe)
-craft : piston(recipe: Recipe)
-    - recipe_piston(recipe)
-craft : chiseled_sandstone_from_sandstone_stonecutting(recipe: Recipe)
-    - recipe_chiseled_sandstone_from_sandstone_stonecutting(recipe)
-craft : orange_bed_from_white_bed(recipe: Recipe)
-    - recipe_orange_bed_from_white_bed(recipe)
-craft : warped_button(recipe: Recipe)
-    - recipe_warped_button(recipe)
-craft : green_glazed_terracotta(recipe: Recipe)
-    - recipe_green_glazed_terracotta(recipe)
-craft : polished_blackstone_slab(recipe: Recipe)
-    - recipe_polished_blackstone_slab(recipe)
-craft : quartz_stairs(recipe: Recipe)
-    - recipe_quartz_stairs(recipe)
-craft : baked_potato_from_smoking(recipe: Recipe)
-    - recipe_baked_potato_from_smoking(recipe)
-craft : green_terracotta(recipe: Recipe)
-    - recipe_green_terracotta(recipe)
-craft : purple_wool(recipe: Recipe)
-    - recipe_purple_wool(recipe)
-craft : gray_stained_glass(recipe: Recipe)
-    - recipe_gray_stained_glass(recipe)
-craft : glass(recipe: Recipe)
-    - recipe_glass(recipe)
-craft : mossy_stone_brick_stairs(recipe: Recipe)
-    - recipe_mossy_stone_brick_stairs(recipe)
-craft : lime_bed(recipe: Recipe)
-    - recipe_lime_bed(recipe)
-craft : netherite_scrap(recipe: Recipe)
-    - recipe_netherite_scrap(recipe)
-craft : slime_ball(recipe: Recipe)
-    - recipe_slime_ball(recipe)
-craft : black_bed(recipe: Recipe)
-    - recipe_black_bed(recipe)
-craft : cut_sandstone_slab_from_cut_sandstone_stonecutting(recipe: Recipe)
-    - recipe_cut_sandstone_slab_from_cut_sandstone_stonecutting(recipe)
-craft : diamond_helmet(recipe: Recipe)
-    - recipe_diamond_helmet(recipe)
-craft : jungle_wood(recipe: Recipe)
-    - recipe_jungle_wood(recipe)
-craft : cauldron(recipe: Recipe)
-    - recipe_cauldron(recipe)
-craft : white_stained_glass(recipe: Recipe)
-    - recipe_white_stained_glass(recipe)
-craft : stone(recipe: Recipe)
-    - recipe_stone(recipe)
-craft : mojang_banner_pattern(recipe: Recipe)
-    - recipe_mojang_banner_pattern(recipe)
-craft : lantern(recipe: Recipe)
-    - recipe_lantern(recipe)
-craft : white_carpet(recipe: Recipe)
-    - recipe_white_carpet(recipe)
-craft : green_carpet(recipe: Recipe)
-    - recipe_green_carpet(recipe)
-craft : lime_dye_from_smelting(recipe: Recipe)
-    - recipe_lime_dye_from_smelting(recipe)
-craft : orange_glazed_terracotta(recipe: Recipe)
-    - recipe_orange_glazed_terracotta(recipe)
-craft : jungle_planks(recipe: Recipe)
-    - recipe_jungle_planks(recipe)
-craft : nether_brick_wall_from_nether_bricks_stonecutting(recipe: Recipe)
-    - recipe_nether_brick_wall_from_nether_bricks_stonecutting(recipe)
-craft : polished_diorite_from_diorite_stonecutting(recipe: Recipe)
-    - recipe_polished_diorite_from_diorite_stonecutting(recipe)
-craft : polished_granite_stairs_from_granite_stonecutting(recipe: Recipe)
-    - recipe_polished_granite_stairs_from_granite_stonecutting(recipe)
-craft : smooth_sandstone_stairs(recipe: Recipe)
-    - recipe_smooth_sandstone_stairs(recipe)
-craft : gold_nugget(recipe: Recipe)
-    - recipe_gold_nugget(recipe)
-craft : polished_blackstone_bricks_from_blackstone_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_bricks_from_blackstone_stonecutting(recipe)
-craft : birch_trapdoor(recipe: Recipe)
-    - recipe_birch_trapdoor(recipe)
-craft : acacia_wood(recipe: Recipe)
-    - recipe_acacia_wood(recipe)
-craft : light_gray_stained_glass_pane_from_glass_pane(recipe: Recipe)
-    - recipe_light_gray_stained_glass_pane_from_glass_pane(recipe)
-craft : mossy_stone_brick_wall_from_mossy_stone_brick_stonecutting(recipe: Recipe)
-    - recipe_mossy_stone_brick_wall_from_mossy_stone_brick_stonecutting(recipe)
-craft : nether_brick_fence(recipe: Recipe)
-    - recipe_nether_brick_fence(recipe)
-craft : black_banner(recipe: Recipe)
-    - recipe_black_banner(recipe)
-craft : terracotta(recipe: Recipe)
-    - recipe_terracotta(recipe)
-craft : yellow_dye_from_dandelion(recipe: Recipe)
-    - recipe_yellow_dye_from_dandelion(recipe)
-craft : chiseled_polished_blackstone_from_blackstone_stonecutting(recipe: Recipe)
-    - recipe_chiseled_polished_blackstone_from_blackstone_stonecutting(recipe)
-craft : dried_kelp_from_smoking(recipe: Recipe)
-    - recipe_dried_kelp_from_smoking(recipe)
-craft : polished_blackstone_brick_wall(recipe: Recipe)
-    - recipe_polished_blackstone_brick_wall(recipe)
-craft : wooden_axe(recipe: Recipe)
-    - recipe_wooden_axe(recipe)
-craft : warped_planks(recipe: Recipe)
-    - recipe_warped_planks(recipe)
-craft : quartz_bricks(recipe: Recipe)
-    - recipe_quartz_bricks(recipe)
-craft : dried_kelp_block(recipe: Recipe)
-    - recipe_dried_kelp_block(recipe)
-craft : light_blue_terracotta(recipe: Recipe)
-    - recipe_light_blue_terracotta(recipe)
-craft : yellow_wool(recipe: Recipe)
-    - recipe_yellow_wool(recipe)
-craft : barrel(recipe: Recipe)
-    - recipe_barrel(recipe)
-craft : light_blue_bed(recipe: Recipe)
-    - recipe_light_blue_bed(recipe)
-craft : golden_chestplate(recipe: Recipe)
-    - recipe_golden_chestplate(recipe)
-craft : cooked_salmon_from_smoking(recipe: Recipe)
-    - recipe_cooked_salmon_from_smoking(recipe)
-craft : yellow_carpet_from_white_carpet(recipe: Recipe)
-    - recipe_yellow_carpet_from_white_carpet(recipe)
-craft : cyan_stained_glass_pane(recipe: Recipe)
-    - recipe_cyan_stained_glass_pane(recipe)
-craft : snow_block(recipe: Recipe)
-    - recipe_snow_block(recipe)
-craft : light_gray_carpet(recipe: Recipe)
-    - recipe_light_gray_carpet(recipe)
-craft : acacia_planks(recipe: Recipe)
-    - recipe_acacia_planks(recipe)
-craft : lapis_block(recipe: Recipe)
-    - recipe_lapis_block(recipe)
-craft : redstone_lamp(recipe: Recipe)
-    - recipe_redstone_lamp(recipe)
-craft : orange_bed(recipe: Recipe)
-    - recipe_orange_bed(recipe)
-craft : red_concrete_powder(recipe: Recipe)
-    - recipe_red_concrete_powder(recipe)
-craft : coal_from_blasting(recipe: Recipe)
-    - recipe_coal_from_blasting(recipe)
-craft : warped_door(recipe: Recipe)
-    - recipe_warped_door(recipe)
-craft : polished_blackstone_brick_stairs(recipe: Recipe)
-    - recipe_polished_blackstone_brick_stairs(recipe)
-craft : cyan_carpet(recipe: Recipe)
-    - recipe_cyan_carpet(recipe)
-craft : orange_banner(recipe: Recipe)
-    - recipe_orange_banner(recipe)
-craft : dispenser(recipe: Recipe)
-    - recipe_dispenser(recipe)
-craft : iron_ingot_from_blasting(recipe: Recipe)
-    - recipe_iron_ingot_from_blasting(recipe)
-craft : chest_minecart(recipe: Recipe)
-    - recipe_chest_minecart(recipe)
-craft : red_dye_from_beetroot(recipe: Recipe)
-    - recipe_red_dye_from_beetroot(recipe)
-craft : lapis_from_smelting(recipe: Recipe)
-    - recipe_lapis_from_smelting(recipe)
-craft : cooked_rabbit_from_smoking(recipe: Recipe)
-    - recipe_cooked_rabbit_from_smoking(recipe)
-craft : purple_banner(recipe: Recipe)
-    - recipe_purple_banner(recipe)
-craft : purpur_slab_from_purpur_block_stonecutting(recipe: Recipe)
-    - recipe_purpur_slab_from_purpur_block_stonecutting(recipe)
-craft : green_stained_glass_pane_from_glass_pane(recipe: Recipe)
-    - recipe_green_stained_glass_pane_from_glass_pane(recipe)
-craft : andesite_slab(recipe: Recipe)
-    - recipe_andesite_slab(recipe)
-craft : cooked_cod(recipe: Recipe)
-    - recipe_cooked_cod(recipe)
-craft : polished_diorite_stairs_from_diorite_stonecutting(recipe: Recipe)
-    - recipe_polished_diorite_stairs_from_diorite_stonecutting(recipe)
-craft : acacia_sign(recipe: Recipe)
-    - recipe_acacia_sign(recipe)
-craft : prismarine_wall_from_prismarine_stonecutting(recipe: Recipe)
-    - recipe_prismarine_wall_from_prismarine_stonecutting(recipe)
-craft : emerald_block(recipe: Recipe)
-    - recipe_emerald_block(recipe)
-craft : polished_andesite_slab_from_polished_andesite_stonecutting(recipe: Recipe)
-    - recipe_polished_andesite_slab_from_polished_andesite_stonecutting(recipe)
-craft : minecart(recipe: Recipe)
-    - recipe_minecart(recipe)
-craft : crimson_fence(recipe: Recipe)
-    - recipe_crimson_fence(recipe)
-craft : ender_chest(recipe: Recipe)
-    - recipe_ender_chest(recipe)
-craft : end_crystal(recipe: Recipe)
-    - recipe_end_crystal(recipe)
-craft : bucket(recipe: Recipe)
-    - recipe_bucket(recipe)
-craft : polished_blackstone_brick_slab(recipe: Recipe)
-    - recipe_polished_blackstone_brick_slab(recipe)
-craft : polished_blackstone_bricks(recipe: Recipe)
-    - recipe_polished_blackstone_bricks(recipe)
-craft : dark_prismarine(recipe: Recipe)
-    - recipe_dark_prismarine(recipe)
-craft : blue_wool(recipe: Recipe)
-    - recipe_blue_wool(recipe)
-craft : daylight_detector(recipe: Recipe)
-    - recipe_daylight_detector(recipe)
-craft : light_gray_glazed_terracotta(recipe: Recipe)
-    - recipe_light_gray_glazed_terracotta(recipe)
-craft : prismarine_brick_stairs(recipe: Recipe)
-    - recipe_prismarine_brick_stairs(recipe)
-craft : respawn_anchor(recipe: Recipe)
-    - recipe_respawn_anchor(recipe)
-craft : gray_glazed_terracotta(recipe: Recipe)
-    - recipe_gray_glazed_terracotta(recipe)
-craft : scaffolding(recipe: Recipe)
-    - recipe_scaffolding(recipe)
-craft : cooked_beef_from_campfire_cooking(recipe: Recipe)
-    - recipe_cooked_beef_from_campfire_cooking(recipe)
-craft : pink_stained_glass_pane(recipe: Recipe)
-    - recipe_pink_stained_glass_pane(recipe)
-craft : lime_stained_glass_pane_from_glass_pane(recipe: Recipe)
-    - recipe_lime_stained_glass_pane_from_glass_pane(recipe)
-craft : red_nether_brick_stairs_from_red_nether_bricks_stonecutting(recipe: Recipe)
-    - recipe_red_nether_brick_stairs_from_red_nether_bricks_stonecutting(recipe)
-craft : red_wool(recipe: Recipe)
-    - recipe_red_wool(recipe)
-craft : prismarine_brick_slab(recipe: Recipe)
-    - recipe_prismarine_brick_slab(recipe)
-craft : prismarine_stairs_from_prismarine_stonecutting(recipe: Recipe)
-    - recipe_prismarine_stairs_from_prismarine_stonecutting(recipe)
-craft : cobblestone_slab(recipe: Recipe)
-    - recipe_cobblestone_slab(recipe)
-craft : polished_diorite_stairs_from_polished_diorite_stonecutting(recipe: Recipe)
-    - recipe_polished_diorite_stairs_from_polished_diorite_stonecutting(recipe)
-craft : cyan_bed(recipe: Recipe)
-    - recipe_cyan_bed(recipe)
-craft : cobblestone_slab_from_cobblestone_stonecutting(recipe: Recipe)
-    - recipe_cobblestone_slab_from_cobblestone_stonecutting(recipe)
-craft : sugar_from_honey_bottle(recipe: Recipe)
-    - recipe_sugar_from_honey_bottle(recipe)
-craft : white_dye(recipe: Recipe)
-    - recipe_white_dye(recipe)
-craft : cyan_dye(recipe: Recipe)
-    - recipe_cyan_dye(recipe)
-craft : iron_chestplate(recipe: Recipe)
-    - recipe_iron_chestplate(recipe)
-craft : white_dye_from_lily_of_the_valley(recipe: Recipe)
-    - recipe_white_dye_from_lily_of_the_valley(recipe)
-craft : gray_dye(recipe: Recipe)
-    - recipe_gray_dye(recipe)
-craft : brick_wall_from_bricks_stonecutting(recipe: Recipe)
-    - recipe_brick_wall_from_bricks_stonecutting(recipe)
-craft : end_stone_brick_slab_from_end_stone_brick_stonecutting(recipe: Recipe)
-    - recipe_end_stone_brick_slab_from_end_stone_brick_stonecutting(recipe)
-craft : blue_terracotta(recipe: Recipe)
-    - recipe_blue_terracotta(recipe)
-craft : dried_kelp_from_smelting(recipe: Recipe)
-    - recipe_dried_kelp_from_smelting(recipe)
-craft : jungle_door(recipe: Recipe)
-    - recipe_jungle_door(recipe)
-craft : brewing_stand(recipe: Recipe)
-    - recipe_brewing_stand(recipe)
-craft : magenta_dye_from_lilac(recipe: Recipe)
-    - recipe_magenta_dye_from_lilac(recipe)
-craft : spruce_boat(recipe: Recipe)
-    - recipe_spruce_boat(recipe)
-craft : blue_stained_glass(recipe: Recipe)
-    - recipe_blue_stained_glass(recipe)
-craft : polished_blackstone_wall(recipe: Recipe)
-    - recipe_polished_blackstone_wall(recipe)
-craft : bookshelf(recipe: Recipe)
-    - recipe_bookshelf(recipe)
-craft : chiseled_polished_blackstone_from_polished_blackstone_stonecutting(recipe: Recipe)
-    - recipe_chiseled_polished_blackstone_from_polished_blackstone_stonecutting(recipe)
-craft : lime_bed_from_white_bed(recipe: Recipe)
-    - recipe_lime_bed_from_white_bed(recipe)
-craft : stone_bricks(recipe: Recipe)
-    - recipe_stone_bricks(recipe)
-craft : packed_ice(recipe: Recipe)
-    - recipe_packed_ice(recipe)
-craft : andesite_wall_from_andesite_stonecutting(recipe: Recipe)
-    - recipe_andesite_wall_from_andesite_stonecutting(recipe)
-craft : purple_carpet(recipe: Recipe)
-    - recipe_purple_carpet(recipe)
-craft : spruce_sign(recipe: Recipe)
-    - recipe_spruce_sign(recipe)
-craft : white_wool_from_string(recipe: Recipe)
-    - recipe_white_wool_from_string(recipe)
-craft : smooth_red_sandstone_slab_from_smooth_red_sandstone_stonecutting(recipe: Recipe)
-    - recipe_smooth_red_sandstone_slab_from_smooth_red_sandstone_stonecutting(recipe)
-craft : pink_wool(recipe: Recipe)
-    - recipe_pink_wool(recipe)
-craft : diamond_axe(recipe: Recipe)
-    - recipe_diamond_axe(recipe)
-craft : sandstone_wall(recipe: Recipe)
-    - recipe_sandstone_wall(recipe)
-craft : crimson_fence_gate(recipe: Recipe)
-    - recipe_crimson_fence_gate(recipe)
-craft : bow(recipe: Recipe)
-    - recipe_bow(recipe)
-craft : light_blue_concrete_powder(recipe: Recipe)
-    - recipe_light_blue_concrete_powder(recipe)
-craft : yellow_stained_glass_pane(recipe: Recipe)
-    - recipe_yellow_stained_glass_pane(recipe)
-craft : wooden_hoe(recipe: Recipe)
-    - recipe_wooden_hoe(recipe)
-craft : cyan_banner(recipe: Recipe)
-    - recipe_cyan_banner(recipe)
-craft : soul_lantern(recipe: Recipe)
-    - recipe_soul_lantern(recipe)
-craft : polished_blackstone_brick_stairs_from_blackstone_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_brick_stairs_from_blackstone_stonecutting(recipe)
-craft : chiseled_nether_bricks_from_nether_bricks_stonecutting(recipe: Recipe)
-    - recipe_chiseled_nether_bricks_from_nether_bricks_stonecutting(recipe)
-craft : dark_oak_stairs(recipe: Recipe)
-    - recipe_dark_oak_stairs(recipe)
-craft : polished_blackstone_brick_stairs_from_polished_blackstone_stonecutting(recipe: Recipe)
-    - recipe_polished_blackstone_brick_stairs_from_polished_blackstone_stonecutting(recipe)
-craft : stone_brick_wall(recipe: Recipe)
-    - recipe_stone_brick_wall(recipe)
-craft : dark_oak_wood(recipe: Recipe)
-    - recipe_dark_oak_wood(recipe)
-craft : magenta_dye_from_allium(recipe: Recipe)
-    - recipe_magenta_dye_from_allium(recipe)
-craft : campfire(recipe: Recipe)
-    - recipe_campfire(recipe)
-craft : granite_stairs_from_granite_stonecutting(recipe: Recipe)
-    - recipe_granite_stairs_from_granite_stonecutting(recipe)
-craft : prismarine_brick_stairs_from_prismarine_stonecutting(recipe: Recipe)
-    - recipe_prismarine_brick_stairs_from_prismarine_stonecutting(recipe)
-craft : stone_stairs_from_stone_stonecutting(recipe: Recipe)
-    - recipe_stone_stairs_from_stone_stonecutting(recipe)
-craft : heavy_weighted_pressure_plate(recipe: Recipe)
-    - recipe_heavy_weighted_pressure_plate(recipe)
-craft : observer(recipe: Recipe)
-    - recipe_observer(recipe)
-craft : magenta_dye_from_purple_and_pink(recipe: Recipe)
-    - recipe_magenta_dye_from_purple_and_pink(recipe)
-craft : yellow_stained_glass(recipe: Recipe)
-    - recipe_yellow_stained_glass(recipe)
-craft : smooth_red_sandstone(recipe: Recipe)
-    - recipe_smooth_red_sandstone(recipe)
-craft : oak_pressure_plate(recipe: Recipe)
-    - recipe_oak_pressure_plate(recipe)
-craft : gray_bed_from_white_bed(recipe: Recipe)
-    - recipe_gray_bed_from_white_bed(recipe)
-craft : birch_planks(recipe: Recipe)
-    - recipe_birch_planks(recipe)
-craft : jungle_boat(recipe: Recipe)
-    - recipe_jungle_boat(recipe)
-craft : stone_bricks_from_stone_stonecutting(recipe: Recipe)
-    - recipe_stone_bricks_from_stone_stonecutting(recipe)
-craft : golden_apple(recipe: Recipe)
-    - recipe_golden_apple(recipe)
-craft : note_block(recipe: Recipe)
-    - recipe_note_block(recipe)
-craft : polished_diorite_stairs(recipe: Recipe)
-    - recipe_polished_diorite_stairs(recipe)
-craft : cyan_carpet_from_white_carpet(recipe: Recipe)
-    - recipe_cyan_carpet_from_white_carpet(recipe)
-craft : pink_stained_glass_pane_from_glass_pane(recipe: Recipe)
-    - recipe_pink_stained_glass_pane_from_glass_pane(recipe)
-craft : lime_wool(recipe: Recipe)
-    - recipe_lime_wool(recipe)
-craft : blackstone_stairs_from_blackstone_stonecutting(recipe: Recipe)
-    - recipe_blackstone_stairs_from_blackstone_stonecutting(recipe)
-craft : cracked_nether_bricks(recipe: Recipe)
-    - recipe_cracked_nether_bricks(recipe)
-craft : black_stained_glass(recipe: Recipe)
-    - recipe_black_stained_glass(recipe)
-craft : bone_block(recipe: Recipe)
-    - recipe_bone_block(recipe)
-craft : warped_stairs(recipe: Recipe)
-    - recipe_warped_stairs(recipe)
-craft : sandstone_wall_from_sandstone_stonecutting(recipe: Recipe)
-    - recipe_sandstone_wall_from_sandstone_stonecutting(recipe)
+task craft-item(item: Item)
+craft-item : craft(recipe: Recipe, item: Item)
+    < recipe_produces(recipe, item)
+    - craft-recipe(recipe)
+
+
+task craft-recipe(recipe: Recipe)
+craft-recipe : wooden_shovel(recipe: Recipe)
+    < recipe = wooden_shovel
+    - recipe_wooden_shovel
+craft-recipe : lapis_lazuli(recipe: Recipe)
+    < recipe = lapis_lazuli
+    - recipe_lapis_lazuli
+craft-recipe : quartz_from_blasting(recipe: Recipe)
+    < recipe = quartz_from_blasting
+    - recipe_quartz_from_blasting
+craft-recipe : stripped_spruce_wood(recipe: Recipe)
+    < recipe = stripped_spruce_wood
+    - recipe_stripped_spruce_wood
+craft-recipe : fletching_table(recipe: Recipe)
+    < recipe = fletching_table
+    - recipe_fletching_table
+craft-recipe : green_dye(recipe: Recipe)
+    < recipe = green_dye
+    - recipe_green_dye
+craft-recipe : beehive(recipe: Recipe)
+    < recipe = beehive
+    - recipe_beehive
+craft-recipe : orange_carpet_from_white_carpet(recipe: Recipe)
+    < recipe = orange_carpet_from_white_carpet
+    - recipe_orange_carpet_from_white_carpet
+craft-recipe : granite_stairs(recipe: Recipe)
+    < recipe = granite_stairs
+    - recipe_granite_stairs
+craft-recipe : birch_door(recipe: Recipe)
+    < recipe = birch_door
+    - recipe_birch_door
+craft-recipe : chiseled_quartz_block(recipe: Recipe)
+    < recipe = chiseled_quartz_block
+    - recipe_chiseled_quartz_block
+craft-recipe : end_stone_brick_wall(recipe: Recipe)
+    < recipe = end_stone_brick_wall
+    - recipe_end_stone_brick_wall
+craft-recipe : cobblestone_wall(recipe: Recipe)
+    < recipe = cobblestone_wall
+    - recipe_cobblestone_wall
+craft-recipe : diamond_pickaxe(recipe: Recipe)
+    < recipe = diamond_pickaxe
+    - recipe_diamond_pickaxe
+craft-recipe : crimson_stairs(recipe: Recipe)
+    < recipe = crimson_stairs
+    - recipe_crimson_stairs
+craft-recipe : chiseled_red_sandstone_from_red_sandstone_stonecutting(recipe: Recipe)
+    < recipe = chiseled_red_sandstone_from_red_sandstone_stonecutting
+    - recipe_chiseled_red_sandstone_from_red_sandstone_stonecutting
+craft-recipe : polished_andesite_stairs(recipe: Recipe)
+    < recipe = polished_andesite_stairs
+    - recipe_polished_andesite_stairs
+craft-recipe : purple_glazed_terracotta(recipe: Recipe)
+    < recipe = purple_glazed_terracotta
+    - recipe_purple_glazed_terracotta
+craft-recipe : paper(recipe: Recipe)
+    < recipe = paper
+    - recipe_paper
+craft-recipe : lectern(recipe: Recipe)
+    < recipe = lectern
+    - recipe_lectern
+craft-recipe : stone_stairs(recipe: Recipe)
+    < recipe = stone_stairs
+    - recipe_stone_stairs
+craft-recipe : black_wool(recipe: Recipe)
+    < recipe = black_wool
+    - recipe_black_wool
+craft-recipe : slime_block(recipe: Recipe)
+    < recipe = slime_block
+    - recipe_slime_block
+craft-recipe : mossy_stone_brick_wall(recipe: Recipe)
+    < recipe = mossy_stone_brick_wall
+    - recipe_mossy_stone_brick_wall
+craft-recipe : blackstone_slab(recipe: Recipe)
+    < recipe = blackstone_slab
+    - recipe_blackstone_slab
+craft-recipe : iron_hoe(recipe: Recipe)
+    < recipe = iron_hoe
+    - recipe_iron_hoe
+craft-recipe : smooth_stone(recipe: Recipe)
+    < recipe = smooth_stone
+    - recipe_smooth_stone
+craft-recipe : polished_diorite_slab(recipe: Recipe)
+    < recipe = polished_diorite_slab
+    - recipe_polished_diorite_slab
+craft-recipe : leather(recipe: Recipe)
+    < recipe = leather
+    - recipe_leather
+craft-recipe : jungle_stairs(recipe: Recipe)
+    < recipe = jungle_stairs
+    - recipe_jungle_stairs
+craft-recipe : light_blue_stained_glass(recipe: Recipe)
+    < recipe = light_blue_stained_glass
+    - recipe_light_blue_stained_glass
+craft-recipe : jungle_sign(recipe: Recipe)
+    < recipe = jungle_sign
+    - recipe_jungle_sign
+craft-recipe : granite_wall_from_granite_stonecutting(recipe: Recipe)
+    < recipe = granite_wall_from_granite_stonecutting
+    - recipe_granite_wall_from_granite_stonecutting
+craft-recipe : purple_carpet_from_white_carpet(recipe: Recipe)
+    < recipe = purple_carpet_from_white_carpet
+    - recipe_purple_carpet_from_white_carpet
+craft-recipe : stripped_crimson_hyphae(recipe: Recipe)
+    < recipe = stripped_crimson_hyphae
+    - recipe_stripped_crimson_hyphae
+craft-recipe : light_gray_dye_from_gray_white_dye(recipe: Recipe)
+    < recipe = light_gray_dye_from_gray_white_dye
+    - recipe_light_gray_dye_from_gray_white_dye
+craft-recipe : netherite_axe_smithing(recipe: Recipe)
+    < recipe = netherite_axe_smithing
+    - recipe_netherite_axe_smithing
+craft-recipe : lime_banner(recipe: Recipe)
+    < recipe = lime_banner
+    - recipe_lime_banner
+craft-recipe : gray_wool(recipe: Recipe)
+    < recipe = gray_wool
+    - recipe_gray_wool
+craft-recipe : crossbow(recipe: Recipe)
+    < recipe = crossbow
+    - recipe_crossbow
+craft-recipe : oak_wood(recipe: Recipe)
+    < recipe = oak_wood
+    - recipe_oak_wood
+craft-recipe : end_stone_brick_slab(recipe: Recipe)
+    < recipe = end_stone_brick_slab
+    - recipe_end_stone_brick_slab
+craft-recipe : warped_slab(recipe: Recipe)
+    < recipe = warped_slab
+    - recipe_warped_slab
+craft-recipe : lime_concrete_powder(recipe: Recipe)
+    < recipe = lime_concrete_powder
+    - recipe_lime_concrete_powder
+craft-recipe : redstone_block(recipe: Recipe)
+    < recipe = redstone_block
+    - recipe_redstone_block
+craft-recipe : diorite_slab(recipe: Recipe)
+    < recipe = diorite_slab
+    - recipe_diorite_slab
+craft-recipe : iron_helmet(recipe: Recipe)
+    < recipe = iron_helmet
+    - recipe_iron_helmet
+craft-recipe : jungle_button(recipe: Recipe)
+    < recipe = jungle_button
+    - recipe_jungle_button
+craft-recipe : cyan_wool(recipe: Recipe)
+    < recipe = cyan_wool
+    - recipe_cyan_wool
+craft-recipe : granite_slab(recipe: Recipe)
+    < recipe = granite_slab
+    - recipe_granite_slab
+craft-recipe : warped_fence_gate(recipe: Recipe)
+    < recipe = warped_fence_gate
+    - recipe_warped_fence_gate
+craft-recipe : diamond_boots(recipe: Recipe)
+    < recipe = diamond_boots
+    - recipe_diamond_boots
+craft-recipe : blue_bed(recipe: Recipe)
+    < recipe = blue_bed
+    - recipe_blue_bed
+craft-recipe : wooden_pickaxe(recipe: Recipe)
+    < recipe = wooden_pickaxe
+    - recipe_wooden_pickaxe
+craft-recipe : light_blue_carpet(recipe: Recipe)
+    < recipe = light_blue_carpet
+    - recipe_light_blue_carpet
+craft-recipe : purple_bed(recipe: Recipe)
+    < recipe = purple_bed
+    - recipe_purple_bed
+craft-recipe : blackstone_stairs(recipe: Recipe)
+    < recipe = blackstone_stairs
+    - recipe_blackstone_stairs
+craft-recipe : red_dye_from_tulip(recipe: Recipe)
+    < recipe = red_dye_from_tulip
+    - recipe_red_dye_from_tulip
+craft-recipe : popped_chorus_fruit(recipe: Recipe)
+    < recipe = popped_chorus_fruit
+    - recipe_popped_chorus_fruit
+craft-recipe : black_concrete_powder(recipe: Recipe)
+    < recipe = black_concrete_powder
+    - recipe_black_concrete_powder
+craft-recipe : melon(recipe: Recipe)
+    < recipe = melon
+    - recipe_melon
+craft-recipe : polished_blackstone_wall_from_blackstone_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_wall_from_blackstone_stonecutting
+    - recipe_polished_blackstone_wall_from_blackstone_stonecutting
+craft-recipe : mossy_stone_brick_slab_from_mossy_stone_brick_stonecutting(recipe: Recipe)
+    < recipe = mossy_stone_brick_slab_from_mossy_stone_brick_stonecutting
+    - recipe_mossy_stone_brick_slab_from_mossy_stone_brick_stonecutting
+craft-recipe : lime_dye(recipe: Recipe)
+    < recipe = lime_dye
+    - recipe_lime_dye
+craft-recipe : crimson_sign(recipe: Recipe)
+    < recipe = crimson_sign
+    - recipe_crimson_sign
+craft-recipe : cut_sandstone_slab_from_sandstone_stonecutting(recipe: Recipe)
+    < recipe = cut_sandstone_slab_from_sandstone_stonecutting
+    - recipe_cut_sandstone_slab_from_sandstone_stonecutting
+craft-recipe : oak_boat(recipe: Recipe)
+    < recipe = oak_boat
+    - recipe_oak_boat
+craft-recipe : emerald_from_blasting(recipe: Recipe)
+    < recipe = emerald_from_blasting
+    - recipe_emerald_from_blasting
+craft-recipe : oak_planks(recipe: Recipe)
+    < recipe = oak_planks
+    - recipe_oak_planks
+craft-recipe : warped_fence(recipe: Recipe)
+    < recipe = warped_fence
+    - recipe_warped_fence
+craft-recipe : painting(recipe: Recipe)
+    < recipe = painting
+    - recipe_painting
+craft-recipe : dried_kelp_from_campfire_cooking(recipe: Recipe)
+    < recipe = dried_kelp_from_campfire_cooking
+    - recipe_dried_kelp_from_campfire_cooking
+craft-recipe : prismarine_slab(recipe: Recipe)
+    < recipe = prismarine_slab
+    - recipe_prismarine_slab
+craft-recipe : andesite_slab_from_andesite_stonecutting(recipe: Recipe)
+    < recipe = andesite_slab_from_andesite_stonecutting
+    - recipe_andesite_slab_from_andesite_stonecutting
+craft-recipe : cracked_polished_blackstone_bricks(recipe: Recipe)
+    < recipe = cracked_polished_blackstone_bricks
+    - recipe_cracked_polished_blackstone_bricks
+craft-recipe : coal(recipe: Recipe)
+    < recipe = coal
+    - recipe_coal
+craft-recipe : chiseled_quartz_block_from_quartz_block_stonecutting(recipe: Recipe)
+    < recipe = chiseled_quartz_block_from_quartz_block_stonecutting
+    - recipe_chiseled_quartz_block_from_quartz_block_stonecutting
+craft-recipe : nether_brick_slab_from_nether_bricks_stonecutting(recipe: Recipe)
+    < recipe = nether_brick_slab_from_nether_bricks_stonecutting
+    - recipe_nether_brick_slab_from_nether_bricks_stonecutting
+craft-recipe : spruce_trapdoor(recipe: Recipe)
+    < recipe = spruce_trapdoor
+    - recipe_spruce_trapdoor
+craft-recipe : light_blue_dye_from_blue_orchid(recipe: Recipe)
+    < recipe = light_blue_dye_from_blue_orchid
+    - recipe_light_blue_dye_from_blue_orchid
+craft-recipe : soul_campfire(recipe: Recipe)
+    < recipe = soul_campfire
+    - recipe_soul_campfire
+craft-recipe : stone_brick_slab_from_stone_stonecutting(recipe: Recipe)
+    < recipe = stone_brick_slab_from_stone_stonecutting
+    - recipe_stone_brick_slab_from_stone_stonecutting
+craft-recipe : dark_oak_trapdoor(recipe: Recipe)
+    < recipe = dark_oak_trapdoor
+    - recipe_dark_oak_trapdoor
+craft-recipe : end_stone_brick_wall_from_end_stone_stonecutting(recipe: Recipe)
+    < recipe = end_stone_brick_wall_from_end_stone_stonecutting
+    - recipe_end_stone_brick_wall_from_end_stone_stonecutting
+craft-recipe : quartz_pillar_from_quartz_block_stonecutting(recipe: Recipe)
+    < recipe = quartz_pillar_from_quartz_block_stonecutting
+    - recipe_quartz_pillar_from_quartz_block_stonecutting
+craft-recipe : prismarine_bricks(recipe: Recipe)
+    < recipe = prismarine_bricks
+    - recipe_prismarine_bricks
+craft-recipe : anvil(recipe: Recipe)
+    < recipe = anvil
+    - recipe_anvil
+craft-recipe : dark_prismarine_stairs_from_dark_prismarine_stonecutting(recipe: Recipe)
+    < recipe = dark_prismarine_stairs_from_dark_prismarine_stonecutting
+    - recipe_dark_prismarine_stairs_from_dark_prismarine_stonecutting
+craft-recipe : polished_granite_slab_from_polished_granite_stonecutting(recipe: Recipe)
+    < recipe = polished_granite_slab_from_polished_granite_stonecutting
+    - recipe_polished_granite_slab_from_polished_granite_stonecutting
+craft-recipe : stone_slab(recipe: Recipe)
+    < recipe = stone_slab
+    - recipe_stone_slab
+craft-recipe : acacia_fence(recipe: Recipe)
+    < recipe = acacia_fence
+    - recipe_acacia_fence
+craft-recipe : gray_bed(recipe: Recipe)
+    < recipe = gray_bed
+    - recipe_gray_bed
+craft-recipe : pink_dye_from_pink_tulip(recipe: Recipe)
+    < recipe = pink_dye_from_pink_tulip
+    - recipe_pink_dye_from_pink_tulip
+craft-recipe : iron_leggings(recipe: Recipe)
+    < recipe = iron_leggings
+    - recipe_iron_leggings
+craft-recipe : baked_potato(recipe: Recipe)
+    < recipe = baked_potato
+    - recipe_baked_potato
+craft-recipe : brown_dye(recipe: Recipe)
+    < recipe = brown_dye
+    - recipe_brown_dye
+craft-recipe : repeater(recipe: Recipe)
+    < recipe = repeater
+    - recipe_repeater
+craft-recipe : orange_dye_from_red_yellow(recipe: Recipe)
+    < recipe = orange_dye_from_red_yellow
+    - recipe_orange_dye_from_red_yellow
+craft-recipe : dark_prismarine_stairs(recipe: Recipe)
+    < recipe = dark_prismarine_stairs
+    - recipe_dark_prismarine_stairs
+craft-recipe : brick_stairs(recipe: Recipe)
+    < recipe = brick_stairs
+    - recipe_brick_stairs
+craft-recipe : cooked_chicken_from_campfire_cooking(recipe: Recipe)
+    < recipe = cooked_chicken_from_campfire_cooking
+    - recipe_cooked_chicken_from_campfire_cooking
+craft-recipe : leather_leggings(recipe: Recipe)
+    < recipe = leather_leggings
+    - recipe_leather_leggings
+craft-recipe : smooth_quartz(recipe: Recipe)
+    < recipe = smooth_quartz
+    - recipe_smooth_quartz
+craft-recipe : netherite_ingot(recipe: Recipe)
+    < recipe = netherite_ingot
+    - recipe_netherite_ingot
+craft-recipe : light_gray_terracotta(recipe: Recipe)
+    < recipe = light_gray_terracotta
+    - recipe_light_gray_terracotta
+craft-recipe : pink_banner(recipe: Recipe)
+    < recipe = pink_banner
+    - recipe_pink_banner
+craft-recipe : cyan_stained_glass_pane_from_glass_pane(recipe: Recipe)
+    < recipe = cyan_stained_glass_pane_from_glass_pane
+    - recipe_cyan_stained_glass_pane_from_glass_pane
+craft-recipe : oak_stairs(recipe: Recipe)
+    < recipe = oak_stairs
+    - recipe_oak_stairs
+craft-recipe : arrow(recipe: Recipe)
+    < recipe = arrow
+    - recipe_arrow
+craft-recipe : golden_leggings(recipe: Recipe)
+    < recipe = golden_leggings
+    - recipe_golden_leggings
+craft-recipe : stripped_warped_hyphae(recipe: Recipe)
+    < recipe = stripped_warped_hyphae
+    - recipe_stripped_warped_hyphae
+craft-recipe : red_stained_glass_pane_from_glass_pane(recipe: Recipe)
+    < recipe = red_stained_glass_pane_from_glass_pane
+    - recipe_red_stained_glass_pane_from_glass_pane
+craft-recipe : orange_carpet(recipe: Recipe)
+    < recipe = orange_carpet
+    - recipe_orange_carpet
+craft-recipe : oak_fence_gate(recipe: Recipe)
+    < recipe = oak_fence_gate
+    - recipe_oak_fence_gate
+craft-recipe : purpur_pillar(recipe: Recipe)
+    < recipe = purpur_pillar
+    - recipe_purpur_pillar
+craft-recipe : gray_carpet_from_white_carpet(recipe: Recipe)
+    < recipe = gray_carpet_from_white_carpet
+    - recipe_gray_carpet_from_white_carpet
+craft-recipe : polished_andesite_slab(recipe: Recipe)
+    < recipe = polished_andesite_slab
+    - recipe_polished_andesite_slab
+craft-recipe : diamond_from_smelting(recipe: Recipe)
+    < recipe = diamond_from_smelting
+    - recipe_diamond_from_smelting
+craft-recipe : oak_trapdoor(recipe: Recipe)
+    < recipe = oak_trapdoor
+    - recipe_oak_trapdoor
+craft-recipe : gray_stained_glass_pane_from_glass_pane(recipe: Recipe)
+    < recipe = gray_stained_glass_pane_from_glass_pane
+    - recipe_gray_stained_glass_pane_from_glass_pane
+craft-recipe : stripped_birch_wood(recipe: Recipe)
+    < recipe = stripped_birch_wood
+    - recipe_stripped_birch_wood
+craft-recipe : netherite_scrap_from_blasting(recipe: Recipe)
+    < recipe = netherite_scrap_from_blasting
+    - recipe_netherite_scrap_from_blasting
+craft-recipe : sponge(recipe: Recipe)
+    < recipe = sponge
+    - recipe_sponge
+craft-recipe : stone_axe(recipe: Recipe)
+    < recipe = stone_axe
+    - recipe_stone_axe
+craft-recipe : black_dye_from_wither_rose(recipe: Recipe)
+    < recipe = black_dye_from_wither_rose
+    - recipe_black_dye_from_wither_rose
+craft-recipe : diorite_stairs_from_diorite_stonecutting(recipe: Recipe)
+    < recipe = diorite_stairs_from_diorite_stonecutting
+    - recipe_diorite_stairs_from_diorite_stonecutting
+craft-recipe : enchanting_table(recipe: Recipe)
+    < recipe = enchanting_table
+    - recipe_enchanting_table
+craft-recipe : light_blue_dye_from_blue_white_dye(recipe: Recipe)
+    < recipe = light_blue_dye_from_blue_white_dye
+    - recipe_light_blue_dye_from_blue_white_dye
+craft-recipe : gold_nugget_from_blasting(recipe: Recipe)
+    < recipe = gold_nugget_from_blasting
+    - recipe_gold_nugget_from_blasting
+craft-recipe : black_bed_from_white_bed(recipe: Recipe)
+    < recipe = black_bed_from_white_bed
+    - recipe_black_bed_from_white_bed
+craft-recipe : chiseled_nether_bricks(recipe: Recipe)
+    < recipe = chiseled_nether_bricks
+    - recipe_chiseled_nether_bricks
+craft-recipe : golden_helmet(recipe: Recipe)
+    < recipe = golden_helmet
+    - recipe_golden_helmet
+craft-recipe : light_blue_stained_glass_pane(recipe: Recipe)
+    < recipe = light_blue_stained_glass_pane
+    - recipe_light_blue_stained_glass_pane
+craft-recipe : hay_block(recipe: Recipe)
+    < recipe = hay_block
+    - recipe_hay_block
+craft-recipe : polished_blackstone_button(recipe: Recipe)
+    < recipe = polished_blackstone_button
+    - recipe_polished_blackstone_button
+craft-recipe : birch_stairs(recipe: Recipe)
+    < recipe = birch_stairs
+    - recipe_birch_stairs
+craft-recipe : nether_wart_block(recipe: Recipe)
+    < recipe = nether_wart_block
+    - recipe_nether_wart_block
+craft-recipe : dark_oak_boat(recipe: Recipe)
+    < recipe = dark_oak_boat
+    - recipe_dark_oak_boat
+craft-recipe : cooked_cod_from_smoking(recipe: Recipe)
+    < recipe = cooked_cod_from_smoking
+    - recipe_cooked_cod_from_smoking
+craft-recipe : cooked_porkchop(recipe: Recipe)
+    < recipe = cooked_porkchop
+    - recipe_cooked_porkchop
+craft-recipe : diamond_sword(recipe: Recipe)
+    < recipe = diamond_sword
+    - recipe_diamond_sword
+craft-recipe : light_blue_glazed_terracotta(recipe: Recipe)
+    < recipe = light_blue_glazed_terracotta
+    - recipe_light_blue_glazed_terracotta
+craft-recipe : tnt_minecart(recipe: Recipe)
+    < recipe = tnt_minecart
+    - recipe_tnt_minecart
+craft-recipe : white_glazed_terracotta(recipe: Recipe)
+    < recipe = white_glazed_terracotta
+    - recipe_white_glazed_terracotta
+craft-recipe : polished_andesite_from_andesite_stonecutting(recipe: Recipe)
+    < recipe = polished_andesite_from_andesite_stonecutting
+    - recipe_polished_andesite_from_andesite_stonecutting
+craft-recipe : pink_dye_from_red_white_dye(recipe: Recipe)
+    < recipe = pink_dye_from_red_white_dye
+    - recipe_pink_dye_from_red_white_dye
+craft-recipe : blackstone_wall_from_blackstone_stonecutting(recipe: Recipe)
+    < recipe = blackstone_wall_from_blackstone_stonecutting
+    - recipe_blackstone_wall_from_blackstone_stonecutting
+craft-recipe : warped_pressure_plate(recipe: Recipe)
+    < recipe = warped_pressure_plate
+    - recipe_warped_pressure_plate
+craft-recipe : yellow_bed_from_white_bed(recipe: Recipe)
+    < recipe = yellow_bed_from_white_bed
+    - recipe_yellow_bed_from_white_bed
+craft-recipe : iron_nugget(recipe: Recipe)
+    < recipe = iron_nugget
+    - recipe_iron_nugget
+craft-recipe : diorite_wall(recipe: Recipe)
+    < recipe = diorite_wall
+    - recipe_diorite_wall
+craft-recipe : smooth_red_sandstone_slab(recipe: Recipe)
+    < recipe = smooth_red_sandstone_slab
+    - recipe_smooth_red_sandstone_slab
+craft-recipe : pink_glazed_terracotta(recipe: Recipe)
+    < recipe = pink_glazed_terracotta
+    - recipe_pink_glazed_terracotta
+craft-recipe : blackstone_wall(recipe: Recipe)
+    < recipe = blackstone_wall
+    - recipe_blackstone_wall
+craft-recipe : trapped_chest(recipe: Recipe)
+    < recipe = trapped_chest
+    - recipe_trapped_chest
+craft-recipe : polished_blackstone_brick_slab_from_blackstone_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_brick_slab_from_blackstone_stonecutting
+    - recipe_polished_blackstone_brick_slab_from_blackstone_stonecutting
+craft-recipe : green_carpet_from_white_carpet(recipe: Recipe)
+    < recipe = green_carpet_from_white_carpet
+    - recipe_green_carpet_from_white_carpet
+craft-recipe : beacon(recipe: Recipe)
+    < recipe = beacon
+    - recipe_beacon
+craft-recipe : red_dye_from_poppy(recipe: Recipe)
+    < recipe = red_dye_from_poppy
+    - recipe_red_dye_from_poppy
+craft-recipe : red_bed(recipe: Recipe)
+    < recipe = red_bed
+    - recipe_red_bed
+craft-recipe : dark_oak_button(recipe: Recipe)
+    < recipe = dark_oak_button
+    - recipe_dark_oak_button
+craft-recipe : yellow_terracotta(recipe: Recipe)
+    < recipe = yellow_terracotta
+    - recipe_yellow_terracotta
+craft-recipe : blue_dye_from_cornflower(recipe: Recipe)
+    < recipe = blue_dye_from_cornflower
+    - recipe_blue_dye_from_cornflower
+craft-recipe : dried_kelp(recipe: Recipe)
+    < recipe = dried_kelp
+    - recipe_dried_kelp
+craft-recipe : green_banner(recipe: Recipe)
+    < recipe = green_banner
+    - recipe_green_banner
+craft-recipe : red_carpet(recipe: Recipe)
+    < recipe = red_carpet
+    - recipe_red_carpet
+craft-recipe : end_rod(recipe: Recipe)
+    < recipe = end_rod
+    - recipe_end_rod
+craft-recipe : white_concrete_powder(recipe: Recipe)
+    < recipe = white_concrete_powder
+    - recipe_white_concrete_powder
+craft-recipe : cooked_mutton(recipe: Recipe)
+    < recipe = cooked_mutton
+    - recipe_cooked_mutton
+craft-recipe : magenta_concrete_powder(recipe: Recipe)
+    < recipe = magenta_concrete_powder
+    - recipe_magenta_concrete_powder
+craft-recipe : rail(recipe: Recipe)
+    < recipe = rail
+    - recipe_rail
+craft-recipe : chiseled_stone_bricks_from_stone_bricks_stonecutting(recipe: Recipe)
+    < recipe = chiseled_stone_bricks_from_stone_bricks_stonecutting
+    - recipe_chiseled_stone_bricks_from_stone_bricks_stonecutting
+craft-recipe : dark_oak_door(recipe: Recipe)
+    < recipe = dark_oak_door
+    - recipe_dark_oak_door
+craft-recipe : gold_ingot(recipe: Recipe)
+    < recipe = gold_ingot
+    - recipe_gold_ingot
+craft-recipe : honey_block(recipe: Recipe)
+    < recipe = honey_block
+    - recipe_honey_block
+craft-recipe : soul_torch(recipe: Recipe)
+    < recipe = soul_torch
+    - recipe_soul_torch
+craft-recipe : tripwire_hook(recipe: Recipe)
+    < recipe = tripwire_hook
+    - recipe_tripwire_hook
+craft-recipe : gold_ingot_from_nuggets(recipe: Recipe)
+    < recipe = gold_ingot_from_nuggets
+    - recipe_gold_ingot_from_nuggets
+craft-recipe : pink_concrete_powder(recipe: Recipe)
+    < recipe = pink_concrete_powder
+    - recipe_pink_concrete_powder
+craft-recipe : magenta_bed(recipe: Recipe)
+    < recipe = magenta_bed
+    - recipe_magenta_bed
+craft-recipe : brown_stained_glass(recipe: Recipe)
+    < recipe = brown_stained_glass
+    - recipe_brown_stained_glass
+craft-recipe : polished_diorite(recipe: Recipe)
+    < recipe = polished_diorite
+    - recipe_polished_diorite
+craft-recipe : furnace(recipe: Recipe)
+    < recipe = furnace
+    - recipe_furnace
+craft-recipe : netherite_shovel_smithing(recipe: Recipe)
+    < recipe = netherite_shovel_smithing
+    - recipe_netherite_shovel_smithing
+craft-recipe : rabbit_stew_from_red_mushroom(recipe: Recipe)
+    < recipe = rabbit_stew_from_red_mushroom
+    - recipe_rabbit_stew_from_red_mushroom
+craft-recipe : nether_brick_stairs_from_nether_bricks_stonecutting(recipe: Recipe)
+    < recipe = nether_brick_stairs_from_nether_bricks_stonecutting
+    - recipe_nether_brick_stairs_from_nether_bricks_stonecutting
+craft-recipe : smooth_sandstone_slab(recipe: Recipe)
+    < recipe = smooth_sandstone_slab
+    - recipe_smooth_sandstone_slab
+craft-recipe : spruce_wood(recipe: Recipe)
+    < recipe = spruce_wood
+    - recipe_spruce_wood
+craft-recipe : end_stone_brick_stairs_from_end_stone_brick_stonecutting(recipe: Recipe)
+    < recipe = end_stone_brick_stairs_from_end_stone_brick_stonecutting
+    - recipe_end_stone_brick_stairs_from_end_stone_brick_stonecutting
+craft-recipe : magenta_stained_glass(recipe: Recipe)
+    < recipe = magenta_stained_glass
+    - recipe_magenta_stained_glass
+craft-recipe : shulker_box(recipe: Recipe)
+    < recipe = shulker_box
+    - recipe_shulker_box
+craft-recipe : iron_axe(recipe: Recipe)
+    < recipe = iron_axe
+    - recipe_iron_axe
+craft-recipe : polished_granite(recipe: Recipe)
+    < recipe = polished_granite
+    - recipe_polished_granite
+craft-recipe : polished_andesite(recipe: Recipe)
+    < recipe = polished_andesite
+    - recipe_polished_andesite
+craft-recipe : cut_red_sandstone_from_red_sandstone_stonecutting(recipe: Recipe)
+    < recipe = cut_red_sandstone_from_red_sandstone_stonecutting
+    - recipe_cut_red_sandstone_from_red_sandstone_stonecutting
+craft-recipe : red_glazed_terracotta(recipe: Recipe)
+    < recipe = red_glazed_terracotta
+    - recipe_red_glazed_terracotta
+craft-recipe : mossy_cobblestone_slab(recipe: Recipe)
+    < recipe = mossy_cobblestone_slab
+    - recipe_mossy_cobblestone_slab
+craft-recipe : quartz(recipe: Recipe)
+    < recipe = quartz
+    - recipe_quartz
+craft-recipe : flint_and_steel(recipe: Recipe)
+    < recipe = flint_and_steel
+    - recipe_flint_and_steel
+craft-recipe : golden_sword(recipe: Recipe)
+    < recipe = golden_sword
+    - recipe_golden_sword
+craft-recipe : sticky_piston(recipe: Recipe)
+    < recipe = sticky_piston
+    - recipe_sticky_piston
+craft-recipe : blue_stained_glass_pane(recipe: Recipe)
+    < recipe = blue_stained_glass_pane
+    - recipe_blue_stained_glass_pane
+craft-recipe : cooked_chicken_from_smoking(recipe: Recipe)
+    < recipe = cooked_chicken_from_smoking
+    - recipe_cooked_chicken_from_smoking
+craft-recipe : creeper_banner_pattern(recipe: Recipe)
+    < recipe = creeper_banner_pattern
+    - recipe_creeper_banner_pattern
+craft-recipe : hopper(recipe: Recipe)
+    < recipe = hopper
+    - recipe_hopper
+craft-recipe : white_terracotta(recipe: Recipe)
+    < recipe = white_terracotta
+    - recipe_white_terracotta
+craft-recipe : light_blue_wool(recipe: Recipe)
+    < recipe = light_blue_wool
+    - recipe_light_blue_wool
+craft-recipe : birch_fence_gate(recipe: Recipe)
+    < recipe = birch_fence_gate
+    - recipe_birch_fence_gate
+craft-recipe : cut_red_sandstone_slab_from_red_sandstone_stonecutting(recipe: Recipe)
+    < recipe = cut_red_sandstone_slab_from_red_sandstone_stonecutting
+    - recipe_cut_red_sandstone_slab_from_red_sandstone_stonecutting
+craft-recipe : light_gray_dye_from_azure_bluet(recipe: Recipe)
+    < recipe = light_gray_dye_from_azure_bluet
+    - recipe_light_gray_dye_from_azure_bluet
+craft-recipe : diamond_shovel(recipe: Recipe)
+    < recipe = diamond_shovel
+    - recipe_diamond_shovel
+craft-recipe : warped_sign(recipe: Recipe)
+    < recipe = warped_sign
+    - recipe_warped_sign
+craft-recipe : magenta_dye_from_blue_red_white_dye(recipe: Recipe)
+    < recipe = magenta_dye_from_blue_red_white_dye
+    - recipe_magenta_dye_from_blue_red_white_dye
+craft-recipe : netherite_boots_smithing(recipe: Recipe)
+    < recipe = netherite_boots_smithing
+    - recipe_netherite_boots_smithing
+craft-recipe : smooth_stone_slab_from_smooth_stone_stonecutting(recipe: Recipe)
+    < recipe = smooth_stone_slab_from_smooth_stone_stonecutting
+    - recipe_smooth_stone_slab_from_smooth_stone_stonecutting
+craft-recipe : iron_pickaxe(recipe: Recipe)
+    < recipe = iron_pickaxe
+    - recipe_iron_pickaxe
+craft-recipe : hopper_minecart(recipe: Recipe)
+    < recipe = hopper_minecart
+    - recipe_hopper_minecart
+craft-recipe : smooth_quartz_stairs_from_smooth_quartz_stonecutting(recipe: Recipe)
+    < recipe = smooth_quartz_stairs_from_smooth_quartz_stonecutting
+    - recipe_smooth_quartz_stairs_from_smooth_quartz_stonecutting
+craft-recipe : smooth_quartz_stairs(recipe: Recipe)
+    < recipe = smooth_quartz_stairs
+    - recipe_smooth_quartz_stairs
+craft-recipe : yellow_concrete_powder(recipe: Recipe)
+    < recipe = yellow_concrete_powder
+    - recipe_yellow_concrete_powder
+craft-recipe : white_banner(recipe: Recipe)
+    < recipe = white_banner
+    - recipe_white_banner
+craft-recipe : gold_block(recipe: Recipe)
+    < recipe = gold_block
+    - recipe_gold_block
+craft-recipe : gold_ingot_from_gold_block(recipe: Recipe)
+    < recipe = gold_ingot_from_gold_block
+    - recipe_gold_ingot_from_gold_block
+craft-recipe : compass(recipe: Recipe)
+    < recipe = compass
+    - recipe_compass
+craft-recipe : bread(recipe: Recipe)
+    < recipe = bread
+    - recipe_bread
+craft-recipe : oak_fence(recipe: Recipe)
+    < recipe = oak_fence
+    - recipe_oak_fence
+craft-recipe : smooth_sandstone_slab_from_smooth_sandstone_stonecutting(recipe: Recipe)
+    < recipe = smooth_sandstone_slab_from_smooth_sandstone_stonecutting
+    - recipe_smooth_sandstone_slab_from_smooth_sandstone_stonecutting
+craft-recipe : mushroom_stew(recipe: Recipe)
+    < recipe = mushroom_stew
+    - recipe_mushroom_stew
+craft-recipe : smoker(recipe: Recipe)
+    < recipe = smoker
+    - recipe_smoker
+craft-recipe : loom(recipe: Recipe)
+    < recipe = loom
+    - recipe_loom
+craft-recipe : brown_carpet(recipe: Recipe)
+    < recipe = brown_carpet
+    - recipe_brown_carpet
+craft-recipe : polished_blackstone_from_blackstone_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_from_blackstone_stonecutting
+    - recipe_polished_blackstone_from_blackstone_stonecutting
+craft-recipe : netherite_hoe_smithing(recipe: Recipe)
+    < recipe = netherite_hoe_smithing
+    - recipe_netherite_hoe_smithing
+craft-recipe : magenta_stained_glass_pane(recipe: Recipe)
+    < recipe = magenta_stained_glass_pane
+    - recipe_magenta_stained_glass_pane
+craft-recipe : red_banner(recipe: Recipe)
+    < recipe = red_banner
+    - recipe_red_banner
+craft-recipe : iron_ingot_from_iron_block(recipe: Recipe)
+    < recipe = iron_ingot_from_iron_block
+    - recipe_iron_ingot_from_iron_block
+craft-recipe : sandstone_slab_from_sandstone_stonecutting(recipe: Recipe)
+    < recipe = sandstone_slab_from_sandstone_stonecutting
+    - recipe_sandstone_slab_from_sandstone_stonecutting
+craft-recipe : blaze_powder(recipe: Recipe)
+    < recipe = blaze_powder
+    - recipe_blaze_powder
+craft-recipe : cooked_rabbit_from_campfire_cooking(recipe: Recipe)
+    < recipe = cooked_rabbit_from_campfire_cooking
+    - recipe_cooked_rabbit_from_campfire_cooking
+craft-recipe : purple_bed_from_white_bed(recipe: Recipe)
+    < recipe = purple_bed_from_white_bed
+    - recipe_purple_bed_from_white_bed
+craft-recipe : polished_blackstone_brick_slab_from_polished_blackstone_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_brick_slab_from_polished_blackstone_stonecutting
+    - recipe_polished_blackstone_brick_slab_from_polished_blackstone_stonecutting
+craft-recipe : orange_wool(recipe: Recipe)
+    < recipe = orange_wool
+    - recipe_orange_wool
+craft-recipe : cooked_porkchop_from_campfire_cooking(recipe: Recipe)
+    < recipe = cooked_porkchop_from_campfire_cooking
+    - recipe_cooked_porkchop_from_campfire_cooking
+craft-recipe : purple_stained_glass_pane_from_glass_pane(recipe: Recipe)
+    < recipe = purple_stained_glass_pane_from_glass_pane
+    - recipe_purple_stained_glass_pane_from_glass_pane
+craft-recipe : andesite_stairs_from_andesite_stonecutting(recipe: Recipe)
+    < recipe = andesite_stairs_from_andesite_stonecutting
+    - recipe_andesite_stairs_from_andesite_stonecutting
+craft-recipe : prismarine_stairs(recipe: Recipe)
+    < recipe = prismarine_stairs
+    - recipe_prismarine_stairs
+craft-recipe : brown_banner(recipe: Recipe)
+    < recipe = brown_banner
+    - recipe_brown_banner
+craft-recipe : cartography_table(recipe: Recipe)
+    < recipe = cartography_table
+    - recipe_cartography_table
+craft-recipe : golden_axe(recipe: Recipe)
+    < recipe = golden_axe
+    - recipe_golden_axe
+craft-recipe : netherite_block(recipe: Recipe)
+    < recipe = netherite_block
+    - recipe_netherite_block
+craft-recipe : spruce_planks(recipe: Recipe)
+    < recipe = spruce_planks
+    - recipe_spruce_planks
+craft-recipe : red_sandstone(recipe: Recipe)
+    < recipe = red_sandstone
+    - recipe_red_sandstone
+craft-recipe : prismarine_slab_from_prismarine_stonecutting(recipe: Recipe)
+    < recipe = prismarine_slab_from_prismarine_stonecutting
+    - recipe_prismarine_slab_from_prismarine_stonecutting
+craft-recipe : prismarine(recipe: Recipe)
+    < recipe = prismarine
+    - recipe_prismarine
+craft-recipe : brick_wall(recipe: Recipe)
+    < recipe = brick_wall
+    - recipe_brick_wall
+craft-recipe : white_bed(recipe: Recipe)
+    < recipe = white_bed
+    - recipe_white_bed
+craft-recipe : stone_pressure_plate(recipe: Recipe)
+    < recipe = stone_pressure_plate
+    - recipe_stone_pressure_plate
+craft-recipe : golden_carrot(recipe: Recipe)
+    < recipe = golden_carrot
+    - recipe_golden_carrot
+craft-recipe : cooked_salmon(recipe: Recipe)
+    < recipe = cooked_salmon
+    - recipe_cooked_salmon
+craft-recipe : polished_granite_stairs(recipe: Recipe)
+    < recipe = polished_granite_stairs
+    - recipe_polished_granite_stairs
+craft-recipe : birch_wood(recipe: Recipe)
+    < recipe = birch_wood
+    - recipe_birch_wood
+craft-recipe : birch_slab(recipe: Recipe)
+    < recipe = birch_slab
+    - recipe_birch_slab
+craft-recipe : brick_slab(recipe: Recipe)
+    < recipe = brick_slab
+    - recipe_brick_slab
+craft-recipe : warped_trapdoor(recipe: Recipe)
+    < recipe = warped_trapdoor
+    - recipe_warped_trapdoor
+craft-recipe : cooked_cod_from_campfire_cooking(recipe: Recipe)
+    < recipe = cooked_cod_from_campfire_cooking
+    - recipe_cooked_cod_from_campfire_cooking
+craft-recipe : bricks(recipe: Recipe)
+    < recipe = bricks
+    - recipe_bricks
+craft-recipe : warped_fungus_on_a_stick(recipe: Recipe)
+    < recipe = warped_fungus_on_a_stick
+    - recipe_warped_fungus_on_a_stick
+craft-recipe : brown_concrete_powder(recipe: Recipe)
+    < recipe = brown_concrete_powder
+    - recipe_brown_concrete_powder
+craft-recipe : baked_potato_from_campfire_cooking(recipe: Recipe)
+    < recipe = baked_potato_from_campfire_cooking
+    - recipe_baked_potato_from_campfire_cooking
+craft-recipe : oak_button(recipe: Recipe)
+    < recipe = oak_button
+    - recipe_oak_button
+craft-recipe : stone_brick_walls_from_stone_stonecutting(recipe: Recipe)
+    < recipe = stone_brick_walls_from_stone_stonecutting
+    - recipe_stone_brick_walls_from_stone_stonecutting
+craft-recipe : netherite_helmet_smithing(recipe: Recipe)
+    < recipe = netherite_helmet_smithing
+    - recipe_netherite_helmet_smithing
+craft-recipe : magma_block(recipe: Recipe)
+    < recipe = magma_block
+    - recipe_magma_block
+craft-recipe : chiseled_stone_bricks(recipe: Recipe)
+    < recipe = chiseled_stone_bricks
+    - recipe_chiseled_stone_bricks
+craft-recipe : jungle_slab(recipe: Recipe)
+    < recipe = jungle_slab
+    - recipe_jungle_slab
+craft-recipe : stone_brick_wall_from_stone_bricks_stonecutting(recipe: Recipe)
+    < recipe = stone_brick_wall_from_stone_bricks_stonecutting
+    - recipe_stone_brick_wall_from_stone_bricks_stonecutting
+craft-recipe : lime_carpet(recipe: Recipe)
+    < recipe = lime_carpet
+    - recipe_lime_carpet
+craft-recipe : dark_oak_fence(recipe: Recipe)
+    < recipe = dark_oak_fence
+    - recipe_dark_oak_fence
+craft-recipe : fermented_spider_eye(recipe: Recipe)
+    < recipe = fermented_spider_eye
+    - recipe_fermented_spider_eye
+craft-recipe : redstone_from_smelting(recipe: Recipe)
+    < recipe = redstone_from_smelting
+    - recipe_redstone_from_smelting
+craft-recipe : sugar_from_sugar_cane(recipe: Recipe)
+    < recipe = sugar_from_sugar_cane
+    - recipe_sugar_from_sugar_cane
+craft-recipe : fishing_rod(recipe: Recipe)
+    < recipe = fishing_rod
+    - recipe_fishing_rod
+craft-recipe : composter(recipe: Recipe)
+    < recipe = composter
+    - recipe_composter
+craft-recipe : chiseled_stone_bricks_stone_from_stonecutting(recipe: Recipe)
+    < recipe = chiseled_stone_bricks_stone_from_stonecutting
+    - recipe_chiseled_stone_bricks_stone_from_stonecutting
+craft-recipe : map(recipe: Recipe)
+    < recipe = map
+    - recipe_map
+craft-recipe : red_sandstone_wall(recipe: Recipe)
+    < recipe = red_sandstone_wall
+    - recipe_red_sandstone_wall
+craft-recipe : jukebox(recipe: Recipe)
+    < recipe = jukebox
+    - recipe_jukebox
+craft-recipe : blue_banner(recipe: Recipe)
+    < recipe = blue_banner
+    - recipe_blue_banner
+craft-recipe : oak_sign(recipe: Recipe)
+    < recipe = oak_sign
+    - recipe_oak_sign
+craft-recipe : iron_door(recipe: Recipe)
+    < recipe = iron_door
+    - recipe_iron_door
+craft-recipe : purpur_stairs_from_purpur_block_stonecutting(recipe: Recipe)
+    < recipe = purpur_stairs_from_purpur_block_stonecutting
+    - recipe_purpur_stairs_from_purpur_block_stonecutting
+craft-recipe : stone_hoe(recipe: Recipe)
+    < recipe = stone_hoe
+    - recipe_stone_hoe
+craft-recipe : diamond_from_blasting(recipe: Recipe)
+    < recipe = diamond_from_blasting
+    - recipe_diamond_from_blasting
+craft-recipe : light_gray_carpet_from_white_carpet(recipe: Recipe)
+    < recipe = light_gray_carpet_from_white_carpet
+    - recipe_light_gray_carpet_from_white_carpet
+craft-recipe : stripped_acacia_wood(recipe: Recipe)
+    < recipe = stripped_acacia_wood
+    - recipe_stripped_acacia_wood
+craft-recipe : fire_charge(recipe: Recipe)
+    < recipe = fire_charge
+    - recipe_fire_charge
+craft-recipe : blackstone_slab_from_blackstone_stonecutting(recipe: Recipe)
+    < recipe = blackstone_slab_from_blackstone_stonecutting
+    - recipe_blackstone_slab_from_blackstone_stonecutting
+craft-recipe : light_gray_dye_from_white_tulip(recipe: Recipe)
+    < recipe = light_gray_dye_from_white_tulip
+    - recipe_light_gray_dye_from_white_tulip
+craft-recipe : red_stained_glass(recipe: Recipe)
+    < recipe = red_stained_glass
+    - recipe_red_stained_glass
+craft-recipe : andesite(recipe: Recipe)
+    < recipe = andesite
+    - recipe_andesite
+craft-recipe : quartz_slab_from_stonecutting(recipe: Recipe)
+    < recipe = quartz_slab_from_stonecutting
+    - recipe_quartz_slab_from_stonecutting
+craft-recipe : iron_boots(recipe: Recipe)
+    < recipe = iron_boots
+    - recipe_iron_boots
+craft-recipe : red_nether_brick_wall_from_red_nether_bricks_stonecutting(recipe: Recipe)
+    < recipe = red_nether_brick_wall_from_red_nether_bricks_stonecutting
+    - recipe_red_nether_brick_wall_from_red_nether_bricks_stonecutting
+craft-recipe : spruce_slab(recipe: Recipe)
+    < recipe = spruce_slab
+    - recipe_spruce_slab
+craft-recipe : mossy_cobblestone_stairs_from_mossy_cobblestone_stonecutting(recipe: Recipe)
+    < recipe = mossy_cobblestone_stairs_from_mossy_cobblestone_stonecutting
+    - recipe_mossy_cobblestone_stairs_from_mossy_cobblestone_stonecutting
+craft-recipe : polished_blackstone_stairs_from_blackstone_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_stairs_from_blackstone_stonecutting
+    - recipe_polished_blackstone_stairs_from_blackstone_stonecutting
+craft-recipe : iron_ingot_from_nuggets(recipe: Recipe)
+    < recipe = iron_ingot_from_nuggets
+    - recipe_iron_ingot_from_nuggets
+craft-recipe : granite(recipe: Recipe)
+    < recipe = granite
+    - recipe_granite
+craft-recipe : pumpkin_pie(recipe: Recipe)
+    < recipe = pumpkin_pie
+    - recipe_pumpkin_pie
+craft-recipe : glowstone(recipe: Recipe)
+    < recipe = glowstone
+    - recipe_glowstone
+craft-recipe : gold_nugget_from_smelting(recipe: Recipe)
+    < recipe = gold_nugget_from_smelting
+    - recipe_gold_nugget_from_smelting
+craft-recipe : shield(recipe: Recipe)
+    < recipe = shield
+    - recipe_shield
+craft-recipe : mossy_cobblestone_wall_from_mossy_cobblestone_stonecutting(recipe: Recipe)
+    < recipe = mossy_cobblestone_wall_from_mossy_cobblestone_stonecutting
+    - recipe_mossy_cobblestone_wall_from_mossy_cobblestone_stonecutting
+craft-recipe : glass_pane(recipe: Recipe)
+    < recipe = glass_pane
+    - recipe_glass_pane
+craft-recipe : lead(recipe: Recipe)
+    < recipe = lead
+    - recipe_lead
+craft-recipe : acacia_button(recipe: Recipe)
+    < recipe = acacia_button
+    - recipe_acacia_button
+craft-recipe : smooth_stone_slab(recipe: Recipe)
+    < recipe = smooth_stone_slab
+    - recipe_smooth_stone_slab
+craft-recipe : chest(recipe: Recipe)
+    < recipe = chest
+    - recipe_chest
+craft-recipe : oak_slab(recipe: Recipe)
+    < recipe = oak_slab
+    - recipe_oak_slab
+craft-recipe : coal_from_smelting(recipe: Recipe)
+    < recipe = coal_from_smelting
+    - recipe_coal_from_smelting
+craft-recipe : green_stained_glass_pane(recipe: Recipe)
+    < recipe = green_stained_glass_pane
+    - recipe_green_stained_glass_pane
+craft-recipe : dark_prismarine_slab_from_dark_prismarine_stonecutting(recipe: Recipe)
+    < recipe = dark_prismarine_slab_from_dark_prismarine_stonecutting
+    - recipe_dark_prismarine_slab_from_dark_prismarine_stonecutting
+craft-recipe : oak_door(recipe: Recipe)
+    < recipe = oak_door
+    - recipe_oak_door
+craft-recipe : gray_concrete_powder(recipe: Recipe)
+    < recipe = gray_concrete_powder
+    - recipe_gray_concrete_powder
+craft-recipe : polished_andesite_stairs_from_polished_andesite_stonecutting(recipe: Recipe)
+    < recipe = polished_andesite_stairs_from_polished_andesite_stonecutting
+    - recipe_polished_andesite_stairs_from_polished_andesite_stonecutting
+craft-recipe : cooked_salmon_from_campfire_cooking(recipe: Recipe)
+    < recipe = cooked_salmon_from_campfire_cooking
+    - recipe_cooked_salmon_from_campfire_cooking
+craft-recipe : smooth_red_sandstone_stairs_from_smooth_red_sandstone_stonecutting(recipe: Recipe)
+    < recipe = smooth_red_sandstone_stairs_from_smooth_red_sandstone_stonecutting
+    - recipe_smooth_red_sandstone_stairs_from_smooth_red_sandstone_stonecutting
+craft-recipe : black_dye(recipe: Recipe)
+    < recipe = black_dye
+    - recipe_black_dye
+craft-recipe : smooth_quartz_slab_from_smooth_quartz_stonecutting(recipe: Recipe)
+    < recipe = smooth_quartz_slab_from_smooth_quartz_stonecutting
+    - recipe_smooth_quartz_slab_from_smooth_quartz_stonecutting
+craft-recipe : brick_slab_from_bricks_stonecutting(recipe: Recipe)
+    < recipe = brick_slab_from_bricks_stonecutting
+    - recipe_brick_slab_from_bricks_stonecutting
+craft-recipe : cyan_glazed_terracotta(recipe: Recipe)
+    < recipe = cyan_glazed_terracotta
+    - recipe_cyan_glazed_terracotta
+craft-recipe : cut_red_sandstone_slab_from_cut_red_sandstone_stonecutting(recipe: Recipe)
+    < recipe = cut_red_sandstone_slab_from_cut_red_sandstone_stonecutting
+    - recipe_cut_red_sandstone_slab_from_cut_red_sandstone_stonecutting
+craft-recipe : stone_brick_slab_from_stone_bricks_stonecutting(recipe: Recipe)
+    < recipe = stone_brick_slab_from_stone_bricks_stonecutting
+    - recipe_stone_brick_slab_from_stone_bricks_stonecutting
+craft-recipe : polished_blackstone_wall_from_polished_blackstone_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_wall_from_polished_blackstone_stonecutting
+    - recipe_polished_blackstone_wall_from_polished_blackstone_stonecutting
+craft-recipe : brown_wool(recipe: Recipe)
+    < recipe = brown_wool
+    - recipe_brown_wool
+craft-recipe : nether_bricks(recipe: Recipe)
+    < recipe = nether_bricks
+    - recipe_nether_bricks
+craft-recipe : red_nether_brick_slab_from_red_nether_bricks_stonecutting(recipe: Recipe)
+    < recipe = red_nether_brick_slab_from_red_nether_bricks_stonecutting
+    - recipe_red_nether_brick_slab_from_red_nether_bricks_stonecutting
+craft-recipe : sandstone_stairs(recipe: Recipe)
+    < recipe = sandstone_stairs
+    - recipe_sandstone_stairs
+craft-recipe : blue_glazed_terracotta(recipe: Recipe)
+    < recipe = blue_glazed_terracotta
+    - recipe_blue_glazed_terracotta
+craft-recipe : dark_oak_pressure_plate(recipe: Recipe)
+    < recipe = dark_oak_pressure_plate
+    - recipe_dark_oak_pressure_plate
+craft-recipe : honey_bottle(recipe: Recipe)
+    < recipe = honey_bottle
+    - recipe_honey_bottle
+craft-recipe : stone_pickaxe(recipe: Recipe)
+    < recipe = stone_pickaxe
+    - recipe_stone_pickaxe
+craft-recipe : tnt(recipe: Recipe)
+    < recipe = tnt
+    - recipe_tnt
+craft-recipe : gray_terracotta(recipe: Recipe)
+    < recipe = gray_terracotta
+    - recipe_gray_terracotta
+craft-recipe : stick(recipe: Recipe)
+    < recipe = stick
+    - recipe_stick
+craft-recipe : dark_oak_slab(recipe: Recipe)
+    < recipe = dark_oak_slab
+    - recipe_dark_oak_slab
+craft-recipe : light_weighted_pressure_plate(recipe: Recipe)
+    < recipe = light_weighted_pressure_plate
+    - recipe_light_weighted_pressure_plate
+craft-recipe : light_gray_wool(recipe: Recipe)
+    < recipe = light_gray_wool
+    - recipe_light_gray_wool
+craft-recipe : cookie(recipe: Recipe)
+    < recipe = cookie
+    - recipe_cookie
+craft-recipe : jungle_fence_gate(recipe: Recipe)
+    < recipe = jungle_fence_gate
+    - recipe_jungle_fence_gate
+craft-recipe : iron_nugget_from_blasting(recipe: Recipe)
+    < recipe = iron_nugget_from_blasting
+    - recipe_iron_nugget_from_blasting
+craft-recipe : polished_blackstone_slab_from_blackstone_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_slab_from_blackstone_stonecutting
+    - recipe_polished_blackstone_slab_from_blackstone_stonecutting
+craft-recipe : jungle_fence(recipe: Recipe)
+    < recipe = jungle_fence
+    - recipe_jungle_fence
+craft-recipe : light_blue_bed_from_white_bed(recipe: Recipe)
+    < recipe = light_blue_bed_from_white_bed
+    - recipe_light_blue_bed_from_white_bed
+craft-recipe : cooked_porkchop_from_smoking(recipe: Recipe)
+    < recipe = cooked_porkchop_from_smoking
+    - recipe_cooked_porkchop_from_smoking
+craft-recipe : snow(recipe: Recipe)
+    < recipe = snow
+    - recipe_snow
+craft-recipe : andesite_wall(recipe: Recipe)
+    < recipe = andesite_wall
+    - recipe_andesite_wall
+craft-recipe : stripped_jungle_wood(recipe: Recipe)
+    < recipe = stripped_jungle_wood
+    - recipe_stripped_jungle_wood
+craft-recipe : black_stained_glass_pane(recipe: Recipe)
+    < recipe = black_stained_glass_pane
+    - recipe_black_stained_glass_pane
+craft-recipe : diamond(recipe: Recipe)
+    < recipe = diamond
+    - recipe_diamond
+craft-recipe : pumpkin_seeds(recipe: Recipe)
+    < recipe = pumpkin_seeds
+    - recipe_pumpkin_seeds
+craft-recipe : stick_from_bamboo_item(recipe: Recipe)
+    < recipe = stick_from_bamboo_item
+    - recipe_stick_from_bamboo_item
+craft-recipe : light_gray_dye_from_black_white_dye(recipe: Recipe)
+    < recipe = light_gray_dye_from_black_white_dye
+    - recipe_light_gray_dye_from_black_white_dye
+craft-recipe : cyan_bed_from_white_bed(recipe: Recipe)
+    < recipe = cyan_bed_from_white_bed
+    - recipe_cyan_bed_from_white_bed
+craft-recipe : yellow_stained_glass_pane_from_glass_pane(recipe: Recipe)
+    < recipe = yellow_stained_glass_pane_from_glass_pane
+    - recipe_yellow_stained_glass_pane_from_glass_pane
+craft-recipe : netherite_sword_smithing(recipe: Recipe)
+    < recipe = netherite_sword_smithing
+    - recipe_netherite_sword_smithing
+craft-recipe : redstone_torch(recipe: Recipe)
+    < recipe = redstone_torch
+    - recipe_redstone_torch
+craft-recipe : cooked_mutton_from_campfire_cooking(recipe: Recipe)
+    < recipe = cooked_mutton_from_campfire_cooking
+    - recipe_cooked_mutton_from_campfire_cooking
+craft-recipe : stone_shovel(recipe: Recipe)
+    < recipe = stone_shovel
+    - recipe_stone_shovel
+craft-recipe : lime_glazed_terracotta(recipe: Recipe)
+    < recipe = lime_glazed_terracotta
+    - recipe_lime_glazed_terracotta
+craft-recipe : polished_andesite_slab_from_andesite_stonecutting(recipe: Recipe)
+    < recipe = polished_andesite_slab_from_andesite_stonecutting
+    - recipe_polished_andesite_slab_from_andesite_stonecutting
+craft-recipe : detector_rail(recipe: Recipe)
+    < recipe = detector_rail
+    - recipe_detector_rail
+craft-recipe : red_terracotta(recipe: Recipe)
+    < recipe = red_terracotta
+    - recipe_red_terracotta
+craft-recipe : magenta_dye_from_blue_red_pink(recipe: Recipe)
+    < recipe = magenta_dye_from_blue_red_pink
+    - recipe_magenta_dye_from_blue_red_pink
+craft-recipe : spruce_button(recipe: Recipe)
+    < recipe = spruce_button
+    - recipe_spruce_button
+craft-recipe : cooked_mutton_from_smoking(recipe: Recipe)
+    < recipe = cooked_mutton_from_smoking
+    - recipe_cooked_mutton_from_smoking
+craft-recipe : polished_blackstone_brick_stairs_from_polished_blackstone_bricks_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_brick_stairs_from_polished_blackstone_bricks_stonecutting
+    - recipe_polished_blackstone_brick_stairs_from_polished_blackstone_bricks_stonecutting
+craft-recipe : crimson_door(recipe: Recipe)
+    < recipe = crimson_door
+    - recipe_crimson_door
+craft-recipe : yellow_carpet(recipe: Recipe)
+    < recipe = yellow_carpet
+    - recipe_yellow_carpet
+craft-recipe : birch_fence(recipe: Recipe)
+    < recipe = birch_fence
+    - recipe_birch_fence
+craft-recipe : pink_bed_from_white_bed(recipe: Recipe)
+    < recipe = pink_bed_from_white_bed
+    - recipe_pink_bed_from_white_bed
+craft-recipe : netherite_leggings_smithing(recipe: Recipe)
+    < recipe = netherite_leggings_smithing
+    - recipe_netherite_leggings_smithing
+craft-recipe : ladder(recipe: Recipe)
+    < recipe = ladder
+    - recipe_ladder
+craft-recipe : stonecutter(recipe: Recipe)
+    < recipe = stonecutter
+    - recipe_stonecutter
+craft-recipe : light_gray_bed(recipe: Recipe)
+    < recipe = light_gray_bed
+    - recipe_light_gray_bed
+craft-recipe : blue_concrete_powder(recipe: Recipe)
+    < recipe = blue_concrete_powder
+    - recipe_blue_concrete_powder
+craft-recipe : red_sandstone_stairs_from_red_sandstone_stonecutting(recipe: Recipe)
+    < recipe = red_sandstone_stairs_from_red_sandstone_stonecutting
+    - recipe_red_sandstone_stairs_from_red_sandstone_stonecutting
+craft-recipe : red_sandstone_slab_from_red_sandstone_stonecutting(recipe: Recipe)
+    < recipe = red_sandstone_slab_from_red_sandstone_stonecutting
+    - recipe_red_sandstone_slab_from_red_sandstone_stonecutting
+craft-recipe : white_stained_glass_pane(recipe: Recipe)
+    < recipe = white_stained_glass_pane
+    - recipe_white_stained_glass_pane
+craft-recipe : black_terracotta(recipe: Recipe)
+    < recipe = black_terracotta
+    - recipe_black_terracotta
+craft-recipe : magma_cream(recipe: Recipe)
+    < recipe = magma_cream
+    - recipe_magma_cream
+craft-recipe : green_bed(recipe: Recipe)
+    < recipe = green_bed
+    - recipe_green_bed
+craft-recipe : green_concrete_powder(recipe: Recipe)
+    < recipe = green_concrete_powder
+    - recipe_green_concrete_powder
+craft-recipe : cut_red_sandstone_slab(recipe: Recipe)
+    < recipe = cut_red_sandstone_slab
+    - recipe_cut_red_sandstone_slab
+craft-recipe : purple_concrete_powder(recipe: Recipe)
+    < recipe = purple_concrete_powder
+    - recipe_purple_concrete_powder
+craft-recipe : flower_pot(recipe: Recipe)
+    < recipe = flower_pot
+    - recipe_flower_pot
+craft-recipe : pink_dye_from_peony(recipe: Recipe)
+    < recipe = pink_dye_from_peony
+    - recipe_pink_dye_from_peony
+craft-recipe : carrot_on_a_stick(recipe: Recipe)
+    < recipe = carrot_on_a_stick
+    - recipe_carrot_on_a_stick
+craft-recipe : diorite_stairs(recipe: Recipe)
+    < recipe = diorite_stairs
+    - recipe_diorite_stairs
+craft-recipe : polished_blackstone_brick_wall_from_polished_blackstone_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_brick_wall_from_polished_blackstone_stonecutting
+    - recipe_polished_blackstone_brick_wall_from_polished_blackstone_stonecutting
+craft-recipe : mossy_cobblestone(recipe: Recipe)
+    < recipe = mossy_cobblestone
+    - recipe_mossy_cobblestone
+craft-recipe : stone_slab_from_stone_stonecutting(recipe: Recipe)
+    < recipe = stone_slab_from_stone_stonecutting
+    - recipe_stone_slab_from_stone_stonecutting
+craft-recipe : chain(recipe: Recipe)
+    < recipe = chain
+    - recipe_chain
+craft-recipe : iron_shovel(recipe: Recipe)
+    < recipe = iron_shovel
+    - recipe_iron_shovel
+craft-recipe : stone_button(recipe: Recipe)
+    < recipe = stone_button
+    - recipe_stone_button
+craft-recipe : iron_block(recipe: Recipe)
+    < recipe = iron_block
+    - recipe_iron_block
+craft-recipe : honeycomb_block(recipe: Recipe)
+    < recipe = honeycomb_block
+    - recipe_honeycomb_block
+craft-recipe : lodestone(recipe: Recipe)
+    < recipe = lodestone
+    - recipe_lodestone
+craft-recipe : gray_banner(recipe: Recipe)
+    < recipe = gray_banner
+    - recipe_gray_banner
+craft-recipe : crimson_trapdoor(recipe: Recipe)
+    < recipe = crimson_trapdoor
+    - recipe_crimson_trapdoor
+craft-recipe : nether_brick_stairs(recipe: Recipe)
+    < recipe = nether_brick_stairs
+    - recipe_nether_brick_stairs
+craft-recipe : quartz_block(recipe: Recipe)
+    < recipe = quartz_block
+    - recipe_quartz_block
+craft-recipe : cyan_concrete_powder(recipe: Recipe)
+    < recipe = cyan_concrete_powder
+    - recipe_cyan_concrete_powder
+craft-recipe : cake(recipe: Recipe)
+    < recipe = cake
+    - recipe_cake
+craft-recipe : skull_banner_pattern(recipe: Recipe)
+    < recipe = skull_banner_pattern
+    - recipe_skull_banner_pattern
+craft-recipe : sea_lantern(recipe: Recipe)
+    < recipe = sea_lantern
+    - recipe_sea_lantern
+craft-recipe : orange_concrete_powder(recipe: Recipe)
+    < recipe = orange_concrete_powder
+    - recipe_orange_concrete_powder
+craft-recipe : armor_stand(recipe: Recipe)
+    < recipe = armor_stand
+    - recipe_armor_stand
+craft-recipe : polished_granite_from_granite_stonecutting(recipe: Recipe)
+    < recipe = polished_granite_from_granite_stonecutting
+    - recipe_polished_granite_from_granite_stonecutting
+craft-recipe : flower_banner_pattern(recipe: Recipe)
+    < recipe = flower_banner_pattern
+    - recipe_flower_banner_pattern
+craft-recipe : smithing_table(recipe: Recipe)
+    < recipe = smithing_table
+    - recipe_smithing_table
+craft-recipe : pink_bed(recipe: Recipe)
+    < recipe = pink_bed
+    - recipe_pink_bed
+craft-recipe : acacia_slab(recipe: Recipe)
+    < recipe = acacia_slab
+    - recipe_acacia_slab
+craft-recipe : brick_stairs_from_bricks_stonecutting(recipe: Recipe)
+    < recipe = brick_stairs_from_bricks_stonecutting
+    - recipe_brick_stairs_from_bricks_stonecutting
+craft-recipe : book(recipe: Recipe)
+    < recipe = book
+    - recipe_book
+craft-recipe : quartz_stairs_from_quartz_block_stonecutting(recipe: Recipe)
+    < recipe = quartz_stairs_from_quartz_block_stonecutting
+    - recipe_quartz_stairs_from_quartz_block_stonecutting
+craft-recipe : magenta_stained_glass_pane_from_glass_pane(recipe: Recipe)
+    < recipe = magenta_stained_glass_pane_from_glass_pane
+    - recipe_magenta_stained_glass_pane_from_glass_pane
+craft-recipe : purple_stained_glass(recipe: Recipe)
+    < recipe = purple_stained_glass
+    - recipe_purple_stained_glass
+craft-recipe : crimson_slab(recipe: Recipe)
+    < recipe = crimson_slab
+    - recipe_crimson_slab
+craft-recipe : bone_meal_from_bone_block(recipe: Recipe)
+    < recipe = bone_meal_from_bone_block
+    - recipe_bone_meal_from_bone_block
+craft-recipe : crimson_button(recipe: Recipe)
+    < recipe = crimson_button
+    - recipe_crimson_button
+craft-recipe : cooked_chicken(recipe: Recipe)
+    < recipe = cooked_chicken
+    - recipe_cooked_chicken
+craft-recipe : conduit(recipe: Recipe)
+    < recipe = conduit
+    - recipe_conduit
+craft-recipe : purple_stained_glass_pane(recipe: Recipe)
+    < recipe = purple_stained_glass_pane
+    - recipe_purple_stained_glass_pane
+craft-recipe : jungle_pressure_plate(recipe: Recipe)
+    < recipe = jungle_pressure_plate
+    - recipe_jungle_pressure_plate
+craft-recipe : comparator(recipe: Recipe)
+    < recipe = comparator
+    - recipe_comparator
+craft-recipe : crimson_pressure_plate(recipe: Recipe)
+    < recipe = crimson_pressure_plate
+    - recipe_crimson_pressure_plate
+craft-recipe : red_sandstone_slab(recipe: Recipe)
+    < recipe = red_sandstone_slab
+    - recipe_red_sandstone_slab
+craft-recipe : blue_bed_from_white_bed(recipe: Recipe)
+    < recipe = blue_bed_from_white_bed
+    - recipe_blue_bed_from_white_bed
+craft-recipe : magenta_glazed_terracotta(recipe: Recipe)
+    < recipe = magenta_glazed_terracotta
+    - recipe_magenta_glazed_terracotta
+craft-recipe : birch_button(recipe: Recipe)
+    < recipe = birch_button
+    - recipe_birch_button
+craft-recipe : acacia_fence_gate(recipe: Recipe)
+    < recipe = acacia_fence_gate
+    - recipe_acacia_fence_gate
+craft-recipe : purple_terracotta(recipe: Recipe)
+    < recipe = purple_terracotta
+    - recipe_purple_terracotta
+craft-recipe : red_stained_glass_pane(recipe: Recipe)
+    < recipe = red_stained_glass_pane
+    - recipe_red_stained_glass_pane
+craft-recipe : green_stained_glass(recipe: Recipe)
+    < recipe = green_stained_glass
+    - recipe_green_stained_glass
+craft-recipe : mossy_stone_brick_stairs_from_mossy_stone_brick_stonecutting(recipe: Recipe)
+    < recipe = mossy_stone_brick_stairs_from_mossy_stone_brick_stonecutting
+    - recipe_mossy_stone_brick_stairs_from_mossy_stone_brick_stonecutting
+craft-recipe : black_carpet_from_white_carpet(recipe: Recipe)
+    < recipe = black_carpet_from_white_carpet
+    - recipe_black_carpet_from_white_carpet
+craft-recipe : bowl(recipe: Recipe)
+    < recipe = bowl
+    - recipe_bowl
+craft-recipe : pink_stained_glass(recipe: Recipe)
+    < recipe = pink_stained_glass
+    - recipe_pink_stained_glass
+craft-recipe : cyan_terracotta(recipe: Recipe)
+    < recipe = cyan_terracotta
+    - recipe_cyan_terracotta
+craft-recipe : polished_andesite_stairs_from_andesite_stonecutting(recipe: Recipe)
+    < recipe = polished_andesite_stairs_from_andesite_stonecutting
+    - recipe_polished_andesite_stairs_from_andesite_stonecutting
+craft-recipe : blue_carpet_from_white_carpet(recipe: Recipe)
+    < recipe = blue_carpet_from_white_carpet
+    - recipe_blue_carpet_from_white_carpet
+craft-recipe : lime_stained_glass_pane(recipe: Recipe)
+    < recipe = lime_stained_glass_pane
+    - recipe_lime_stained_glass_pane
+craft-recipe : brick(recipe: Recipe)
+    < recipe = brick
+    - recipe_brick
+craft-recipe : magenta_bed_from_white_bed(recipe: Recipe)
+    < recipe = magenta_bed_from_white_bed
+    - recipe_magenta_bed_from_white_bed
+craft-recipe : mossy_stone_bricks(recipe: Recipe)
+    < recipe = mossy_stone_bricks
+    - recipe_mossy_stone_bricks
+craft-recipe : spruce_door(recipe: Recipe)
+    < recipe = spruce_door
+    - recipe_spruce_door
+craft-recipe : activator_rail(recipe: Recipe)
+    < recipe = activator_rail
+    - recipe_activator_rail
+craft-recipe : jack_o_lantern(recipe: Recipe)
+    < recipe = jack_o_lantern
+    - recipe_jack_o_lantern
+craft-recipe : leather_chestplate(recipe: Recipe)
+    < recipe = leather_chestplate
+    - recipe_leather_chestplate
+craft-recipe : yellow_dye_from_sunflower(recipe: Recipe)
+    < recipe = yellow_dye_from_sunflower
+    - recipe_yellow_dye_from_sunflower
+craft-recipe : torch(recipe: Recipe)
+    < recipe = torch
+    - recipe_torch
+craft-recipe : light_gray_concrete_powder(recipe: Recipe)
+    < recipe = light_gray_concrete_powder
+    - recipe_light_gray_concrete_powder
+craft-recipe : purpur_stairs(recipe: Recipe)
+    < recipe = purpur_stairs
+    - recipe_purpur_stairs
+craft-recipe : purpur_block(recipe: Recipe)
+    < recipe = purpur_block
+    - recipe_purpur_block
+craft-recipe : lime_carpet_from_white_carpet(recipe: Recipe)
+    < recipe = lime_carpet_from_white_carpet
+    - recipe_lime_carpet_from_white_carpet
+craft-recipe : cut_sandstone_slab(recipe: Recipe)
+    < recipe = cut_sandstone_slab
+    - recipe_cut_sandstone_slab
+craft-recipe : orange_dye_from_orange_tulip(recipe: Recipe)
+    < recipe = orange_dye_from_orange_tulip
+    - recipe_orange_dye_from_orange_tulip
+craft-recipe : smooth_red_sandstone_stairs(recipe: Recipe)
+    < recipe = smooth_red_sandstone_stairs
+    - recipe_smooth_red_sandstone_stairs
+craft-recipe : iron_nugget_from_smelting(recipe: Recipe)
+    < recipe = iron_nugget_from_smelting
+    - recipe_iron_nugget_from_smelting
+craft-recipe : beetroot_soup(recipe: Recipe)
+    < recipe = beetroot_soup
+    - recipe_beetroot_soup
+craft-recipe : light_blue_banner(recipe: Recipe)
+    < recipe = light_blue_banner
+    - recipe_light_blue_banner
+craft-recipe : end_stone_brick_slab_from_end_stone_stonecutting(recipe: Recipe)
+    < recipe = end_stone_brick_slab_from_end_stone_stonecutting
+    - recipe_end_stone_brick_slab_from_end_stone_stonecutting
+craft-recipe : golden_boots(recipe: Recipe)
+    < recipe = golden_boots
+    - recipe_golden_boots
+craft-recipe : polished_diorite_slab_from_polished_diorite_stonecutting(recipe: Recipe)
+    < recipe = polished_diorite_slab_from_polished_diorite_stonecutting
+    - recipe_polished_diorite_slab_from_polished_diorite_stonecutting
+craft-recipe : redstone_from_blasting(recipe: Recipe)
+    < recipe = redstone_from_blasting
+    - recipe_redstone_from_blasting
+craft-recipe : polished_granite_slab(recipe: Recipe)
+    < recipe = polished_granite_slab
+    - recipe_polished_granite_slab
+craft-recipe : cooked_rabbit(recipe: Recipe)
+    < recipe = cooked_rabbit
+    - recipe_cooked_rabbit
+craft-recipe : clay(recipe: Recipe)
+    < recipe = clay
+    - recipe_clay
+craft-recipe : cobblestone_stairs(recipe: Recipe)
+    < recipe = cobblestone_stairs
+    - recipe_cobblestone_stairs
+craft-recipe : polished_basalt(recipe: Recipe)
+    < recipe = polished_basalt
+    - recipe_polished_basalt
+craft-recipe : dark_oak_planks(recipe: Recipe)
+    < recipe = dark_oak_planks
+    - recipe_dark_oak_planks
+craft-recipe : red_nether_brick_stairs(recipe: Recipe)
+    < recipe = red_nether_brick_stairs
+    - recipe_red_nether_brick_stairs
+craft-recipe : black_stained_glass_pane_from_glass_pane(recipe: Recipe)
+    < recipe = black_stained_glass_pane_from_glass_pane
+    - recipe_black_stained_glass_pane_from_glass_pane
+craft-recipe : clock(recipe: Recipe)
+    < recipe = clock
+    - recipe_clock
+craft-recipe : light_gray_dye_from_oxeye_daisy(recipe: Recipe)
+    < recipe = light_gray_dye_from_oxeye_daisy
+    - recipe_light_gray_dye_from_oxeye_daisy
+craft-recipe : brown_glazed_terracotta(recipe: Recipe)
+    < recipe = brown_glazed_terracotta
+    - recipe_brown_glazed_terracotta
+craft-recipe : red_bed_from_white_bed(recipe: Recipe)
+    < recipe = red_bed_from_white_bed
+    - recipe_red_bed_from_white_bed
+craft-recipe : light_gray_stained_glass_pane(recipe: Recipe)
+    < recipe = light_gray_stained_glass_pane
+    - recipe_light_gray_stained_glass_pane
+craft-recipe : crafting_table(recipe: Recipe)
+    < recipe = crafting_table
+    - recipe_crafting_table
+craft-recipe : nether_brick_slab(recipe: Recipe)
+    < recipe = nether_brick_slab
+    - recipe_nether_brick_slab
+craft-recipe : stone_brick_stairs(recipe: Recipe)
+    < recipe = stone_brick_stairs
+    - recipe_stone_brick_stairs
+craft-recipe : purple_dye(recipe: Recipe)
+    < recipe = purple_dye
+    - recipe_purple_dye
+craft-recipe : chiseled_polished_blackstone(recipe: Recipe)
+    < recipe = chiseled_polished_blackstone
+    - recipe_chiseled_polished_blackstone
+craft-recipe : diamond_block(recipe: Recipe)
+    < recipe = diamond_block
+    - recipe_diamond_block
+craft-recipe : pink_carpet_from_white_carpet(recipe: Recipe)
+    < recipe = pink_carpet_from_white_carpet
+    - recipe_pink_carpet_from_white_carpet
+craft-recipe : prismarine_brick_slab_from_prismarine_stonecutting(recipe: Recipe)
+    < recipe = prismarine_brick_slab_from_prismarine_stonecutting
+    - recipe_prismarine_brick_slab_from_prismarine_stonecutting
+craft-recipe : wheat(recipe: Recipe)
+    < recipe = wheat
+    - recipe_wheat
+craft-recipe : cooked_beef_from_smoking(recipe: Recipe)
+    < recipe = cooked_beef_from_smoking
+    - recipe_cooked_beef_from_smoking
+craft-recipe : wooden_sword(recipe: Recipe)
+    < recipe = wooden_sword
+    - recipe_wooden_sword
+craft-recipe : end_stone_bricks_from_end_stone_stonecutting(recipe: Recipe)
+    < recipe = end_stone_bricks_from_end_stone_stonecutting
+    - recipe_end_stone_bricks_from_end_stone_stonecutting
+craft-recipe : smooth_quartz_slab(recipe: Recipe)
+    < recipe = smooth_quartz_slab
+    - recipe_smooth_quartz_slab
+craft-recipe : coarse_dirt(recipe: Recipe)
+    < recipe = coarse_dirt
+    - recipe_coarse_dirt
+craft-recipe : jungle_trapdoor(recipe: Recipe)
+    < recipe = jungle_trapdoor
+    - recipe_jungle_trapdoor
+craft-recipe : emerald_from_smelting(recipe: Recipe)
+    < recipe = emerald_from_smelting
+    - recipe_emerald_from_smelting
+craft-recipe : brown_stained_glass_pane_from_glass_pane(recipe: Recipe)
+    < recipe = brown_stained_glass_pane_from_glass_pane
+    - recipe_brown_stained_glass_pane_from_glass_pane
+craft-recipe : writable_book(recipe: Recipe)
+    < recipe = writable_book
+    - recipe_writable_book
+craft-recipe : blue_ice(recipe: Recipe)
+    < recipe = blue_ice
+    - recipe_blue_ice
+craft-recipe : polished_diorite_slab_from_diorite_stonecutting(recipe: Recipe)
+    < recipe = polished_diorite_slab_from_diorite_stonecutting
+    - recipe_polished_diorite_slab_from_diorite_stonecutting
+craft-recipe : magenta_terracotta(recipe: Recipe)
+    < recipe = magenta_terracotta
+    - recipe_magenta_terracotta
+craft-recipe : birch_pressure_plate(recipe: Recipe)
+    < recipe = birch_pressure_plate
+    - recipe_birch_pressure_plate
+craft-recipe : polished_granite_slab_from_granite_stonecutting(recipe: Recipe)
+    < recipe = polished_granite_slab_from_granite_stonecutting
+    - recipe_polished_granite_slab_from_granite_stonecutting
+craft-recipe : netherite_pickaxe_smithing(recipe: Recipe)
+    < recipe = netherite_pickaxe_smithing
+    - recipe_netherite_pickaxe_smithing
+craft-recipe : brown_bed_from_white_bed(recipe: Recipe)
+    < recipe = brown_bed_from_white_bed
+    - recipe_brown_bed_from_white_bed
+craft-recipe : redstone(recipe: Recipe)
+    < recipe = redstone
+    - recipe_redstone
+craft-recipe : diorite_slab_from_diorite_stonecutting(recipe: Recipe)
+    < recipe = diorite_slab_from_diorite_stonecutting
+    - recipe_diorite_slab_from_diorite_stonecutting
+craft-recipe : acacia_trapdoor(recipe: Recipe)
+    < recipe = acacia_trapdoor
+    - recipe_acacia_trapdoor
+craft-recipe : nether_brick(recipe: Recipe)
+    < recipe = nether_brick
+    - recipe_nether_brick
+craft-recipe : end_stone_brick_stairs_from_end_stone_stonecutting(recipe: Recipe)
+    < recipe = end_stone_brick_stairs_from_end_stone_stonecutting
+    - recipe_end_stone_brick_stairs_from_end_stone_stonecutting
+craft-recipe : cracked_stone_bricks(recipe: Recipe)
+    < recipe = cracked_stone_bricks
+    - recipe_cracked_stone_bricks
+craft-recipe : prismarine_wall(recipe: Recipe)
+    < recipe = prismarine_wall
+    - recipe_prismarine_wall
+craft-recipe : red_dye_from_rose_bush(recipe: Recipe)
+    < recipe = red_dye_from_rose_bush
+    - recipe_red_dye_from_rose_bush
+craft-recipe : gold_ingot_from_blasting(recipe: Recipe)
+    < recipe = gold_ingot_from_blasting
+    - recipe_gold_ingot_from_blasting
+craft-recipe : brown_terracotta(recipe: Recipe)
+    < recipe = brown_terracotta
+    - recipe_brown_terracotta
+craft-recipe : magenta_wool(recipe: Recipe)
+    < recipe = magenta_wool
+    - recipe_magenta_wool
+craft-recipe : leather_helmet(recipe: Recipe)
+    < recipe = leather_helmet
+    - recipe_leather_helmet
+craft-recipe : red_carpet_from_white_carpet(recipe: Recipe)
+    < recipe = red_carpet_from_white_carpet
+    - recipe_red_carpet_from_white_carpet
+craft-recipe : grindstone(recipe: Recipe)
+    < recipe = grindstone
+    - recipe_grindstone
+craft-recipe : light_gray_stained_glass(recipe: Recipe)
+    < recipe = light_gray_stained_glass
+    - recipe_light_gray_stained_glass
+craft-recipe : dark_oak_sign(recipe: Recipe)
+    < recipe = dark_oak_sign
+    - recipe_dark_oak_sign
+craft-recipe : sandstone_slab(recipe: Recipe)
+    < recipe = sandstone_slab
+    - recipe_sandstone_slab
+craft-recipe : magenta_banner(recipe: Recipe)
+    < recipe = magenta_banner
+    - recipe_magenta_banner
+craft-recipe : mossy_cobblestone_wall(recipe: Recipe)
+    < recipe = mossy_cobblestone_wall
+    - recipe_mossy_cobblestone_wall
+craft-recipe : gray_stained_glass_pane(recipe: Recipe)
+    < recipe = gray_stained_glass_pane
+    - recipe_gray_stained_glass_pane
+craft-recipe : nether_brick_wall(recipe: Recipe)
+    < recipe = nether_brick_wall
+    - recipe_nether_brick_wall
+craft-recipe : brown_carpet_from_white_carpet(recipe: Recipe)
+    < recipe = brown_carpet_from_white_carpet
+    - recipe_brown_carpet_from_white_carpet
+craft-recipe : stripped_oak_wood(recipe: Recipe)
+    < recipe = stripped_oak_wood
+    - recipe_stripped_oak_wood
+craft-recipe : polished_blackstone_slab_from_polished_blackstone_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_slab_from_polished_blackstone_stonecutting
+    - recipe_polished_blackstone_slab_from_polished_blackstone_stonecutting
+craft-recipe : item_frame(recipe: Recipe)
+    < recipe = item_frame
+    - recipe_item_frame
+craft-recipe : quartz_slab(recipe: Recipe)
+    < recipe = quartz_slab
+    - recipe_quartz_slab
+craft-recipe : polished_blackstone_stairs(recipe: Recipe)
+    < recipe = polished_blackstone_stairs
+    - recipe_polished_blackstone_stairs
+craft-recipe : quartz_pillar(recipe: Recipe)
+    < recipe = quartz_pillar
+    - recipe_quartz_pillar
+craft-recipe : diorite_wall_from_diorite_stonecutting(recipe: Recipe)
+    < recipe = diorite_wall_from_diorite_stonecutting
+    - recipe_diorite_wall_from_diorite_stonecutting
+craft-recipe : glistering_melon_slice(recipe: Recipe)
+    < recipe = glistering_melon_slice
+    - recipe_glistering_melon_slice
+craft-recipe : acacia_stairs(recipe: Recipe)
+    < recipe = acacia_stairs
+    - recipe_acacia_stairs
+craft-recipe : polished_basalt_from_basalt_stonecutting(recipe: Recipe)
+    < recipe = polished_basalt_from_basalt_stonecutting
+    - recipe_polished_basalt_from_basalt_stonecutting
+craft-recipe : golden_pickaxe(recipe: Recipe)
+    < recipe = golden_pickaxe
+    - recipe_golden_pickaxe
+craft-recipe : green_bed_from_white_bed(recipe: Recipe)
+    < recipe = green_bed_from_white_bed
+    - recipe_green_bed_from_white_bed
+craft-recipe : orange_stained_glass(recipe: Recipe)
+    < recipe = orange_stained_glass
+    - recipe_orange_stained_glass
+craft-recipe : blue_carpet(recipe: Recipe)
+    < recipe = blue_carpet
+    - recipe_blue_carpet
+craft-recipe : yellow_banner(recipe: Recipe)
+    < recipe = yellow_banner
+    - recipe_yellow_banner
+craft-recipe : blast_furnace(recipe: Recipe)
+    < recipe = blast_furnace
+    - recipe_blast_furnace
+craft-recipe : quartz_bricks_from_quartz_block_stonecutting(recipe: Recipe)
+    < recipe = quartz_bricks_from_quartz_block_stonecutting
+    - recipe_quartz_bricks_from_quartz_block_stonecutting
+craft-recipe : yellow_glazed_terracotta(recipe: Recipe)
+    < recipe = yellow_glazed_terracotta
+    - recipe_yellow_glazed_terracotta
+craft-recipe : mossy_cobblestone_slab_from_mossy_cobblestone_stonecutting(recipe: Recipe)
+    < recipe = mossy_cobblestone_slab_from_mossy_cobblestone_stonecutting
+    - recipe_mossy_cobblestone_slab_from_mossy_cobblestone_stonecutting
+craft-recipe : cut_red_sandstone(recipe: Recipe)
+    < recipe = cut_red_sandstone
+    - recipe_cut_red_sandstone
+craft-recipe : netherite_ingot_from_netherite_block(recipe: Recipe)
+    < recipe = netherite_ingot_from_netherite_block
+    - recipe_netherite_ingot_from_netherite_block
+craft-recipe : dark_prismarine_slab(recipe: Recipe)
+    < recipe = dark_prismarine_slab
+    - recipe_dark_prismarine_slab
+craft-recipe : rabbit_stew_from_brown_mushroom(recipe: Recipe)
+    < recipe = rabbit_stew_from_brown_mushroom
+    - recipe_rabbit_stew_from_brown_mushroom
+craft-recipe : brown_bed(recipe: Recipe)
+    < recipe = brown_bed
+    - recipe_brown_bed
+craft-recipe : spruce_fence(recipe: Recipe)
+    < recipe = spruce_fence
+    - recipe_spruce_fence
+craft-recipe : stone_brick_slab(recipe: Recipe)
+    < recipe = stone_brick_slab
+    - recipe_stone_brick_slab
+craft-recipe : magenta_carpet_from_white_carpet(recipe: Recipe)
+    < recipe = magenta_carpet_from_white_carpet
+    - recipe_magenta_carpet_from_white_carpet
+craft-recipe : black_carpet(recipe: Recipe)
+    < recipe = black_carpet
+    - recipe_black_carpet
+craft-recipe : glass_bottle(recipe: Recipe)
+    < recipe = glass_bottle
+    - recipe_glass_bottle
+craft-recipe : iron_bars(recipe: Recipe)
+    < recipe = iron_bars
+    - recipe_iron_bars
+craft-recipe : red_sandstone_stairs(recipe: Recipe)
+    < recipe = red_sandstone_stairs
+    - recipe_red_sandstone_stairs
+craft-recipe : cut_sandstone(recipe: Recipe)
+    < recipe = cut_sandstone
+    - recipe_cut_sandstone
+craft-recipe : crimson_planks(recipe: Recipe)
+    < recipe = crimson_planks
+    - recipe_crimson_planks
+craft-recipe : smooth_sandstone_stairs_from_smooth_sandstone_stonecutting(recipe: Recipe)
+    < recipe = smooth_sandstone_stairs_from_smooth_sandstone_stonecutting
+    - recipe_smooth_sandstone_stairs_from_smooth_sandstone_stonecutting
+craft-recipe : chiseled_sandstone(recipe: Recipe)
+    < recipe = chiseled_sandstone
+    - recipe_chiseled_sandstone
+craft-recipe : diamond_chestplate(recipe: Recipe)
+    < recipe = diamond_chestplate
+    - recipe_diamond_chestplate
+craft-recipe : light_gray_banner(recipe: Recipe)
+    < recipe = light_gray_banner
+    - recipe_light_gray_banner
+craft-recipe : red_nether_brick_wall(recipe: Recipe)
+    < recipe = red_nether_brick_wall
+    - recipe_red_nether_brick_wall
+craft-recipe : granite_slab_from_granite_stonecutting(recipe: Recipe)
+    < recipe = granite_slab_from_granite_stonecutting
+    - recipe_granite_slab_from_granite_stonecutting
+craft-recipe : stone_brick_stairs_from_stone_bricks_stonecutting(recipe: Recipe)
+    < recipe = stone_brick_stairs_from_stone_bricks_stonecutting
+    - recipe_stone_brick_stairs_from_stone_bricks_stonecutting
+craft-recipe : polished_granite_stairs_from_polished_granite_stonecutting(recipe: Recipe)
+    < recipe = polished_granite_stairs_from_polished_granite_stonecutting
+    - recipe_polished_granite_stairs_from_polished_granite_stonecutting
+craft-recipe : stone_sword(recipe: Recipe)
+    < recipe = stone_sword
+    - recipe_stone_sword
+craft-recipe : end_stone_brick_wall_from_end_stone_brick_stonecutting(recipe: Recipe)
+    < recipe = end_stone_brick_wall_from_end_stone_brick_stonecutting
+    - recipe_end_stone_brick_wall_from_end_stone_brick_stonecutting
+craft-recipe : red_nether_brick_slab(recipe: Recipe)
+    < recipe = red_nether_brick_slab
+    - recipe_red_nether_brick_slab
+craft-recipe : spectral_arrow(recipe: Recipe)
+    < recipe = spectral_arrow
+    - recipe_spectral_arrow
+craft-recipe : polished_blackstone_brick_slab_from_polished_blackstone_bricks_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_brick_slab_from_polished_blackstone_bricks_stonecutting
+    - recipe_polished_blackstone_brick_slab_from_polished_blackstone_bricks_stonecutting
+craft-recipe : sandstone(recipe: Recipe)
+    < recipe = sandstone
+    - recipe_sandstone
+craft-recipe : melon_seeds(recipe: Recipe)
+    < recipe = melon_seeds
+    - recipe_melon_seeds
+craft-recipe : acacia_pressure_plate(recipe: Recipe)
+    < recipe = acacia_pressure_plate
+    - recipe_acacia_pressure_plate
+craft-recipe : magenta_carpet(recipe: Recipe)
+    < recipe = magenta_carpet
+    - recipe_magenta_carpet
+craft-recipe : orange_stained_glass_pane_from_glass_pane(recipe: Recipe)
+    < recipe = orange_stained_glass_pane_from_glass_pane
+    - recipe_orange_stained_glass_pane_from_glass_pane
+craft-recipe : ender_eye(recipe: Recipe)
+    < recipe = ender_eye
+    - recipe_ender_eye
+craft-recipe : lever(recipe: Recipe)
+    < recipe = lever
+    - recipe_lever
+craft-recipe : bone_meal(recipe: Recipe)
+    < recipe = bone_meal
+    - recipe_bone_meal
+craft-recipe : andesite_stairs(recipe: Recipe)
+    < recipe = andesite_stairs
+    - recipe_andesite_stairs
+craft-recipe : end_stone_brick_stairs(recipe: Recipe)
+    < recipe = end_stone_brick_stairs
+    - recipe_end_stone_brick_stairs
+craft-recipe : end_stone_bricks(recipe: Recipe)
+    < recipe = end_stone_bricks
+    - recipe_end_stone_bricks
+craft-recipe : furnace_minecart(recipe: Recipe)
+    < recipe = furnace_minecart
+    - recipe_furnace_minecart
+craft-recipe : cyan_stained_glass(recipe: Recipe)
+    < recipe = cyan_stained_glass
+    - recipe_cyan_stained_glass
+craft-recipe : iron_sword(recipe: Recipe)
+    < recipe = iron_sword
+    - recipe_iron_sword
+craft-recipe : red_sandstone_wall_from_red_sandstone_stonecutting(recipe: Recipe)
+    < recipe = red_sandstone_wall_from_red_sandstone_stonecutting
+    - recipe_red_sandstone_wall_from_red_sandstone_stonecutting
+craft-recipe : lime_terracotta(recipe: Recipe)
+    < recipe = lime_terracotta
+    - recipe_lime_terracotta
+craft-recipe : cobblestone_stairs_from_cobblestone_stonecutting(recipe: Recipe)
+    < recipe = cobblestone_stairs_from_cobblestone_stonecutting
+    - recipe_cobblestone_stairs_from_cobblestone_stonecutting
+craft-recipe : birch_boat(recipe: Recipe)
+    < recipe = birch_boat
+    - recipe_birch_boat
+craft-recipe : coal_block(recipe: Recipe)
+    < recipe = coal_block
+    - recipe_coal_block
+craft-recipe : blue_stained_glass_pane_from_glass_pane(recipe: Recipe)
+    < recipe = blue_stained_glass_pane_from_glass_pane
+    - recipe_blue_stained_glass_pane_from_glass_pane
+craft-recipe : white_stained_glass_pane_from_glass_pane(recipe: Recipe)
+    < recipe = white_stained_glass_pane_from_glass_pane
+    - recipe_white_stained_glass_pane_from_glass_pane
+craft-recipe : spruce_stairs(recipe: Recipe)
+    < recipe = spruce_stairs
+    - recipe_spruce_stairs
+craft-recipe : leather_boots(recipe: Recipe)
+    < recipe = leather_boots
+    - recipe_leather_boots
+craft-recipe : diorite(recipe: Recipe)
+    < recipe = diorite
+    - recipe_diorite
+craft-recipe : green_wool(recipe: Recipe)
+    < recipe = green_wool
+    - recipe_green_wool
+craft-recipe : iron_ingot(recipe: Recipe)
+    < recipe = iron_ingot
+    - recipe_iron_ingot
+craft-recipe : charcoal(recipe: Recipe)
+    < recipe = charcoal
+    - recipe_charcoal
+craft-recipe : stone_brick_stairs_from_stone_stonecutting(recipe: Recipe)
+    < recipe = stone_brick_stairs_from_stone_stonecutting
+    - recipe_stone_brick_stairs_from_stone_stonecutting
+craft-recipe : chiseled_red_sandstone(recipe: Recipe)
+    < recipe = chiseled_red_sandstone
+    - recipe_chiseled_red_sandstone
+craft-recipe : emerald(recipe: Recipe)
+    < recipe = emerald
+    - recipe_emerald
+craft-recipe : sandstone_stairs_from_sandstone_stonecutting(recipe: Recipe)
+    < recipe = sandstone_stairs_from_sandstone_stonecutting
+    - recipe_sandstone_stairs_from_sandstone_stonecutting
+craft-recipe : pink_terracotta(recipe: Recipe)
+    < recipe = pink_terracotta
+    - recipe_pink_terracotta
+craft-recipe : diamond_hoe(recipe: Recipe)
+    < recipe = diamond_hoe
+    - recipe_diamond_hoe
+craft-recipe : lapis_from_blasting(recipe: Recipe)
+    < recipe = lapis_from_blasting
+    - recipe_lapis_from_blasting
+craft-recipe : polished_blackstone_brick_wall_from_polished_blackstone_bricks_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_brick_wall_from_polished_blackstone_bricks_stonecutting
+    - recipe_polished_blackstone_brick_wall_from_polished_blackstone_bricks_stonecutting
+craft-recipe : purpur_slab(recipe: Recipe)
+    < recipe = purpur_slab
+    - recipe_purpur_slab
+craft-recipe : brown_stained_glass_pane(recipe: Recipe)
+    < recipe = brown_stained_glass_pane
+    - recipe_brown_stained_glass_pane
+craft-recipe : dropper(recipe: Recipe)
+    < recipe = dropper
+    - recipe_dropper
+craft-recipe : gray_carpet(recipe: Recipe)
+    < recipe = gray_carpet
+    - recipe_gray_carpet
+craft-recipe : cooked_beef(recipe: Recipe)
+    < recipe = cooked_beef
+    - recipe_cooked_beef
+craft-recipe : black_glazed_terracotta(recipe: Recipe)
+    < recipe = black_glazed_terracotta
+    - recipe_black_glazed_terracotta
+craft-recipe : powered_rail(recipe: Recipe)
+    < recipe = powered_rail
+    - recipe_powered_rail
+craft-recipe : mossy_cobblestone_stairs(recipe: Recipe)
+    < recipe = mossy_cobblestone_stairs
+    - recipe_mossy_cobblestone_stairs
+craft-recipe : stripped_dark_oak_wood(recipe: Recipe)
+    < recipe = stripped_dark_oak_wood
+    - recipe_stripped_dark_oak_wood
+craft-recipe : polished_blackstone(recipe: Recipe)
+    < recipe = polished_blackstone
+    - recipe_polished_blackstone
+craft-recipe : polished_blackstone_brick_wall_from_blackstone_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_brick_wall_from_blackstone_stonecutting
+    - recipe_polished_blackstone_brick_wall_from_blackstone_stonecutting
+craft-recipe : lime_stained_glass(recipe: Recipe)
+    < recipe = lime_stained_glass
+    - recipe_lime_stained_glass
+craft-recipe : leather_horse_armor(recipe: Recipe)
+    < recipe = leather_horse_armor
+    - recipe_leather_horse_armor
+craft-recipe : polished_blackstone_stairs_from_polished_blackstone_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_stairs_from_polished_blackstone_stonecutting
+    - recipe_polished_blackstone_stairs_from_polished_blackstone_stonecutting
+craft-recipe : orange_terracotta(recipe: Recipe)
+    < recipe = orange_terracotta
+    - recipe_orange_terracotta
+craft-recipe : spruce_pressure_plate(recipe: Recipe)
+    < recipe = spruce_pressure_plate
+    - recipe_spruce_pressure_plate
+craft-recipe : turtle_helmet(recipe: Recipe)
+    < recipe = turtle_helmet
+    - recipe_turtle_helmet
+craft-recipe : light_blue_stained_glass_pane_from_glass_pane(recipe: Recipe)
+    < recipe = light_blue_stained_glass_pane_from_glass_pane
+    - recipe_light_blue_stained_glass_pane_from_glass_pane
+craft-recipe : smooth_sandstone(recipe: Recipe)
+    < recipe = smooth_sandstone
+    - recipe_smooth_sandstone
+craft-recipe : cobblestone_wall_from_cobblestone_stonecutting(recipe: Recipe)
+    < recipe = cobblestone_wall_from_cobblestone_stonecutting
+    - recipe_cobblestone_wall_from_cobblestone_stonecutting
+craft-recipe : iron_trapdoor(recipe: Recipe)
+    < recipe = iron_trapdoor
+    - recipe_iron_trapdoor
+craft-recipe : yellow_bed(recipe: Recipe)
+    < recipe = yellow_bed
+    - recipe_yellow_bed
+craft-recipe : dark_oak_fence_gate(recipe: Recipe)
+    < recipe = dark_oak_fence_gate
+    - recipe_dark_oak_fence_gate
+craft-recipe : orange_stained_glass_pane(recipe: Recipe)
+    < recipe = orange_stained_glass_pane
+    - recipe_orange_stained_glass_pane
+craft-recipe : acacia_door(recipe: Recipe)
+    < recipe = acacia_door
+    - recipe_acacia_door
+craft-recipe : target(recipe: Recipe)
+    < recipe = target
+    - recipe_target
+craft-recipe : golden_hoe(recipe: Recipe)
+    < recipe = golden_hoe
+    - recipe_golden_hoe
+craft-recipe : golden_shovel(recipe: Recipe)
+    < recipe = golden_shovel
+    - recipe_golden_shovel
+craft-recipe : birch_sign(recipe: Recipe)
+    < recipe = birch_sign
+    - recipe_birch_sign
+craft-recipe : diamond_leggings(recipe: Recipe)
+    < recipe = diamond_leggings
+    - recipe_diamond_leggings
+craft-recipe : light_gray_bed_from_white_bed(recipe: Recipe)
+    < recipe = light_gray_bed_from_white_bed
+    - recipe_light_gray_bed_from_white_bed
+craft-recipe : cut_sandstone_from_sandstone_stonecutting(recipe: Recipe)
+    < recipe = cut_sandstone_from_sandstone_stonecutting
+    - recipe_cut_sandstone_from_sandstone_stonecutting
+craft-recipe : polished_blackstone_bricks_from_polished_blackstone_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_bricks_from_polished_blackstone_stonecutting
+    - recipe_polished_blackstone_bricks_from_polished_blackstone_stonecutting
+craft-recipe : acacia_boat(recipe: Recipe)
+    < recipe = acacia_boat
+    - recipe_acacia_boat
+craft-recipe : spruce_fence_gate(recipe: Recipe)
+    < recipe = spruce_fence_gate
+    - recipe_spruce_fence_gate
+craft-recipe : purpur_pillar_from_purpur_block_stonecutting(recipe: Recipe)
+    < recipe = purpur_pillar_from_purpur_block_stonecutting
+    - recipe_purpur_pillar_from_purpur_block_stonecutting
+craft-recipe : light_blue_carpet_from_white_carpet(recipe: Recipe)
+    < recipe = light_blue_carpet_from_white_carpet
+    - recipe_light_blue_carpet_from_white_carpet
+craft-recipe : mossy_stone_brick_slab(recipe: Recipe)
+    < recipe = mossy_stone_brick_slab
+    - recipe_mossy_stone_brick_slab
+craft-recipe : pink_carpet(recipe: Recipe)
+    < recipe = pink_carpet
+    - recipe_pink_carpet
+craft-recipe : blue_dye(recipe: Recipe)
+    < recipe = blue_dye
+    - recipe_blue_dye
+craft-recipe : shears(recipe: Recipe)
+    < recipe = shears
+    - recipe_shears
+craft-recipe : granite_wall(recipe: Recipe)
+    < recipe = granite_wall
+    - recipe_granite_wall
+craft-recipe : crimson_hyphae(recipe: Recipe)
+    < recipe = crimson_hyphae
+    - recipe_crimson_hyphae
+craft-recipe : warped_hyphae(recipe: Recipe)
+    < recipe = warped_hyphae
+    - recipe_warped_hyphae
+craft-recipe : red_nether_bricks(recipe: Recipe)
+    < recipe = red_nether_bricks
+    - recipe_red_nether_bricks
+craft-recipe : netherite_chestplate_smithing(recipe: Recipe)
+    < recipe = netherite_chestplate_smithing
+    - recipe_netherite_chestplate_smithing
+craft-recipe : polished_blackstone_pressure_plate(recipe: Recipe)
+    < recipe = polished_blackstone_pressure_plate
+    - recipe_polished_blackstone_pressure_plate
+craft-recipe : piston(recipe: Recipe)
+    < recipe = piston
+    - recipe_piston
+craft-recipe : chiseled_sandstone_from_sandstone_stonecutting(recipe: Recipe)
+    < recipe = chiseled_sandstone_from_sandstone_stonecutting
+    - recipe_chiseled_sandstone_from_sandstone_stonecutting
+craft-recipe : orange_bed_from_white_bed(recipe: Recipe)
+    < recipe = orange_bed_from_white_bed
+    - recipe_orange_bed_from_white_bed
+craft-recipe : warped_button(recipe: Recipe)
+    < recipe = warped_button
+    - recipe_warped_button
+craft-recipe : green_glazed_terracotta(recipe: Recipe)
+    < recipe = green_glazed_terracotta
+    - recipe_green_glazed_terracotta
+craft-recipe : polished_blackstone_slab(recipe: Recipe)
+    < recipe = polished_blackstone_slab
+    - recipe_polished_blackstone_slab
+craft-recipe : quartz_stairs(recipe: Recipe)
+    < recipe = quartz_stairs
+    - recipe_quartz_stairs
+craft-recipe : baked_potato_from_smoking(recipe: Recipe)
+    < recipe = baked_potato_from_smoking
+    - recipe_baked_potato_from_smoking
+craft-recipe : green_terracotta(recipe: Recipe)
+    < recipe = green_terracotta
+    - recipe_green_terracotta
+craft-recipe : purple_wool(recipe: Recipe)
+    < recipe = purple_wool
+    - recipe_purple_wool
+craft-recipe : gray_stained_glass(recipe: Recipe)
+    < recipe = gray_stained_glass
+    - recipe_gray_stained_glass
+craft-recipe : glass(recipe: Recipe)
+    < recipe = glass
+    - recipe_glass
+craft-recipe : mossy_stone_brick_stairs(recipe: Recipe)
+    < recipe = mossy_stone_brick_stairs
+    - recipe_mossy_stone_brick_stairs
+craft-recipe : lime_bed(recipe: Recipe)
+    < recipe = lime_bed
+    - recipe_lime_bed
+craft-recipe : netherite_scrap(recipe: Recipe)
+    < recipe = netherite_scrap
+    - recipe_netherite_scrap
+craft-recipe : slime_ball(recipe: Recipe)
+    < recipe = slime_ball
+    - recipe_slime_ball
+craft-recipe : black_bed(recipe: Recipe)
+    < recipe = black_bed
+    - recipe_black_bed
+craft-recipe : cut_sandstone_slab_from_cut_sandstone_stonecutting(recipe: Recipe)
+    < recipe = cut_sandstone_slab_from_cut_sandstone_stonecutting
+    - recipe_cut_sandstone_slab_from_cut_sandstone_stonecutting
+craft-recipe : diamond_helmet(recipe: Recipe)
+    < recipe = diamond_helmet
+    - recipe_diamond_helmet
+craft-recipe : jungle_wood(recipe: Recipe)
+    < recipe = jungle_wood
+    - recipe_jungle_wood
+craft-recipe : cauldron(recipe: Recipe)
+    < recipe = cauldron
+    - recipe_cauldron
+craft-recipe : white_stained_glass(recipe: Recipe)
+    < recipe = white_stained_glass
+    - recipe_white_stained_glass
+craft-recipe : stone(recipe: Recipe)
+    < recipe = stone
+    - recipe_stone
+craft-recipe : mojang_banner_pattern(recipe: Recipe)
+    < recipe = mojang_banner_pattern
+    - recipe_mojang_banner_pattern
+craft-recipe : lantern(recipe: Recipe)
+    < recipe = lantern
+    - recipe_lantern
+craft-recipe : white_carpet(recipe: Recipe)
+    < recipe = white_carpet
+    - recipe_white_carpet
+craft-recipe : green_carpet(recipe: Recipe)
+    < recipe = green_carpet
+    - recipe_green_carpet
+craft-recipe : lime_dye_from_smelting(recipe: Recipe)
+    < recipe = lime_dye_from_smelting
+    - recipe_lime_dye_from_smelting
+craft-recipe : orange_glazed_terracotta(recipe: Recipe)
+    < recipe = orange_glazed_terracotta
+    - recipe_orange_glazed_terracotta
+craft-recipe : jungle_planks(recipe: Recipe)
+    < recipe = jungle_planks
+    - recipe_jungle_planks
+craft-recipe : nether_brick_wall_from_nether_bricks_stonecutting(recipe: Recipe)
+    < recipe = nether_brick_wall_from_nether_bricks_stonecutting
+    - recipe_nether_brick_wall_from_nether_bricks_stonecutting
+craft-recipe : polished_diorite_from_diorite_stonecutting(recipe: Recipe)
+    < recipe = polished_diorite_from_diorite_stonecutting
+    - recipe_polished_diorite_from_diorite_stonecutting
+craft-recipe : polished_granite_stairs_from_granite_stonecutting(recipe: Recipe)
+    < recipe = polished_granite_stairs_from_granite_stonecutting
+    - recipe_polished_granite_stairs_from_granite_stonecutting
+craft-recipe : smooth_sandstone_stairs(recipe: Recipe)
+    < recipe = smooth_sandstone_stairs
+    - recipe_smooth_sandstone_stairs
+craft-recipe : gold_nugget(recipe: Recipe)
+    < recipe = gold_nugget
+    - recipe_gold_nugget
+craft-recipe : polished_blackstone_bricks_from_blackstone_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_bricks_from_blackstone_stonecutting
+    - recipe_polished_blackstone_bricks_from_blackstone_stonecutting
+craft-recipe : birch_trapdoor(recipe: Recipe)
+    < recipe = birch_trapdoor
+    - recipe_birch_trapdoor
+craft-recipe : acacia_wood(recipe: Recipe)
+    < recipe = acacia_wood
+    - recipe_acacia_wood
+craft-recipe : light_gray_stained_glass_pane_from_glass_pane(recipe: Recipe)
+    < recipe = light_gray_stained_glass_pane_from_glass_pane
+    - recipe_light_gray_stained_glass_pane_from_glass_pane
+craft-recipe : mossy_stone_brick_wall_from_mossy_stone_brick_stonecutting(recipe: Recipe)
+    < recipe = mossy_stone_brick_wall_from_mossy_stone_brick_stonecutting
+    - recipe_mossy_stone_brick_wall_from_mossy_stone_brick_stonecutting
+craft-recipe : nether_brick_fence(recipe: Recipe)
+    < recipe = nether_brick_fence
+    - recipe_nether_brick_fence
+craft-recipe : black_banner(recipe: Recipe)
+    < recipe = black_banner
+    - recipe_black_banner
+craft-recipe : terracotta(recipe: Recipe)
+    < recipe = terracotta
+    - recipe_terracotta
+craft-recipe : yellow_dye_from_dandelion(recipe: Recipe)
+    < recipe = yellow_dye_from_dandelion
+    - recipe_yellow_dye_from_dandelion
+craft-recipe : chiseled_polished_blackstone_from_blackstone_stonecutting(recipe: Recipe)
+    < recipe = chiseled_polished_blackstone_from_blackstone_stonecutting
+    - recipe_chiseled_polished_blackstone_from_blackstone_stonecutting
+craft-recipe : dried_kelp_from_smoking(recipe: Recipe)
+    < recipe = dried_kelp_from_smoking
+    - recipe_dried_kelp_from_smoking
+craft-recipe : polished_blackstone_brick_wall(recipe: Recipe)
+    < recipe = polished_blackstone_brick_wall
+    - recipe_polished_blackstone_brick_wall
+craft-recipe : wooden_axe(recipe: Recipe)
+    < recipe = wooden_axe
+    - recipe_wooden_axe
+craft-recipe : warped_planks(recipe: Recipe)
+    < recipe = warped_planks
+    - recipe_warped_planks
+craft-recipe : quartz_bricks(recipe: Recipe)
+    < recipe = quartz_bricks
+    - recipe_quartz_bricks
+craft-recipe : dried_kelp_block(recipe: Recipe)
+    < recipe = dried_kelp_block
+    - recipe_dried_kelp_block
+craft-recipe : light_blue_terracotta(recipe: Recipe)
+    < recipe = light_blue_terracotta
+    - recipe_light_blue_terracotta
+craft-recipe : yellow_wool(recipe: Recipe)
+    < recipe = yellow_wool
+    - recipe_yellow_wool
+craft-recipe : barrel(recipe: Recipe)
+    < recipe = barrel
+    - recipe_barrel
+craft-recipe : light_blue_bed(recipe: Recipe)
+    < recipe = light_blue_bed
+    - recipe_light_blue_bed
+craft-recipe : golden_chestplate(recipe: Recipe)
+    < recipe = golden_chestplate
+    - recipe_golden_chestplate
+craft-recipe : cooked_salmon_from_smoking(recipe: Recipe)
+    < recipe = cooked_salmon_from_smoking
+    - recipe_cooked_salmon_from_smoking
+craft-recipe : yellow_carpet_from_white_carpet(recipe: Recipe)
+    < recipe = yellow_carpet_from_white_carpet
+    - recipe_yellow_carpet_from_white_carpet
+craft-recipe : cyan_stained_glass_pane(recipe: Recipe)
+    < recipe = cyan_stained_glass_pane
+    - recipe_cyan_stained_glass_pane
+craft-recipe : snow_block(recipe: Recipe)
+    < recipe = snow_block
+    - recipe_snow_block
+craft-recipe : light_gray_carpet(recipe: Recipe)
+    < recipe = light_gray_carpet
+    - recipe_light_gray_carpet
+craft-recipe : acacia_planks(recipe: Recipe)
+    < recipe = acacia_planks
+    - recipe_acacia_planks
+craft-recipe : lapis_block(recipe: Recipe)
+    < recipe = lapis_block
+    - recipe_lapis_block
+craft-recipe : redstone_lamp(recipe: Recipe)
+    < recipe = redstone_lamp
+    - recipe_redstone_lamp
+craft-recipe : orange_bed(recipe: Recipe)
+    < recipe = orange_bed
+    - recipe_orange_bed
+craft-recipe : red_concrete_powder(recipe: Recipe)
+    < recipe = red_concrete_powder
+    - recipe_red_concrete_powder
+craft-recipe : coal_from_blasting(recipe: Recipe)
+    < recipe = coal_from_blasting
+    - recipe_coal_from_blasting
+craft-recipe : warped_door(recipe: Recipe)
+    < recipe = warped_door
+    - recipe_warped_door
+craft-recipe : polished_blackstone_brick_stairs(recipe: Recipe)
+    < recipe = polished_blackstone_brick_stairs
+    - recipe_polished_blackstone_brick_stairs
+craft-recipe : cyan_carpet(recipe: Recipe)
+    < recipe = cyan_carpet
+    - recipe_cyan_carpet
+craft-recipe : orange_banner(recipe: Recipe)
+    < recipe = orange_banner
+    - recipe_orange_banner
+craft-recipe : dispenser(recipe: Recipe)
+    < recipe = dispenser
+    - recipe_dispenser
+craft-recipe : iron_ingot_from_blasting(recipe: Recipe)
+    < recipe = iron_ingot_from_blasting
+    - recipe_iron_ingot_from_blasting
+craft-recipe : chest_minecart(recipe: Recipe)
+    < recipe = chest_minecart
+    - recipe_chest_minecart
+craft-recipe : red_dye_from_beetroot(recipe: Recipe)
+    < recipe = red_dye_from_beetroot
+    - recipe_red_dye_from_beetroot
+craft-recipe : lapis_from_smelting(recipe: Recipe)
+    < recipe = lapis_from_smelting
+    - recipe_lapis_from_smelting
+craft-recipe : cooked_rabbit_from_smoking(recipe: Recipe)
+    < recipe = cooked_rabbit_from_smoking
+    - recipe_cooked_rabbit_from_smoking
+craft-recipe : purple_banner(recipe: Recipe)
+    < recipe = purple_banner
+    - recipe_purple_banner
+craft-recipe : purpur_slab_from_purpur_block_stonecutting(recipe: Recipe)
+    < recipe = purpur_slab_from_purpur_block_stonecutting
+    - recipe_purpur_slab_from_purpur_block_stonecutting
+craft-recipe : green_stained_glass_pane_from_glass_pane(recipe: Recipe)
+    < recipe = green_stained_glass_pane_from_glass_pane
+    - recipe_green_stained_glass_pane_from_glass_pane
+craft-recipe : andesite_slab(recipe: Recipe)
+    < recipe = andesite_slab
+    - recipe_andesite_slab
+craft-recipe : cooked_cod(recipe: Recipe)
+    < recipe = cooked_cod
+    - recipe_cooked_cod
+craft-recipe : polished_diorite_stairs_from_diorite_stonecutting(recipe: Recipe)
+    < recipe = polished_diorite_stairs_from_diorite_stonecutting
+    - recipe_polished_diorite_stairs_from_diorite_stonecutting
+craft-recipe : acacia_sign(recipe: Recipe)
+    < recipe = acacia_sign
+    - recipe_acacia_sign
+craft-recipe : prismarine_wall_from_prismarine_stonecutting(recipe: Recipe)
+    < recipe = prismarine_wall_from_prismarine_stonecutting
+    - recipe_prismarine_wall_from_prismarine_stonecutting
+craft-recipe : emerald_block(recipe: Recipe)
+    < recipe = emerald_block
+    - recipe_emerald_block
+craft-recipe : polished_andesite_slab_from_polished_andesite_stonecutting(recipe: Recipe)
+    < recipe = polished_andesite_slab_from_polished_andesite_stonecutting
+    - recipe_polished_andesite_slab_from_polished_andesite_stonecutting
+craft-recipe : minecart(recipe: Recipe)
+    < recipe = minecart
+    - recipe_minecart
+craft-recipe : crimson_fence(recipe: Recipe)
+    < recipe = crimson_fence
+    - recipe_crimson_fence
+craft-recipe : ender_chest(recipe: Recipe)
+    < recipe = ender_chest
+    - recipe_ender_chest
+craft-recipe : end_crystal(recipe: Recipe)
+    < recipe = end_crystal
+    - recipe_end_crystal
+craft-recipe : bucket(recipe: Recipe)
+    < recipe = bucket
+    - recipe_bucket
+craft-recipe : polished_blackstone_brick_slab(recipe: Recipe)
+    < recipe = polished_blackstone_brick_slab
+    - recipe_polished_blackstone_brick_slab
+craft-recipe : polished_blackstone_bricks(recipe: Recipe)
+    < recipe = polished_blackstone_bricks
+    - recipe_polished_blackstone_bricks
+craft-recipe : dark_prismarine(recipe: Recipe)
+    < recipe = dark_prismarine
+    - recipe_dark_prismarine
+craft-recipe : blue_wool(recipe: Recipe)
+    < recipe = blue_wool
+    - recipe_blue_wool
+craft-recipe : daylight_detector(recipe: Recipe)
+    < recipe = daylight_detector
+    - recipe_daylight_detector
+craft-recipe : light_gray_glazed_terracotta(recipe: Recipe)
+    < recipe = light_gray_glazed_terracotta
+    - recipe_light_gray_glazed_terracotta
+craft-recipe : prismarine_brick_stairs(recipe: Recipe)
+    < recipe = prismarine_brick_stairs
+    - recipe_prismarine_brick_stairs
+craft-recipe : respawn_anchor(recipe: Recipe)
+    < recipe = respawn_anchor
+    - recipe_respawn_anchor
+craft-recipe : gray_glazed_terracotta(recipe: Recipe)
+    < recipe = gray_glazed_terracotta
+    - recipe_gray_glazed_terracotta
+craft-recipe : scaffolding(recipe: Recipe)
+    < recipe = scaffolding
+    - recipe_scaffolding
+craft-recipe : cooked_beef_from_campfire_cooking(recipe: Recipe)
+    < recipe = cooked_beef_from_campfire_cooking
+    - recipe_cooked_beef_from_campfire_cooking
+craft-recipe : pink_stained_glass_pane(recipe: Recipe)
+    < recipe = pink_stained_glass_pane
+    - recipe_pink_stained_glass_pane
+craft-recipe : lime_stained_glass_pane_from_glass_pane(recipe: Recipe)
+    < recipe = lime_stained_glass_pane_from_glass_pane
+    - recipe_lime_stained_glass_pane_from_glass_pane
+craft-recipe : red_nether_brick_stairs_from_red_nether_bricks_stonecutting(recipe: Recipe)
+    < recipe = red_nether_brick_stairs_from_red_nether_bricks_stonecutting
+    - recipe_red_nether_brick_stairs_from_red_nether_bricks_stonecutting
+craft-recipe : red_wool(recipe: Recipe)
+    < recipe = red_wool
+    - recipe_red_wool
+craft-recipe : prismarine_brick_slab(recipe: Recipe)
+    < recipe = prismarine_brick_slab
+    - recipe_prismarine_brick_slab
+craft-recipe : prismarine_stairs_from_prismarine_stonecutting(recipe: Recipe)
+    < recipe = prismarine_stairs_from_prismarine_stonecutting
+    - recipe_prismarine_stairs_from_prismarine_stonecutting
+craft-recipe : cobblestone_slab(recipe: Recipe)
+    < recipe = cobblestone_slab
+    - recipe_cobblestone_slab
+craft-recipe : polished_diorite_stairs_from_polished_diorite_stonecutting(recipe: Recipe)
+    < recipe = polished_diorite_stairs_from_polished_diorite_stonecutting
+    - recipe_polished_diorite_stairs_from_polished_diorite_stonecutting
+craft-recipe : cyan_bed(recipe: Recipe)
+    < recipe = cyan_bed
+    - recipe_cyan_bed
+craft-recipe : cobblestone_slab_from_cobblestone_stonecutting(recipe: Recipe)
+    < recipe = cobblestone_slab_from_cobblestone_stonecutting
+    - recipe_cobblestone_slab_from_cobblestone_stonecutting
+craft-recipe : sugar_from_honey_bottle(recipe: Recipe)
+    < recipe = sugar_from_honey_bottle
+    - recipe_sugar_from_honey_bottle
+craft-recipe : white_dye(recipe: Recipe)
+    < recipe = white_dye
+    - recipe_white_dye
+craft-recipe : cyan_dye(recipe: Recipe)
+    < recipe = cyan_dye
+    - recipe_cyan_dye
+craft-recipe : iron_chestplate(recipe: Recipe)
+    < recipe = iron_chestplate
+    - recipe_iron_chestplate
+craft-recipe : white_dye_from_lily_of_the_valley(recipe: Recipe)
+    < recipe = white_dye_from_lily_of_the_valley
+    - recipe_white_dye_from_lily_of_the_valley
+craft-recipe : gray_dye(recipe: Recipe)
+    < recipe = gray_dye
+    - recipe_gray_dye
+craft-recipe : brick_wall_from_bricks_stonecutting(recipe: Recipe)
+    < recipe = brick_wall_from_bricks_stonecutting
+    - recipe_brick_wall_from_bricks_stonecutting
+craft-recipe : end_stone_brick_slab_from_end_stone_brick_stonecutting(recipe: Recipe)
+    < recipe = end_stone_brick_slab_from_end_stone_brick_stonecutting
+    - recipe_end_stone_brick_slab_from_end_stone_brick_stonecutting
+craft-recipe : blue_terracotta(recipe: Recipe)
+    < recipe = blue_terracotta
+    - recipe_blue_terracotta
+craft-recipe : dried_kelp_from_smelting(recipe: Recipe)
+    < recipe = dried_kelp_from_smelting
+    - recipe_dried_kelp_from_smelting
+craft-recipe : jungle_door(recipe: Recipe)
+    < recipe = jungle_door
+    - recipe_jungle_door
+craft-recipe : brewing_stand(recipe: Recipe)
+    < recipe = brewing_stand
+    - recipe_brewing_stand
+craft-recipe : magenta_dye_from_lilac(recipe: Recipe)
+    < recipe = magenta_dye_from_lilac
+    - recipe_magenta_dye_from_lilac
+craft-recipe : spruce_boat(recipe: Recipe)
+    < recipe = spruce_boat
+    - recipe_spruce_boat
+craft-recipe : blue_stained_glass(recipe: Recipe)
+    < recipe = blue_stained_glass
+    - recipe_blue_stained_glass
+craft-recipe : polished_blackstone_wall(recipe: Recipe)
+    < recipe = polished_blackstone_wall
+    - recipe_polished_blackstone_wall
+craft-recipe : bookshelf(recipe: Recipe)
+    < recipe = bookshelf
+    - recipe_bookshelf
+craft-recipe : chiseled_polished_blackstone_from_polished_blackstone_stonecutting(recipe: Recipe)
+    < recipe = chiseled_polished_blackstone_from_polished_blackstone_stonecutting
+    - recipe_chiseled_polished_blackstone_from_polished_blackstone_stonecutting
+craft-recipe : lime_bed_from_white_bed(recipe: Recipe)
+    < recipe = lime_bed_from_white_bed
+    - recipe_lime_bed_from_white_bed
+craft-recipe : stone_bricks(recipe: Recipe)
+    < recipe = stone_bricks
+    - recipe_stone_bricks
+craft-recipe : packed_ice(recipe: Recipe)
+    < recipe = packed_ice
+    - recipe_packed_ice
+craft-recipe : andesite_wall_from_andesite_stonecutting(recipe: Recipe)
+    < recipe = andesite_wall_from_andesite_stonecutting
+    - recipe_andesite_wall_from_andesite_stonecutting
+craft-recipe : purple_carpet(recipe: Recipe)
+    < recipe = purple_carpet
+    - recipe_purple_carpet
+craft-recipe : spruce_sign(recipe: Recipe)
+    < recipe = spruce_sign
+    - recipe_spruce_sign
+craft-recipe : white_wool_from_string(recipe: Recipe)
+    < recipe = white_wool_from_string
+    - recipe_white_wool_from_string
+craft-recipe : smooth_red_sandstone_slab_from_smooth_red_sandstone_stonecutting(recipe: Recipe)
+    < recipe = smooth_red_sandstone_slab_from_smooth_red_sandstone_stonecutting
+    - recipe_smooth_red_sandstone_slab_from_smooth_red_sandstone_stonecutting
+craft-recipe : pink_wool(recipe: Recipe)
+    < recipe = pink_wool
+    - recipe_pink_wool
+craft-recipe : diamond_axe(recipe: Recipe)
+    < recipe = diamond_axe
+    - recipe_diamond_axe
+craft-recipe : sandstone_wall(recipe: Recipe)
+    < recipe = sandstone_wall
+    - recipe_sandstone_wall
+craft-recipe : crimson_fence_gate(recipe: Recipe)
+    < recipe = crimson_fence_gate
+    - recipe_crimson_fence_gate
+craft-recipe : bow(recipe: Recipe)
+    < recipe = bow
+    - recipe_bow
+craft-recipe : light_blue_concrete_powder(recipe: Recipe)
+    < recipe = light_blue_concrete_powder
+    - recipe_light_blue_concrete_powder
+craft-recipe : yellow_stained_glass_pane(recipe: Recipe)
+    < recipe = yellow_stained_glass_pane
+    - recipe_yellow_stained_glass_pane
+craft-recipe : wooden_hoe(recipe: Recipe)
+    < recipe = wooden_hoe
+    - recipe_wooden_hoe
+craft-recipe : cyan_banner(recipe: Recipe)
+    < recipe = cyan_banner
+    - recipe_cyan_banner
+craft-recipe : soul_lantern(recipe: Recipe)
+    < recipe = soul_lantern
+    - recipe_soul_lantern
+craft-recipe : polished_blackstone_brick_stairs_from_blackstone_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_brick_stairs_from_blackstone_stonecutting
+    - recipe_polished_blackstone_brick_stairs_from_blackstone_stonecutting
+craft-recipe : chiseled_nether_bricks_from_nether_bricks_stonecutting(recipe: Recipe)
+    < recipe = chiseled_nether_bricks_from_nether_bricks_stonecutting
+    - recipe_chiseled_nether_bricks_from_nether_bricks_stonecutting
+craft-recipe : dark_oak_stairs(recipe: Recipe)
+    < recipe = dark_oak_stairs
+    - recipe_dark_oak_stairs
+craft-recipe : polished_blackstone_brick_stairs_from_polished_blackstone_stonecutting(recipe: Recipe)
+    < recipe = polished_blackstone_brick_stairs_from_polished_blackstone_stonecutting
+    - recipe_polished_blackstone_brick_stairs_from_polished_blackstone_stonecutting
+craft-recipe : stone_brick_wall(recipe: Recipe)
+    < recipe = stone_brick_wall
+    - recipe_stone_brick_wall
+craft-recipe : dark_oak_wood(recipe: Recipe)
+    < recipe = dark_oak_wood
+    - recipe_dark_oak_wood
+craft-recipe : magenta_dye_from_allium(recipe: Recipe)
+    < recipe = magenta_dye_from_allium
+    - recipe_magenta_dye_from_allium
+craft-recipe : campfire(recipe: Recipe)
+    < recipe = campfire
+    - recipe_campfire
+craft-recipe : granite_stairs_from_granite_stonecutting(recipe: Recipe)
+    < recipe = granite_stairs_from_granite_stonecutting
+    - recipe_granite_stairs_from_granite_stonecutting
+craft-recipe : prismarine_brick_stairs_from_prismarine_stonecutting(recipe: Recipe)
+    < recipe = prismarine_brick_stairs_from_prismarine_stonecutting
+    - recipe_prismarine_brick_stairs_from_prismarine_stonecutting
+craft-recipe : stone_stairs_from_stone_stonecutting(recipe: Recipe)
+    < recipe = stone_stairs_from_stone_stonecutting
+    - recipe_stone_stairs_from_stone_stonecutting
+craft-recipe : heavy_weighted_pressure_plate(recipe: Recipe)
+    < recipe = heavy_weighted_pressure_plate
+    - recipe_heavy_weighted_pressure_plate
+craft-recipe : observer(recipe: Recipe)
+    < recipe = observer
+    - recipe_observer
+craft-recipe : magenta_dye_from_purple_and_pink(recipe: Recipe)
+    < recipe = magenta_dye_from_purple_and_pink
+    - recipe_magenta_dye_from_purple_and_pink
+craft-recipe : yellow_stained_glass(recipe: Recipe)
+    < recipe = yellow_stained_glass
+    - recipe_yellow_stained_glass
+craft-recipe : smooth_red_sandstone(recipe: Recipe)
+    < recipe = smooth_red_sandstone
+    - recipe_smooth_red_sandstone
+craft-recipe : oak_pressure_plate(recipe: Recipe)
+    < recipe = oak_pressure_plate
+    - recipe_oak_pressure_plate
+craft-recipe : gray_bed_from_white_bed(recipe: Recipe)
+    < recipe = gray_bed_from_white_bed
+    - recipe_gray_bed_from_white_bed
+craft-recipe : birch_planks(recipe: Recipe)
+    < recipe = birch_planks
+    - recipe_birch_planks
+craft-recipe : jungle_boat(recipe: Recipe)
+    < recipe = jungle_boat
+    - recipe_jungle_boat
+craft-recipe : stone_bricks_from_stone_stonecutting(recipe: Recipe)
+    < recipe = stone_bricks_from_stone_stonecutting
+    - recipe_stone_bricks_from_stone_stonecutting
+craft-recipe : golden_apple(recipe: Recipe)
+    < recipe = golden_apple
+    - recipe_golden_apple
+craft-recipe : note_block(recipe: Recipe)
+    < recipe = note_block
+    - recipe_note_block
+craft-recipe : polished_diorite_stairs(recipe: Recipe)
+    < recipe = polished_diorite_stairs
+    - recipe_polished_diorite_stairs
+craft-recipe : cyan_carpet_from_white_carpet(recipe: Recipe)
+    < recipe = cyan_carpet_from_white_carpet
+    - recipe_cyan_carpet_from_white_carpet
+craft-recipe : pink_stained_glass_pane_from_glass_pane(recipe: Recipe)
+    < recipe = pink_stained_glass_pane_from_glass_pane
+    - recipe_pink_stained_glass_pane_from_glass_pane
+craft-recipe : lime_wool(recipe: Recipe)
+    < recipe = lime_wool
+    - recipe_lime_wool
+craft-recipe : blackstone_stairs_from_blackstone_stonecutting(recipe: Recipe)
+    < recipe = blackstone_stairs_from_blackstone_stonecutting
+    - recipe_blackstone_stairs_from_blackstone_stonecutting
+craft-recipe : cracked_nether_bricks(recipe: Recipe)
+    < recipe = cracked_nether_bricks
+    - recipe_cracked_nether_bricks
+craft-recipe : black_stained_glass(recipe: Recipe)
+    < recipe = black_stained_glass
+    - recipe_black_stained_glass
+craft-recipe : bone_block(recipe: Recipe)
+    < recipe = bone_block
+    - recipe_bone_block
+craft-recipe : warped_stairs(recipe: Recipe)
+    < recipe = warped_stairs
+    - recipe_warped_stairs
+craft-recipe : sandstone_wall_from_sandstone_stonecutting(recipe: Recipe)
+    < recipe = sandstone_wall_from_sandstone_stonecutting
+    - recipe_sandstone_wall_from_sandstone_stonecutting
 
 
 action recipe_wooden_shovel

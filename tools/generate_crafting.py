@@ -5,6 +5,7 @@ from typing import Iterator, Literal, Self
 
 from pydantic import BaseModel
 
+from .helpers import as_dict, as_list, remember
 from .get_names import domain_item_name
 
 # RECIPE_DIR = path.join(path.dirname(__file__), "..", "minecraft", "data", "minecraft", "recipes")
@@ -191,28 +192,6 @@ class SmithingRecipe(Recipe):
                f"    => item_nr({domain_item_name(self.addition)}) -= 1\n" \
                f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
 
-# ================================
-STANDARD_ATTR = {
-    "recipe": "Recipe"
-}
-
-def generate_crafting_task(
-        recipe_names: list[str],
-        task_name: str = "craft",
-        params: dict[str, str] = STANDARD_ATTR) -> str:
-
-    param_str = ", ".join(f"{param}: {typ}" for param, typ in params.items())
-    arg_str = ", ".join(param for param in params.keys())
-
-    task_str = f"task {task_name}({param_str})\n"
-    method_strs = [
-        f"{task_name} : {recipe_name}({param_str})\n" \
-        f"    - recipe_{recipe_name}({arg_str})\n"
-        for recipe_name in recipe_names
-    ]
-
-    return task_str + "".join(method_strs)
-
 
 # ================================
 def read_recipe_file(filename: str) -> Recipe:
@@ -241,27 +220,64 @@ def read_recipe_file(filename: str) -> Recipe:
             print("Different type:", typ, "for recipe", recipe_name)
             return None
 
-def read_all_recipes() -> Iterator[Recipe]:
+@remember
+@as_list
+def all_recipes() -> Iterator[Recipe]:
     for filename in listdir(RECIPE_DIR):
         filepath = path.join(RECIPE_DIR, filename)
         rec = read_recipe_file(filepath)
         if rec is not None:
             yield rec
 
-def export_recipes_to_file(filename: str):
-    recipes = list(read_all_recipes())
+@remember
+@as_dict
+def recipe_result_items() -> Iterator[tuple[str, str]]:
+    for rec in all_recipes():
+        yield rec.recipe_name, rec.result_item
+
+
+# ================================
+RECIPE_CRAFTING_TASK_NAME = "craft-recipe"
+ITEM_CRAFTING_TASK_NAME = "craft-item"
+
+def generate_recipe_crafting_task(recipe_names: list[str]) -> str:
+    task_str = f"task {RECIPE_CRAFTING_TASK_NAME}(recipe: Recipe)\n"
+    method_strs = [
+        f"{RECIPE_CRAFTING_TASK_NAME} : {recipe_name}(recipe: Recipe)\n" \
+        f"    < recipe = {recipe_name}\n" \
+        f"    - recipe_{recipe_name}\n"
+        for recipe_name in recipe_names
+    ]
+
+    return task_str + "".join(method_strs)
+
+def generate_item_crafting_task() -> str:
+    task_str = f"task {ITEM_CRAFTING_TASK_NAME}(item: Item)\n"
+    method_str = f"{ITEM_CRAFTING_TASK_NAME} : craft(recipe: Recipe, item: Item)\n" \
+                 f"    < recipe_produces(recipe, item)\n" \
+                 f"    - {RECIPE_CRAFTING_TASK_NAME}(recipe)\n"
+
+    return task_str + method_str
+
+
+# ================================
+def recipes_to_file(filename: str):
+    recipes = list(all_recipes())
     recipe_names = [rec.recipe_name for rec in recipes]
-    task_str = generate_crafting_task(recipe_names)
+    recipe_task_str = generate_recipe_crafting_task(recipe_names)
+    item_task_str   = generate_item_crafting_task()
 
     with open(filename, "w") as file:
-        file.write(task_str)
+        file.write(item_task_str)
+        file.write("\n\n")
+        file.write(recipe_task_str)
         file.write("\n\n")
         for rec in recipes:
             file.write(rec.generate_action())
             file.write("\n")
 
 def main():
-    export_recipes_to_file("recipes.shit")
+    recipes_to_file("recipes.shit")
 
 if __name__ == "__main__":
     main()
