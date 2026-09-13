@@ -1,0 +1,6 @@
+
+problem minecraft : get_stick
+
+goal acquire-item(i_stick)
+
+# MACRO FACTS
