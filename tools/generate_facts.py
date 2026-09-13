@@ -1,6 +1,7 @@
 
 from typing import Iterator
 
+from .generate_crafting import recipe_result_items
 from .facts_json_reader import mined_becomes, killed_becomes
 from .get_names import block_to_item_name, get_block_names, get_item_names
 from .code_extraction import BLOCK_REGISTRY
@@ -305,7 +306,9 @@ def generate_leads_to() -> Iterator[str]:
     for portal, dim in PORTAL_LEADS_TO.items():
         yield f"leads_to({portal}, {dim})"
 
-# pred recipe_produces(recipe: Recipe, item: Item)
+def generate_recipe_produces() -> Iterator[str]:
+    for recipe, item in recipe_result_items().items():
+        yield f"recipe_produces({recipe}, {item})"
 
 
 # ================================
@@ -324,6 +327,7 @@ def generate() -> Iterator[str]:
     yield from generate_killed_becomes()
     yield from generate_findable_structure_in_dim()
     yield from generate_leads_to()
+    yield from generate_recipe_produces()
     
 
 def count_generated_facts() -> int:
@@ -333,6 +337,7 @@ def count_generated_facts() -> int:
     return i
 
 def domain_facts_to_file(path: str = "domain_facts.txt"):
+    sorted_facts = sorted(generate())
     with open(path, "w", encoding="utf-8") as file:
-        for fact in generate():
+        for fact in sorted_facts:
             file.write(f"{fact}\n")

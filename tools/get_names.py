@@ -19,6 +19,9 @@ def domain_block_name(mc_block_name: str) -> str:
 def domain_entity_name(mc_entity_name: str) -> str:
     it = mc_entity_name.removeprefix("minecraft:")
     return f"e_{it}"
+def domain_recipe_name(mc_recipe_name: str) -> str:
+    it = mc_recipe_name.removeprefix("minecraft:")
+    return f"r_{it}"
 def block_to_item_name(block_name: str) -> str:
     """Get the corresponding item name for a block name"""
     assert block_name.startswith("b_")

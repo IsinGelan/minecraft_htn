@@ -6,7 +6,7 @@ from typing import Iterator, Literal, Self
 from pydantic import BaseModel
 
 from .helpers import as_dict, as_list, remember
-from .get_names import domain_item_name
+from .get_names import domain_item_name, domain_recipe_name
 
 # RECIPE_DIR = path.join(path.dirname(__file__), "..", "minecraft", "data", "minecraft", "recipes")
 RECIPE_DIR = "minecraft/data/minecraft/recipes/"
@@ -217,7 +217,7 @@ def read_recipe_file(filename: str) -> Recipe:
         case "minecraft:smithing":
             return SmithingRecipe.from_dict(dic, recipe_name)  # TODO: Implement smithing recipe
         case _:
-            print("Different type:", typ, "for recipe", recipe_name)
+            print("Unhandled recipe type:", typ, "for recipe", recipe_name)
             return None
 
 @remember
@@ -229,11 +229,14 @@ def all_recipes() -> Iterator[Recipe]:
         if rec is not None:
             yield rec
 
+def get_recipe_names() -> list[str]:
+    return [rec.recipe_name for rec in all_recipes()]
+
 @remember
 @as_dict
 def recipe_result_items() -> Iterator[tuple[str, str]]:
     for rec in all_recipes():
-        yield rec.recipe_name, rec.result_item
+        yield domain_recipe_name(rec.recipe_name), domain_item_name(rec.result_item)
 
 
 # ================================
@@ -244,7 +247,7 @@ def generate_recipe_crafting_task(recipe_names: list[str]) -> str:
     task_str = f"task {RECIPE_CRAFTING_TASK_NAME}(recipe: Recipe)\n"
     method_strs = [
         f"{RECIPE_CRAFTING_TASK_NAME} : {recipe_name}(recipe: Recipe)\n" \
-        f"    < recipe = {recipe_name}\n" \
+        f"    < recipe = {domain_recipe_name(recipe_name)}\n" \
         f"    - recipe_{recipe_name}\n"
         for recipe_name in recipe_names
     ]
