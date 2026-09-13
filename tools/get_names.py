@@ -7,6 +7,8 @@ from tools.helpers import as_list, remember
 # ================================
 TRANSLATION_FILEPATH = "minecraft/assets/minecraft/lang/en_us.json"
 
+JAVA_ENTITY_TYPES_PATH = "minecraft_code/EntityType.java"
+
 # ================================
 def domain_item_name(mc_item_name: str) -> str:
     it = mc_item_name.removeprefix("minecraft:")
@@ -14,6 +16,9 @@ def domain_item_name(mc_item_name: str) -> str:
 def domain_block_name(mc_block_name: str) -> str:
     it = mc_block_name.removeprefix("minecraft:")
     return f"b_{it}"
+def domain_entity_name(mc_entity_name: str) -> str:
+    it = mc_entity_name.removeprefix("minecraft:")
+    return f"e_{it}"
 def block_to_item_name(block_name: str) -> str:
     """Get the corresponding item name for a block name"""
     assert block_name.startswith("b_")
@@ -57,3 +62,18 @@ def get_item_names() -> list[str]:
     block_item_names = {block_to_item_name(block) for block in get_block_names()}
     as_set = set(get_item_item_names()) | block_item_names
     return list(as_set)
+
+# ================================
+REGISTRY_CALL = r'([A-Z_]+) = register\(\n?\s+("[^"]+")'
+
+@remember
+@as_list
+def get_entity_names() -> Iterator[str]:
+    """Get all entity names that are registered in EntityType.java"""
+    with open(JAVA_ENTITY_TYPES_PATH, "r", encoding="utf-8") as f:
+        content = f.read()
+    import re
+    for match in re.finditer(REGISTRY_CALL, content):
+        const_name, mc_entity_name = match.groups()
+        mc_entity_name = mc_entity_name.strip('"')
+        yield domain_entity_name(mc_entity_name)

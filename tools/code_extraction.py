@@ -1,19 +1,28 @@
 
 import javalang as jl
-from javalang.tree import ClassCreator, FieldDeclaration, ClassDeclaration, MethodInvocation, Expression, MemberReference
+from javalang.tree import (
+    ClassCreator,
+    FieldDeclaration,
+    ClassDeclaration,
+    MethodDeclaration,
+    MethodInvocation,
+    Expression,
+    MemberReference)
+from javalang.ast import Node as ASTNode
 
 from .helpers import find
 
 # ================================
 JAVA_BLOCKS_PATH = "minecraft_code/Blocks.java"
-
 BlockEntry = tuple[str, str, str]  # (const_name, snake_name, material?)
 BLOCK_REGISTRY: dict[str, BlockEntry] = {}
 
 with open(JAVA_BLOCKS_PATH, "r", encoding="utf-8") as f:
     file_tree = jl.parse.parse(f.read())
-    _, cla = next(file_tree.filter(ClassDeclaration))
-    JAVA_BLOCKS_CLASS: ClassDeclaration = cla
+_, cla = next(file_tree.filter(ClassDeclaration))
+JAVA_BLOCKS_CLASS: ClassDeclaration = cla
+
+# JAVA_BIOMES_PATH = "minecraft_code/VanillaBiomes.java"
 
 # ================================
 def properties_call(expr: Expression) -> bool:
@@ -77,4 +86,5 @@ def populate_block_registry() -> None:
         fields = get_block_fields(field)
         BLOCK_REGISTRY[fields[0]] = fields
 
+# ================================
 populate_block_registry()
