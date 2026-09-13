@@ -19,6 +19,27 @@ def into_bins[T, Hashable](iter: Iterable[T], bin_key: Callable[[T], Hashable]) 
 
 
 # ================================
+def split_into_lines(text: str, line_length: int) -> Iterator[str]:
+    """yields line and starts new one as soon as the line length is exceeded.
+    Splits on spaces"""
+    text_len = len(text)
+
+    line_start_index = 0
+    line_end_index = 0
+    text_index = 0
+    while text_index < text_len - 1:
+        next_space_index = text.find(" ", line_end_index)
+        if next_space_index == -1:
+            next_space_index = text_len
+        text_index = line_end_index = next_space_index + 1
+        if line_end_index - line_start_index > line_length:
+            yield text[line_start_index:line_end_index-1]
+            line_start_index = line_end_index
+    if line_start_index >= text_len:
+        return
+    yield text[line_start_index:next_space_index]
+
+# ================================
 # Decorators
 def as_list[T](fun: Callable[..., Iterable[T]]) -> Callable[..., list[T]]:
     def wrapper(*args, **kwargs):

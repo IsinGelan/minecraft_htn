@@ -212,6 +212,12 @@ ENTITY_DIMENSIONS = {
     "e_player": [],
     "e_fishing_bobber": [],
 }
+
+
+# ================================
+def get_structure_names() -> list[str]:
+    return list(STRUCTURE_DIMENSIONS.keys())
+
 # ================================
 # pred findable_block_in_dim(btype: Block, dim: Dim)
 def generate_findable_block_in_dim() -> Iterator[str]:

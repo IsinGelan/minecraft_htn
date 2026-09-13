@@ -230,7 +230,7 @@ def all_recipes() -> Iterator[Recipe]:
             yield rec
 
 def get_recipe_names() -> list[str]:
-    return [rec.recipe_name for rec in all_recipes()]
+    return [domain_recipe_name(rec.recipe_name) for rec in all_recipes()]
 
 @remember
 @as_dict
