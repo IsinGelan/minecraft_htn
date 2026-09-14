@@ -1,8 +1,7 @@
-
-from collections.abc import Callable
+ 
 import json
 from os import listdir, path
-from typing import Iterator
+from typing import Iterator, Callable
 
 from .get_names import domain_block_name, domain_entity_name, domain_item_name
 

@@ -21,3 +21,7 @@ cd build
 cmake ../src
 make -j
 cd ../../..
+
+pip install -r shitlang/requirements.txt
+
+pip install -r requirements.txt
