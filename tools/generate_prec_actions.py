@@ -1,8 +1,8 @@
 
 from typing import Iterator
 
-from shit_transpiler.helpers import func_and
-from shit_transpiler.shit_objs import (
+from shitlang.helpers import func_and
+from shitlang.shit_objs import (
     Action,
     DomainFile,
     IdentifierParam,
@@ -14,7 +14,7 @@ from shit_transpiler.shit_objs import (
     Task,
     TaskCall,
     TopLevelComment)
-from shit_transpiler.paths import filter_parent_is, find_of_type
+from shitlang.paths import filter_parent_is, find_of_type
 
 # ================================
 OPEN_PRECONDITION_PREDICATES = {

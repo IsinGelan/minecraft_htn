@@ -1,7 +1,7 @@
 
 import argparse
 
-from shit_transpiler import transpile_domain, transpile_problem
+from shitlang import transpile_domain, transpile_problem
 
 from tools.generate_crafting import get_recipe_names
 from tools.generate_prec_actions import domain_add_prec_action_calls, domain_add_prec_actions
