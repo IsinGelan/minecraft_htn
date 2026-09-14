@@ -59,14 +59,18 @@ PROBLEM_MACRO_FUNS = [
 
 # ================================
 ARGPARSER = argparse.ArgumentParser(prog="Minecraft SHIT-Domain Transpiler", description="Transpile MC domain and problem files to HDDL")
-ARGPARSER.add_argument('--domain', '-d', type=str, default="",
+ARGPARSER.add_argument('--domain', '-d', type=str,
                     help='Path to the domain file')
-ARGPARSER.add_argument('--problem', '-p', type=str, default="",
+ARGPARSER.add_argument('--problem', '-p', type=str,
                     help='Path to the problem file')
 ARGPARSER.add_argument('--show-macro-result', '-m', action='store_true',
                     help='Show the intermediate result with applied macros')
+ARGPARSER.add_argument('--out_domain', '-D', type=str, default="temp/domain.hddl",
+                    help='Output path for the transpiled domain file')
+ARGPARSER.add_argument('--out_problem', '-P', type=str, default="temp/problem.hddl",
+                    help='Output path for the transpiled problem file')
 
-def handle_domain(domain_path: str, show_macro_result: bool):
+def handle_domain(domain_path: str, show_macro_result: bool, res_domain_path: str = "temp/domain.hddl"):
     print("\nTranspiling Domain...")
     print("---------------------")
     domain = transpile_domain(
@@ -77,9 +81,9 @@ def handle_domain(domain_path: str, show_macro_result: bool):
     domain_add_prec_actions(domain)
     domain_add_prec_action_calls(domain)
 
-    domain.write_to_file("domain.hddl")
+    domain.write_to_file(res_domain_path)
 
-def handle_problem(problem_path: str, show_macro_result: bool):
+def handle_problem(problem_path: str, show_macro_result: bool, res_problem_path: str = "temp/problem.hddl"):
     print("\nTranspiling Problem...")
     print("----------------------")
     problem = transpile_problem(
@@ -87,7 +91,7 @@ def handle_problem(problem_path: str, show_macro_result: bool):
         macro_funs=PROBLEM_MACRO_FUNS,
         show_macro_result=show_macro_result)
     
-    problem.write_to_file("problem.hddl")
+    problem.write_to_file(res_problem_path)
 
 def main():
     args = ARGPARSER.parse_args()
@@ -98,10 +102,10 @@ def main():
         exit(1)
 
     if args.domain:
-        handle_domain(args.domain, macros)
+        handle_domain(args.domain, macros, args.out_domain)
 
     if args.problem:
-        handle_problem(args.problem, macros)
+        handle_problem(args.problem, macros, args.out_problem)
 
 
 if __name__ == "__main__":
