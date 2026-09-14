@@ -1,0 +1,12 @@
+[submodule "shitlang"]
+	path = shitlang
+	url = https://github.com/IsinGelan/shitlang.git
+[submodule "panda/pandaPIgrounder"]
+	path = panda/pandaPIgrounder
+	url = https://github.com/panda-planner-dev/pandaPIgrounder
+[submodule "panda/pandaPIparser"]
+	path = panda/pandaPIparser
+	url = https://github.com/panda-planner-dev/pandaPIparser
+[submodule "panda/pandaPIengine"]
+	path = panda/pandaPIengine
+	url = https://github.com/panda-planner-dev/pandaPIengine
