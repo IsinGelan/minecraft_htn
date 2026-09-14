@@ -18,10 +18,10 @@ from shit_transpiler.paths import filter_parent_is, find_of_type
 
 # ================================
 OPEN_PRECONDITION_PREDICATES = {
-    "near_block": None,#"reach-block",
-    "near_entity": (),#"reach-entity",
+    # "near_block": None,#"reach-block",
+    # "near_entity": (),#"reach-entity",
     "near_structure": (),#"reach-structure",
-    "near_container_containing": (),#"reach-block",
+    # "near_container_containing": (),#"reach-block",
     "has_item": (),#"acquire-item",
 }
 

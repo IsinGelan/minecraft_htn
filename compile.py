@@ -1,10 +1,12 @@
 
+import argparse
+
 from shit_transpiler import transpile_domain, transpile_problem
 
 from tools.generate_crafting import get_recipe_names
 from tools.generate_prec_actions import domain_add_prec_action_calls, domain_add_prec_actions
 from tools.get_names import get_block_names, get_entity_names, get_item_names
-from tools.generate_facts import generate, get_structure_names
+from tools.generate_facts import PICKAXES, generate, get_structure_names
 from tools.helpers import split_into_lines
 
 MACRO_CONSTS_MARKER = "# MACRO CONSTS"
@@ -28,7 +30,7 @@ def typed_declarations(typename: str, names: list[str]) -> str:
 
 def add_consts(code: str) -> str:
     blocks_decls = typed_declarations(BLOCK_TYPENAME, get_block_names())
-    items_decls = typed_declarations(ITEM_TYPENAME, get_item_names())
+    items_decls = typed_declarations(ITEM_TYPENAME, set(get_item_names()) - set(PICKAXES))
     entity_decls = typed_declarations(ENTITY_TYPENAME, get_entity_names())
     recipe_decls = typed_declarations(RECIPE_TYPENAME, get_recipe_names())
     structure_decls = typed_declarations(STRUCTURE_TYPENAME, get_structure_names())
@@ -56,22 +58,51 @@ PROBLEM_MACRO_FUNS = [
 ]
 
 # ================================
-def main():
+ARGPARSER = argparse.ArgumentParser(prog="Minecraft SHIT-Domain Transpiler", description="Transpile MC domain and problem files to HDDL")
+ARGPARSER.add_argument('--domain', '-d', type=str, default="",
+                    help='Path to the domain file')
+ARGPARSER.add_argument('--problem', '-p', type=str, default="",
+                    help='Path to the problem file')
+ARGPARSER.add_argument('--show-macro-result', '-m', action='store_true',
+                    help='Show the intermediate result with applied macros')
+
+def handle_domain(domain_path: str, show_macro_result: bool):
+    print("\nTranspiling Domain...")
+    print("---------------------")
     domain = transpile_domain(
-        "domain.shit",
+        domain_path,
         macro_funs=DOMAIN_MACRO_FUNS,
-        show_macro_result=True)
+        show_macro_result=show_macro_result)
     
     domain_add_prec_actions(domain)
     domain_add_prec_action_calls(domain)
 
-    problem = transpile_problem(
-        "idea_problem.shit",
-        macro_funs=PROBLEM_MACRO_FUNS,
-        show_macro_result=False)
-    
     domain.write_to_file("domain.hddl")
+
+def handle_problem(problem_path: str, show_macro_result: bool):
+    print("\nTranspiling Problem...")
+    print("----------------------")
+    problem = transpile_problem(
+        problem_path,
+        macro_funs=PROBLEM_MACRO_FUNS,
+        show_macro_result=show_macro_result)
+    
     problem.write_to_file("problem.hddl")
+
+def main():
+    args = ARGPARSER.parse_args()
+    macros = args.show_macro_result
+
+    if not args.domain and not args.problem:
+        ARGPARSER.print_help()
+        exit(1)
+
+    if args.domain:
+        handle_domain(args.domain, macros)
+
+    if args.problem:
+        handle_problem(args.problem, macros)
+
 
 if __name__ == "__main__":
     main()

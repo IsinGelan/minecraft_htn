@@ -51,13 +51,13 @@ action dono
 
 ## Blocks
 
-task reach_block(btype: Block)
+task reach-block(btype: Block)
 
-reach_block : find(btype: Block)
+reach-block : find(btype: Block)
     - find-block(btype)
-reach_block : place(btype: Block, item: Item)
+reach-block : place(btype: Block, item: Item)
     - place-block(btype, item)
-reach_block : craft-n-place(btype: Block, item: Item)
+reach-block : craft-n-place(btype: Block, item: Item)
     - craft(item)
     - place-block(btype, item)
 
@@ -133,8 +133,14 @@ action container-take(ctype: Container, item: Item)
 
 ## Entity
 
-action kill-entity(entity: Entity, res_item: Item)
-    < killed_becomes(entity, res_item)
+task kill-entity(entity: Entity)
+
+kill-entity : kill(entity: Entity)
+    - find-entity(entity)
+    - kill-entity-directly(entity)
+
+action kill-entity-directly(entity: Entity)
+    < near_entity(entity)
 
 action reap-entity(entity: Entity, tool: Tool, res_item: Item)
     < reaped_entity_becomes(entity, res_item)
@@ -145,6 +151,7 @@ task find-entity(etype: Entity)
 
 find-entity : find(etype: Entity, dim: Dim)
     < findable_entity_in_dim(etype, dim)
+    - goto-dim(dim)
     - find-entity-in-dim(etype, dim)
 
 action find-entity-in-dim(etype: Entity, dim: Dim)
@@ -163,22 +170,22 @@ goto-dim : dono(dim: Dim)
 goto-dim : overworld-nether(dim: Dim)
     < in_dim(overworld)
     < dim = nether
-    - reach-building(nether_portal_overworld)
+    - reach-structure(nether_portal_overworld)
     - enter-portal(nether_portal_overworld)
 goto-dim : overworld-end(dim: Dim)
     < in_dim(overworld)
     < dim = end
-    - reach-building(lit_end_portal)
+    - reach-structure(lit_end_portal)
     - enter-portal(lit_end_portal)
 goto-dim : nether-overworld(dim: Dim)
     < in_dim(nether)
     < dim = overworld
-    - reach-building(nether_portal_nether)
+    - reach-structure(nether_portal_nether)
     - enter-portal(nether_portal_nether)
 goto-dim : end-overworld(dim: Dim)
     < in_dim(end)
     < dim = overworld
-    - reach-building(lit_center_portal)
+    - reach-structure(lit_center_portal)
     - enter-portal(lit_center_portal)
 
 task enter-portal(portal_type: Portal)
@@ -194,17 +201,20 @@ action enter-portal-dim(portal_type: Portal, dim: Dim)
 
 ## Structures
 
-task reach-building(b: Building)
+task reach-structure(s: Structure)
 
-reach-building : revisit(b: Building)
-    - goto-memorized-structure(b)
+reach-structure : revisit(s: Structure)
+    - goto-memorized-structure(s)
 
-reach-building : build(b: Building)
-    - build-building(b)
+reach-structure : build(s: Building)
+    - build-building(s)
 
-action goto-memorized-structure(b: Building)
-    < structure_memorized(b)
-    => near_structure(b)
+reach-structure : find(s: Structure)
+    - find-structure(s)
+
+action goto-memorized-structure(s: Structure)
+    < structure_memorized(s)
+    => near_structure(s)
 
 task build-building(b: Building)
 
@@ -240,7 +250,9 @@ action build-lit-end-portal
 
 task find-structure(s: Structure)
 
-task find-structure-in-dim(s: Structure, dim: Dim)
+action find-structure-in-dim(s: Structure, dim: Dim)
+    < in_dim(dim)
+    => near_structure(s)
 
 find-structure : find(s: Structure, dim: Dim)
     < findable_structure_in_dim(s, dim)
@@ -270,7 +282,8 @@ acquire-item : container-take(item: Item, ctype: Container)
     - container-take(ctype, item)
 
 acquire-item : kill-entity(item: Item, entity: Entity)
-    - kill-entity(entity, item)
+    < killed_becomes(entity, item)
+    - kill-entity(entity)
 
 acquire-item : reap-entity(item: Item, tool: Tool, entity: Entity)
     - reap-entity(entity, tool, item)
