@@ -213,6 +213,11 @@ ENTITY_DIMENSIONS = {
     "e_fishing_bobber": [],
 }
 
+# extra facts for domain objects defined manually, not generated from the assets
+EXTRA_FACTS = """
+findable_structure_in_dim(end_portal, overworld)
+findable_structure_in_dim(center_portal, end)
+"""
 
 # ================================
 def get_structure_names() -> list[str]:
@@ -334,7 +339,7 @@ def generate() -> Iterator[str]:
     yield from generate_findable_structure_in_dim()
     yield from generate_leads_to()
     yield from generate_recipe_produces()
-    
+    yield from EXTRA_FACTS.strip().splitlines()
 
 def count_generated_facts() -> int:
     i = 0

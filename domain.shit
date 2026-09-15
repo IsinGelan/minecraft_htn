@@ -139,6 +139,8 @@ kill-entity : kill(entity: Entity)
     - find-entity(entity)
     - kill-entity-directly(entity)
 
+## TODO: implement drops
+## TODO: e_ender_dragon: lit_center_portal activates
 action kill-entity-directly(entity: Entity)
     < near_entity(entity)
 
@@ -246,6 +248,10 @@ action build-lit-end-portal
     < has_item(i_eye_of_ender)
     => near_structure(lit_end_portal)
     => structure_memorized(lit_end_portal)
+
+build-building : lit_center_portal(b: Building)
+    < b = lit_center_portal
+    - kill-entity(e_ender_dragon)
 
 
 task find-structure(s: Structure)
