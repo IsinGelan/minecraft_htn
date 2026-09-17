@@ -3,14 +3,15 @@ import argparse
 
 from shitlang import transpile_domain, transpile_problem
 
-from tools.generate_crafting import get_recipe_names
-from tools.generate_prec_actions import domain_add_prec_action_calls, domain_add_prec_actions
+from tools.generate_crafting import get_recipe_names, recipes_string
+from tools.generate_prec_actions import domain_do_precondition_replacement
 from tools.get_names import get_block_names, get_entity_names, get_item_names
 from tools.generate_facts import PICKAXES, generate, get_structure_names
 from tools.helpers import split_into_lines
 
 MACRO_CONSTS_MARKER = "# MACRO CONSTS"
 MACRO_FACTS_MARKER = "# MACRO FACTS"
+MACRO_CRAFTING_MARKER = "# MACRO CRAFTING"
 BLOCK_TYPENAME = "Block"
 ITEM_TYPENAME = "Item"
 ENTITY_TYPENAME = "Entity"
@@ -45,6 +46,10 @@ def add_consts(code: str) -> str:
     
     return code.replace(MACRO_CONSTS_MARKER, const_decls)
 
+def add_crafting_recipes(code: str) -> str:
+    recipes_str = recipes_string(numbered=False)
+    return code.replace(MACRO_CRAFTING_MARKER, recipes_str)
+
 def add_domain_facts(code: str) -> str:
     facts_string = "\n".join(generate())
     return code.replace(MACRO_FACTS_MARKER, facts_string)
@@ -52,6 +57,7 @@ def add_domain_facts(code: str) -> str:
 
 DOMAIN_MACRO_FUNS = [
     add_consts,
+    add_crafting_recipes,
 ]
 PROBLEM_MACRO_FUNS = [
     add_domain_facts,
@@ -78,8 +84,7 @@ def handle_domain(domain_path: str, show_macro_result: bool, res_domain_path: st
         macro_funs=DOMAIN_MACRO_FUNS,
         show_macro_result=show_macro_result)
     
-    domain_add_prec_actions(domain)
-    domain_add_prec_action_calls(domain)
+    domain_do_precondition_replacement(domain)
 
     domain.write_to_file(res_domain_path)
 

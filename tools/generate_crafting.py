@@ -25,7 +25,10 @@ class Recipe(BaseModel):
     @classmethod
     def from_dict(cls, dic: dict, name: str) -> Self:
         ...
-    def generate_action(self):
+    def generate_action_numbered(self):
+        ...
+    def generate_action_unnumbered(self):
+        print(f"Fallback for {self.recipe_name}")
         ...
 
 
@@ -40,12 +43,17 @@ class StonecuttingRecipe(Recipe):
             result_count=dic.get("count", 1),
             ingredient=dic["ingredient"]["item"]
         )
-    def generate_action(self):
+    def generate_action_numbered(self):
         return f"action recipe_{self.recipe_name}\n" \
                 "    < near_block(b_stonecutter)\n" \
                f"    < item_nr({domain_item_name(self.ingredient)}) >= 1\n" \
                f"    => item_nr({domain_item_name(self.ingredient)}) -= 1\n" \
                f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
+    def generate_action_unnumbered(self):
+        return f"action recipe_{self.recipe_name}\n" \
+                "    < near_block(b_stonecutter)\n" \
+               f"    < has_item({domain_item_name(self.ingredient)})\n" \
+               f"    => has_item({domain_item_name(self.result_item)})\n"
                 
 
 def item_tag_desc(item: dict | list) -> str:
@@ -108,7 +116,7 @@ class CraftingRecipe(Recipe):
             ingredients=ingredients,
             pattern=pat
         )
-    def generate_action(self):
+    def generate_action_numbered(self):
         block_prec = "    < near_block(b_crafting_table)\n" if self.large_interface else ""
         item_prec = "".join(
             f"    < item_nr({domain_item_name(ing)}) >= {count}\n"
@@ -123,6 +131,16 @@ class CraftingRecipe(Recipe):
                f"{item_prec}" \
                f"{item_post}" \
                f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
+    def generate_action_unnumbered(self):
+        block_prec = "    < near_block(b_crafting_table)\n" if self.large_interface else ""
+        item_prec = "".join(
+            f"    < has_item({domain_item_name(ing)})\n"
+            for ing, count in self.ingredients
+            )
+        return f"action recipe_{self.recipe_name}\n" \
+               f"{block_prec}" \
+               f"{item_prec}" \
+               f"    => has_item({domain_item_name(self.result_item)})\n"
 
 class CampfireRecipe(Recipe):
     ingredient: str
@@ -135,12 +153,17 @@ class CampfireRecipe(Recipe):
             result_count=dic.get("count", 1),
             ingredient=dic["ingredient"]["item"]
         )
-    def generate_action(self):
+    def generate_action_numbered(self):
         return f"action recipe_{self.recipe_name}\n" \
                 "    < near_block(b_campfire)\n" \
                f"    < item_nr({domain_item_name(self.ingredient)}) >= 1\n" \
                f"    => item_nr({domain_item_name(self.ingredient)}) -= 1\n" \
                f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
+    def generate_action_unnumbered(self):
+        return f"action recipe_{self.recipe_name}\n" \
+                "    < near_block(b_campfire)\n" \
+               f"    < has_item({domain_item_name(self.ingredient)})\n" \
+               f"    => has_item({domain_item_name(self.result_item)})\n"
 
 class FurnaceRecipe(Recipe):
     furnace_type: FurnaceType
@@ -159,7 +182,7 @@ class FurnaceRecipe(Recipe):
             furnace_type=dic["type"].removeprefix("minecraft:"),
             ingredient=item_tag_desc(dic["ingredient"])
         )
-    def generate_action(self):
+    def generate_action_numbered(self):
         block_name = {
             "smelting": "b_furnace",
             "smoking": "b_smoker",
@@ -169,6 +192,15 @@ class FurnaceRecipe(Recipe):
                f"    < item_nr({domain_item_name(self.ingredient)}) >= 1\n" \
                f"    => item_nr({domain_item_name(self.ingredient)}) -= 1\n" \
                f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
+    def generate_action_unnumbered(self):
+        block_name = {
+            "smelting": "b_furnace",
+            "smoking": "b_smoker",
+            "blasting": "b_blast_furnace"}
+        return f"action recipe_{self.recipe_name}\n" \
+               f"    < near_block({block_name[self.furnace_type]})\n" \
+               f"    < has_item({domain_item_name(self.ingredient)})\n" \
+               f"    => has_item({domain_item_name(self.result_item)})\n"
 
 class SmithingRecipe(Recipe):
     base: str
@@ -183,7 +215,7 @@ class SmithingRecipe(Recipe):
             base=item_tag_desc(dic["base"]),
             addition=item_tag_desc(dic["addition"])
         )
-    def generate_action(self):
+    def generate_action_numbered(self):
         return f"action recipe_{self.recipe_name}\n" \
                f"    < near_block(b_smithing_table)\n" \
                f"    < item_nr({domain_item_name(self.base)}) >= 1\n" \
@@ -191,6 +223,12 @@ class SmithingRecipe(Recipe):
                f"    => item_nr({domain_item_name(self.base)}) -= 1\n" \
                f"    => item_nr({domain_item_name(self.addition)}) -= 1\n" \
                f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
+    def generate_action_unnumbered(self):
+        return f"action recipe_{self.recipe_name}\n" \
+               f"    < near_block(b_smithing_table)\n" \
+               f"    < has_item({domain_item_name(self.base)})\n" \
+               f"    < has_item({domain_item_name(self.addition)})\n" \
+               f"    => has_item({domain_item_name(self.result_item)})\n"
 
 
 # ================================
@@ -215,7 +253,7 @@ def read_recipe_file(filename: str) -> Recipe:
         case "minecraft:blasting":
             return FurnaceRecipe.from_dict(dic, recipe_name)
         case "minecraft:smithing":
-            return SmithingRecipe.from_dict(dic, recipe_name)  # TODO: Implement smithing recipe
+            return SmithingRecipe.from_dict(dic, recipe_name)
         case _:
             print("Unhandled recipe type:", typ, "for recipe", recipe_name)
             return None
@@ -264,23 +302,27 @@ def generate_item_crafting_task() -> str:
 
 
 # ================================
-def recipes_to_file(filename: str):
+def recipes_string(*, numbered: bool) -> str:
+    recipe_fun = lambda rec: rec.generate_action_numbered() if numbered else rec.generate_action_unnumbered()
     recipes = list(all_recipes())
-    recipe_names = [rec.recipe_name for rec in recipes]
+    # TODO: Deal with item tags
+    tagless_recipes = [rec for rec in recipes
+                       if "#" not in rec.generate_action_unnumbered()]
+
+    recipe_names = [rec.recipe_name for rec in tagless_recipes]
     recipe_task_str = generate_recipe_crafting_task(recipe_names)
     item_task_str   = generate_item_crafting_task()
+    actions_str = "\n".join(
+        recipe_fun(rec) for rec in tagless_recipes
+    )
+    return item_task_str + "\n\n" + recipe_task_str + "\n\n" + actions_str + "\n"
 
+def recipes_to_file(filename: str, *, numbered: bool):
     with open(filename, "w") as file:
-        file.write(item_task_str)
-        file.write("\n\n")
-        file.write(recipe_task_str)
-        file.write("\n\n")
-        for rec in recipes:
-            file.write(rec.generate_action())
-            file.write("\n")
+        file.write(recipes_string(numbered=numbered))
 
 def main():
-    recipes_to_file("recipes.shit")
+    recipes_to_file("recipes.shit", numbered=False)
 
 if __name__ == "__main__":
     main()

@@ -16,6 +16,7 @@ const nether end overworld : Dim
 const nether_portal_nether nether_portal_overworld : Portal
 const end_portal lit_end_portal center_portal lit_center_portal : Portal
 const i_eye_of_ender i_obsidian : Item
+const i_air: Tool # bare hand
 const i_wooden_pickaxe i_stone_pickaxe i_iron_pickaxe : Tool
 const i_diamond_pickaxe i_gold_pickaxe i_netherite_pickaxe : Tool
 const tool_tier_0 tool_tier_1 tool_tier_2 tool_tier_3 : ToolTier
@@ -58,12 +59,15 @@ reach-block : find(btype: Block)
 reach-block : place(btype: Block, item: Item)
     - place-block(btype, item)
 reach-block : craft-n-place(btype: Block, item: Item)
-    - craft(item)
+    - craft-item(item)
     - place-block(btype, item)
 
 
 task find-block(btype: Block)
 
+find-block : dono(btype: Block)
+    < near_block(btype)
+    - dono
 find-block : find(btype: Block, dim: Dim)
     < findable_block_in_dim(btype, dim)
     - goto-dim(dim)
@@ -81,21 +85,21 @@ mine-block : no-pickaxe(btype: Block, tool: Tool, res_item: Item)
     < ~mining_requires_tier(btype, tool_tier_1)
     < ~mining_requires_tier(btype, tool_tier_0)
     - mine-block-directly(btype, tool, res_item)
-mine-block : pickaxe-3(btype: Block, tool: Tool, res_item: Item)
-    < can_mine_tier(tool, tool_tier_3)
-    < mining_requires_tier(btype, tool_tier_3)
-    - mine-block-directly(btype, tool, res_item)
-mine-block : pickaxe-2(btype: Block, tool: Tool, res_item: Item)
-    < can_mine_tier(tool, tool_tier_2)
-    < mining_requires_tier(btype, tool_tier_2)
+mine-block : pickaxe-0(btype: Block, tool: Tool, res_item: Item)
+    < can_mine_tier(tool, tool_tier_0)
+    < mining_requires_tier(btype, tool_tier_0)
     - mine-block-directly(btype, tool, res_item)
 mine-block : pickaxe-1(btype: Block, tool: Tool, res_item: Item)
     < can_mine_tier(tool, tool_tier_1)
     < mining_requires_tier(btype, tool_tier_1)
     - mine-block-directly(btype, tool, res_item)
-mine-block : pickaxe-0(btype: Block, tool: Tool, res_item: Item)
-    < can_mine_tier(tool, tool_tier_0)
-    < mining_requires_tier(btype, tool_tier_0)
+mine-block : pickaxe-2(btype: Block, tool: Tool, res_item: Item)
+    < can_mine_tier(tool, tool_tier_2)
+    < mining_requires_tier(btype, tool_tier_2)
+    - mine-block-directly(btype, tool, res_item)
+mine-block : pickaxe-3(btype: Block, tool: Tool, res_item: Item)
+    < can_mine_tier(tool, tool_tier_3)
+    < mining_requires_tier(btype, tool_tier_3)
     - mine-block-directly(btype, tool, res_item)
 
 action mine-block-directly(btype: Block, tool: Tool, res_item: Item)
@@ -151,6 +155,9 @@ action reap-entity(entity: Entity, tool: Tool, res_item: Item)
 
 task find-entity(etype: Entity)
 
+find-entity : dono(etype: Entity)
+    < near_entity(etype)
+    - dono
 find-entity : find(etype: Entity, dim: Dim)
     < findable_entity_in_dim(etype, dim)
     - goto-dim(dim)
@@ -168,7 +175,6 @@ task goto-dim(dim: Dim)
 goto-dim : dono(dim: Dim)
     < in_dim(dim)
     - dono
-
 goto-dim : overworld-nether(dim: Dim)
     < in_dim(overworld)
     < dim = nether
@@ -207,10 +213,8 @@ task reach-structure(s: Structure)
 
 reach-structure : revisit(s: Structure)
     - goto-memorized-structure(s)
-
 reach-structure : build(s: Building)
     - build-building(s)
-
 reach-structure : find(s: Structure)
     - find-structure(s)
 
@@ -226,6 +230,12 @@ build-building : nether_portal_overworld(b: Building)
 build-building : nether_portal_nether(b: Building)
     < b = nether_portal_nether
     - build-nether-portal-nether()
+build-building : lit_end_portal(b: Building)
+    < b = lit_end_portal
+    - build-lit-end-portal
+build-building : lit_center_portal(b: Building)
+    < b = lit_center_portal
+    - kill-entity(e_ender_dragon)
     
 action build-nether-portal-overworld
     < has_item(i_obsidian)
@@ -239,37 +249,34 @@ action build-nether-portal-nether
     => near_structure(nether_portal_nether)
     => structure_memorized(nether_portal_nether)
 
-build-building : lit_end_portal(b: Building)
-    < b = lit_end_portal
-    - build-lit-end-portal
-
 action build-lit-end-portal
     < near_structure(end_portal)
     < has_item(i_eye_of_ender)
     => near_structure(lit_end_portal)
     => structure_memorized(lit_end_portal)
 
-build-building : lit_center_portal(b: Building)
-    < b = lit_center_portal
-    - kill-entity(e_ender_dragon)
-
-
 task find-structure(s: Structure)
 
-action find-structure-in-dim(s: Structure, dim: Dim)
-    < in_dim(dim)
-    => near_structure(s)
-
+find-structure : dono(s: Structure)
+    < near_structure(s)
+    - dono
 find-structure : find(s: Structure, dim: Dim)
     < findable_structure_in_dim(s, dim)
     - goto-dim(dim)
     - find-structure-in-dim(s, dim)
 
+action find-structure-in-dim(s: Structure, dim: Dim)
+    < in_dim(dim)
+    => near_structure(s)
 
 
 ## Items
 
 task acquire-item(item: Item)
+
+acquire-item : dono(item: Item)
+    < has_item(item)
+    - dono
 
 acquire-item : pickup(item: Item)
     - pickup-item(item)
@@ -295,15 +302,7 @@ acquire-item : reap-entity(item: Item, tool: Tool, entity: Entity)
     - reap-entity(entity, tool, item)
 
 acquire-item : craft(item: Item)
-    - craft(item)
+    - craft-item(item)
 
 
-task craft(item: Item)
-
-craft : craft(item: Item, recipe: Recipe)
-    < recipe_produces(recipe, item)
-    - craft-recipe(item, recipe)
-
-task craft-recipe(item: Item, recipe: Recipe)
-
-
+# MACRO CRAFTING

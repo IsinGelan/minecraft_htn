@@ -1,20 +1,22 @@
 
 from typing import Iterator
 
+from tools.manual_classify import block_dimensions
+
 from .generate_crafting import recipe_result_items
 from .facts_json_reader import mined_becomes, killed_becomes
 from .get_names import block_to_item_name, get_block_names, get_item_names
 from .code_extraction import BLOCK_REGISTRY
 
 # ================================
-MINING_TIER_3 = [
+MINING_TIER_3 = {
     "b_obsidian",
     "b_crying_obsidian",
     "b_netherite_block",
     "b_respawn_anchor",
     "b_ancient_debris"
-]
-MINING_TIER_2 = [
+}
+MINING_TIER_2 = {
     "b_diamond_block",
     "b_diamond_ore",
     "b_emerald_block",
@@ -22,13 +24,13 @@ MINING_TIER_2 = [
     "b_gold_block",
     "b_gold_ore",
     "b_redstone_ore"
-]
-MINING_TIER_1 = [
+}
+MINING_TIER_1 = {
     "b_iron_block",
     "b_iron_ore",
     "b_lapis_block",
     "b_lapis_ore"
-]
+}
 MINING_TIER_0 = {
     f"b_{name}"
     for (_, name, material) in BLOCK_REGISTRY.values()
@@ -217,6 +219,7 @@ ENTITY_DIMENSIONS = {
 EXTRA_FACTS = """
 findable_structure_in_dim(end_portal, overworld)
 findable_structure_in_dim(center_portal, end)
+has_item(i_air) # bare hand
 """
 
 # ================================
@@ -227,7 +230,9 @@ def get_structure_names() -> list[str]:
 # pred findable_block_in_dim(btype: Block, dim: Dim)
 def generate_findable_block_in_dim() -> Iterator[str]:
     # TODO: where to find this?
-    yield from []
+    for block, dims in block_dimensions().items():
+        for dim in dims:
+            yield f"findable_block_in_dim({block}, {dim})"
 
 # # pred can_reap_block(tool: Tool, btype: Block)
 # def generate_can_reap_block() -> Iterator[str]:
@@ -261,7 +266,7 @@ def generate_mining_requires_tier() -> Iterator[str]:
     for block in MINING_TIER_1:
         # stone
         yield f"mining_requires_tier({block}, tool_tier_1)"
-    for block in MINING_TIER_0:
+    for block in MINING_TIER_0 - MINING_TIER_1:
         yield f"mining_requires_tier({block}, tool_tier_0)"
 
 # pred is_pickaxe(tool: Tool)
