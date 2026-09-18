@@ -1,0 +1,1224 @@
+{
+    "b_air": [
+        "overworld",
+        "nether",
+        "end"
+    ],
+    "b_barrier": [],
+    "b_stone": [
+        "overworld"
+    ],
+    "b_granite": [
+        "overworld"
+    ],
+    "b_polished_granite": [],
+    "b_diorite": [
+        "overworld"
+    ],
+    "b_polished_diorite": [],
+    "b_andesite": [
+        "overworld"
+    ],
+    "b_polished_andesite": [],
+    "b_hay_block": [
+        "overworld"
+    ],
+    "b_grass_block": [
+        "overworld"
+    ],
+    "b_dirt": [
+        "overworld"
+    ],
+    "b_coarse_dirt": [
+        "overworld"
+    ],
+    "b_podzol": [
+        "overworld"
+    ],
+    "b_cobblestone": [
+        "overworld"
+    ],
+    "b_oak_planks": [
+        "overworld"
+    ],
+    "b_spruce_planks": [
+        "overworld"
+    ],
+    "b_birch_planks": [],
+    "b_jungle_planks": [],
+    "b_acacia_planks": [],
+    "b_dark_oak_planks": [],
+    "b_oak_sapling": [],
+    "b_spruce_sapling": [],
+    "b_birch_sapling": [],
+    "b_jungle_sapling": [],
+    "b_acacia_sapling": [],
+    "b_dark_oak_sapling": [],
+    "b_oak_door": [
+        "overworld"
+    ],
+    "b_spruce_door": [
+        "overworld"
+    ],
+    "b_birch_door": [],
+    "b_jungle_door": [],
+    "b_acacia_door": [
+        "overworld"
+    ],
+    "b_dark_oak_door": [],
+    "b_bedrock": [
+        "overworld",
+        "nether"
+    ],
+    "b_water": [
+        "overworld"
+    ],
+    "b_lava": [
+        "overworld",
+        "nether"
+    ],
+    "b_sand": [
+        "overworld"
+    ],
+    "b_red_sand": [
+        "overworld"
+    ],
+    "b_sandstone": [
+        "overworld"
+    ],
+    "b_chiseled_sandstone": [
+        "overworld"
+    ],
+    "b_cut_sandstone": [
+        "overworld"
+    ],
+    "b_red_sandstone": [],
+    "b_chiseled_red_sandstone": [],
+    "b_cut_red_sandstone": [],
+    "b_gravel": [
+        "overworld",
+        "nether"
+    ],
+    "b_gold_ore": [
+        "overworld"
+    ],
+    "b_nether_gold_ore": [
+        "nether"
+    ],
+    "b_iron_ore": [
+        "overworld"
+    ],
+    "b_coal_ore": [
+        "overworld"
+    ],
+    "b_oak_wood": [],
+    "b_spruce_wood": [],
+    "b_birch_wood": [],
+    "b_jungle_wood": [],
+    "b_acacia_wood": [],
+    "b_dark_oak_wood": [],
+    "b_oak_log": [
+        "overworld"
+    ],
+    "b_spruce_log": [
+        "overworld"
+    ],
+    "b_birch_log": [
+        "overworld"
+    ],
+    "b_jungle_log": [
+        "overworld"
+    ],
+    "b_acacia_log": [
+        "overworld"
+    ],
+    "b_dark_oak_log": [
+        "overworld"
+    ],
+    "b_stripped_oak_log": [],
+    "b_stripped_spruce_log": [],
+    "b_stripped_birch_log": [],
+    "b_stripped_jungle_log": [],
+    "b_stripped_acacia_log": [],
+    "b_stripped_dark_oak_log": [],
+    "b_stripped_oak_wood": [],
+    "b_stripped_spruce_wood": [],
+    "b_stripped_birch_wood": [],
+    "b_stripped_jungle_wood": [],
+    "b_stripped_acacia_wood": [],
+    "b_stripped_dark_oak_wood": [],
+    "b_oak_leaves": [
+        "overworld"
+    ],
+    "b_spruce_leaves": [
+        "overworld"
+    ],
+    "b_birch_leaves": [
+        "overworld"
+    ],
+    "b_jungle_leaves": [
+        "overworld"
+    ],
+    "b_acacia_leaves": [
+        "overworld"
+    ],
+    "b_dark_oak_leaves": [
+        "overworld"
+    ],
+    "b_dead_bush": [
+        "overworld"
+    ],
+    "b_grass": [
+        "overworld"
+    ],
+    "b_fern": [
+        "overworld"
+    ],
+    "b_sponge": [
+        "overworld"
+    ],
+    "b_wet_sponge": [
+        "overworld"
+    ],
+    "b_glass": [
+        "overworld"
+    ],
+    "b_kelp_plant": [
+        "overworld"
+    ],
+    "b_kelp": [
+        "overworld"
+    ],
+    "b_dried_kelp_block": [],
+    "b_white_stained_glass": [],
+    "b_orange_stained_glass": [],
+    "b_magenta_stained_glass": [],
+    "b_light_blue_stained_glass": [],
+    "b_yellow_stained_glass": [],
+    "b_lime_stained_glass": [],
+    "b_pink_stained_glass": [],
+    "b_gray_stained_glass": [],
+    "b_light_gray_stained_glass": [],
+    "b_cyan_stained_glass": [],
+    "b_purple_stained_glass": [],
+    "b_blue_stained_glass": [],
+    "b_brown_stained_glass": [],
+    "b_green_stained_glass": [],
+    "b_red_stained_glass": [],
+    "b_black_stained_glass": [],
+    "b_white_stained_glass_pane": [],
+    "b_orange_stained_glass_pane": [],
+    "b_magenta_stained_glass_pane": [],
+    "b_light_blue_stained_glass_pane": [],
+    "b_yellow_stained_glass_pane": [],
+    "b_lime_stained_glass_pane": [],
+    "b_pink_stained_glass_pane": [],
+    "b_gray_stained_glass_pane": [],
+    "b_light_gray_stained_glass_pane": [],
+    "b_cyan_stained_glass_pane": [],
+    "b_purple_stained_glass_pane": [],
+    "b_blue_stained_glass_pane": [],
+    "b_brown_stained_glass_pane": [],
+    "b_green_stained_glass_pane": [],
+    "b_red_stained_glass_pane": [],
+    "b_black_stained_glass_pane": [],
+    "b_glass_pane": [
+        "overworld"
+    ],
+    "b_dandelion": [
+        "overworld"
+    ],
+    "b_poppy": [
+        "overworld"
+    ],
+    "b_blue_orchid": [
+        "overworld"
+    ],
+    "b_allium": [
+        "overworld"
+    ],
+    "b_azure_bluet": [
+        "overworld"
+    ],
+    "b_red_tulip": [
+        "overworld"
+    ],
+    "b_orange_tulip": [
+        "overworld"
+    ],
+    "b_white_tulip": [
+        "overworld"
+    ],
+    "b_pink_tulip": [
+        "overworld"
+    ],
+    "b_oxeye_daisy": [
+        "overworld"
+    ],
+    "b_cornflower": [
+        "overworld"
+    ],
+    "b_lily_of_the_valley": [
+        "overworld"
+    ],
+    "b_wither_rose": [],
+    "b_sunflower": [
+        "overworld"
+    ],
+    "b_lilac": [
+        "overworld"
+    ],
+    "b_tall_grass": [
+        "overworld"
+    ],
+    "b_tall_seagrass": [
+        "overworld"
+    ],
+    "b_large_fern": [
+        "overworld"
+    ],
+    "b_rose_bush": [
+        "overworld"
+    ],
+    "b_peony": [
+        "overworld"
+    ],
+    "b_seagrass": [
+        "overworld"
+    ],
+    "b_sea_pickle": [
+        "overworld"
+    ],
+    "b_brown_mushroom": [
+        "overworld"
+    ],
+    "b_red_mushroom_block": [
+        "overworld"
+    ],
+    "b_brown_mushroom_block": [
+        "overworld"
+    ],
+    "b_mushroom_stem": [
+        "overworld"
+    ],
+    "b_gold_block": [
+        "nether"
+    ],
+    "b_iron_block": [],
+    "b_smooth_stone": [],
+    "b_smooth_sandstone": [],
+    "b_smooth_red_sandstone": [],
+    "b_smooth_quartz": [],
+    "b_stone_slab": [],
+    "b_smooth_stone_slab": [],
+    "b_sandstone_slab": [],
+    "b_red_sandstone_slab": [],
+    "b_cut_sandstone_slab": [],
+    "b_cut_red_sandstone_slab": [],
+    "b_petrified_oak_slab": [],
+    "b_cobblestone_slab": [
+        "overworld"
+    ],
+    "b_brick_slab": [],
+    "b_stone_brick_slab": [],
+    "b_nether_brick_slab": [],
+    "b_quartz_slab": [],
+    "b_oak_slab": [],
+    "b_spruce_slab": [],
+    "b_birch_slab": [],
+    "b_jungle_slab": [],
+    "b_acacia_slab": [],
+    "b_dark_oak_slab": [],
+    "b_dark_prismarine_slab": [],
+    "b_prismarine_slab": [],
+    "b_prismarine_brick_slab": [],
+    "b_bricks": [],
+    "b_tnt": [
+        "overworld"
+    ],
+    "b_bookshelf": [
+        "overworld"
+    ],
+    "b_mossy_cobblestone": [
+        "overworld"
+    ],
+    "b_obsidian": [
+        "overworld",
+        "nether",
+        "end"
+    ],
+    "b_torch": [
+        "overworld"
+    ],
+    "b_wall_torch": [
+        "overworld"
+    ],
+    "b_soul_torch": [],
+    "b_soul_wall_torch": [],
+    "b_fire": [
+        "overworld",
+        "nether"
+    ],
+    "b_spawner": [
+        "overworld",
+        "nether"
+    ],
+    "b_respawn_anchor": [],
+    "b_oak_stairs": [
+        "overworld"
+    ],
+    "b_spruce_stairs": [
+        "overworld"
+    ],
+    "b_birch_stairs": [],
+    "b_jungle_stairs": [],
+    "b_acacia_stairs": [
+        "overworld"
+    ],
+    "b_dark_oak_stairs": [],
+    "b_dark_prismarine_stairs": [],
+    "b_prismarine_stairs": [],
+    "b_prismarine_brick_stairs": [],
+    "b_chest": [
+        "overworld",
+        "nether",
+        "end"
+    ],
+    "b_trapped_chest": [],
+    "b_redstone_wire": [
+        "overworld"
+    ],
+    "b_diamond_ore": [
+        "overworld"
+    ],
+    "b_coal_block": [],
+    "b_diamond_block": [],
+    "b_crafting_table": [
+        "overworld"
+    ],
+    "b_wheat": [
+        "overworld"
+    ],
+    "b_farmland": [
+        "overworld"
+    ],
+    "b_furnace": [
+        "overworld"
+    ],
+    "b_oak_sign": [],
+    "b_spruce_sign": [],
+    "b_birch_sign": [],
+    "b_acacia_sign": [],
+    "b_jungle_sign": [],
+    "b_dark_oak_sign": [],
+    "b_oak_wall_sign": [],
+    "b_spruce_wall_sign": [],
+    "b_birch_wall_sign": [],
+    "b_acacia_wall_sign": [],
+    "b_jungle_wall_sign": [],
+    "b_dark_oak_wall_sign": [],
+    "b_ladder": [
+        "overworld",
+        "end"
+    ],
+    "b_scaffolding": [],
+    "b_rail": [
+        "overworld"
+    ],
+    "b_powered_rail": [],
+    "b_activator_rail": [],
+    "b_detector_rail": [],
+    "b_cobblestone_stairs": [
+        "overworld"
+    ],
+    "b_sandstone_stairs": [],
+    "b_red_sandstone_stairs": [],
+    "b_lever": [
+        "overworld"
+    ],
+    "b_stone_pressure_plate": [],
+    "b_oak_pressure_plate": [],
+    "b_spruce_pressure_plate": [],
+    "b_birch_pressure_plate": [],
+    "b_jungle_pressure_plate": [],
+    "b_acacia_pressure_plate": [],
+    "b_dark_oak_pressure_plate": [],
+    "b_light_weighted_pressure_plate": [],
+    "b_heavy_weighted_pressure_plate": [],
+    "b_iron_door": [],
+    "b_redstone_ore": [
+        "overworld"
+    ],
+    "b_redstone_torch": [],
+    "b_redstone_wall_torch": [],
+    "b_stone_button": [
+        "overworld"
+    ],
+    "b_oak_button": [],
+    "b_spruce_button": [],
+    "b_birch_button": [],
+    "b_jungle_button": [],
+    "b_acacia_button": [],
+    "b_dark_oak_button": [],
+    "b_snow": [
+        "overworld"
+    ],
+    "b_white_carpet": [],
+    "b_orange_carpet": [],
+    "b_magenta_carpet": [],
+    "b_light_blue_carpet": [],
+    "b_yellow_carpet": [],
+    "b_lime_carpet": [],
+    "b_pink_carpet": [],
+    "b_gray_carpet": [],
+    "b_light_gray_carpet": [],
+    "b_cyan_carpet": [],
+    "b_purple_carpet": [],
+    "b_blue_carpet": [],
+    "b_brown_carpet": [],
+    "b_green_carpet": [],
+    "b_red_carpet": [],
+    "b_black_carpet": [],
+    "b_ice": [
+        "overworld"
+    ],
+    "b_frosted_ice": [
+        "overworld"
+    ],
+    "b_packed_ice": [
+        "overworld"
+    ],
+    "b_blue_ice": [
+        "overworld"
+    ],
+    "b_cactus": [
+        "overworld"
+    ],
+    "b_clay": [
+        "overworld"
+    ],
+    "b_white_terracotta": [],
+    "b_orange_terracotta": [
+        "overworld"
+    ],
+    "b_magenta_terracotta": [],
+    "b_light_blue_terracotta": [],
+    "b_yellow_terracotta": [],
+    "b_lime_terracotta": [],
+    "b_pink_terracotta": [],
+    "b_gray_terracotta": [],
+    "b_light_gray_terracotta": [],
+    "b_cyan_terracotta": [],
+    "b_purple_terracotta": [],
+    "b_blue_terracotta": [],
+    "b_brown_terracotta": [],
+    "b_green_terracotta": [],
+    "b_red_terracotta": [],
+    "b_black_terracotta": [],
+    "b_terracotta": [
+        "overworld"
+    ],
+    "b_sugar_cane": [
+        "overworld"
+    ],
+    "b_jukebox": [],
+    "b_oak_fence": [
+        "overworld"
+    ],
+    "b_spruce_fence": [
+        "overworld"
+    ],
+    "b_birch_fence": [],
+    "b_jungle_fence": [],
+    "b_dark_oak_fence": [],
+    "b_acacia_fence": [],
+    "b_oak_fence_gate": [
+        "overworld"
+    ],
+    "b_spruce_fence_gate": [],
+    "b_birch_fence_gate": [],
+    "b_jungle_fence_gate": [],
+    "b_dark_oak_fence_gate": [],
+    "b_acacia_fence_gate": [
+        "overworld"
+    ],
+    "b_pumpkin_stem": [
+        "overworld"
+    ],
+    "b_attached_pumpkin_stem": [
+        "overworld"
+    ],
+    "b_pumpkin": [
+        "overworld"
+    ],
+    "b_carved_pumpkin": [],
+    "b_jack_o_lantern": [],
+    "b_netherrack": [
+        "nether"
+    ],
+    "b_soul_sand": [
+        "nether"
+    ],
+    "b_glowstone": [
+        "nether"
+    ],
+    "b_nether_portal": [],
+    "b_white_wool": [],
+    "b_orange_wool": [],
+    "b_magenta_wool": [],
+    "b_light_blue_wool": [],
+    "b_yellow_wool": [],
+    "b_lime_wool": [],
+    "b_pink_wool": [],
+    "b_gray_wool": [],
+    "b_light_gray_wool": [],
+    "b_cyan_wool": [],
+    "b_purple_wool": [],
+    "b_blue_wool": [],
+    "b_brown_wool": [],
+    "b_green_wool": [],
+    "b_red_wool": [],
+    "b_black_wool": [],
+    "b_lapis_ore": [
+        "overworld"
+    ],
+    "b_lapis_block": [],
+    "b_dispenser": [],
+    "b_dropper": [],
+    "b_note_block": [],
+    "b_cake": [],
+    "b_set_spawn": [],
+    "b_oak_trapdoor": [
+        "overworld"
+    ],
+    "b_spruce_trapdoor": [],
+    "b_birch_trapdoor": [],
+    "b_jungle_trapdoor": [],
+    "b_acacia_trapdoor": [],
+    "b_dark_oak_trapdoor": [],
+    "b_iron_trapdoor": [],
+    "b_cobweb": [
+        "overworld"
+    ],
+    "b_stone_bricks": [
+        "overworld"
+    ],
+    "b_mossy_stone_bricks": [
+        "overworld"
+    ],
+    "b_cracked_stone_bricks": [
+        "overworld"
+    ],
+    "b_chiseled_stone_bricks": [
+        "overworld"
+    ],
+    "b_infested_stone": [
+        "overworld"
+    ],
+    "b_infested_cobblestone": [],
+    "b_infested_stone_bricks": [
+        "overworld"
+    ],
+    "b_infested_mossy_stone_bricks": [
+        "overworld"
+    ],
+    "b_infested_cracked_stone_bricks": [
+        "overworld"
+    ],
+    "b_infested_chiseled_stone_bricks": [
+        "overworld"
+    ],
+    "b_piston": [
+        "overworld"
+    ],
+    "b_sticky_piston": [],
+    "b_iron_bars": [
+        "overworld"
+    ],
+    "b_melon": [
+        "overworld"
+    ],
+    "b_brick_stairs": [],
+    "b_stone_brick_stairs": [],
+    "b_vine": [
+        "overworld"
+    ],
+    "b_nether_bricks": [
+        "nether"
+    ],
+    "b_nether_brick_fence": [
+        "nether"
+    ],
+    "b_nether_brick_stairs": [
+        "nether"
+    ],
+    "b_nether_wart": [
+        "nether"
+    ],
+    "b_warped_wart_block": [
+        "nether"
+    ],
+    "b_warped_stem": [
+        "nether"
+    ],
+    "b_stripped_warped_stem": [],
+    "b_warped_hyphae": [
+        "nether"
+    ],
+    "b_stripped_warped_hyphae": [],
+    "b_crimson_stem": [
+        "nether"
+    ],
+    "b_stripped_crimson_stem": [],
+    "b_crimson_hyphae": [],
+    "b_stripped_crimson_hyphae": [],
+    "b_warped_nylium": [
+        "nether"
+    ],
+    "b_crimson_nylium": [
+        "nether"
+    ],
+    "b_warped_fungus": [
+        "nether"
+    ],
+    "b_crimson_fungus": [
+        "nether"
+    ],
+    "b_crimson_roots": [
+        "nether"
+    ],
+    "b_warped_roots": [
+        "nether"
+    ],
+    "b_nether_sprouts": [
+        "nether"
+    ],
+    "b_shroomlight": [
+        "nether"
+    ],
+    "b_weeping_vines": [
+        "nether"
+    ],
+    "b_weeping_vines_plant": [
+        "nether"
+    ],
+    "b_twisting_vines": [
+        "nether"
+    ],
+    "b_twisting_vines_plant": [
+        "nether"
+    ],
+    "b_soul_soil": [
+        "nether"
+    ],
+    "b_basalt": [
+        "nether"
+    ],
+    "b_polished_basalt": [],
+    "b_warped_planks": [],
+    "b_warped_slab": [],
+    "b_warped_pressure_plate": [],
+    "b_warped_fence": [],
+    "b_warped_trapdoor": [],
+    "b_warped_fence_gate": [],
+    "b_warped_stairs": [],
+    "b_warped_button": [],
+    "b_warped_door": [],
+    "b_warped_sign": [],
+    "b_warped_wall_sign": [],
+    "b_crimson_planks": [],
+    "b_crimson_slab": [],
+    "b_crimson_pressure_plate": [],
+    "b_crimson_fence": [],
+    "b_crimson_trapdoor": [],
+    "b_crimson_fence_gate": [],
+    "b_crimson_stairs": [],
+    "b_crimson_button": [],
+    "b_crimson_door": [],
+    "b_crimson_sign": [],
+    "b_crimson_wall_sign": [],
+    "b_soul_fire": [
+        "nether"
+    ],
+    "b_cauldron": [
+        "overworld"
+    ],
+    "b_enchanting_table": [],
+    "b_anvil": [],
+    "b_chipped_anvil": [],
+    "b_damaged_anvil": [],
+    "b_end_stone": [
+        "end"
+    ],
+    "b_end_portal_frame": [
+        "overworld"
+    ],
+    "b_mycelium": [
+        "overworld"
+    ],
+    "b_lily_pad": [
+        "overworld"
+    ],
+    "b_dragon_egg": [],
+    "b_redstone_lamp": [],
+    "b_cocoa": [
+        "overworld"
+    ],
+    "b_ender_chest": [],
+    "b_emerald_ore": [
+        "overworld"
+    ],
+    "b_emerald_block": [],
+    "b_redstone_block": [],
+    "b_tripwire": [
+        "overworld"
+    ],
+    "b_tripwire_hook": [
+        "overworld"
+    ],
+    "b_command_block": [],
+    "b_repeating_command_block": [],
+    "b_chain_command_block": [],
+    "b_beacon": [],
+    "b_cobblestone_wall": [
+        "overworld"
+    ],
+    "b_mossy_cobblestone_wall": [],
+    "b_carrots": [
+        "overworld"
+    ],
+    "b_potatoes": [
+        "overworld"
+    ],
+    "b_daylight_detector": [],
+    "b_nether_quartz_ore": [
+        "nether"
+    ],
+    "b_hopper": [],
+    "b_quartz_block": [],
+    "b_chiseled_quartz_block": [],
+    "b_quartz_pillar": [],
+    "b_quartz_stairs": [],
+    "b_slime_block": [],
+    "b_prismarine": [
+        "overworld"
+    ],
+    "b_prismarine_bricks": [
+        "overworld"
+    ],
+    "b_dark_prismarine": [
+        "overworld"
+    ],
+    "b_sea_lantern": [
+        "overworld"
+    ],
+    "b_end_rod": [
+        "end"
+    ],
+    "b_chorus_plant": [
+        "end"
+    ],
+    "b_chorus_flower": [
+        "end"
+    ],
+    "b_purpur_block": [
+        "end"
+    ],
+    "b_purpur_pillar": [
+        "end"
+    ],
+    "b_purpur_stairs": [
+        "end"
+    ],
+    "b_purpur_slab": [
+        "end"
+    ],
+    "b_end_stone_bricks": [],
+    "b_beetroots": [
+        "overworld"
+    ],
+    "b_grass_path": [
+        "overworld"
+    ],
+    "b_magma_block": [
+        "nether"
+    ],
+    "b_nether_wart_block": [],
+    "b_red_nether_bricks": [],
+    "b_bone_block": [
+        "overworld",
+        "nether"
+    ],
+    "b_observer": [],
+    "b_shulker_box": [],
+    "b_white_shulker_box": [],
+    "b_orange_shulker_box": [],
+    "b_magenta_shulker_box": [],
+    "b_light_blue_shulker_box": [],
+    "b_yellow_shulker_box": [],
+    "b_lime_shulker_box": [],
+    "b_pink_shulker_box": [],
+    "b_gray_shulker_box": [],
+    "b_light_gray_shulker_box": [],
+    "b_cyan_shulker_box": [],
+    "b_purple_shulker_box": [],
+    "b_blue_shulker_box": [],
+    "b_brown_shulker_box": [],
+    "b_green_shulker_box": [],
+    "b_red_shulker_box": [],
+    "b_black_shulker_box": [],
+    "b_white_glazed_terracotta": [],
+    "b_orange_glazed_terracotta": [],
+    "b_magenta_glazed_terracotta": [],
+    "b_light_blue_glazed_terracotta": [],
+    "b_yellow_glazed_terracotta": [],
+    "b_lime_glazed_terracotta": [],
+    "b_pink_glazed_terracotta": [],
+    "b_gray_glazed_terracotta": [],
+    "b_light_gray_glazed_terracotta": [],
+    "b_cyan_glazed_terracotta": [],
+    "b_purple_glazed_terracotta": [],
+    "b_blue_glazed_terracotta": [],
+    "b_brown_glazed_terracotta": [],
+    "b_green_glazed_terracotta": [],
+    "b_red_glazed_terracotta": [],
+    "b_black_glazed_terracotta": [],
+    "b_black_concrete": [],
+    "b_red_concrete": [],
+    "b_green_concrete": [],
+    "b_brown_concrete": [],
+    "b_blue_concrete": [],
+    "b_purple_concrete": [],
+    "b_cyan_concrete": [],
+    "b_light_gray_concrete": [],
+    "b_gray_concrete": [],
+    "b_pink_concrete": [],
+    "b_lime_concrete": [],
+    "b_yellow_concrete": [],
+    "b_light_blue_concrete": [],
+    "b_magenta_concrete": [],
+    "b_orange_concrete": [],
+    "b_white_concrete": [],
+    "b_black_concrete_powder": [],
+    "b_red_concrete_powder": [],
+    "b_green_concrete_powder": [],
+    "b_brown_concrete_powder": [],
+    "b_blue_concrete_powder": [],
+    "b_purple_concrete_powder": [],
+    "b_cyan_concrete_powder": [],
+    "b_light_gray_concrete_powder": [],
+    "b_gray_concrete_powder": [],
+    "b_pink_concrete_powder": [],
+    "b_lime_concrete_powder": [],
+    "b_yellow_concrete_powder": [],
+    "b_light_blue_concrete_powder": [],
+    "b_magenta_concrete_powder": [],
+    "b_orange_concrete_powder": [],
+    "b_white_concrete_powder": [],
+    "b_turtle_egg": [],
+    "b_piston_head": [],
+    "b_moving_piston": [],
+    "b_red_mushroom": [
+        "overworld",
+        "nether"
+    ],
+    "b_snow_block": [
+        "overworld"
+    ],
+    "b_attached_melon_stem": [
+        "overworld"
+    ],
+    "b_melon_stem": [
+        "overworld"
+    ],
+    "b_brewing_stand": [
+        "overworld"
+    ],
+    "b_end_portal": [],
+    "b_flower_pot": [
+        "overworld"
+    ],
+    "b_potted_oak_sapling": [],
+    "b_potted_spruce_sapling": [],
+    "b_potted_birch_sapling": [],
+    "b_potted_jungle_sapling": [],
+    "b_potted_acacia_sapling": [],
+    "b_potted_dark_oak_sapling": [],
+    "b_potted_fern": [],
+    "b_potted_dandelion": [],
+    "b_potted_poppy": [
+        "overworld"
+    ],
+    "b_potted_blue_orchid": [],
+    "b_potted_allium": [],
+    "b_potted_azure_bluet": [],
+    "b_potted_red_tulip": [],
+    "b_potted_orange_tulip": [],
+    "b_potted_white_tulip": [],
+    "b_potted_pink_tulip": [],
+    "b_potted_oxeye_daisy": [],
+    "b_potted_cornflower": [],
+    "b_potted_lily_of_the_valley": [],
+    "b_potted_wither_rose": [],
+    "b_potted_red_mushroom": [],
+    "b_potted_brown_mushroom": [],
+    "b_potted_dead_bush": [],
+    "b_potted_cactus": [],
+    "b_potted_bamboo": [],
+    "b_potted_crimson_fungus": [],
+    "b_potted_warped_fungus": [],
+    "b_potted_crimson_roots": [],
+    "b_potted_warped_roots": [],
+    "b_skeleton_wall_skull": [],
+    "b_skeleton_skull": [],
+    "b_wither_skeleton_wall_skull": [],
+    "b_wither_skeleton_skull": [],
+    "b_zombie_wall_head": [],
+    "b_zombie_head": [],
+    "b_player_wall_head": [],
+    "b_player_head": [],
+    "b_creeper_wall_head": [],
+    "b_creeper_head": [],
+    "b_dragon_wall_head": [
+        "end"
+    ],
+    "b_dragon_head": [],
+    "b_end_gateway": [
+        "end"
+    ],
+    "b_structure_void": [],
+    "b_structure_block": [],
+    "b_void_air": [],
+    "b_cave_air": [
+        "overworld"
+    ],
+    "b_bubble_column": [
+        "overworld"
+    ],
+    "b_dead_tube_coral_block": [],
+    "b_dead_brain_coral_block": [],
+    "b_dead_bubble_coral_block": [],
+    "b_dead_fire_coral_block": [],
+    "b_dead_horn_coral_block": [],
+    "b_tube_coral_block": [
+        "overworld"
+    ],
+    "b_brain_coral_block": [
+        "overworld"
+    ],
+    "b_bubble_coral_block": [
+        "overworld"
+    ],
+    "b_fire_coral_block": [
+        "overworld"
+    ],
+    "b_horn_coral_block": [
+        "overworld"
+    ],
+    "b_tube_coral": [
+        "overworld"
+    ],
+    "b_brain_coral": [
+        "overworld"
+    ],
+    "b_bubble_coral": [
+        "overworld"
+    ],
+    "b_fire_coral": [
+        "overworld"
+    ],
+    "b_horn_coral": [
+        "overworld"
+    ],
+    "b_dead_tube_coral": [],
+    "b_dead_brain_coral": [],
+    "b_dead_bubble_coral": [],
+    "b_dead_fire_coral": [],
+    "b_dead_horn_coral": [],
+    "b_tube_coral_fan": [],
+    "b_brain_coral_fan": [],
+    "b_bubble_coral_fan": [],
+    "b_fire_coral_fan": [],
+    "b_horn_coral_fan": [],
+    "b_dead_tube_coral_fan": [],
+    "b_dead_brain_coral_fan": [],
+    "b_dead_bubble_coral_fan": [],
+    "b_dead_fire_coral_fan": [],
+    "b_dead_horn_coral_fan": [],
+    "b_tube_coral_wall_fan": [],
+    "b_brain_coral_wall_fan": [],
+    "b_bubble_coral_wall_fan": [],
+    "b_fire_coral_wall_fan": [],
+    "b_horn_coral_wall_fan": [],
+    "b_dead_tube_coral_wall_fan": [],
+    "b_dead_brain_coral_wall_fan": [],
+    "b_dead_bubble_coral_wall_fan": [],
+    "b_dead_fire_coral_wall_fan": [],
+    "b_dead_horn_coral_wall_fan": [],
+    "b_loom": [
+        "overworld"
+    ],
+    "b_conduit": [],
+    "b_bamboo": [
+        "overworld"
+    ],
+    "b_bamboo_sapling": [],
+    "b_jigsaw": [],
+    "b_composter": [
+        "overworld"
+    ],
+    "b_target": [],
+    "b_polished_granite_stairs": [],
+    "b_smooth_red_sandstone_stairs": [],
+    "b_mossy_stone_brick_stairs": [],
+    "b_polished_diorite_stairs": [],
+    "b_mossy_cobblestone_stairs": [],
+    "b_end_stone_brick_stairs": [],
+    "b_stone_stairs": [],
+    "b_smooth_sandstone_stairs": [],
+    "b_smooth_quartz_stairs": [],
+    "b_granite_stairs": [],
+    "b_andesite_stairs": [],
+    "b_red_nether_brick_stairs": [],
+    "b_polished_andesite_stairs": [],
+    "b_diorite_stairs": [],
+    "b_polished_granite_slab": [],
+    "b_smooth_red_sandstone_slab": [],
+    "b_mossy_stone_brick_slab": [],
+    "b_polished_diorite_slab": [],
+    "b_mossy_cobblestone_slab": [],
+    "b_end_stone_brick_slab": [],
+    "b_smooth_sandstone_slab": [],
+    "b_smooth_quartz_slab": [],
+    "b_granite_slab": [],
+    "b_andesite_slab": [],
+    "b_red_nether_brick_slab": [],
+    "b_polished_andesite_slab": [],
+    "b_diorite_slab": [],
+    "b_brick_wall": [],
+    "b_prismarine_wall": [],
+    "b_red_sandstone_wall": [],
+    "b_mossy_stone_brick_wall": [],
+    "b_granite_wall": [],
+    "b_stone_brick_wall": [],
+    "b_nether_brick_wall": [],
+    "b_andesite_wall": [],
+    "b_red_nether_brick_wall": [],
+    "b_sandstone_wall": [],
+    "b_end_stone_brick_wall": [],
+    "b_diorite_wall": [],
+    "b_barrel": [
+        "overworld"
+    ],
+    "b_smoker": [
+        "overworld"
+    ],
+    "b_blast_furnace": [
+        "overworld"
+    ],
+    "b_cartography_table": [
+        "overworld"
+    ],
+    "b_fletching_table": [
+        "overworld"
+    ],
+    "b_smithing_table": [
+        "overworld"
+    ],
+    "b_grindstone": [
+        "overworld"
+    ],
+    "b_lectern": [
+        "overworld"
+    ],
+    "b_stonecutter": [
+        "overworld"
+    ],
+    "b_bell": [
+        "overworld"
+    ],
+    "b_ominous_banner": [],
+    "b_lantern": [],
+    "b_soul_lantern": [],
+    "b_sweet_berry_bush": [
+        "overworld"
+    ],
+    "b_campfire": [
+        "overworld"
+    ],
+    "b_soul_campfire": [],
+    "b_beehive": [
+        "overworld"
+    ],
+    "b_bee_nest": [
+        "overworld"
+    ],
+    "b_honey_block": [],
+    "b_honeycomb_block": [],
+    "b_lodestone": [],
+    "b_netherite_block": [],
+    "b_ancient_debris": [
+        "nether"
+    ],
+    "b_crying_obsidian": [
+        "overworld",
+        "nether"
+    ],
+    "b_blackstone": [
+        "nether"
+    ],
+    "b_blackstone_slab": [],
+    "b_blackstone_stairs": [],
+    "b_blackstone_wall": [],
+    "b_polished_blackstone_bricks": [],
+    "b_polished_blackstone_brick_slab": [],
+    "b_polished_blackstone_brick_stairs": [],
+    "b_polished_blackstone_brick_wall": [],
+    "b_chiseled_polished_blackstone": [],
+    "b_cracked_polished_blackstone_bricks": [],
+    "b_gilded_blackstone": [],
+    "b_polished_blackstone": [],
+    "b_polished_blackstone_wall": [],
+    "b_polished_blackstone_slab": [],
+    "b_polished_blackstone_stairs": [],
+    "b_polished_blackstone_pressure_plate": [],
+    "b_polished_blackstone_button": [],
+    "b_cracked_nether_bricks": [],
+    "b_chiseled_nether_bricks": [],
+    "b_quartz_bricks": [],
+    "b_chain": [],
+    "b_black_bed": [],
+    "b_red_bed": [],
+    "b_green_bed": [],
+    "b_brown_bed": [],
+    "b_blue_bed": [],
+    "b_purple_bed": [],
+    "b_cyan_bed": [],
+    "b_light_gray_bed": [],
+    "b_gray_bed": [],
+    "b_pink_bed": [],
+    "b_lime_bed": [],
+    "b_yellow_bed": [],
+    "b_light_blue_bed": [],
+    "b_magenta_bed": [],
+    "b_orange_bed": [],
+    "b_white_bed": [],
+    "b_repeater": [],
+    "b_comparator": [],
+    "b_black_banner": [],
+    "b_red_banner": [],
+    "b_green_banner": [],
+    "b_brown_banner": [],
+    "b_blue_banner": [],
+    "b_purple_banner": [],
+    "b_cyan_banner": [],
+    "b_light_gray_banner": [],
+    "b_gray_banner": [],
+    "b_pink_banner": [],
+    "b_lime_banner": [],
+    "b_yellow_banner": [],
+    "b_light_blue_banner": [],
+    "b_magenta_banner": [],
+    "b_orange_banner": [],
+    "b_white_banner": []
+}

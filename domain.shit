@@ -11,6 +11,8 @@ type Portal < Building
 type Entity 
 type Recipe
 type ToolTier
+type ItemTag
+type BlockTag
 
 const nether end overworld : Dim
 const nether_portal_nether nether_portal_overworld : Portal
@@ -45,6 +47,8 @@ pred findable_entity_in_dim(entity: Entity, dim: Dim) # domain
 pred is_pickaxe(tool: Tool)                         # domain
 pred can_mine_tier(tool: Tool, tier: ToolTier)      # domain
 pred mining_requires_tier(btype: Block, tier: ToolTier) # domain
+pred item_tag(item: Item, tag: ItemTag)             # domain
+pred block_tag(btype: Item, tag: BlockTag)          # domain
 
 
 action dono

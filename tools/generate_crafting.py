@@ -6,7 +6,7 @@ from typing import Iterator, Literal, Self
 from pydantic import BaseModel
 
 from .helpers import as_dict, as_list, remember
-from .get_names import domain_item_name, domain_recipe_name
+from .get_names import domain_item_name, domain_recipe_name, domain_item_tag_name
 
 # RECIPE_DIR = path.join(path.dirname(__file__), "..", "minecraft", "data", "minecraft", "recipes")
 RECIPE_DIR = "minecraft/data/minecraft/recipes/"
@@ -16,11 +16,15 @@ FurnaceType = Literal["smelting", "smoking", "blasting"]
 CRAFTING_PATTERN_NEXTLINE = "\n"
 AIR_ITEM = "minecraft:air"
 
+def is_tag_name(name: str) -> bool:
+    return "#" in name
+
 # ================================
 class Recipe(BaseModel):
     recipe_name: str
     result_item: str
     result_count: int
+    _args: int = 0
 
     @classmethod
     def from_dict(cls, dic: dict, name: str) -> Self:
@@ -31,6 +35,23 @@ class Recipe(BaseModel):
         print(f"Fallback for {self.recipe_name}")
         ...
 
+    def has_tag_or_item(self, name: str) -> str:
+        """returns the precondition fact(s) and adds the necessary args (variable items to the `_args`)"""
+        if is_tag_name(name):
+            tag_name = domain_item_tag_name(name)
+            item_variable = f"i{self._args}"
+            self._args += 1
+            print(f"{self.recipe_name}: adds {item_variable} for tag {tag_name}")
+            return f"    < item_tag({item_variable}, {tag_name})\n" \
+                   f"    < has_item({item_variable})\n"
+        else:
+            item_name = domain_item_name(name)
+            return f"    < has_item({item_name})\n"
+
+    def params_str(self) -> str:
+        if not self._args:
+            return ""
+        return "(" + ", ".join(f"i{num}: Item" for num in range(self._args)) + ")"
 
 class StonecuttingRecipe(Recipe):
     ingredient: str
@@ -44,16 +65,16 @@ class StonecuttingRecipe(Recipe):
             ingredient=dic["ingredient"]["item"]
         )
     def generate_action_numbered(self):
-        return f"action recipe_{self.recipe_name}\n" \
+        return f"action recipe_{self.recipe_name}{self.params_str()}\n" \
                 "    < near_block(b_stonecutter)\n" \
                f"    < item_nr({domain_item_name(self.ingredient)}) >= 1\n" \
                f"    => item_nr({domain_item_name(self.ingredient)}) -= 1\n" \
                f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
     def generate_action_unnumbered(self):
-        return f"action recipe_{self.recipe_name}\n" \
+        return f"action recipe_{self.recipe_name}{self.params_str()}\n" \
                 "    < near_block(b_stonecutter)\n" \
-               f"    < has_item({domain_item_name(self.ingredient)})\n" \
-               f"    => has_item({domain_item_name(self.result_item)})\n"
+               + self.has_tag_or_item(self.ingredient) \
+               + f"    => has_item({domain_item_name(self.result_item)})\n"
                 
 
 def item_tag_desc(item: dict | list) -> str:
@@ -132,15 +153,17 @@ class CraftingRecipe(Recipe):
                f"{item_post}" \
                f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
     def generate_action_unnumbered(self):
+        self._args = 0  # Reset args for unnumbered generation
         block_prec = "    < near_block(b_crafting_table)\n" if self.large_interface else ""
         item_prec = "".join(
-            f"    < has_item({domain_item_name(ing)})\n"
+            self.has_tag_or_item(ing)
             for ing, count in self.ingredients
             )
-        return f"action recipe_{self.recipe_name}\n" \
+        return f"action recipe_{self.recipe_name}{self.params_str()}\n" \
                f"{block_prec}" \
                f"{item_prec}" \
                f"    => has_item({domain_item_name(self.result_item)})\n"
+
 
 class CampfireRecipe(Recipe):
     ingredient: str
@@ -160,10 +183,10 @@ class CampfireRecipe(Recipe):
                f"    => item_nr({domain_item_name(self.ingredient)}) -= 1\n" \
                f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
     def generate_action_unnumbered(self):
-        return f"action recipe_{self.recipe_name}\n" \
+        return f"action recipe_{self.recipe_name}{self.params_str()}\n" \
                 "    < near_block(b_campfire)\n" \
-               f"    < has_item({domain_item_name(self.ingredient)})\n" \
-               f"    => has_item({domain_item_name(self.result_item)})\n"
+               + self.has_tag_or_item(self.ingredient) \
+               + f"    => has_item({domain_item_name(self.result_item)})\n"
 
 class FurnaceRecipe(Recipe):
     furnace_type: FurnaceType
@@ -187,20 +210,25 @@ class FurnaceRecipe(Recipe):
             "smelting": "b_furnace",
             "smoking": "b_smoker",
             "blasting": "b_blast_furnace"}
-        return f"action recipe_{self.recipe_name}\n" \
+        return f"action recipe_{self.recipe_name}{self.params_str()}\n" \
                f"    < near_block({block_name[self.furnace_type]})\n" \
                f"    < item_nr({domain_item_name(self.ingredient)}) >= 1\n" \
                f"    => item_nr({domain_item_name(self.ingredient)}) -= 1\n" \
                f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
     def generate_action_unnumbered(self):
+        self._args = 0  # Reset args for numbered generation
         block_name = {
             "smelting": "b_furnace",
             "smoking": "b_smoker",
             "blasting": "b_blast_furnace"}
-        return f"action recipe_{self.recipe_name}\n" \
-               f"    < near_block({block_name[self.furnace_type]})\n" \
-               f"    < has_item({domain_item_name(self.ingredient)})\n" \
-               f"    => has_item({domain_item_name(self.result_item)})\n"
+
+        # This order to generate the arguments before using the param string
+        recipe_body = f"    < near_block({block_name[self.furnace_type]})\n" \
+                       + self.has_tag_or_item(self.ingredient) \
+                       + f"    => has_item({domain_item_name(self.result_item)})\n"
+        recipe_header = f"action recipe_{self.recipe_name}{self.params_str()}\n"
+        return recipe_header + recipe_body
+
 
 class SmithingRecipe(Recipe):
     base: str
@@ -216,7 +244,7 @@ class SmithingRecipe(Recipe):
             addition=item_tag_desc(dic["addition"])
         )
     def generate_action_numbered(self):
-        return f"action recipe_{self.recipe_name}\n" \
+        return f"action recipe_{self.recipe_name}{self.params_str()}\n" \
                f"    < near_block(b_smithing_table)\n" \
                f"    < item_nr({domain_item_name(self.base)}) >= 1\n" \
                f"    < item_nr({domain_item_name(self.addition)}) >= 1\n" \
@@ -224,11 +252,11 @@ class SmithingRecipe(Recipe):
                f"    => item_nr({domain_item_name(self.addition)}) -= 1\n" \
                f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
     def generate_action_unnumbered(self):
-        return f"action recipe_{self.recipe_name}\n" \
+        return f"action recipe_{self.recipe_name}{self.params_str()}\n" \
                f"    < near_block(b_smithing_table)\n" \
-               f"    < has_item({domain_item_name(self.base)})\n" \
-               f"    < has_item({domain_item_name(self.addition)})\n" \
-               f"    => has_item({domain_item_name(self.result_item)})\n"
+               + self.has_tag_or_item(self.base) \
+               + self.has_tag_or_item(self.addition) \
+               + f"    => has_item({domain_item_name(self.result_item)})\n"
 
 
 # ================================
@@ -278,23 +306,35 @@ def recipe_result_items() -> Iterator[tuple[str, str]]:
 
 
 # ================================
+def args_from_params(params_str: str) -> str:
+    if not params_str:
+        return ""
+    params = params_str.strip("()").split(", ")
+    return "(" + ", ".join(param.removesuffix(": Item") for param in params) + ")"
+
+def more_params(params_str: str) -> str:
+    if not params_str:
+        return ""
+    return ", " + params_str.strip("()")
+
 RECIPE_CRAFTING_TASK_NAME = "craft-recipe"
 ITEM_CRAFTING_TASK_NAME = "craft-item"
 
-def generate_recipe_crafting_task(recipe_names: list[str]) -> str:
+def generate_recipe_crafting_task(recipes: list[Recipe]) -> str:
     task_str = f"task {RECIPE_CRAFTING_TASK_NAME}(recipe: Recipe)\n"
     method_strs = [
-        f"{RECIPE_CRAFTING_TASK_NAME} : {recipe_name}(recipe: Recipe)\n" \
-        f"    < recipe = {domain_recipe_name(recipe_name)}\n" \
-        f"    - recipe_{recipe_name}\n"
-        for recipe_name in recipe_names
+        f"{RECIPE_CRAFTING_TASK_NAME} : {recipe.recipe_name}" \
+        f"(recipe: Recipe{more_params(recipe.params_str())})\n" \
+        f"    < recipe = {domain_recipe_name(recipe.recipe_name)}\n" \
+        f"    - recipe_{recipe.recipe_name}{args_from_params(recipe.params_str())}\n"
+        for recipe in recipes
     ]
 
     return task_str + "".join(method_strs)
 
 def generate_item_crafting_task() -> str:
     task_str = f"task {ITEM_CRAFTING_TASK_NAME}(item: Item)\n"
-    method_str = f"{ITEM_CRAFTING_TASK_NAME} : craft(recipe: Recipe, item: Item)\n" \
+    method_str = f"{ITEM_CRAFTING_TASK_NAME} : craft(item: Item, recipe: Recipe)\n" \
                  f"    < recipe_produces(recipe, item)\n" \
                  f"    - {RECIPE_CRAFTING_TASK_NAME}(recipe)\n"
 
@@ -305,16 +345,13 @@ def generate_item_crafting_task() -> str:
 def recipes_string(*, numbered: bool) -> str:
     recipe_fun = lambda rec: rec.generate_action_numbered() if numbered else rec.generate_action_unnumbered()
     recipes = list(all_recipes())
-    # TODO: Deal with item tags
-    tagless_recipes = [rec for rec in recipes
-                       if "#" not in rec.generate_action_unnumbered()]
-
-    recipe_names = [rec.recipe_name for rec in tagless_recipes]
-    recipe_task_str = generate_recipe_crafting_task(recipe_names)
     item_task_str   = generate_item_crafting_task()
     actions_str = "\n".join(
-        recipe_fun(rec) for rec in tagless_recipes
+        recipe_fun(rec) for rec in recipes
     )
+    # the task is computed after the actions cause computing the action string
+    # also adds the arguments to the action. this could be done more cleanly, but for now it works
+    recipe_task_str = generate_recipe_crafting_task(recipes)
     return item_task_str + "\n\n" + recipe_task_str + "\n\n" + actions_str + "\n"
 
 def recipes_to_file(filename: str, *, numbered: bool):

@@ -3,7 +3,9 @@ import json
 from os import listdir, path
 from typing import Iterator, Callable
 
-from .get_names import domain_block_name, domain_entity_name, domain_item_name
+from tools.helpers import Registry, as_dict, remember
+
+from .get_names import domain_block_name, domain_entity_name, domain_item_name, domain_item_tag_name
 
 
 """LOOT TABLE
@@ -99,3 +101,46 @@ def killed_becomes() -> dict[str, list[str]]:
     return process_all_drops(ENTITY_LOOTTABLE_DIR, possible_drops, domain_entity_name)
 def mined_becomes() -> dict[str, list[str]]:
     return process_all_drops(BLOCK_LOOTTABLE_DIR, possible_drops_mine, domain_block_name)
+
+# =================================
+ITEM_TAGS_DIR = "minecraft/data/minecraft/tags/items/"
+BLOCK_TAGS_DIR = "minecraft/data/minecraft/tags/blocks/"
+ENTITY_TAGS_DIR = "minecraft/data/minecraft/tags/entity_types/"
+
+class TagRegistry(Registry):
+    tag_dir: str
+    _items: dict[str, list[str]] = {}
+
+    def itercompute(self, name: str) -> Iterator[str]:
+        full_path = path.join(self.tag_dir, name + ".json")
+        with open(full_path, "r", encoding="utf-8") as f:
+            d: dict = json.load(f)
+        mc_names: list[str] = d.get("values", [])
+        clear_names = [name.replace("minecraft:", "") for name in mc_names]
+        for name in clear_names:
+            if name.startswith("#"):
+                yield from self.get(name[1:])
+            else:
+                yield domain_item_name(name)
+
+    def compute(self, name: str):
+        return sorted(set(self.itercompute(name)))
+
+def read_tags(dirname: str) -> Iterator[tuple[str, list[str]]]:
+    registry = TagRegistry(tag_dir=dirname)
+    for filename in listdir(dirname):
+        name = filename.removesuffix(".json")
+        name_start = s if (s := name.rfind("/")) != -1 else 0
+        name = name[name_start:]
+        yield domain_item_tag_name(name), registry.get(name)
+
+
+@remember
+@as_dict
+def item_tags():
+    return read_tags(ITEM_TAGS_DIR)
+
+@remember
+@as_dict
+def block_tags():
+    return read_tags(BLOCK_TAGS_DIR)

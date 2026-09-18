@@ -1,6 +1,8 @@
 
 from typing import Callable, Iterable, Iterator, Optional
 
+from pydantic import BaseModel
+
 # ================================
 def find[T](iter: Iterable[T], pred: Callable[[T], bool]) -> Optional[T]:
     for item in iter:
@@ -67,3 +69,25 @@ def remember[T](fun: Callable[[], T]) -> Callable[[], T]:
             res = fun(*args, **kwargs)
         return res
     return wrapper
+
+# ================================
+class Registry[T](BaseModel):
+    """A dictionary of values that are interdependent, i.e. the computation of
+    one value may require the prior computation of another value.\n
+    The Registry takes care of this and computes values when needed.\n
+    To use the Registry, subclass it and implement the compute method"""
+    _items: dict[str, T] = {}
+
+    def compute(self, name: str) -> T:
+        ...
+
+    def get(self, name: str) -> T:
+        if name not in self._items:
+            self._items[name] = self.compute(name)
+        return self._items.get(name)
+
+    def get_for_all(self, names: list[str]) -> list[T]:
+        return [self._items[name] for name in names]
+
+    def entries(self) -> list[T]:
+        return list(self._items.values())

@@ -13,12 +13,21 @@ JAVA_ENTITY_TYPES_PATH = "minecraft_code/EntityType.java"
 def domain_item_name(mc_item_name: str) -> str:
     it = mc_item_name.removeprefix("minecraft:")
     return f"i_{it}"
+def domain_item_tag_name(mc_item_tag_name: str) -> str:
+    it = mc_item_tag_name.removeprefix("#").removeprefix("minecraft:")
+    return f"it_{it}"
 def domain_block_name(mc_block_name: str) -> str:
     it = mc_block_name.removeprefix("minecraft:")
     return f"b_{it}"
+def domain_block_tag_name(mc_block_tag_name: str) -> str:
+    it = mc_block_tag_name.removeprefix("#").removeprefix("minecraft:")
+    return f"bt_{it}"
 def domain_entity_name(mc_entity_name: str) -> str:
     it = mc_entity_name.removeprefix("minecraft:")
     return f"e_{it}"
+def domain_entity_tag_name(mc_entity_tag_name: str) -> str:
+    it = mc_entity_tag_name.removeprefix("#").removeprefix("minecraft:")
+    return f"et_{it}"
 def domain_recipe_name(mc_recipe_name: str) -> str:
     it = mc_recipe_name.removeprefix("minecraft:")
     return f"r_{it}"

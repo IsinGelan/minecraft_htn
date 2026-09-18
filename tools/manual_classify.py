@@ -27,7 +27,7 @@ def classify[T](entries: list[T], options: list[str]) -> Iterator[tuple[T, list[
         yield entry, selected
 
 # ================================
-BLOCKS_CLASSIFICATION_PATH = "data/blocks_dimension.json"
+BLOCKS_CLASSIFICATION_PATH = "data/block_dimensions.json"
 
 def classify_blocks() -> dict[str, list[str]]:
     blocks = get_block_names()

@@ -6,7 +6,7 @@ from shitlang import transpile_domain, transpile_problem
 from tools.generate_crafting import get_recipe_names, recipes_string
 from tools.generate_prec_actions import domain_do_precondition_replacement
 from tools.get_names import get_block_names, get_entity_names, get_item_names
-from tools.generate_facts import PICKAXES, generate, get_structure_names
+from tools.generate_facts import PICKAXES, generate, get_block_tag_names, get_item_tag_names, get_structure_names
 from tools.helpers import split_into_lines
 
 MACRO_CONSTS_MARKER = "# MACRO CONSTS"
@@ -17,6 +17,9 @@ ITEM_TYPENAME = "Item"
 ENTITY_TYPENAME = "Entity"
 RECIPE_TYPENAME = "Recipe"
 STRUCTURE_TYPENAME = "Structure"
+ITEM_TAG_TYPENAME = "ItemTag"
+BLOCK_TAG_TYPENAME = "BlockTag"
+ENTITY_TAG_TYPENAME = "EntityTag"
 
 CONST_LINEWIDTH = 70
 
@@ -34,7 +37,10 @@ def add_consts(code: str) -> str:
     items_decls = typed_declarations(ITEM_TYPENAME, set(get_item_names()) - set(PICKAXES))
     entity_decls = typed_declarations(ENTITY_TYPENAME, get_entity_names())
     recipe_decls = typed_declarations(RECIPE_TYPENAME, get_recipe_names())
+    item_tag_decls = typed_declarations(ITEM_TAG_TYPENAME, get_item_tag_names())
+    # block_tag_decls = typed_declarations(BLOCK_TAG_TYPENAME, get_block_tag_names())
     structure_decls = typed_declarations(STRUCTURE_TYPENAME, get_structure_names())
+    # entity_tag_decls = typed_declarations(ENTITY_TAG_TYPENAME, get_entity_tag_names())
 
     const_decls = (
         blocks_decls
@@ -42,6 +48,8 @@ def add_consts(code: str) -> str:
         + entity_decls
         + recipe_decls
         + structure_decls
+        + item_tag_decls
+        # + block_tag_decls
     )
     
     return code.replace(MACRO_CONSTS_MARKER, const_decls)

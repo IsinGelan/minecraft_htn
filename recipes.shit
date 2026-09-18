@@ -1,10 +1,13 @@
 task craft-item(item: Item)
-craft-item : craft(recipe: Recipe, item: Item)
+craft-item : craft(item: Item, recipe: Recipe)
     < recipe_produces(recipe, item)
     - craft-recipe(recipe)
 
 
 task craft-recipe(recipe: Recipe)
+craft-recipe : wooden_shovel(recipe: Recipe, i0: Item)
+    < recipe = r_wooden_shovel
+    - recipe_wooden_shovel(i0)
 craft-recipe : lapis_lazuli(recipe: Recipe)
     < recipe = r_lapis_lazuli
     - recipe_lapis_lazuli
@@ -14,9 +17,15 @@ craft-recipe : quartz_from_blasting(recipe: Recipe)
 craft-recipe : stripped_spruce_wood(recipe: Recipe)
     < recipe = r_stripped_spruce_wood
     - recipe_stripped_spruce_wood
+craft-recipe : fletching_table(recipe: Recipe, i0: Item)
+    < recipe = r_fletching_table
+    - recipe_fletching_table(i0)
 craft-recipe : green_dye(recipe: Recipe)
     < recipe = r_green_dye
     - recipe_green_dye
+craft-recipe : beehive(recipe: Recipe, i0: Item)
+    < recipe = r_beehive
+    - recipe_beehive(i0)
 craft-recipe : orange_carpet_from_white_carpet(recipe: Recipe)
     < recipe = r_orange_carpet_from_white_carpet
     - recipe_orange_carpet_from_white_carpet
@@ -53,6 +62,9 @@ craft-recipe : purple_glazed_terracotta(recipe: Recipe)
 craft-recipe : paper(recipe: Recipe)
     < recipe = r_paper
     - recipe_paper
+craft-recipe : lectern(recipe: Recipe, i0: Item)
+    < recipe = r_lectern
+    - recipe_lectern(i0)
 craft-recipe : stone_stairs(recipe: Recipe)
     < recipe = r_stone_stairs
     - recipe_stone_stairs
@@ -149,9 +161,18 @@ craft-recipe : warped_fence_gate(recipe: Recipe)
 craft-recipe : diamond_boots(recipe: Recipe)
     < recipe = r_diamond_boots
     - recipe_diamond_boots
+craft-recipe : blue_bed(recipe: Recipe, i0: Item)
+    < recipe = r_blue_bed
+    - recipe_blue_bed(i0)
+craft-recipe : wooden_pickaxe(recipe: Recipe, i0: Item)
+    < recipe = r_wooden_pickaxe
+    - recipe_wooden_pickaxe(i0)
 craft-recipe : light_blue_carpet(recipe: Recipe)
     < recipe = r_light_blue_carpet
     - recipe_light_blue_carpet
+craft-recipe : purple_bed(recipe: Recipe, i0: Item)
+    < recipe = r_purple_bed
+    - recipe_purple_bed(i0)
 craft-recipe : blackstone_stairs(recipe: Recipe)
     < recipe = r_blackstone_stairs
     - recipe_blackstone_stairs
@@ -188,9 +209,15 @@ craft-recipe : oak_boat(recipe: Recipe)
 craft-recipe : emerald_from_blasting(recipe: Recipe)
     < recipe = r_emerald_from_blasting
     - recipe_emerald_from_blasting
+craft-recipe : oak_planks(recipe: Recipe, i0: Item)
+    < recipe = r_oak_planks
+    - recipe_oak_planks(i0)
 craft-recipe : warped_fence(recipe: Recipe)
     < recipe = r_warped_fence
     - recipe_warped_fence
+craft-recipe : painting(recipe: Recipe, i0: Item)
+    < recipe = r_painting
+    - recipe_painting(i0)
 craft-recipe : dried_kelp_from_campfire_cooking(recipe: Recipe)
     < recipe = r_dried_kelp_from_campfire_cooking
     - recipe_dried_kelp_from_campfire_cooking
@@ -218,6 +245,9 @@ craft-recipe : spruce_trapdoor(recipe: Recipe)
 craft-recipe : light_blue_dye_from_blue_orchid(recipe: Recipe)
     < recipe = r_light_blue_dye_from_blue_orchid
     - recipe_light_blue_dye_from_blue_orchid
+craft-recipe : soul_campfire(recipe: Recipe, i0: Item, i1: Item)
+    < recipe = r_soul_campfire
+    - recipe_soul_campfire(i0, i1)
 craft-recipe : stone_brick_slab_from_stone_stonecutting(recipe: Recipe)
     < recipe = r_stone_brick_slab_from_stone_stonecutting
     - recipe_stone_brick_slab_from_stone_stonecutting
@@ -248,6 +278,9 @@ craft-recipe : stone_slab(recipe: Recipe)
 craft-recipe : acacia_fence(recipe: Recipe)
     < recipe = r_acacia_fence
     - recipe_acacia_fence
+craft-recipe : gray_bed(recipe: Recipe, i0: Item)
+    < recipe = r_gray_bed
+    - recipe_gray_bed(i0)
 craft-recipe : pink_dye_from_pink_tulip(recipe: Recipe)
     < recipe = r_pink_dye_from_pink_tulip
     - recipe_pink_dye_from_pink_tulip
@@ -341,6 +374,9 @@ craft-recipe : netherite_scrap_from_blasting(recipe: Recipe)
 craft-recipe : sponge(recipe: Recipe)
     < recipe = r_sponge
     - recipe_sponge
+craft-recipe : stone_axe(recipe: Recipe, i0: Item)
+    < recipe = r_stone_axe
+    - recipe_stone_axe(i0)
 craft-recipe : black_dye_from_wither_rose(recipe: Recipe)
     < recipe = r_black_dye_from_wither_rose
     - recipe_black_dye_from_wither_rose
@@ -446,6 +482,9 @@ craft-recipe : beacon(recipe: Recipe)
 craft-recipe : red_dye_from_poppy(recipe: Recipe)
     < recipe = r_red_dye_from_poppy
     - recipe_red_dye_from_poppy
+craft-recipe : red_bed(recipe: Recipe, i0: Item)
+    < recipe = r_red_bed
+    - recipe_red_bed(i0)
 craft-recipe : dark_oak_button(recipe: Recipe)
     < recipe = r_dark_oak_button
     - recipe_dark_oak_button
@@ -485,21 +524,36 @@ craft-recipe : chiseled_stone_bricks_from_stone_bricks_stonecutting(recipe: Reci
 craft-recipe : dark_oak_door(recipe: Recipe)
     < recipe = r_dark_oak_door
     - recipe_dark_oak_door
+craft-recipe : gold_ingot(recipe: Recipe, i0: Item)
+    < recipe = r_gold_ingot
+    - recipe_gold_ingot(i0)
 craft-recipe : honey_block(recipe: Recipe)
     < recipe = r_honey_block
     - recipe_honey_block
+craft-recipe : soul_torch(recipe: Recipe, i0: Item)
+    < recipe = r_soul_torch
+    - recipe_soul_torch(i0)
+craft-recipe : tripwire_hook(recipe: Recipe, i0: Item)
+    < recipe = r_tripwire_hook
+    - recipe_tripwire_hook(i0)
 craft-recipe : gold_ingot_from_nuggets(recipe: Recipe)
     < recipe = r_gold_ingot_from_nuggets
     - recipe_gold_ingot_from_nuggets
 craft-recipe : pink_concrete_powder(recipe: Recipe)
     < recipe = r_pink_concrete_powder
     - recipe_pink_concrete_powder
+craft-recipe : magenta_bed(recipe: Recipe, i0: Item)
+    < recipe = r_magenta_bed
+    - recipe_magenta_bed(i0)
 craft-recipe : brown_stained_glass(recipe: Recipe)
     < recipe = r_brown_stained_glass
     - recipe_brown_stained_glass
 craft-recipe : polished_diorite(recipe: Recipe)
     < recipe = r_polished_diorite
     - recipe_polished_diorite
+craft-recipe : furnace(recipe: Recipe, i0: Item)
+    < recipe = r_furnace
+    - recipe_furnace(i0)
 craft-recipe : netherite_shovel_smithing(recipe: Recipe)
     < recipe = r_netherite_shovel_smithing
     - recipe_netherite_shovel_smithing
@@ -635,6 +689,12 @@ craft-recipe : smooth_sandstone_slab_from_smooth_sandstone_stonecutting(recipe: 
 craft-recipe : mushroom_stew(recipe: Recipe)
     < recipe = r_mushroom_stew
     - recipe_mushroom_stew
+craft-recipe : smoker(recipe: Recipe, i0: Item)
+    < recipe = r_smoker
+    - recipe_smoker(i0)
+craft-recipe : loom(recipe: Recipe, i0: Item)
+    < recipe = r_loom
+    - recipe_loom(i0)
 craft-recipe : brown_carpet(recipe: Recipe)
     < recipe = r_brown_carpet
     - recipe_brown_carpet
@@ -686,12 +746,18 @@ craft-recipe : prismarine_stairs(recipe: Recipe)
 craft-recipe : brown_banner(recipe: Recipe)
     < recipe = r_brown_banner
     - recipe_brown_banner
+craft-recipe : cartography_table(recipe: Recipe, i0: Item)
+    < recipe = r_cartography_table
+    - recipe_cartography_table(i0)
 craft-recipe : golden_axe(recipe: Recipe)
     < recipe = r_golden_axe
     - recipe_golden_axe
 craft-recipe : netherite_block(recipe: Recipe)
     < recipe = r_netherite_block
     - recipe_netherite_block
+craft-recipe : spruce_planks(recipe: Recipe, i0: Item)
+    < recipe = r_spruce_planks
+    - recipe_spruce_planks(i0)
 craft-recipe : red_sandstone(recipe: Recipe)
     < recipe = r_red_sandstone
     - recipe_red_sandstone
@@ -704,6 +770,9 @@ craft-recipe : prismarine(recipe: Recipe)
 craft-recipe : brick_wall(recipe: Recipe)
     < recipe = r_brick_wall
     - recipe_brick_wall
+craft-recipe : white_bed(recipe: Recipe, i0: Item)
+    < recipe = r_white_bed
+    - recipe_white_bed(i0)
 craft-recipe : stone_pressure_plate(recipe: Recipe)
     < recipe = r_stone_pressure_plate
     - recipe_stone_pressure_plate
@@ -782,6 +851,9 @@ craft-recipe : sugar_from_sugar_cane(recipe: Recipe)
 craft-recipe : fishing_rod(recipe: Recipe)
     < recipe = r_fishing_rod
     - recipe_fishing_rod
+craft-recipe : composter(recipe: Recipe, i0: Item)
+    < recipe = r_composter
+    - recipe_composter(i0)
 craft-recipe : chiseled_stone_bricks_stone_from_stonecutting(recipe: Recipe)
     < recipe = r_chiseled_stone_bricks_stone_from_stonecutting
     - recipe_chiseled_stone_bricks_stone_from_stonecutting
@@ -791,6 +863,9 @@ craft-recipe : map(recipe: Recipe)
 craft-recipe : red_sandstone_wall(recipe: Recipe)
     < recipe = r_red_sandstone_wall
     - recipe_red_sandstone_wall
+craft-recipe : jukebox(recipe: Recipe, i0: Item)
+    < recipe = r_jukebox
+    - recipe_jukebox(i0)
 craft-recipe : blue_banner(recipe: Recipe)
     < recipe = r_blue_banner
     - recipe_blue_banner
@@ -803,6 +878,9 @@ craft-recipe : iron_door(recipe: Recipe)
 craft-recipe : purpur_stairs_from_purpur_block_stonecutting(recipe: Recipe)
     < recipe = r_purpur_stairs_from_purpur_block_stonecutting
     - recipe_purpur_stairs_from_purpur_block_stonecutting
+craft-recipe : stone_hoe(recipe: Recipe, i0: Item)
+    < recipe = r_stone_hoe
+    - recipe_stone_hoe(i0)
 craft-recipe : diamond_from_blasting(recipe: Recipe)
     < recipe = r_diamond_from_blasting
     - recipe_diamond_from_blasting
@@ -860,6 +938,9 @@ craft-recipe : glowstone(recipe: Recipe)
 craft-recipe : gold_nugget_from_smelting(recipe: Recipe)
     < recipe = r_gold_nugget_from_smelting
     - recipe_gold_nugget_from_smelting
+craft-recipe : shield(recipe: Recipe, i0: Item)
+    < recipe = r_shield
+    - recipe_shield(i0)
 craft-recipe : mossy_cobblestone_wall_from_mossy_cobblestone_stonecutting(recipe: Recipe)
     < recipe = r_mossy_cobblestone_wall_from_mossy_cobblestone_stonecutting
     - recipe_mossy_cobblestone_wall_from_mossy_cobblestone_stonecutting
@@ -875,6 +956,9 @@ craft-recipe : acacia_button(recipe: Recipe)
 craft-recipe : smooth_stone_slab(recipe: Recipe)
     < recipe = r_smooth_stone_slab
     - recipe_smooth_stone_slab
+craft-recipe : chest(recipe: Recipe, i0: Item)
+    < recipe = r_chest
+    - recipe_chest(i0)
 craft-recipe : oak_slab(recipe: Recipe)
     < recipe = r_oak_slab
     - recipe_oak_slab
@@ -944,12 +1028,18 @@ craft-recipe : dark_oak_pressure_plate(recipe: Recipe)
 craft-recipe : honey_bottle(recipe: Recipe)
     < recipe = r_honey_bottle
     - recipe_honey_bottle
+craft-recipe : stone_pickaxe(recipe: Recipe, i0: Item)
+    < recipe = r_stone_pickaxe
+    - recipe_stone_pickaxe(i0)
 craft-recipe : tnt(recipe: Recipe)
     < recipe = r_tnt
     - recipe_tnt
 craft-recipe : gray_terracotta(recipe: Recipe)
     < recipe = r_gray_terracotta
     - recipe_gray_terracotta
+craft-recipe : stick(recipe: Recipe, i0: Item)
+    < recipe = r_stick
+    - recipe_stick(i0)
 craft-recipe : dark_oak_slab(recipe: Recipe)
     < recipe = r_dark_oak_slab
     - recipe_dark_oak_slab
@@ -1019,6 +1109,9 @@ craft-recipe : redstone_torch(recipe: Recipe)
 craft-recipe : cooked_mutton_from_campfire_cooking(recipe: Recipe)
     < recipe = r_cooked_mutton_from_campfire_cooking
     - recipe_cooked_mutton_from_campfire_cooking
+craft-recipe : stone_shovel(recipe: Recipe, i0: Item)
+    < recipe = r_stone_shovel
+    - recipe_stone_shovel(i0)
 craft-recipe : lime_glazed_terracotta(recipe: Recipe)
     < recipe = r_lime_glazed_terracotta
     - recipe_lime_glazed_terracotta
@@ -1064,6 +1157,9 @@ craft-recipe : ladder(recipe: Recipe)
 craft-recipe : stonecutter(recipe: Recipe)
     < recipe = r_stonecutter
     - recipe_stonecutter
+craft-recipe : light_gray_bed(recipe: Recipe, i0: Item)
+    < recipe = r_light_gray_bed
+    - recipe_light_gray_bed(i0)
 craft-recipe : blue_concrete_powder(recipe: Recipe)
     < recipe = r_blue_concrete_powder
     - recipe_blue_concrete_powder
@@ -1082,6 +1178,9 @@ craft-recipe : black_terracotta(recipe: Recipe)
 craft-recipe : magma_cream(recipe: Recipe)
     < recipe = r_magma_cream
     - recipe_magma_cream
+craft-recipe : green_bed(recipe: Recipe, i0: Item)
+    < recipe = r_green_bed
+    - recipe_green_bed(i0)
 craft-recipe : green_concrete_powder(recipe: Recipe)
     < recipe = r_green_concrete_powder
     - recipe_green_concrete_powder
@@ -1166,6 +1265,12 @@ craft-recipe : polished_granite_from_granite_stonecutting(recipe: Recipe)
 craft-recipe : flower_banner_pattern(recipe: Recipe)
     < recipe = r_flower_banner_pattern
     - recipe_flower_banner_pattern
+craft-recipe : smithing_table(recipe: Recipe, i0: Item)
+    < recipe = r_smithing_table
+    - recipe_smithing_table(i0)
+craft-recipe : pink_bed(recipe: Recipe, i0: Item)
+    < recipe = r_pink_bed
+    - recipe_pink_bed(i0)
 craft-recipe : acacia_slab(recipe: Recipe)
     < recipe = r_acacia_slab
     - recipe_acacia_slab
@@ -1241,6 +1346,9 @@ craft-recipe : mossy_stone_brick_stairs_from_mossy_stone_brick_stonecutting(reci
 craft-recipe : black_carpet_from_white_carpet(recipe: Recipe)
     < recipe = r_black_carpet_from_white_carpet
     - recipe_black_carpet_from_white_carpet
+craft-recipe : bowl(recipe: Recipe, i0: Item)
+    < recipe = r_bowl
+    - recipe_bowl(i0)
 craft-recipe : pink_stained_glass(recipe: Recipe)
     < recipe = r_pink_stained_glass
     - recipe_pink_stained_glass
@@ -1340,6 +1448,9 @@ craft-recipe : cobblestone_stairs(recipe: Recipe)
 craft-recipe : polished_basalt(recipe: Recipe)
     < recipe = r_polished_basalt
     - recipe_polished_basalt
+craft-recipe : dark_oak_planks(recipe: Recipe, i0: Item)
+    < recipe = r_dark_oak_planks
+    - recipe_dark_oak_planks(i0)
 craft-recipe : red_nether_brick_stairs(recipe: Recipe)
     < recipe = r_red_nether_brick_stairs
     - recipe_red_nether_brick_stairs
@@ -1361,6 +1472,9 @@ craft-recipe : red_bed_from_white_bed(recipe: Recipe)
 craft-recipe : light_gray_stained_glass_pane(recipe: Recipe)
     < recipe = r_light_gray_stained_glass_pane
     - recipe_light_gray_stained_glass_pane
+craft-recipe : crafting_table(recipe: Recipe, i0: Item)
+    < recipe = r_crafting_table
+    - recipe_crafting_table(i0)
 craft-recipe : nether_brick_slab(recipe: Recipe)
     < recipe = r_nether_brick_slab
     - recipe_nether_brick_slab
@@ -1388,6 +1502,9 @@ craft-recipe : wheat(recipe: Recipe)
 craft-recipe : cooked_beef_from_smoking(recipe: Recipe)
     < recipe = r_cooked_beef_from_smoking
     - recipe_cooked_beef_from_smoking
+craft-recipe : wooden_sword(recipe: Recipe, i0: Item)
+    < recipe = r_wooden_sword
+    - recipe_wooden_sword(i0)
 craft-recipe : end_stone_bricks_from_end_stone_stonecutting(recipe: Recipe)
     < recipe = r_end_stone_bricks_from_end_stone_stonecutting
     - recipe_end_stone_bricks_from_end_stone_stonecutting
@@ -1454,6 +1571,9 @@ craft-recipe : prismarine_wall(recipe: Recipe)
 craft-recipe : red_dye_from_rose_bush(recipe: Recipe)
     < recipe = r_red_dye_from_rose_bush
     - recipe_red_dye_from_rose_bush
+craft-recipe : gold_ingot_from_blasting(recipe: Recipe, i0: Item)
+    < recipe = r_gold_ingot_from_blasting
+    - recipe_gold_ingot_from_blasting(i0)
 craft-recipe : brown_terracotta(recipe: Recipe)
     < recipe = r_brown_terracotta
     - recipe_brown_terracotta
@@ -1466,6 +1586,9 @@ craft-recipe : leather_helmet(recipe: Recipe)
 craft-recipe : red_carpet_from_white_carpet(recipe: Recipe)
     < recipe = r_red_carpet_from_white_carpet
     - recipe_red_carpet_from_white_carpet
+craft-recipe : grindstone(recipe: Recipe, i0: Item)
+    < recipe = r_grindstone
+    - recipe_grindstone(i0)
 craft-recipe : light_gray_stained_glass(recipe: Recipe)
     < recipe = r_light_gray_stained_glass
     - recipe_light_gray_stained_glass
@@ -1559,6 +1682,9 @@ craft-recipe : dark_prismarine_slab(recipe: Recipe)
 craft-recipe : rabbit_stew_from_brown_mushroom(recipe: Recipe)
     < recipe = r_rabbit_stew_from_brown_mushroom
     - recipe_rabbit_stew_from_brown_mushroom
+craft-recipe : brown_bed(recipe: Recipe, i0: Item)
+    < recipe = r_brown_bed
+    - recipe_brown_bed(i0)
 craft-recipe : spruce_fence(recipe: Recipe)
     < recipe = r_spruce_fence
     - recipe_spruce_fence
@@ -1583,6 +1709,9 @@ craft-recipe : red_sandstone_stairs(recipe: Recipe)
 craft-recipe : cut_sandstone(recipe: Recipe)
     < recipe = r_cut_sandstone
     - recipe_cut_sandstone
+craft-recipe : crimson_planks(recipe: Recipe, i0: Item)
+    < recipe = r_crimson_planks
+    - recipe_crimson_planks(i0)
 craft-recipe : smooth_sandstone_stairs_from_smooth_sandstone_stonecutting(recipe: Recipe)
     < recipe = r_smooth_sandstone_stairs_from_smooth_sandstone_stonecutting
     - recipe_smooth_sandstone_stairs_from_smooth_sandstone_stonecutting
@@ -1607,6 +1736,9 @@ craft-recipe : stone_brick_stairs_from_stone_bricks_stonecutting(recipe: Recipe)
 craft-recipe : polished_granite_stairs_from_polished_granite_stonecutting(recipe: Recipe)
     < recipe = r_polished_granite_stairs_from_polished_granite_stonecutting
     - recipe_polished_granite_stairs_from_polished_granite_stonecutting
+craft-recipe : stone_sword(recipe: Recipe, i0: Item)
+    < recipe = r_stone_sword
+    - recipe_stone_sword(i0)
 craft-recipe : end_stone_brick_wall_from_end_stone_brick_stonecutting(recipe: Recipe)
     < recipe = r_end_stone_brick_wall_from_end_stone_brick_stonecutting
     - recipe_end_stone_brick_wall_from_end_stone_brick_stonecutting
@@ -1697,6 +1829,9 @@ craft-recipe : green_wool(recipe: Recipe)
 craft-recipe : iron_ingot(recipe: Recipe)
     < recipe = r_iron_ingot
     - recipe_iron_ingot
+craft-recipe : charcoal(recipe: Recipe, i0: Item)
+    < recipe = r_charcoal
+    - recipe_charcoal(i0)
 craft-recipe : stone_brick_stairs_from_stone_stonecutting(recipe: Recipe)
     < recipe = r_stone_brick_stairs_from_stone_stonecutting
     - recipe_stone_brick_stairs_from_stone_stonecutting
@@ -1784,6 +1919,9 @@ craft-recipe : cobblestone_wall_from_cobblestone_stonecutting(recipe: Recipe)
 craft-recipe : iron_trapdoor(recipe: Recipe)
     < recipe = r_iron_trapdoor
     - recipe_iron_trapdoor
+craft-recipe : yellow_bed(recipe: Recipe, i0: Item)
+    < recipe = r_yellow_bed
+    - recipe_yellow_bed(i0)
 craft-recipe : dark_oak_fence_gate(recipe: Recipe)
     < recipe = r_dark_oak_fence_gate
     - recipe_dark_oak_fence_gate
@@ -1859,6 +1997,9 @@ craft-recipe : netherite_chestplate_smithing(recipe: Recipe)
 craft-recipe : polished_blackstone_pressure_plate(recipe: Recipe)
     < recipe = r_polished_blackstone_pressure_plate
     - recipe_polished_blackstone_pressure_plate
+craft-recipe : piston(recipe: Recipe, i0: Item)
+    < recipe = r_piston
+    - recipe_piston(i0)
 craft-recipe : chiseled_sandstone_from_sandstone_stonecutting(recipe: Recipe)
     < recipe = r_chiseled_sandstone_from_sandstone_stonecutting
     - recipe_chiseled_sandstone_from_sandstone_stonecutting
@@ -1889,15 +2030,24 @@ craft-recipe : purple_wool(recipe: Recipe)
 craft-recipe : gray_stained_glass(recipe: Recipe)
     < recipe = r_gray_stained_glass
     - recipe_gray_stained_glass
+craft-recipe : glass(recipe: Recipe, i0: Item)
+    < recipe = r_glass
+    - recipe_glass(i0)
 craft-recipe : mossy_stone_brick_stairs(recipe: Recipe)
     < recipe = r_mossy_stone_brick_stairs
     - recipe_mossy_stone_brick_stairs
+craft-recipe : lime_bed(recipe: Recipe, i0: Item)
+    < recipe = r_lime_bed
+    - recipe_lime_bed(i0)
 craft-recipe : netherite_scrap(recipe: Recipe)
     < recipe = r_netherite_scrap
     - recipe_netherite_scrap
 craft-recipe : slime_ball(recipe: Recipe)
     < recipe = r_slime_ball
     - recipe_slime_ball
+craft-recipe : black_bed(recipe: Recipe, i0: Item)
+    < recipe = r_black_bed
+    - recipe_black_bed(i0)
 craft-recipe : cut_sandstone_slab_from_cut_sandstone_stonecutting(recipe: Recipe)
     < recipe = r_cut_sandstone_slab_from_cut_sandstone_stonecutting
     - recipe_cut_sandstone_slab_from_cut_sandstone_stonecutting
@@ -1934,6 +2084,9 @@ craft-recipe : lime_dye_from_smelting(recipe: Recipe)
 craft-recipe : orange_glazed_terracotta(recipe: Recipe)
     < recipe = r_orange_glazed_terracotta
     - recipe_orange_glazed_terracotta
+craft-recipe : jungle_planks(recipe: Recipe, i0: Item)
+    < recipe = r_jungle_planks
+    - recipe_jungle_planks(i0)
 craft-recipe : nether_brick_wall_from_nether_bricks_stonecutting(recipe: Recipe)
     < recipe = r_nether_brick_wall_from_nether_bricks_stonecutting
     - recipe_nether_brick_wall_from_nether_bricks_stonecutting
@@ -1985,6 +2138,12 @@ craft-recipe : dried_kelp_from_smoking(recipe: Recipe)
 craft-recipe : polished_blackstone_brick_wall(recipe: Recipe)
     < recipe = r_polished_blackstone_brick_wall
     - recipe_polished_blackstone_brick_wall
+craft-recipe : wooden_axe(recipe: Recipe, i0: Item)
+    < recipe = r_wooden_axe
+    - recipe_wooden_axe(i0)
+craft-recipe : warped_planks(recipe: Recipe, i0: Item)
+    < recipe = r_warped_planks
+    - recipe_warped_planks(i0)
 craft-recipe : quartz_bricks(recipe: Recipe)
     < recipe = r_quartz_bricks
     - recipe_quartz_bricks
@@ -1997,6 +2156,12 @@ craft-recipe : light_blue_terracotta(recipe: Recipe)
 craft-recipe : yellow_wool(recipe: Recipe)
     < recipe = r_yellow_wool
     - recipe_yellow_wool
+craft-recipe : barrel(recipe: Recipe, i0: Item, i1: Item)
+    < recipe = r_barrel
+    - recipe_barrel(i0, i1)
+craft-recipe : light_blue_bed(recipe: Recipe, i0: Item)
+    < recipe = r_light_blue_bed
+    - recipe_light_blue_bed(i0)
 craft-recipe : golden_chestplate(recipe: Recipe)
     < recipe = r_golden_chestplate
     - recipe_golden_chestplate
@@ -2015,12 +2180,18 @@ craft-recipe : snow_block(recipe: Recipe)
 craft-recipe : light_gray_carpet(recipe: Recipe)
     < recipe = r_light_gray_carpet
     - recipe_light_gray_carpet
+craft-recipe : acacia_planks(recipe: Recipe, i0: Item)
+    < recipe = r_acacia_planks
+    - recipe_acacia_planks(i0)
 craft-recipe : lapis_block(recipe: Recipe)
     < recipe = r_lapis_block
     - recipe_lapis_block
 craft-recipe : redstone_lamp(recipe: Recipe)
     < recipe = r_redstone_lamp
     - recipe_redstone_lamp
+craft-recipe : orange_bed(recipe: Recipe, i0: Item)
+    < recipe = r_orange_bed
+    - recipe_orange_bed(i0)
 craft-recipe : red_concrete_powder(recipe: Recipe)
     < recipe = r_red_concrete_powder
     - recipe_red_concrete_powder
@@ -2114,6 +2285,9 @@ craft-recipe : dark_prismarine(recipe: Recipe)
 craft-recipe : blue_wool(recipe: Recipe)
     < recipe = r_blue_wool
     - recipe_blue_wool
+craft-recipe : daylight_detector(recipe: Recipe, i0: Item)
+    < recipe = r_daylight_detector
+    - recipe_daylight_detector(i0)
 craft-recipe : light_gray_glazed_terracotta(recipe: Recipe)
     < recipe = r_light_gray_glazed_terracotta
     - recipe_light_gray_glazed_terracotta
@@ -2156,6 +2330,9 @@ craft-recipe : cobblestone_slab(recipe: Recipe)
 craft-recipe : polished_diorite_stairs_from_polished_diorite_stonecutting(recipe: Recipe)
     < recipe = r_polished_diorite_stairs_from_polished_diorite_stonecutting
     - recipe_polished_diorite_stairs_from_polished_diorite_stonecutting
+craft-recipe : cyan_bed(recipe: Recipe, i0: Item)
+    < recipe = r_cyan_bed
+    - recipe_cyan_bed(i0)
 craft-recipe : cobblestone_slab_from_cobblestone_stonecutting(recipe: Recipe)
     < recipe = r_cobblestone_slab_from_cobblestone_stonecutting
     - recipe_cobblestone_slab_from_cobblestone_stonecutting
@@ -2192,6 +2369,9 @@ craft-recipe : dried_kelp_from_smelting(recipe: Recipe)
 craft-recipe : jungle_door(recipe: Recipe)
     < recipe = r_jungle_door
     - recipe_jungle_door
+craft-recipe : brewing_stand(recipe: Recipe, i0: Item)
+    < recipe = r_brewing_stand
+    - recipe_brewing_stand(i0)
 craft-recipe : magenta_dye_from_lilac(recipe: Recipe)
     < recipe = r_magenta_dye_from_lilac
     - recipe_magenta_dye_from_lilac
@@ -2204,6 +2384,9 @@ craft-recipe : blue_stained_glass(recipe: Recipe)
 craft-recipe : polished_blackstone_wall(recipe: Recipe)
     < recipe = r_polished_blackstone_wall
     - recipe_polished_blackstone_wall
+craft-recipe : bookshelf(recipe: Recipe, i0: Item)
+    < recipe = r_bookshelf
+    - recipe_bookshelf(i0)
 craft-recipe : chiseled_polished_blackstone_from_polished_blackstone_stonecutting(recipe: Recipe)
     < recipe = r_chiseled_polished_blackstone_from_polished_blackstone_stonecutting
     - recipe_chiseled_polished_blackstone_from_polished_blackstone_stonecutting
@@ -2252,6 +2435,9 @@ craft-recipe : light_blue_concrete_powder(recipe: Recipe)
 craft-recipe : yellow_stained_glass_pane(recipe: Recipe)
     < recipe = r_yellow_stained_glass_pane
     - recipe_yellow_stained_glass_pane
+craft-recipe : wooden_hoe(recipe: Recipe, i0: Item)
+    < recipe = r_wooden_hoe
+    - recipe_wooden_hoe(i0)
 craft-recipe : cyan_banner(recipe: Recipe)
     < recipe = r_cyan_banner
     - recipe_cyan_banner
@@ -2279,6 +2465,9 @@ craft-recipe : dark_oak_wood(recipe: Recipe)
 craft-recipe : magenta_dye_from_allium(recipe: Recipe)
     < recipe = r_magenta_dye_from_allium
     - recipe_magenta_dye_from_allium
+craft-recipe : campfire(recipe: Recipe, i0: Item, i1: Item)
+    < recipe = r_campfire
+    - recipe_campfire(i0, i1)
 craft-recipe : granite_stairs_from_granite_stonecutting(recipe: Recipe)
     < recipe = r_granite_stairs_from_granite_stonecutting
     - recipe_granite_stairs_from_granite_stonecutting
@@ -2309,6 +2498,9 @@ craft-recipe : oak_pressure_plate(recipe: Recipe)
 craft-recipe : gray_bed_from_white_bed(recipe: Recipe)
     < recipe = r_gray_bed_from_white_bed
     - recipe_gray_bed_from_white_bed
+craft-recipe : birch_planks(recipe: Recipe, i0: Item)
+    < recipe = r_birch_planks
+    - recipe_birch_planks(i0)
 craft-recipe : jungle_boat(recipe: Recipe)
     < recipe = r_jungle_boat
     - recipe_jungle_boat
@@ -2318,6 +2510,9 @@ craft-recipe : stone_bricks_from_stone_stonecutting(recipe: Recipe)
 craft-recipe : golden_apple(recipe: Recipe)
     < recipe = r_golden_apple
     - recipe_golden_apple
+craft-recipe : note_block(recipe: Recipe, i0: Item)
+    < recipe = r_note_block
+    - recipe_note_block(i0)
 craft-recipe : polished_diorite_stairs(recipe: Recipe)
     < recipe = r_polished_diorite_stairs
     - recipe_polished_diorite_stairs
@@ -2350,6 +2545,13 @@ craft-recipe : sandstone_wall_from_sandstone_stonecutting(recipe: Recipe)
     - recipe_sandstone_wall_from_sandstone_stonecutting
 
 
+action recipe_wooden_shovel(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    < has_item(i_stick)
+    => has_item(i_wooden_shovel)
+
 action recipe_lapis_lazuli
     < has_item(i_lapis_block)
     => has_item(i_lapis_lazuli)
@@ -2363,10 +2565,24 @@ action recipe_stripped_spruce_wood
     < has_item(i_stripped_spruce_log)
     => has_item(i_stripped_spruce_wood)
 
+action recipe_fletching_table(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_flint)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_fletching_table)
+
 action recipe_green_dye
     < near_block(b_furnace)
     < has_item(i_cactus)
     => has_item(i_green_dye)
+
+action recipe_beehive(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    < has_item(i_honeycomb)
+    => has_item(i_beehive)
 
 action recipe_orange_carpet_from_white_carpet
     < near_block(b_crafting_table)
@@ -2428,6 +2644,13 @@ action recipe_paper
     < near_block(b_crafting_table)
     < has_item(i_sugar_cane)
     => has_item(i_paper)
+
+action recipe_lectern(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_wooden_slabs)
+    < has_item(i0)
+    < has_item(i_bookshelf)
+    => has_item(i_lectern)
 
 action recipe_stone_stairs
     < near_block(b_crafting_table)
@@ -2597,9 +2820,30 @@ action recipe_diamond_boots
     < has_item(i_diamond)
     => has_item(i_diamond_boots)
 
+action recipe_blue_bed(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_blue_wool)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_blue_bed)
+
+action recipe_wooden_pickaxe(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    < has_item(i_stick)
+    => has_item(i_wooden_pickaxe)
+
 action recipe_light_blue_carpet
     < has_item(i_light_blue_wool)
     => has_item(i_light_blue_carpet)
+
+action recipe_purple_bed(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_purple_wool)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_purple_bed)
 
 action recipe_blackstone_stairs
     < near_block(b_crafting_table)
@@ -2663,11 +2907,23 @@ action recipe_emerald_from_blasting
     < has_item(i_emerald_ore)
     => has_item(i_emerald)
 
+action recipe_oak_planks(i0: Item)
+    < item_tag(i0, it_oak_logs)
+    < has_item(i0)
+    => has_item(i_oak_planks)
+
 action recipe_warped_fence
     < near_block(b_crafting_table)
     < has_item(i_warped_planks)
     < has_item(i_stick)
     => has_item(i_warped_fence)
+
+action recipe_painting(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_stick)
+    < item_tag(i0, it_wool)
+    < has_item(i0)
+    => has_item(i_painting)
 
 action recipe_dried_kelp_from_campfire_cooking
     < near_block(b_campfire)
@@ -2711,6 +2967,15 @@ action recipe_spruce_trapdoor
 action recipe_light_blue_dye_from_blue_orchid
     < has_item(i_blue_orchid)
     => has_item(i_light_blue_dye)
+
+action recipe_soul_campfire(i0: Item, i1: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_stick)
+    < item_tag(i0, it_soul_fire_base_blocks)
+    < has_item(i0)
+    < item_tag(i1, it_logs)
+    < has_item(i1)
+    => has_item(i_soul_campfire)
 
 action recipe_stone_brick_slab_from_stone_stonecutting
     < near_block(b_stonecutter)
@@ -2763,6 +3028,13 @@ action recipe_acacia_fence
     < has_item(i_acacia_planks)
     < has_item(i_stick)
     => has_item(i_acacia_fence)
+
+action recipe_gray_bed(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_gray_wool)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_gray_bed)
 
 action recipe_pink_dye_from_pink_tulip
     < has_item(i_pink_tulip)
@@ -2924,6 +3196,13 @@ action recipe_sponge
     < near_block(b_furnace)
     < has_item(i_wet_sponge)
     => has_item(i_sponge)
+
+action recipe_stone_axe(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_stone_tool_materials)
+    < has_item(i0)
+    < has_item(i_stick)
+    => has_item(i_stone_axe)
 
 action recipe_black_dye_from_wither_rose
     < has_item(i_wither_rose)
@@ -3100,6 +3379,13 @@ action recipe_red_dye_from_poppy
     < has_item(i_poppy)
     => has_item(i_red_dye)
 
+action recipe_red_bed(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_red_wool)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_red_bed)
+
 action recipe_dark_oak_button
     < has_item(i_dark_oak_planks)
     => has_item(i_dark_oak_button)
@@ -3168,9 +3454,31 @@ action recipe_dark_oak_door
     < has_item(i_dark_oak_planks)
     => has_item(i_dark_oak_door)
 
+action recipe_gold_ingot(i0: Item)
+    < near_block(b_furnace)
+    < item_tag(i0, it_gold_ores)
+    < has_item(i0)
+    => has_item(i_gold_ingot)
+
 action recipe_honey_block
     < has_item(i_honey_bottle)
     => has_item(i_honey_block)
+
+action recipe_soul_torch(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_coal)
+    < has_item(i_stick)
+    < item_tag(i0, it_soul_fire_base_blocks)
+    < has_item(i0)
+    => has_item(i_soul_torch)
+
+action recipe_tripwire_hook(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_iron_ingot)
+    < has_item(i_stick)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_tripwire_hook)
 
 action recipe_gold_ingot_from_nuggets
     < near_block(b_crafting_table)
@@ -3184,6 +3492,13 @@ action recipe_pink_concrete_powder
     < has_item(i_gravel)
     => has_item(i_pink_concrete_powder)
 
+action recipe_magenta_bed(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_magenta_wool)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_magenta_bed)
+
 action recipe_brown_stained_glass
     < near_block(b_crafting_table)
     < has_item(i_glass)
@@ -3193,6 +3508,12 @@ action recipe_brown_stained_glass
 action recipe_polished_diorite
     < has_item(i_diorite)
     => has_item(i_polished_diorite)
+
+action recipe_furnace(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_stone_crafting_materials)
+    < has_item(i0)
+    => has_item(i_furnace)
 
 action recipe_netherite_shovel_smithing
     < near_block(b_smithing_table)
@@ -3437,6 +3758,19 @@ action recipe_mushroom_stew
     < has_item(i_bowl)
     => has_item(i_mushroom_stew)
 
+action recipe_smoker(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_logs)
+    < has_item(i0)
+    < has_item(i_furnace)
+    => has_item(i_smoker)
+
+action recipe_loom(i0: Item)
+    < has_item(i_string)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_loom)
+
 action recipe_brown_carpet
     < has_item(i_brown_wool)
     => has_item(i_brown_carpet)
@@ -3523,6 +3857,13 @@ action recipe_brown_banner
     < has_item(i_stick)
     => has_item(i_brown_banner)
 
+action recipe_cartography_table(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_paper)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_cartography_table)
+
 action recipe_golden_axe
     < near_block(b_crafting_table)
     < has_item(i_gold_ingot)
@@ -3533,6 +3874,11 @@ action recipe_netherite_block
     < near_block(b_crafting_table)
     < has_item(i_netherite_ingot)
     => has_item(i_netherite_block)
+
+action recipe_spruce_planks(i0: Item)
+    < item_tag(i0, it_spruce_logs)
+    < has_item(i0)
+    => has_item(i_spruce_planks)
 
 action recipe_red_sandstone
     < has_item(i_red_sand)
@@ -3551,6 +3897,13 @@ action recipe_brick_wall
     < near_block(b_crafting_table)
     < has_item(i_bricks)
     => has_item(i_brick_wall)
+
+action recipe_white_bed(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_white_wool)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_white_bed)
 
 action recipe_stone_pressure_plate
     < has_item(i_stone)
@@ -3681,6 +4034,12 @@ action recipe_fishing_rod
     < has_item(i_string)
     => has_item(i_fishing_rod)
 
+action recipe_composter(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_wooden_slabs)
+    < has_item(i0)
+    => has_item(i_composter)
+
 action recipe_chiseled_stone_bricks_stone_from_stonecutting
     < near_block(b_stonecutter)
     < has_item(i_stone)
@@ -3696,6 +4055,13 @@ action recipe_red_sandstone_wall
     < near_block(b_crafting_table)
     < has_item(i_red_sandstone)
     => has_item(i_red_sandstone_wall)
+
+action recipe_jukebox(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    < has_item(i_diamond)
+    => has_item(i_jukebox)
 
 action recipe_blue_banner
     < near_block(b_crafting_table)
@@ -3718,6 +4084,13 @@ action recipe_purpur_stairs_from_purpur_block_stonecutting
     < near_block(b_stonecutter)
     < has_item(i_purpur_block)
     => has_item(i_purpur_stairs)
+
+action recipe_stone_hoe(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_stone_tool_materials)
+    < has_item(i0)
+    < has_item(i_stick)
+    => has_item(i_stone_hoe)
 
 action recipe_diamond_from_blasting
     < near_block(b_blast_furnace)
@@ -3815,6 +4188,13 @@ action recipe_gold_nugget_from_smelting
     < has_item(i_golden_pickaxe)
     => has_item(i_gold_nugget)
 
+action recipe_shield(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    < has_item(i_iron_ingot)
+    => has_item(i_shield)
+
 action recipe_mossy_cobblestone_wall_from_mossy_cobblestone_stonecutting
     < near_block(b_stonecutter)
     < has_item(i_mossy_cobblestone)
@@ -3839,6 +4219,12 @@ action recipe_smooth_stone_slab
     < near_block(b_crafting_table)
     < has_item(i_smooth_stone)
     => has_item(i_smooth_stone_slab)
+
+action recipe_chest(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_chest)
 
 action recipe_oak_slab
     < near_block(b_crafting_table)
@@ -3955,6 +4341,13 @@ action recipe_honey_bottle
     < has_item(i_glass_bottle)
     => has_item(i_honey_bottle)
 
+action recipe_stone_pickaxe(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_stone_tool_materials)
+    < has_item(i0)
+    < has_item(i_stick)
+    => has_item(i_stone_pickaxe)
+
 action recipe_tnt
     < near_block(b_crafting_table)
     < has_item(i_gunpowder)
@@ -3966,6 +4359,11 @@ action recipe_gray_terracotta
     < has_item(i_terracotta)
     < has_item(i_gray_dye)
     => has_item(i_gray_terracotta)
+
+action recipe_stick(i0: Item)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_stick)
 
 action recipe_dark_oak_slab
     < near_block(b_crafting_table)
@@ -4082,6 +4480,13 @@ action recipe_cooked_mutton_from_campfire_cooking
     < has_item(i_mutton)
     => has_item(i_cooked_mutton)
 
+action recipe_stone_shovel(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_stone_tool_materials)
+    < has_item(i0)
+    < has_item(i_stick)
+    => has_item(i_stone_shovel)
+
 action recipe_lime_glazed_terracotta
     < near_block(b_furnace)
     < has_item(i_lime_terracotta)
@@ -4162,6 +4567,13 @@ action recipe_stonecutter
     < has_item(i_stone)
     => has_item(i_stonecutter)
 
+action recipe_light_gray_bed(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_light_gray_wool)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_light_gray_bed)
+
 action recipe_blue_concrete_powder
     < near_block(b_crafting_table)
     < has_item(i_blue_dye)
@@ -4194,6 +4606,13 @@ action recipe_magma_cream
     < has_item(i_blaze_powder)
     < has_item(i_slime_ball)
     => has_item(i_magma_cream)
+
+action recipe_green_bed(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_green_wool)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_green_bed)
 
 action recipe_green_concrete_powder
     < near_block(b_crafting_table)
@@ -4348,6 +4767,20 @@ action recipe_flower_banner_pattern
     < has_item(i_oxeye_daisy)
     => has_item(i_flower_banner_pattern)
 
+action recipe_smithing_table(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_iron_ingot)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_smithing_table)
+
+action recipe_pink_bed(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_pink_wool)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_pink_bed)
+
 action recipe_acacia_slab
     < near_block(b_crafting_table)
     < has_item(i_acacia_planks)
@@ -4476,6 +4909,12 @@ action recipe_black_carpet_from_white_carpet
     < has_item(i_white_carpet)
     < has_item(i_black_dye)
     => has_item(i_black_carpet)
+
+action recipe_bowl(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_bowl)
 
 action recipe_pink_stained_glass
     < near_block(b_crafting_table)
@@ -4647,6 +5086,11 @@ action recipe_polished_basalt
     < has_item(i_basalt)
     => has_item(i_polished_basalt)
 
+action recipe_dark_oak_planks(i0: Item)
+    < item_tag(i0, it_dark_oak_logs)
+    < has_item(i0)
+    => has_item(i_dark_oak_planks)
+
 action recipe_red_nether_brick_stairs
     < near_block(b_crafting_table)
     < has_item(i_red_nether_bricks)
@@ -4682,6 +5126,11 @@ action recipe_light_gray_stained_glass_pane
     < near_block(b_crafting_table)
     < has_item(i_light_gray_stained_glass)
     => has_item(i_light_gray_stained_glass_pane)
+
+action recipe_crafting_table(i0: Item)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_crafting_table)
 
 action recipe_nether_brick_slab
     < near_block(b_crafting_table)
@@ -4726,6 +5175,13 @@ action recipe_cooked_beef_from_smoking
     < near_block(b_smoker)
     < has_item(i_beef)
     => has_item(i_cooked_beef)
+
+action recipe_wooden_sword(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    < has_item(i_stick)
+    => has_item(i_wooden_sword)
 
 action recipe_end_stone_bricks_from_end_stone_stonecutting
     < near_block(b_stonecutter)
@@ -4838,6 +5294,12 @@ action recipe_red_dye_from_rose_bush
     < has_item(i_rose_bush)
     => has_item(i_red_dye)
 
+action recipe_gold_ingot_from_blasting(i0: Item)
+    < near_block(b_blast_furnace)
+    < item_tag(i0, it_gold_ores)
+    < has_item(i0)
+    => has_item(i_gold_ingot)
+
 action recipe_brown_terracotta
     < near_block(b_crafting_table)
     < has_item(i_terracotta)
@@ -4859,6 +5321,14 @@ action recipe_red_carpet_from_white_carpet
     < has_item(i_white_carpet)
     < has_item(i_red_dye)
     => has_item(i_red_carpet)
+
+action recipe_grindstone(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_stick)
+    < has_item(i_stone_slab)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_grindstone)
 
 action recipe_light_gray_stained_glass
     < near_block(b_crafting_table)
@@ -5025,6 +5495,13 @@ action recipe_rabbit_stew_from_brown_mushroom
     < has_item(i_brown_mushroom)
     => has_item(i_rabbit_stew)
 
+action recipe_brown_bed(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_brown_wool)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_brown_bed)
+
 action recipe_spruce_fence
     < near_block(b_crafting_table)
     < has_item(i_spruce_planks)
@@ -5065,6 +5542,11 @@ action recipe_cut_sandstone
     < has_item(i_sandstone)
     => has_item(i_cut_sandstone)
 
+action recipe_crimson_planks(i0: Item)
+    < item_tag(i0, it_crimson_stems)
+    < has_item(i0)
+    => has_item(i_crimson_planks)
+
 action recipe_smooth_sandstone_stairs_from_smooth_sandstone_stonecutting
     < near_block(b_stonecutter)
     < has_item(i_smooth_sandstone)
@@ -5104,6 +5586,13 @@ action recipe_polished_granite_stairs_from_polished_granite_stonecutting
     < near_block(b_stonecutter)
     < has_item(i_polished_granite)
     => has_item(i_polished_granite_stairs)
+
+action recipe_stone_sword(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_stone_tool_materials)
+    < has_item(i0)
+    < has_item(i_stick)
+    => has_item(i_stone_sword)
 
 action recipe_end_stone_brick_wall_from_end_stone_brick_stonecutting
     < near_block(b_stonecutter)
@@ -5256,6 +5745,12 @@ action recipe_iron_ingot
     < has_item(i_iron_ore)
     => has_item(i_iron_ingot)
 
+action recipe_charcoal(i0: Item)
+    < near_block(b_furnace)
+    < item_tag(i0, it_logs_that_burn)
+    < has_item(i0)
+    => has_item(i_charcoal)
+
 action recipe_stone_brick_stairs_from_stone_stonecutting
     < near_block(b_stonecutter)
     < has_item(i_stone)
@@ -5402,6 +5897,13 @@ action recipe_iron_trapdoor
     < has_item(i_iron_ingot)
     => has_item(i_iron_trapdoor)
 
+action recipe_yellow_bed(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_yellow_wool)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_yellow_bed)
+
 action recipe_dark_oak_fence_gate
     < near_block(b_crafting_table)
     < has_item(i_stick)
@@ -5529,6 +6031,15 @@ action recipe_polished_blackstone_pressure_plate
     < has_item(i_polished_blackstone)
     => has_item(i_polished_blackstone_pressure_plate)
 
+action recipe_piston(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    < has_item(i_cobblestone)
+    < has_item(i_iron_ingot)
+    < has_item(i_redstone)
+    => has_item(i_piston)
+
 action recipe_chiseled_sandstone_from_sandstone_stonecutting
     < near_block(b_stonecutter)
     < has_item(i_sandstone)
@@ -5580,10 +6091,23 @@ action recipe_gray_stained_glass
     < has_item(i_gray_dye)
     => has_item(i_gray_stained_glass)
 
+action recipe_glass(i0: Item)
+    < near_block(b_furnace)
+    < item_tag(i0, it_sand)
+    < has_item(i0)
+    => has_item(i_glass)
+
 action recipe_mossy_stone_brick_stairs
     < near_block(b_crafting_table)
     < has_item(i_mossy_stone_bricks)
     => has_item(i_mossy_stone_brick_stairs)
+
+action recipe_lime_bed(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_lime_wool)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_lime_bed)
 
 action recipe_netherite_scrap
     < near_block(b_furnace)
@@ -5593,6 +6117,13 @@ action recipe_netherite_scrap
 action recipe_slime_ball
     < has_item(i_slime_block)
     => has_item(i_slime_ball)
+
+action recipe_black_bed(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_black_wool)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_black_bed)
 
 action recipe_cut_sandstone_slab_from_cut_sandstone_stonecutting
     < near_block(b_stonecutter)
@@ -5652,6 +6183,11 @@ action recipe_orange_glazed_terracotta
     < near_block(b_furnace)
     < has_item(i_orange_terracotta)
     => has_item(i_orange_glazed_terracotta)
+
+action recipe_jungle_planks(i0: Item)
+    < item_tag(i0, it_jungle_logs)
+    < has_item(i0)
+    => has_item(i_jungle_planks)
 
 action recipe_nether_brick_wall_from_nether_bricks_stonecutting
     < near_block(b_stonecutter)
@@ -5738,6 +6274,18 @@ action recipe_polished_blackstone_brick_wall
     < has_item(i_polished_blackstone_bricks)
     => has_item(i_polished_blackstone_brick_wall)
 
+action recipe_wooden_axe(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    < has_item(i_stick)
+    => has_item(i_wooden_axe)
+
+action recipe_warped_planks(i0: Item)
+    < item_tag(i0, it_warped_stems)
+    < has_item(i0)
+    => has_item(i_warped_planks)
+
 action recipe_quartz_bricks
     < has_item(i_quartz_block)
     => has_item(i_quartz_bricks)
@@ -5757,6 +6305,21 @@ action recipe_yellow_wool
     < has_item(i_yellow_dye)
     < has_item(i_white_wool)
     => has_item(i_yellow_wool)
+
+action recipe_barrel(i0: Item, i1: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    < item_tag(i1, it_wooden_slabs)
+    < has_item(i1)
+    => has_item(i_barrel)
+
+action recipe_light_blue_bed(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_light_blue_wool)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_light_blue_bed)
 
 action recipe_golden_chestplate
     < near_block(b_crafting_table)
@@ -5787,6 +6350,11 @@ action recipe_light_gray_carpet
     < has_item(i_light_gray_wool)
     => has_item(i_light_gray_carpet)
 
+action recipe_acacia_planks(i0: Item)
+    < item_tag(i0, it_acacia_logs)
+    < has_item(i0)
+    => has_item(i_acacia_planks)
+
 action recipe_lapis_block
     < near_block(b_crafting_table)
     < has_item(i_lapis_lazuli)
@@ -5797,6 +6365,13 @@ action recipe_redstone_lamp
     < has_item(i_redstone)
     < has_item(i_glowstone)
     => has_item(i_redstone_lamp)
+
+action recipe_orange_bed(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_orange_wool)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_orange_bed)
 
 action recipe_red_concrete_powder
     < near_block(b_crafting_table)
@@ -5963,6 +6538,14 @@ action recipe_blue_wool
     < has_item(i_white_wool)
     => has_item(i_blue_wool)
 
+action recipe_daylight_detector(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_glass)
+    < has_item(i_quartz)
+    < item_tag(i0, it_wooden_slabs)
+    < has_item(i0)
+    => has_item(i_daylight_detector)
+
 action recipe_light_gray_glazed_terracotta
     < near_block(b_furnace)
     < has_item(i_light_gray_terracotta)
@@ -6036,6 +6619,13 @@ action recipe_polished_diorite_stairs_from_polished_diorite_stonecutting
     < has_item(i_polished_diorite)
     => has_item(i_polished_diorite_stairs)
 
+action recipe_cyan_bed(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_cyan_wool)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    => has_item(i_cyan_bed)
+
 action recipe_cobblestone_slab_from_cobblestone_stonecutting
     < near_block(b_stonecutter)
     < has_item(i_cobblestone)
@@ -6094,6 +6684,13 @@ action recipe_jungle_door
     < has_item(i_jungle_planks)
     => has_item(i_jungle_door)
 
+action recipe_brewing_stand(i0: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_blaze_rod)
+    < item_tag(i0, it_stone_crafting_materials)
+    < has_item(i0)
+    => has_item(i_brewing_stand)
+
 action recipe_magenta_dye_from_lilac
     < has_item(i_lilac)
     => has_item(i_magenta_dye)
@@ -6113,6 +6710,13 @@ action recipe_polished_blackstone_wall
     < near_block(b_crafting_table)
     < has_item(i_polished_blackstone)
     => has_item(i_polished_blackstone_wall)
+
+action recipe_bookshelf(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    < has_item(i_book)
+    => has_item(i_bookshelf)
 
 action recipe_chiseled_polished_blackstone_from_polished_blackstone_stonecutting
     < near_block(b_stonecutter)
@@ -6197,6 +6801,13 @@ action recipe_yellow_stained_glass_pane
     < has_item(i_yellow_stained_glass)
     => has_item(i_yellow_stained_glass_pane)
 
+action recipe_wooden_hoe(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    < has_item(i_stick)
+    => has_item(i_wooden_hoe)
+
 action recipe_cyan_banner
     < near_block(b_crafting_table)
     < has_item(i_cyan_wool)
@@ -6241,6 +6852,15 @@ action recipe_dark_oak_wood
 action recipe_magenta_dye_from_allium
     < has_item(i_allium)
     => has_item(i_magenta_dye)
+
+action recipe_campfire(i0: Item, i1: Item)
+    < near_block(b_crafting_table)
+    < has_item(i_stick)
+    < item_tag(i0, it_coals)
+    < has_item(i0)
+    < item_tag(i1, it_logs)
+    < has_item(i1)
+    => has_item(i_campfire)
 
 action recipe_granite_stairs_from_granite_stonecutting
     < near_block(b_stonecutter)
@@ -6293,6 +6913,11 @@ action recipe_gray_bed_from_white_bed
     < has_item(i_gray_dye)
     => has_item(i_gray_bed)
 
+action recipe_birch_planks(i0: Item)
+    < item_tag(i0, it_birch_logs)
+    < has_item(i0)
+    => has_item(i_birch_planks)
+
 action recipe_jungle_boat
     < near_block(b_crafting_table)
     < has_item(i_jungle_planks)
@@ -6308,6 +6933,13 @@ action recipe_golden_apple
     < has_item(i_gold_ingot)
     < has_item(i_apple)
     => has_item(i_golden_apple)
+
+action recipe_note_block(i0: Item)
+    < near_block(b_crafting_table)
+    < item_tag(i0, it_planks)
+    < has_item(i0)
+    < has_item(i_redstone)
+    => has_item(i_note_block)
 
 action recipe_polished_diorite_stairs
     < near_block(b_crafting_table)
