@@ -22,6 +22,7 @@ const i_air: Tool # bare hand
 const i_wooden_pickaxe i_stone_pickaxe i_iron_pickaxe : Tool
 const i_diamond_pickaxe i_gold_pickaxe i_netherite_pickaxe : Tool
 const tool_tier_0 tool_tier_1 tool_tier_2 tool_tier_3 : ToolTier
+const e_ender_dragon : Entity
 # MACRO CONSTS
 
 pred in_dim(dim: Dim)                               # state
@@ -60,8 +61,8 @@ task reach-block(btype: Block)
 
 reach-block : find(btype: Block)
     - find-block(btype)
-reach-block : place(btype: Block, item: Item)
-    - place-block(btype, item)
+##reach-block : place(btype: Block, item: Item)
+##    - place-block(btype, item)
 reach-block : craft-n-place(btype: Block, item: Item)
     - craft-item(item)
     - place-block(btype, item)

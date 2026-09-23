@@ -115,8 +115,9 @@ with open(ENTITY_DIMENSIONS_PATH, "r", encoding="utf-8") as f:
 EXTRA_FACTS = """
 findable_structure_in_dim(end_portal, overworld)
 findable_structure_in_dim(center_portal, end)
-has_item(i_air) # bare hand
+has_item(i_air)
 """
+# has_item(i_air) # bare hand.
 
 # ================================
 def get_structure_names() -> list[str]:
@@ -275,8 +276,9 @@ def count_generated_facts() -> int:
         i += 1
     return i
 
-def domain_facts_to_file(path: str = "domain_facts.txt"):
+def domain_facts_to_file(path: str = "domain_facts.pro"):
+    """Write facts to file in prolog style"""
     sorted_facts = sorted(generate())
     with open(path, "w", encoding="utf-8") as file:
         for fact in sorted_facts:
-            file.write(f"{fact}\n")
+            file.write(f"{fact}.\n")
