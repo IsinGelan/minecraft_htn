@@ -32,7 +32,6 @@ class Recipe(BaseModel):
     def generate_action_numbered(self):
         ...
     def generate_action_unnumbered(self):
-        print(f"Fallback for {self.recipe_name}")
         ...
 
     def has_tag_or_item(self, name: str) -> str:
@@ -41,7 +40,6 @@ class Recipe(BaseModel):
             tag_name = domain_item_tag_name(name)
             item_variable = f"i{self._args}"
             self._args += 1
-            print(f"{self.recipe_name}: adds {item_variable} for tag {tag_name}")
             return f"    < item_tag({item_variable}, {tag_name})\n" \
                    f"    < has_item({item_variable})\n"
         else:

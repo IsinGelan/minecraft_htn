@@ -3,6 +3,7 @@ import argparse
 
 from shitlang import transpile_domain, transpile_problem
 
+from shitlang.shit_objs import DomainFile, ProblemFile
 from tools.generate_crafting import get_recipe_names, recipes_string
 from tools.generate_prec_actions import domain_do_precondition_replacement
 from tools.get_names import get_block_names, get_entity_names, get_item_names
@@ -84,27 +85,27 @@ ARGPARSER.add_argument('--out_domain', '-D', type=str, default="temp/domain.hddl
 ARGPARSER.add_argument('--out_problem', '-P', type=str, default="temp/problem.hddl",
                     help='Output path for the transpiled problem file')
 
-def handle_domain(domain_path: str, show_macro_result: bool, res_domain_path: str = "temp/domain.hddl"):
-    print("\nTranspiling Domain...")
+def prepare_domain(domain_path: str, *, show_macro_result: bool = False, prec_replacement: bool = True) -> DomainFile:
+    print("\n>> Transpiling Domain...")
     print("---------------------")
     domain = transpile_domain(
         domain_path,
         macro_funs=DOMAIN_MACRO_FUNS,
         show_macro_result=show_macro_result)
-    
-    domain_do_precondition_replacement(domain)
 
-    domain.write_to_file(res_domain_path)
+    if prec_replacement:
+        domain_do_precondition_replacement(domain)
+    return domain
 
-def handle_problem(problem_path: str, show_macro_result: bool, res_problem_path: str = "temp/problem.hddl"):
-    print("\nTranspiling Problem...")
+def prepare_problem(problem_path: str, show_macro_result: bool = False) -> ProblemFile:
+    print("\n>> Transpiling Problem...")
     print("----------------------")
     problem = transpile_problem(
         problem_path,
         macro_funs=PROBLEM_MACRO_FUNS,
         show_macro_result=show_macro_result)
-    
-    problem.write_to_file(res_problem_path)
+
+    return problem
 
 def main():
     args = ARGPARSER.parse_args()
@@ -115,10 +116,12 @@ def main():
         exit(1)
 
     if args.domain:
-        handle_domain(args.domain, macros, args.out_domain)
+        domain = prepare_domain(args.domain, macros, show_macro_result=True)
+        domain.write_to_file(args.out_domain)
 
     if args.problem:
-        handle_problem(args.problem, macros, args.out_problem)
+        problem = prepare_problem(args.problem, macros)
+        problem.write_to_file(args.out_problem)
 
 
 if __name__ == "__main__":
