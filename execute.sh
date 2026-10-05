@@ -15,10 +15,11 @@ while [ ! $# -eq 0 ]; do
     shift
 done
 
-if $transpile_domain; then
+if $transpile_domain && $transpile_problem; then
+    .venv/bin/python compile.py --domain domain.shit --problem problem.shit
+elif $transpile_domain; then
     .venv/bin/python compile.py --domain domain.shit
-fi
-if $transpile_problem; then
+elif $transpile_problem; then
     .venv/bin/python compile.py --problem problem.shit
 fi
 

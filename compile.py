@@ -3,6 +3,7 @@ import argparse
 
 from shitlang import transpile_domain, transpile_problem
 
+from shitlang.domain_reduction import optimize_domain
 from shitlang.shit_objs import DomainFile, ProblemFile
 from tools.generate_crafting import get_recipe_names, recipes_string
 from tools.generate_prec_actions import domain_do_precondition_replacement
@@ -72,6 +73,10 @@ PROBLEM_MACRO_FUNS = [
     add_domain_facts,
 ]
 
+FALSE_PREDS = {
+    "has_item", "can_reap_block", "can_reap_entity", "reaped_block_becomes",
+    "near_container_containing", "reaped_entity_becomes", "near_item_entity"}
+
 # ================================
 ARGPARSER = argparse.ArgumentParser(prog="Minecraft SHIT-Domain Transpiler", description="Transpile MC domain and problem files to HDDL")
 ARGPARSER.add_argument('--domain', '-d', type=str,
@@ -94,6 +99,7 @@ def prepare_domain(domain_path: str, *, show_macro_result: bool = False, prec_re
         show_macro_result=show_macro_result)
 
     if prec_replacement:
+        print(">> Replacing preconditions with precondition actions")
         domain_do_precondition_replacement(domain)
     return domain
 
@@ -115,12 +121,21 @@ def main():
         ARGPARSER.print_help()
         exit(1)
 
+    if args.domain and args.problem:
+        print("Transpiling domain and problem and optimizing domain based on problem")
+        domain = prepare_domain(args.domain, show_macro_result=macros)
+        problem = prepare_problem(args.problem, show_macro_result=macros)
+        opt_success = optimize_domain(domain, problem, recompile_domain=True, false_preds=FALSE_PREDS)
+        domain.write_to_file(args.out_domain)
+        problem.write_to_file(args.out_problem)
+        return
+
     if args.domain:
-        domain = prepare_domain(args.domain, macros, show_macro_result=True)
+        domain = prepare_domain(args.domain, show_macro_result=macros)
         domain.write_to_file(args.out_domain)
 
     if args.problem:
-        problem = prepare_problem(args.problem, macros)
+        problem = prepare_problem(args.problem, show_macro_result=macros)
         problem.write_to_file(args.out_problem)
 
 

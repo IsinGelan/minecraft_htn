@@ -291,20 +291,22 @@ action pickup-item(item: Item)
     => has_item(item)
 
 acquire-item : mine-block(item: Item, block: Block, tool: Tool)
+    < mined_becomes(block, item)
     - mine-block(block, tool, item)
 
-acquire-item : reap-block(item: Item, block: Block, tool: Tool)
-    - reap-block(block, tool, item)
+## acquire-item : reap-block(item: Item, block: Block, tool: Tool)
+##     - reap-block(block, tool, item)
 
-acquire-item : container-take(item: Item, ctype: Container)
-    - container-take(ctype, item)
+## acquire-item : container-take(item: Item, ctype: Container)
+##     - container-take(ctype, item)
 
 acquire-item : kill-entity(item: Item, entity: Entity)
     < killed_becomes(entity, item)
     - kill-entity(entity)
 
-acquire-item : reap-entity(item: Item, tool: Tool, entity: Entity)
-    - reap-entity(entity, tool, item)
+## acquire-item : reap-entity(item: Item, tool: Tool, entity: Entity)
+##     < reaped_entity_becomes(entity, item)
+##     - reap-entity(entity, tool, item)
 
 acquire-item : craft(item: Item)
     - craft-item(item)

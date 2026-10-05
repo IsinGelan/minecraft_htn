@@ -190,4 +190,6 @@ def domain_do_precondition_replacement(domain: DomainFile):
     proxy_methods = list(action_proxy_methods(domain))
     # 3. Add proxy methods and tasks to domain, replacing action calls with proxy calls
     domain_add_proxy_calls(domain, proxy_methods)
+    # reinitialize model after adding new elements
+    domain.model_post_init(None)
     
