@@ -1,4 +1,5 @@
 
+from os import path
 from typing import Callable, Iterable, Iterator, Optional
 
 from pydantic import BaseModel
@@ -91,3 +92,19 @@ class Registry[T](BaseModel):
 
     def entries(self) -> list[T]:
         return list(self._items.values())
+
+# ================================
+def read_or_compute[T](
+        file_path: str, *,
+        read_fun: Callable[[str], T],
+        compute_fun: Callable[[], T],
+        write_fun: Callable[[T], str]
+    ):
+    if not path.exists(file_path):
+        res = compute_fun()
+        with open(file_path, "w") as f:
+            f.write(write_fun(res))
+    else:
+        with open(file_path, "r") as f:
+            res = read_fun(f.read())
+    return res

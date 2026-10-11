@@ -1,15 +1,15 @@
 
 import argparse
 
-from shitlang import transpile_domain, transpile_problem
-
-from shitlang.domain_reduction import optimize_domain
+from shitlang import get_domain, get_problem, optimize_domain
+from shitlang.main import DUMP_DOMAIN_PATH
 from shitlang.shit_objs import DomainFile, ProblemFile
+
 from tools.generate_crafting import get_recipe_names, recipes_string
 from tools.generate_prec_actions import domain_do_precondition_replacement
 from tools.get_names import get_block_names, get_entity_names, get_item_names
 from tools.generate_facts import PICKAXES, generate, get_block_tag_names, get_item_tag_names, get_structure_names
-from tools.helpers import split_into_lines
+from tools.helpers import read_or_compute, split_into_lines
 
 MACRO_CONSTS_MARKER = "# MACRO CONSTS"
 MACRO_FACTS_MARKER = "# MACRO FACTS"
@@ -25,10 +25,13 @@ ENTITY_TAG_TYPENAME = "EntityTag"
 
 CONST_LINEWIDTH = 70
 
+FACTS_FILE_PATH = "domain_facts.pro"
+CRAFTING_FILE_PATH = "recipes.shit"
+
 # ================================
 def typed_declarations(typename: str, names: list[str]) -> str:
     """Generate a string of const declarations for the given names and typename"""
-    names_string = " ".join(names)
+    names_string = " ".join(sorted(names))
     lines = [
         f"const {line} : {typename}\n"
         for line in split_into_lines(names_string, CONST_LINEWIDTH)]
@@ -57,11 +60,22 @@ def add_consts(code: str) -> str:
     return code.replace(MACRO_CONSTS_MARKER, const_decls)
 
 def add_crafting_recipes(code: str) -> str:
-    recipes_str = recipes_string(numbered=False)
+    # recipes_str = recipes_string(numbered=False)
+    recipes_str = read_or_compute(
+        CRAFTING_FILE_PATH,
+        read_fun=lambda s: s,
+        compute_fun=lambda: recipes_string(numbered=False),
+        write_fun=lambda s: s
+    )
     return code.replace(MACRO_CRAFTING_MARKER, recipes_str)
 
 def add_domain_facts(code: str) -> str:
-    facts_string = "\n".join(generate())
+    facts_string = read_or_compute(
+        FACTS_FILE_PATH,
+        read_fun=lambda s: s.replace(".", ""),
+        compute_fun=lambda: "\n".join(generate()),
+        write_fun=lambda s: s.replace("\n", ".\n") + ".\n")
+
     return code.replace(MACRO_FACTS_MARKER, facts_string)
 
 
@@ -90,23 +104,29 @@ ARGPARSER.add_argument('--out_domain', '-D', type=str, default="temp/domain.hddl
 ARGPARSER.add_argument('--out_problem', '-P', type=str, default="temp/problem.hddl",
                     help='Output path for the transpiled problem file')
 
-def prepare_domain(domain_path: str, *, show_macro_result: bool = False, prec_replacement: bool = True) -> DomainFile:
+def prepare_domain(
+        domain_path: str, *,
+        show_macro_result: bool = False,
+        prec_replacement: bool = True,
+        dump_json: bool = True) -> DomainFile:
     print("\n>> Transpiling Domain...")
     print("---------------------")
-    domain = transpile_domain(
+    domain, recompiled = get_domain(
         domain_path,
         macro_funs=DOMAIN_MACRO_FUNS,
         show_macro_result=show_macro_result)
 
-    if prec_replacement:
+    if prec_replacement and recompiled:
         print(">> Replacing preconditions with precondition actions")
         domain_do_precondition_replacement(domain)
+    if dump_json:
+        domain.dump_json(DUMP_DOMAIN_PATH)
     return domain
 
 def prepare_problem(problem_path: str, show_macro_result: bool = False) -> ProblemFile:
     print("\n>> Transpiling Problem...")
     print("----------------------")
-    problem = transpile_problem(
+    problem = get_problem(
         problem_path,
         macro_funs=PROBLEM_MACRO_FUNS,
         show_macro_result=show_macro_result)
@@ -125,18 +145,18 @@ def main():
         print("Transpiling domain and problem and optimizing domain based on problem")
         domain = prepare_domain(args.domain, show_macro_result=macros)
         problem = prepare_problem(args.problem, show_macro_result=macros)
-        opt_success = optimize_domain(domain, problem, recompile_domain=True, false_preds=FALSE_PREDS)
-        domain.write_to_file(args.out_domain)
-        problem.write_to_file(args.out_problem)
+        opt_success = optimize_domain(domain, problem, recompile_pro_domain=True, false_preds=FALSE_PREDS)
+        domain.export_hddl(args.out_domain)
+        problem.export_hddl(args.out_problem)
         return
 
     if args.domain:
         domain = prepare_domain(args.domain, show_macro_result=macros)
-        domain.write_to_file(args.out_domain)
+        domain.export_hddl(args.out_domain)
 
     if args.problem:
         problem = prepare_problem(args.problem, show_macro_result=macros)
-        problem.write_to_file(args.out_problem)
+        problem.export_hddl(args.out_problem)
 
 
 if __name__ == "__main__":
