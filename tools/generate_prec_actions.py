@@ -60,7 +60,7 @@ def fact_finder(pred_name: str):
         return isinstance(node, FactExpr) and node.predicate_name == pred_name
     return wrapper_pred
 
-def prec_action_name(prec_pred: str) -> str:
+def prec_task_name(prec_pred: str) -> str:
     if prec_pred not in OPEN_PRECONDITION_PREDICATES:
         raise ValueError(f"Precondition predicate {prec_pred} not in OPEN_PRECONDITION_PREDICATES")
     if OPEN_PRECONDITION_PREDICATES[prec_pred] == "none":
@@ -69,10 +69,10 @@ def prec_action_name(prec_pred: str) -> str:
         return f"fulfill-{prec_pred.replace('_', '-')}"
     return OPEN_PRECONDITION_PREDICATES[prec_pred][1]
 
-def fact_to_prec_action_call(fact: FactExpr) -> TaskCall:
+def fact_to_prec_task_call(fact: FactExpr) -> TaskCall:
     """Get the call replacing a precondition fact."""
     pred = fact.predicate_name
-    task_name = prec_action_name(pred)
+    task_name = prec_task_name(pred)
     if pred not in PREC_CALL_ARG_MAPPING:
         return TaskCall(task_name=task_name, args=fact.args)
     
@@ -137,7 +137,7 @@ def proxy_method(
     proxy_task_name = f"proxy-{action.action_name}"
 
     subtasks = SequencedSubtasks(
-        subtasks=[fact_to_prec_action_call(fact) for fact in replace_facts]
+        subtasks=[fact_to_prec_task_call(fact) for fact in replace_facts]
         + [TaskCall(task_name=action.action_name, args=args_from_params(action_params))]
         )
 
@@ -162,7 +162,8 @@ def action_proxy_methods(domain: DomainFile) -> Iterator[Method]:
         proxy = proxy_method(action, replaced_prec_facts)
         yield proxy
 
-def domain_add_proxy_calls(domain: DomainFile, proxy_methods: list[Method]):
+def domain_add_proxy_tasks(domain: DomainFile, proxy_methods: list[Method]):
+    """Adding proxy methods to the domain and replacing action calls with proxy calls."""
     domain.top_level_elements.append(TopLevelComment(comment="PROXY TASKS"))
     for proxy_method in proxy_methods:
         # Info
@@ -175,7 +176,8 @@ def domain_add_proxy_calls(domain: DomainFile, proxy_methods: list[Method]):
         )
         for action_call, _ in action_calls:
             action_call.task_name = proxy_method.task_name
-        
+
+        # add proxy method and task to domain
         task = Task(task_name=proxy_method.task_name, params=proxy_method.params)
         domain.top_level_elements.append(task)
         domain.top_level_elements.append(proxy_method)
@@ -189,7 +191,7 @@ def domain_do_precondition_replacement(domain: DomainFile):
     # 2. Create proxy methods for actions with preconditions that need replacement
     proxy_methods = list(action_proxy_methods(domain))
     # 3. Add proxy methods and tasks to domain, replacing action calls with proxy calls
-    domain_add_proxy_calls(domain, proxy_methods)
+    domain_add_proxy_tasks(domain, proxy_methods)
     # reinitialize model after adding new elements
     domain.model_post_init(None)
     

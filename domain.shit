@@ -45,7 +45,6 @@ pred recipe_produces(recipe: Recipe, item: Item)    # domain
 pred killed_becomes(entity: Entity, item: Item)     # domain
 pred findable_structure_in_dim(structure: Structure, dim: Dim)  # domain
 pred findable_entity_in_dim(entity: Entity, dim: Dim) # domain
-pred is_pickaxe(tool: Tool)                         # domain
 pred can_mine_tier(tool: Tool, tier: ToolTier)      # domain
 pred mining_requires_tier(btype: Block, tier: ToolTier) # domain
 pred item_tag(item: Item, tag: ItemTag)             # domain
