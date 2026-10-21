@@ -39,14 +39,6 @@ MINING_TIER_0 = {
     if material in ("STONE", "METAL", "HEAVY_METAL")
     or name == "nether_gold_ore"
 }
-PICKAXES = [
-    "i_wooden_pickaxe",
-    "i_stone_pickaxe",
-    "i_iron_pickaxe",
-    "i_diamond_pickaxe",
-    "i_gold_pickaxe",
-    "i_netherite_pickaxe"
-]
 MAX_TIER = {
     "i_wooden_pickaxe": 0,
     "i_stone_pickaxe": 1,
@@ -176,11 +168,6 @@ def generate_mining_requires_tier() -> Iterator[str]:
     for block in MINING_TIER_0 - MINING_TIER_1 - MINING_TIER_2 - MINING_TIER_3:
         yield f"mining_requires_tier({block}, tool_tier_0)"
 
-# pred is_pickaxe(tool: Tool)
-def generate_is_pickaxe() -> Iterator[str]:
-    for pickaxe in PICKAXES:
-        yield f"is_pickaxe({pickaxe})"
-
 # pred can_mine_tier(tool: Tool, tier: ToolTier)
 def generate_can_mine_tier() -> Iterator[str]:
     for tool, max_tier in MAX_TIER.items():
@@ -255,7 +242,6 @@ def generate() -> Iterator[str]:
     # yield from generate_reaped_block_becomes()
     yield from generate_mined_becomes()
     yield from generate_mining_requires_tier()
-    yield from generate_is_pickaxe()
     yield from generate_can_mine_tier()
     yield from generate_placed_becomes()
     yield from generate_findable_entity_in_dim()

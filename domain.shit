@@ -81,14 +81,8 @@ find-block : find(btype: Block, dim: Dim)
 ## Mining requires a certain level for drops for certain items
 ## A little more methods, otherwise every tool x item combination would need
 ## a can_mine(tool: Tool, btype: Block) entry
-task mine-block(btype: Block, tool: Tool, res_item: Item)
+task mine-block(btype: Block, res_item: Item) # remove tool here maybe?
 
-mine-block : no-pickaxe(btype: Block, tool: Tool, res_item: Item)
-    < ~mining_requires_tier(btype, tool_tier_3)
-    < ~mining_requires_tier(btype, tool_tier_2)
-    < ~mining_requires_tier(btype, tool_tier_1)
-    < ~mining_requires_tier(btype, tool_tier_0)
-    - mine-block-directly(btype, tool, res_item)
 mine-block : pickaxe-0(btype: Block, tool: Tool, res_item: Item)
     < can_mine_tier(tool, tool_tier_0)
     < mining_requires_tier(btype, tool_tier_0)
@@ -105,14 +99,22 @@ mine-block : pickaxe-3(btype: Block, tool: Tool, res_item: Item)
     < can_mine_tier(tool, tool_tier_3)
     < mining_requires_tier(btype, tool_tier_3)
     - mine-block-directly(btype, tool, res_item)
+mine-block : no-pickaxe(btype: Block, tool: Tool, res_item: Item)
+    < ~mining_requires_tier(btype, tool_tier_3)
+    < ~mining_requires_tier(btype, tool_tier_2)
+    < ~mining_requires_tier(btype, tool_tier_1)
+    < ~mining_requires_tier(btype, tool_tier_0)
+    - mine-block-directly(btype, tool, res_item)
 
 action mine-block-directly(btype: Block, tool: Tool, res_item: Item)
+    ## btype 1 -> res_item 1
     < near_block(btype)
     < has_item(tool)
     < mined_becomes(btype, res_item)
     => has_item(res_item)
 
 action reap-block(btype: Block, tool: Tool, res_item: Item)
+    ## btype 1 -> res_item 1
     < near_block(btype)
     < can_reap_block(tool, btype)
     < reaped_block_becomes(btype, res_item)
@@ -120,20 +122,24 @@ action reap-block(btype: Block, tool: Tool, res_item: Item)
 
 ## integrate the effect of reduction in the item nr
 action place-block(btype: Block, item: Item)
+    ## item 1 -> btype 1
     < has_item(item)
     < placed_becomes(item, btype)
     => near_block(btype)
 
 ## move precondition from task find-block?
 action find-block-in-dim(btype: Block, dim: Dim)
+    ## -> btype 1
     < in_dim(dim)
     => near_block(btype)
 
 action container-put(ctype: Container, item: Item)
+    ## item 1 ->
     < near_block(ctype)
     < has_item(item)
 
 action container-take(ctype: Container, item: Item)
+    ## -> item 1
     < near_container_containing(ctype, item)
     => has_item(item)
 
@@ -147,10 +153,22 @@ kill-entity : kill(entity: Entity)
     - find-entity(entity)
     - kill-entity-directly(entity)
 
+task kill-entity-for-item(entity: Entity, res_item: Item)
+
+kill-entity-for-item : kill(entity: Entity, res_item: Item)
+    - find-entity(entity)
+    - kill-entity-directly-for-item(entity, res_item)
+
 ## TODO: implement drops
 ## TODO: e_ender_dragon: lit_center_portal activates
 action kill-entity-directly(entity: Entity)
     < near_entity(entity)
+
+action kill-entity-directly-for-item(entity: Entity, res_item: Item)
+    ## entity 1 -> res_item 1
+    < near_entity(entity)
+    < killed_becomes(entity, res_item)
+    => has_item(res_item)
 
 action reap-entity(entity: Entity, tool: Tool, res_item: Item)
     < reaped_entity_becomes(entity, res_item)
@@ -168,6 +186,7 @@ find-entity : find(etype: Entity, dim: Dim)
     - find-entity-in-dim(etype, dim)
 
 action find-entity-in-dim(etype: Entity, dim: Dim)
+    ## -> etype 1
     < in_dim(dim)
     => near_entity(etype)
 
@@ -242,18 +261,21 @@ build-building : lit_center_portal(b: Building)
     - kill-entity(e_ender_dragon)
     
 action build-nether-portal-overworld
+    ## i_obsidian 10 ->
     < has_item(i_obsidian)
     < in_dim(overworld)
     => near_structure(nether_portal_overworld)
     => structure_memorized(nether_portal_overworld)
 
 action build-nether-portal-nether
+    ## i_obsidian 10 ->
     < has_item(i_obsidian)
     < in_dim(nether)
     => near_structure(nether_portal_nether)
     => structure_memorized(nether_portal_nether)
 
 action build-lit-end-portal
+    ## i_eye_of_ender 12 -> 
     < near_structure(end_portal)
     < has_item(i_eye_of_ender)
     => near_structure(lit_end_portal)
@@ -286,12 +308,13 @@ acquire-item : pickup(item: Item)
     - pickup-item(item)
 
 action pickup-item(item: Item)
+    ## -> item 1
     < near_item_entity(item)
     => has_item(item)
 
-acquire-item : mine-block(item: Item, block: Block, tool: Tool)
+acquire-item : mine-block(item: Item, block: Block)
     < mined_becomes(block, item)
-    - mine-block(block, tool, item)
+    - mine-block(block, item)
 
 ## acquire-item : reap-block(item: Item, block: Block, tool: Tool)
 ##     - reap-block(block, tool, item)
@@ -301,7 +324,7 @@ acquire-item : mine-block(item: Item, block: Block, tool: Tool)
 
 acquire-item : kill-entity(item: Item, entity: Entity)
     < killed_becomes(entity, item)
-    - kill-entity(entity)
+    - kill-entity-for-item(entity, item)
 
 ## acquire-item : reap-entity(item: Item, tool: Tool, entity: Entity)
 ##     < reaped_entity_becomes(entity, item)

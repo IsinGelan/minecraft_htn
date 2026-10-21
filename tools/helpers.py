@@ -1,6 +1,6 @@
 
 from os import path
-from typing import Callable, Iterable, Iterator, Optional
+from typing import Any, Callable, Iterable, Iterator, Optional
 
 from pydantic import BaseModel
 
@@ -19,6 +19,18 @@ def into_bins[T, Hashable](iter: Iterable[T], bin_key: Callable[[T], Hashable]) 
             bins[key] = []
         bins[key].append(item)
     return bins
+
+def shared_keys[K](dict1: dict[K, Any], dict2: dict[K, Any]) -> set[K]:
+    """Returns the intersection of the keys of two dictionaries"""
+    return set(dict1.keys()).intersection(set(dict2.keys()))
+
+def subdict[K, V](dic: dict[K, V], keys: set[K]) -> dict[K, V]:
+    """Returns a subdictionary with only the specified keys"""
+    return {k: dic[k] for k in keys if k in dic}
+
+def subdict_without[K, V](dic: dict[K, V], without_keys: set[K]) -> dict[K, V]:
+    """Returns a subdictionary without the specified keys"""
+    return {k: dic[k] for k in dic.keys() if k not in without_keys}
 
 
 # ================================

@@ -24,32 +24,49 @@ class Recipe(BaseModel):
     recipe_name: str
     result_item: str
     result_count: int
-    _args: int = 0
+    _tag_params: dict[str, str] = {}
 
     @classmethod
     def from_dict(cls, dic: dict, name: str) -> Self:
+        ...
+    @property
+    def ingredient_names(self) -> list[str]:
         ...
     def generate_action_numbered(self):
         ...
     def generate_action_unnumbered(self):
         ...
 
-    def has_tag_or_item(self, name: str) -> str:
-        """returns the precondition fact(s) and adds the necessary args (variable items to the `_args`)"""
+    def model_post_init(self, context):
+        # Mapping from ingredients of a tag to the action parameter name.
+        self._tag_params = {
+            name: f"i{num}"
+            for num, name in enumerate(filter(is_tag_name, self.ingredient_names))}
+
+    def local_name(self, name: str) -> str:
+        """returns the name used for a tag item or a normal item in the crafting action"""
         if is_tag_name(name):
-            tag_name = domain_item_tag_name(name)
-            item_variable = f"i{self._args}"
-            self._args += 1
+            # print("local name for tag", name, "is", self._tag_params[name])
+            return self._tag_params[name]
+        else:
+            # print("local name for item", name, "is", self._tag_params[name])
+            return domain_item_name(name)
+
+    def item_precondition(self, item_name: str) -> str:
+        """returns the precondition fact(s) and adds the necessary args (variable items to the `_args`)"""
+        if is_tag_name(item_name):
+            tag_name = domain_item_tag_name(item_name)
+            item_variable = self._tag_params[item_name]
             return f"    < item_tag({item_variable}, {tag_name})\n" \
                    f"    < has_item({item_variable})\n"
         else:
-            item_name = domain_item_name(name)
+            item_name = domain_item_name(item_name)
             return f"    < has_item({item_name})\n"
 
     def params_str(self) -> str:
-        if not self._args:
+        if not self._tag_params:
             return ""
-        return "(" + ", ".join(f"i{num}: Item" for num in range(self._args)) + ")"
+        return "(" + ", ".join(f"i{num}: Item" for num in range(len(self._tag_params))) + ")"
 
 class StonecuttingRecipe(Recipe):
     ingredient: str
@@ -62,6 +79,12 @@ class StonecuttingRecipe(Recipe):
             result_count=dic.get("count", 1),
             ingredient=dic["ingredient"]["item"]
         )
+    @property
+    def ingredient_names(self) -> list[str]:
+        return [self.ingredient]
+    def annotation(self) -> str:
+        return f"{self.local_name(self.ingredient)} 1 "\
+            f"-> {self.local_name(self.result_item)} {self.result_count}"
     def generate_action_numbered(self):
         return f"action recipe_{self.recipe_name}{self.params_str()}\n" \
                 "    < near_block(b_stonecutter)\n" \
@@ -70,8 +93,9 @@ class StonecuttingRecipe(Recipe):
                f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
     def generate_action_unnumbered(self):
         return f"action recipe_{self.recipe_name}{self.params_str()}\n" \
+               f"    ## {self.annotation()}\n" \
                 "    < near_block(b_stonecutter)\n" \
-               + self.has_tag_or_item(self.ingredient) \
+               + self.item_precondition(self.ingredient) \
                + f"    => has_item({domain_item_name(self.result_item)})\n"
                 
 
@@ -135,6 +159,13 @@ class CraftingRecipe(Recipe):
             ingredients=ingredients,
             pattern=pat
         )
+    @property
+    def ingredient_names(self) -> list[str]:
+        return [ing for ing, _ in self.ingredients]
+    def annotation(self) -> str:
+        return ", ".join(
+            f" {self.local_name(ing)} {count}" for ing, count in self.ingredients
+            ) + f" -> {self.local_name(self.result_item)} {self.result_count}"
     def generate_action_numbered(self):
         block_prec = "    < near_block(b_crafting_table)\n" if self.large_interface else ""
         item_prec = "".join(
@@ -154,10 +185,11 @@ class CraftingRecipe(Recipe):
         self._args = 0  # Reset args for unnumbered generation
         block_prec = "    < near_block(b_crafting_table)\n" if self.large_interface else ""
         item_prec = "".join(
-            self.has_tag_or_item(ing)
+            self.item_precondition(ing)
             for ing, count in self.ingredients
             )
         return f"action recipe_{self.recipe_name}{self.params_str()}\n" \
+               f"    ## {self.annotation()}\n" \
                f"{block_prec}" \
                f"{item_prec}" \
                f"    => has_item({domain_item_name(self.result_item)})\n"
@@ -174,6 +206,12 @@ class CampfireRecipe(Recipe):
             result_count=dic.get("count", 1),
             ingredient=dic["ingredient"]["item"]
         )
+    @property
+    def ingredient_names(self) -> list[str]:
+        return [self.ingredient]
+    def annotation(self) -> str:
+        return f"{self.local_name(self.ingredient)} 1"\
+             f" -> {self.local_name(self.result_item)} {self.result_count}"
     def generate_action_numbered(self):
         return f"action recipe_{self.recipe_name}\n" \
                 "    < near_block(b_campfire)\n" \
@@ -182,8 +220,9 @@ class CampfireRecipe(Recipe):
                f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
     def generate_action_unnumbered(self):
         return f"action recipe_{self.recipe_name}{self.params_str()}\n" \
+               f"    ## {self.annotation()}\n" \
                 "    < near_block(b_campfire)\n" \
-               + self.has_tag_or_item(self.ingredient) \
+               + self.item_precondition(self.ingredient) \
                + f"    => has_item({domain_item_name(self.result_item)})\n"
 
 class FurnaceRecipe(Recipe):
@@ -203,6 +242,12 @@ class FurnaceRecipe(Recipe):
             furnace_type=dic["type"].removeprefix("minecraft:"),
             ingredient=item_tag_desc(dic["ingredient"])
         )
+    @property
+    def ingredient_names(self) -> list[str]:
+        return [self.ingredient]
+    def annotation(self) -> str:
+        return f"{self.local_name(self.ingredient)} 1"\
+                f" -> {self.local_name(self.result_item)} {self.result_count}"
     def generate_action_numbered(self):
         block_name = {
             "smelting": "b_furnace",
@@ -221,8 +266,9 @@ class FurnaceRecipe(Recipe):
             "blasting": "b_blast_furnace"}
 
         # This order to generate the arguments before using the param string
-        recipe_body = f"    < near_block({block_name[self.furnace_type]})\n" \
-                       + self.has_tag_or_item(self.ingredient) \
+        recipe_body = f"    ## {self.annotation()}\n" \
+                       + f"    < near_block({block_name[self.furnace_type]})\n" \
+                       + self.item_precondition(self.ingredient) \
                        + f"    => has_item({domain_item_name(self.result_item)})\n"
         recipe_header = f"action recipe_{self.recipe_name}{self.params_str()}\n"
         return recipe_header + recipe_body
@@ -241,6 +287,12 @@ class SmithingRecipe(Recipe):
             base=item_tag_desc(dic["base"]),
             addition=item_tag_desc(dic["addition"])
         )
+    @property
+    def ingredient_names(self) -> list[str]:
+        return [self.base, self.addition]
+    def annotation(self) -> str:
+        return f"{self.local_name(self.base)} 1, {self.local_name(self.addition)} 1 " \
+            f"-> {self.local_name(self.result_item)} {self.result_count}"
     def generate_action_numbered(self):
         return f"action recipe_{self.recipe_name}{self.params_str()}\n" \
                f"    < near_block(b_smithing_table)\n" \
@@ -251,9 +303,10 @@ class SmithingRecipe(Recipe):
                f"    => item_nr({domain_item_name(self.result_item)}) += {self.result_count}\n"
     def generate_action_unnumbered(self):
         return f"action recipe_{self.recipe_name}{self.params_str()}\n" \
+               f"    ## {self.annotation()}\n" \
                f"    < near_block(b_smithing_table)\n" \
-               + self.has_tag_or_item(self.base) \
-               + self.has_tag_or_item(self.addition) \
+               + self.item_precondition(self.base) \
+               + self.item_precondition(self.addition) \
                + f"    => has_item({domain_item_name(self.result_item)})\n"
 
 

@@ -2546,6 +2546,7 @@ craft-recipe : sandstone_wall_from_sandstone_stonecutting(recipe: Recipe)
 
 
 action recipe_wooden_shovel(i0: Item)
+    ##  i0 1,  i_stick 2 -> i_wooden_shovel 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_planks)
     < has_item(i0)
@@ -2553,19 +2554,23 @@ action recipe_wooden_shovel(i0: Item)
     => has_item(i_wooden_shovel)
 
 action recipe_lapis_lazuli
+    ##  i_lapis_block 1 -> i_lapis_lazuli 9
     < has_item(i_lapis_block)
     => has_item(i_lapis_lazuli)
 
 action recipe_quartz_from_blasting
+    ## i_nether_quartz_ore 1 -> i_quartz 1
     < near_block(b_blast_furnace)
     < has_item(i_nether_quartz_ore)
     => has_item(i_quartz)
 
 action recipe_stripped_spruce_wood
+    ##  i_stripped_spruce_log 4 -> i_stripped_spruce_wood 3
     < has_item(i_stripped_spruce_log)
     => has_item(i_stripped_spruce_wood)
 
 action recipe_fletching_table(i0: Item)
+    ##  i_flint 2,  i0 4 -> i_fletching_table 1
     < near_block(b_crafting_table)
     < has_item(i_flint)
     < item_tag(i0, it_planks)
@@ -2573,11 +2578,13 @@ action recipe_fletching_table(i0: Item)
     => has_item(i_fletching_table)
 
 action recipe_green_dye
+    ## i_cactus 1 -> i_green_dye 1
     < near_block(b_furnace)
     < has_item(i_cactus)
     => has_item(i_green_dye)
 
 action recipe_beehive(i0: Item)
+    ##  i0 6,  i_honeycomb 3 -> i_beehive 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_planks)
     < has_item(i0)
@@ -2585,67 +2592,80 @@ action recipe_beehive(i0: Item)
     => has_item(i_beehive)
 
 action recipe_orange_carpet_from_white_carpet
+    ##  i_white_carpet 8,  i_orange_dye 1 -> i_orange_carpet 8
     < near_block(b_crafting_table)
     < has_item(i_white_carpet)
     < has_item(i_orange_dye)
     => has_item(i_orange_carpet)
 
 action recipe_granite_stairs
+    ##  i_granite 6 -> i_granite_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_granite)
     => has_item(i_granite_stairs)
 
 action recipe_birch_door
+    ##  i_birch_planks 6 -> i_birch_door 3
     < near_block(b_crafting_table)
     < has_item(i_birch_planks)
     => has_item(i_birch_door)
 
 action recipe_chiseled_quartz_block
+    ##  i_quartz_slab 2 -> i_chiseled_quartz_block 1
     < has_item(i_quartz_slab)
     => has_item(i_chiseled_quartz_block)
 
 action recipe_end_stone_brick_wall
+    ##  i_end_stone_bricks 6 -> i_end_stone_brick_wall 6
     < near_block(b_crafting_table)
     < has_item(i_end_stone_bricks)
     => has_item(i_end_stone_brick_wall)
 
 action recipe_cobblestone_wall
+    ##  i_cobblestone 6 -> i_cobblestone_wall 6
     < near_block(b_crafting_table)
     < has_item(i_cobblestone)
     => has_item(i_cobblestone_wall)
 
 action recipe_diamond_pickaxe
+    ##  i_diamond 3,  i_stick 2 -> i_diamond_pickaxe 1
     < near_block(b_crafting_table)
     < has_item(i_diamond)
     < has_item(i_stick)
     => has_item(i_diamond_pickaxe)
 
 action recipe_crimson_stairs
+    ##  i_crimson_planks 6 -> i_crimson_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_crimson_planks)
     => has_item(i_crimson_stairs)
 
 action recipe_chiseled_red_sandstone_from_red_sandstone_stonecutting
+    ## i_red_sandstone 1 -> i_chiseled_red_sandstone 1
     < near_block(b_stonecutter)
     < has_item(i_red_sandstone)
     => has_item(i_chiseled_red_sandstone)
 
 action recipe_polished_andesite_stairs
+    ##  i_polished_andesite 6 -> i_polished_andesite_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_polished_andesite)
     => has_item(i_polished_andesite_stairs)
 
 action recipe_purple_glazed_terracotta
+    ## i_purple_terracotta 1 -> i_purple_glazed_terracotta 1
     < near_block(b_furnace)
     < has_item(i_purple_terracotta)
     => has_item(i_purple_glazed_terracotta)
 
 action recipe_paper
+    ##  i_sugar_cane 3 -> i_paper 3
     < near_block(b_crafting_table)
     < has_item(i_sugar_cane)
     => has_item(i_paper)
 
 action recipe_lectern(i0: Item)
+    ##  i0 4,  i_bookshelf 1 -> i_lectern 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_wooden_slabs)
     < has_item(i0)
@@ -2653,105 +2673,125 @@ action recipe_lectern(i0: Item)
     => has_item(i_lectern)
 
 action recipe_stone_stairs
+    ##  i_stone 6 -> i_stone_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_stone)
     => has_item(i_stone_stairs)
 
 action recipe_black_wool
+    ##  i_black_dye 1,  i_white_wool 1 -> i_black_wool 1
     < has_item(i_black_dye)
     < has_item(i_white_wool)
     => has_item(i_black_wool)
 
 action recipe_slime_block
+    ##  i_slime_ball 9 -> i_slime_block 1
     < near_block(b_crafting_table)
     < has_item(i_slime_ball)
     => has_item(i_slime_block)
 
 action recipe_mossy_stone_brick_wall
+    ##  i_mossy_stone_bricks 6 -> i_mossy_stone_brick_wall 6
     < near_block(b_crafting_table)
     < has_item(i_mossy_stone_bricks)
     => has_item(i_mossy_stone_brick_wall)
 
 action recipe_blackstone_slab
+    ##  i_blackstone 3 -> i_blackstone_slab 6
     < near_block(b_crafting_table)
     < has_item(i_blackstone)
     => has_item(i_blackstone_slab)
 
 action recipe_iron_hoe
+    ##  i_iron_ingot 2,  i_stick 2 -> i_iron_hoe 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     < has_item(i_stick)
     => has_item(i_iron_hoe)
 
 action recipe_smooth_stone
+    ## i_stone 1 -> i_smooth_stone 1
     < near_block(b_furnace)
     < has_item(i_stone)
     => has_item(i_smooth_stone)
 
 action recipe_polished_diorite_slab
+    ##  i_polished_diorite 3 -> i_polished_diorite_slab 6
     < near_block(b_crafting_table)
     < has_item(i_polished_diorite)
     => has_item(i_polished_diorite_slab)
 
 action recipe_leather
+    ##  i_rabbit_hide 4 -> i_leather 1
     < has_item(i_rabbit_hide)
     => has_item(i_leather)
 
 action recipe_jungle_stairs
+    ##  i_jungle_planks 6 -> i_jungle_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_jungle_planks)
     => has_item(i_jungle_stairs)
 
 action recipe_light_blue_stained_glass
+    ##  i_glass 8,  i_light_blue_dye 1 -> i_light_blue_stained_glass 8
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_light_blue_dye)
     => has_item(i_light_blue_stained_glass)
 
 action recipe_jungle_sign
+    ##  i_jungle_planks 6,  i_stick 1 -> i_jungle_sign 3
     < near_block(b_crafting_table)
     < has_item(i_jungle_planks)
     < has_item(i_stick)
     => has_item(i_jungle_sign)
 
 action recipe_granite_wall_from_granite_stonecutting
+    ## i_granite 1 -> i_granite_wall 1
     < near_block(b_stonecutter)
     < has_item(i_granite)
     => has_item(i_granite_wall)
 
 action recipe_purple_carpet_from_white_carpet
+    ##  i_white_carpet 8,  i_purple_dye 1 -> i_purple_carpet 8
     < near_block(b_crafting_table)
     < has_item(i_white_carpet)
     < has_item(i_purple_dye)
     => has_item(i_purple_carpet)
 
 action recipe_stripped_crimson_hyphae
+    ##  i_stripped_crimson_stem 4 -> i_stripped_crimson_hyphae 3
     < has_item(i_stripped_crimson_stem)
     => has_item(i_stripped_crimson_hyphae)
 
 action recipe_light_gray_dye_from_gray_white_dye
+    ##  i_gray_dye 1,  i_white_dye 1 -> i_light_gray_dye 2
     < has_item(i_gray_dye)
     < has_item(i_white_dye)
     => has_item(i_light_gray_dye)
 
 action recipe_netherite_axe_smithing
+    ## i_diamond_axe 1, i_netherite_ingot 1 -> i_netherite_axe 1
     < near_block(b_smithing_table)
     < has_item(i_diamond_axe)
     < has_item(i_netherite_ingot)
     => has_item(i_netherite_axe)
 
 action recipe_lime_banner
+    ##  i_lime_wool 6,  i_stick 1 -> i_lime_banner 1
     < near_block(b_crafting_table)
     < has_item(i_lime_wool)
     < has_item(i_stick)
     => has_item(i_lime_banner)
 
 action recipe_gray_wool
+    ##  i_gray_dye 1,  i_white_wool 1 -> i_gray_wool 1
     < has_item(i_gray_dye)
     < has_item(i_white_wool)
     => has_item(i_gray_wool)
 
 action recipe_crossbow
+    ##  i_stick 3,  i_iron_ingot 1,  i_string 2,  i_tripwire_hook 1 -> i_crossbow 1
     < near_block(b_crafting_table)
     < has_item(i_stick)
     < has_item(i_iron_ingot)
@@ -2760,20 +2800,24 @@ action recipe_crossbow
     => has_item(i_crossbow)
 
 action recipe_oak_wood
+    ##  i_oak_log 4 -> i_oak_wood 3
     < has_item(i_oak_log)
     => has_item(i_oak_wood)
 
 action recipe_end_stone_brick_slab
+    ##  i_end_stone_bricks 3 -> i_end_stone_brick_slab 6
     < near_block(b_crafting_table)
     < has_item(i_end_stone_bricks)
     => has_item(i_end_stone_brick_slab)
 
 action recipe_warped_slab
+    ##  i_warped_planks 3 -> i_warped_slab 6
     < near_block(b_crafting_table)
     < has_item(i_warped_planks)
     => has_item(i_warped_slab)
 
 action recipe_lime_concrete_powder
+    ##  i_lime_dye 1,  i_sand 4,  i_gravel 4 -> i_lime_concrete_powder 8
     < near_block(b_crafting_table)
     < has_item(i_lime_dye)
     < has_item(i_sand)
@@ -2781,46 +2825,55 @@ action recipe_lime_concrete_powder
     => has_item(i_lime_concrete_powder)
 
 action recipe_redstone_block
+    ##  i_redstone 9 -> i_redstone_block 1
     < near_block(b_crafting_table)
     < has_item(i_redstone)
     => has_item(i_redstone_block)
 
 action recipe_diorite_slab
+    ##  i_diorite 3 -> i_diorite_slab 6
     < near_block(b_crafting_table)
     < has_item(i_diorite)
     => has_item(i_diorite_slab)
 
 action recipe_iron_helmet
+    ##  i_iron_ingot 5 -> i_iron_helmet 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     => has_item(i_iron_helmet)
 
 action recipe_jungle_button
+    ##  i_jungle_planks 1 -> i_jungle_button 1
     < has_item(i_jungle_planks)
     => has_item(i_jungle_button)
 
 action recipe_cyan_wool
+    ##  i_cyan_dye 1,  i_white_wool 1 -> i_cyan_wool 1
     < has_item(i_cyan_dye)
     < has_item(i_white_wool)
     => has_item(i_cyan_wool)
 
 action recipe_granite_slab
+    ##  i_granite 3 -> i_granite_slab 6
     < near_block(b_crafting_table)
     < has_item(i_granite)
     => has_item(i_granite_slab)
 
 action recipe_warped_fence_gate
+    ##  i_stick 4,  i_warped_planks 2 -> i_warped_fence_gate 1
     < near_block(b_crafting_table)
     < has_item(i_stick)
     < has_item(i_warped_planks)
     => has_item(i_warped_fence_gate)
 
 action recipe_diamond_boots
+    ##  i_diamond 4 -> i_diamond_boots 1
     < near_block(b_crafting_table)
     < has_item(i_diamond)
     => has_item(i_diamond_boots)
 
 action recipe_blue_bed(i0: Item)
+    ##  i_blue_wool 3,  i0 3 -> i_blue_bed 1
     < near_block(b_crafting_table)
     < has_item(i_blue_wool)
     < item_tag(i0, it_planks)
@@ -2828,6 +2881,7 @@ action recipe_blue_bed(i0: Item)
     => has_item(i_blue_bed)
 
 action recipe_wooden_pickaxe(i0: Item)
+    ##  i0 3,  i_stick 2 -> i_wooden_pickaxe 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_planks)
     < has_item(i0)
@@ -2835,10 +2889,12 @@ action recipe_wooden_pickaxe(i0: Item)
     => has_item(i_wooden_pickaxe)
 
 action recipe_light_blue_carpet
+    ##  i_light_blue_wool 2 -> i_light_blue_carpet 3
     < has_item(i_light_blue_wool)
     => has_item(i_light_blue_carpet)
 
 action recipe_purple_bed(i0: Item)
+    ##  i_purple_wool 3,  i0 3 -> i_purple_bed 1
     < near_block(b_crafting_table)
     < has_item(i_purple_wool)
     < item_tag(i0, it_planks)
@@ -2846,20 +2902,24 @@ action recipe_purple_bed(i0: Item)
     => has_item(i_purple_bed)
 
 action recipe_blackstone_stairs
+    ##  i_blackstone 6 -> i_blackstone_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_blackstone)
     => has_item(i_blackstone_stairs)
 
 action recipe_red_dye_from_tulip
+    ##  i_red_tulip 1 -> i_red_dye 1
     < has_item(i_red_tulip)
     => has_item(i_red_dye)
 
 action recipe_popped_chorus_fruit
+    ## i_chorus_fruit 1 -> i_popped_chorus_fruit 1
     < near_block(b_furnace)
     < has_item(i_chorus_fruit)
     => has_item(i_popped_chorus_fruit)
 
 action recipe_black_concrete_powder
+    ##  i_black_dye 1,  i_sand 4,  i_gravel 4 -> i_black_concrete_powder 8
     < near_block(b_crafting_table)
     < has_item(i_black_dye)
     < has_item(i_sand)
@@ -2867,58 +2927,69 @@ action recipe_black_concrete_powder
     => has_item(i_black_concrete_powder)
 
 action recipe_melon
+    ##  i_melon_slice 9 -> i_melon 1
     < near_block(b_crafting_table)
     < has_item(i_melon_slice)
     => has_item(i_melon)
 
 action recipe_polished_blackstone_wall_from_blackstone_stonecutting
+    ## i_blackstone 1 -> i_polished_blackstone_wall 1
     < near_block(b_stonecutter)
     < has_item(i_blackstone)
     => has_item(i_polished_blackstone_wall)
 
 action recipe_mossy_stone_brick_slab_from_mossy_stone_brick_stonecutting
+    ## i_mossy_stone_bricks 1 -> i_mossy_stone_brick_slab 2
     < near_block(b_stonecutter)
     < has_item(i_mossy_stone_bricks)
     => has_item(i_mossy_stone_brick_slab)
 
 action recipe_lime_dye
+    ##  i_green_dye 1,  i_white_dye 1 -> i_lime_dye 2
     < has_item(i_green_dye)
     < has_item(i_white_dye)
     => has_item(i_lime_dye)
 
 action recipe_crimson_sign
+    ##  i_crimson_planks 6,  i_stick 1 -> i_crimson_sign 3
     < near_block(b_crafting_table)
     < has_item(i_crimson_planks)
     < has_item(i_stick)
     => has_item(i_crimson_sign)
 
 action recipe_cut_sandstone_slab_from_sandstone_stonecutting
+    ## i_sandstone 1 -> i_cut_sandstone_slab 2
     < near_block(b_stonecutter)
     < has_item(i_sandstone)
     => has_item(i_cut_sandstone_slab)
 
 action recipe_oak_boat
+    ##  i_oak_planks 5 -> i_oak_boat 1
     < near_block(b_crafting_table)
     < has_item(i_oak_planks)
     => has_item(i_oak_boat)
 
 action recipe_emerald_from_blasting
+    ## i_emerald_ore 1 -> i_emerald 1
     < near_block(b_blast_furnace)
     < has_item(i_emerald_ore)
     => has_item(i_emerald)
 
 action recipe_oak_planks(i0: Item)
+    ##  i0 1 -> i_oak_planks 4
     < item_tag(i0, it_oak_logs)
     < has_item(i0)
     => has_item(i_oak_planks)
 
 action recipe_warped_fence
+    ##  i_warped_planks 4,  i_stick 2 -> i_warped_fence 3
     < near_block(b_crafting_table)
     < has_item(i_warped_planks)
     < has_item(i_stick)
     => has_item(i_warped_fence)
 
 action recipe_painting(i0: Item)
+    ##  i_stick 8,  i0 1 -> i_painting 1
     < near_block(b_crafting_table)
     < has_item(i_stick)
     < item_tag(i0, it_wool)
@@ -2926,49 +2997,59 @@ action recipe_painting(i0: Item)
     => has_item(i_painting)
 
 action recipe_dried_kelp_from_campfire_cooking
+    ## i_kelp 1 -> i_dried_kelp 1
     < near_block(b_campfire)
     < has_item(i_kelp)
     => has_item(i_dried_kelp)
 
 action recipe_prismarine_slab
+    ##  i_prismarine 3 -> i_prismarine_slab 6
     < near_block(b_crafting_table)
     < has_item(i_prismarine)
     => has_item(i_prismarine_slab)
 
 action recipe_andesite_slab_from_andesite_stonecutting
+    ## i_andesite 1 -> i_andesite_slab 2
     < near_block(b_stonecutter)
     < has_item(i_andesite)
     => has_item(i_andesite_slab)
 
 action recipe_cracked_polished_blackstone_bricks
+    ## i_polished_blackstone_bricks 1 -> i_cracked_polished_blackstone_bricks 1
     < near_block(b_furnace)
     < has_item(i_polished_blackstone_bricks)
     => has_item(i_cracked_polished_blackstone_bricks)
 
 action recipe_coal
+    ##  i_coal_block 1 -> i_coal 9
     < has_item(i_coal_block)
     => has_item(i_coal)
 
 action recipe_chiseled_quartz_block_from_quartz_block_stonecutting
+    ## i_quartz_block 1 -> i_chiseled_quartz_block 1
     < near_block(b_stonecutter)
     < has_item(i_quartz_block)
     => has_item(i_chiseled_quartz_block)
 
 action recipe_nether_brick_slab_from_nether_bricks_stonecutting
+    ## i_nether_bricks 1 -> i_nether_brick_slab 2
     < near_block(b_stonecutter)
     < has_item(i_nether_bricks)
     => has_item(i_nether_brick_slab)
 
 action recipe_spruce_trapdoor
+    ##  i_spruce_planks 6 -> i_spruce_trapdoor 2
     < near_block(b_crafting_table)
     < has_item(i_spruce_planks)
     => has_item(i_spruce_trapdoor)
 
 action recipe_light_blue_dye_from_blue_orchid
+    ##  i_blue_orchid 1 -> i_light_blue_dye 1
     < has_item(i_blue_orchid)
     => has_item(i_light_blue_dye)
 
 action recipe_soul_campfire(i0: Item, i1: Item)
+    ##  i_stick 3,  i0 1,  i1 3 -> i_soul_campfire 1
     < near_block(b_crafting_table)
     < has_item(i_stick)
     < item_tag(i0, it_soul_fire_base_blocks)
@@ -2978,58 +3059,69 @@ action recipe_soul_campfire(i0: Item, i1: Item)
     => has_item(i_soul_campfire)
 
 action recipe_stone_brick_slab_from_stone_stonecutting
+    ## i_stone 1 -> i_stone_brick_slab 2
     < near_block(b_stonecutter)
     < has_item(i_stone)
     => has_item(i_stone_brick_slab)
 
 action recipe_dark_oak_trapdoor
+    ##  i_dark_oak_planks 6 -> i_dark_oak_trapdoor 2
     < near_block(b_crafting_table)
     < has_item(i_dark_oak_planks)
     => has_item(i_dark_oak_trapdoor)
 
 action recipe_end_stone_brick_wall_from_end_stone_stonecutting
+    ## i_end_stone 1 -> i_end_stone_brick_wall 1
     < near_block(b_stonecutter)
     < has_item(i_end_stone)
     => has_item(i_end_stone_brick_wall)
 
 action recipe_quartz_pillar_from_quartz_block_stonecutting
+    ## i_quartz_block 1 -> i_quartz_pillar 1
     < near_block(b_stonecutter)
     < has_item(i_quartz_block)
     => has_item(i_quartz_pillar)
 
 action recipe_prismarine_bricks
+    ##  i_prismarine_shard 9 -> i_prismarine_bricks 1
     < near_block(b_crafting_table)
     < has_item(i_prismarine_shard)
     => has_item(i_prismarine_bricks)
 
 action recipe_anvil
+    ##  i_iron_block 3,  i_iron_ingot 4 -> i_anvil 1
     < near_block(b_crafting_table)
     < has_item(i_iron_block)
     < has_item(i_iron_ingot)
     => has_item(i_anvil)
 
 action recipe_dark_prismarine_stairs_from_dark_prismarine_stonecutting
+    ## i_dark_prismarine 1 -> i_dark_prismarine_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_dark_prismarine)
     => has_item(i_dark_prismarine_stairs)
 
 action recipe_polished_granite_slab_from_polished_granite_stonecutting
+    ## i_polished_granite 1 -> i_polished_granite_slab 2
     < near_block(b_stonecutter)
     < has_item(i_polished_granite)
     => has_item(i_polished_granite_slab)
 
 action recipe_stone_slab
+    ##  i_stone 3 -> i_stone_slab 6
     < near_block(b_crafting_table)
     < has_item(i_stone)
     => has_item(i_stone_slab)
 
 action recipe_acacia_fence
+    ##  i_acacia_planks 4,  i_stick 2 -> i_acacia_fence 3
     < near_block(b_crafting_table)
     < has_item(i_acacia_planks)
     < has_item(i_stick)
     => has_item(i_acacia_fence)
 
 action recipe_gray_bed(i0: Item)
+    ##  i_gray_wool 3,  i0 3 -> i_gray_bed 1
     < near_block(b_crafting_table)
     < has_item(i_gray_wool)
     < item_tag(i0, it_planks)
@@ -3037,24 +3129,29 @@ action recipe_gray_bed(i0: Item)
     => has_item(i_gray_bed)
 
 action recipe_pink_dye_from_pink_tulip
+    ##  i_pink_tulip 1 -> i_pink_dye 1
     < has_item(i_pink_tulip)
     => has_item(i_pink_dye)
 
 action recipe_iron_leggings
+    ##  i_iron_ingot 7 -> i_iron_leggings 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     => has_item(i_iron_leggings)
 
 action recipe_baked_potato
+    ## i_potato 1 -> i_baked_potato 1
     < near_block(b_furnace)
     < has_item(i_potato)
     => has_item(i_baked_potato)
 
 action recipe_brown_dye
+    ##  i_cocoa_beans 1 -> i_brown_dye 1
     < has_item(i_cocoa_beans)
     => has_item(i_brown_dye)
 
 action recipe_repeater
+    ##  i_redstone_torch 2,  i_redstone 1,  i_stone 3 -> i_repeater 1
     < near_block(b_crafting_table)
     < has_item(i_redstone_torch)
     < has_item(i_redstone)
@@ -3062,65 +3159,77 @@ action recipe_repeater
     => has_item(i_repeater)
 
 action recipe_orange_dye_from_red_yellow
+    ##  i_red_dye 1,  i_yellow_dye 1 -> i_orange_dye 2
     < has_item(i_red_dye)
     < has_item(i_yellow_dye)
     => has_item(i_orange_dye)
 
 action recipe_dark_prismarine_stairs
+    ##  i_dark_prismarine 6 -> i_dark_prismarine_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_dark_prismarine)
     => has_item(i_dark_prismarine_stairs)
 
 action recipe_brick_stairs
+    ##  i_bricks 6 -> i_brick_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_bricks)
     => has_item(i_brick_stairs)
 
 action recipe_cooked_chicken_from_campfire_cooking
+    ## i_chicken 1 -> i_cooked_chicken 1
     < near_block(b_campfire)
     < has_item(i_chicken)
     => has_item(i_cooked_chicken)
 
 action recipe_leather_leggings
+    ##  i_leather 7 -> i_leather_leggings 1
     < near_block(b_crafting_table)
     < has_item(i_leather)
     => has_item(i_leather_leggings)
 
 action recipe_smooth_quartz
+    ## i_quartz_block 1 -> i_smooth_quartz 1
     < near_block(b_furnace)
     < has_item(i_quartz_block)
     => has_item(i_smooth_quartz)
 
 action recipe_netherite_ingot
+    ##  i_netherite_scrap 4,  i_gold_ingot 4 -> i_netherite_ingot 1
     < near_block(b_crafting_table)
     < has_item(i_netherite_scrap)
     < has_item(i_gold_ingot)
     => has_item(i_netherite_ingot)
 
 action recipe_light_gray_terracotta
+    ##  i_terracotta 8,  i_light_gray_dye 1 -> i_light_gray_terracotta 8
     < near_block(b_crafting_table)
     < has_item(i_terracotta)
     < has_item(i_light_gray_dye)
     => has_item(i_light_gray_terracotta)
 
 action recipe_pink_banner
+    ##  i_pink_wool 6,  i_stick 1 -> i_pink_banner 1
     < near_block(b_crafting_table)
     < has_item(i_pink_wool)
     < has_item(i_stick)
     => has_item(i_pink_banner)
 
 action recipe_cyan_stained_glass_pane_from_glass_pane
+    ##  i_glass_pane 8,  i_cyan_dye 1 -> i_cyan_stained_glass_pane 8
     < near_block(b_crafting_table)
     < has_item(i_glass_pane)
     < has_item(i_cyan_dye)
     => has_item(i_cyan_stained_glass_pane)
 
 action recipe_oak_stairs
+    ##  i_oak_planks 6 -> i_oak_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_oak_planks)
     => has_item(i_oak_stairs)
 
 action recipe_arrow
+    ##  i_flint 1,  i_stick 1,  i_feather 1 -> i_arrow 4
     < near_block(b_crafting_table)
     < has_item(i_flint)
     < has_item(i_stick)
@@ -3128,76 +3237,91 @@ action recipe_arrow
     => has_item(i_arrow)
 
 action recipe_golden_leggings
+    ##  i_gold_ingot 7 -> i_golden_leggings 1
     < near_block(b_crafting_table)
     < has_item(i_gold_ingot)
     => has_item(i_golden_leggings)
 
 action recipe_stripped_warped_hyphae
+    ##  i_stripped_warped_stem 4 -> i_stripped_warped_hyphae 3
     < has_item(i_stripped_warped_stem)
     => has_item(i_stripped_warped_hyphae)
 
 action recipe_red_stained_glass_pane_from_glass_pane
+    ##  i_glass_pane 8,  i_red_dye 1 -> i_red_stained_glass_pane 8
     < near_block(b_crafting_table)
     < has_item(i_glass_pane)
     < has_item(i_red_dye)
     => has_item(i_red_stained_glass_pane)
 
 action recipe_orange_carpet
+    ##  i_orange_wool 2 -> i_orange_carpet 3
     < has_item(i_orange_wool)
     => has_item(i_orange_carpet)
 
 action recipe_oak_fence_gate
+    ##  i_stick 4,  i_oak_planks 2 -> i_oak_fence_gate 1
     < near_block(b_crafting_table)
     < has_item(i_stick)
     < has_item(i_oak_planks)
     => has_item(i_oak_fence_gate)
 
 action recipe_purpur_pillar
+    ##  i_purpur_slab 2 -> i_purpur_pillar 1
     < has_item(i_purpur_slab)
     => has_item(i_purpur_pillar)
 
 action recipe_gray_carpet_from_white_carpet
+    ##  i_white_carpet 8,  i_gray_dye 1 -> i_gray_carpet 8
     < near_block(b_crafting_table)
     < has_item(i_white_carpet)
     < has_item(i_gray_dye)
     => has_item(i_gray_carpet)
 
 action recipe_polished_andesite_slab
+    ##  i_polished_andesite 3 -> i_polished_andesite_slab 6
     < near_block(b_crafting_table)
     < has_item(i_polished_andesite)
     => has_item(i_polished_andesite_slab)
 
 action recipe_diamond_from_smelting
+    ## i_diamond_ore 1 -> i_diamond 1
     < near_block(b_furnace)
     < has_item(i_diamond_ore)
     => has_item(i_diamond)
 
 action recipe_oak_trapdoor
+    ##  i_oak_planks 6 -> i_oak_trapdoor 2
     < near_block(b_crafting_table)
     < has_item(i_oak_planks)
     => has_item(i_oak_trapdoor)
 
 action recipe_gray_stained_glass_pane_from_glass_pane
+    ##  i_glass_pane 8,  i_gray_dye 1 -> i_gray_stained_glass_pane 8
     < near_block(b_crafting_table)
     < has_item(i_glass_pane)
     < has_item(i_gray_dye)
     => has_item(i_gray_stained_glass_pane)
 
 action recipe_stripped_birch_wood
+    ##  i_stripped_birch_log 4 -> i_stripped_birch_wood 3
     < has_item(i_stripped_birch_log)
     => has_item(i_stripped_birch_wood)
 
 action recipe_netherite_scrap_from_blasting
+    ## i_ancient_debris 1 -> i_netherite_scrap 1
     < near_block(b_blast_furnace)
     < has_item(i_ancient_debris)
     => has_item(i_netherite_scrap)
 
 action recipe_sponge
+    ## i_wet_sponge 1 -> i_sponge 1
     < near_block(b_furnace)
     < has_item(i_wet_sponge)
     => has_item(i_sponge)
 
 action recipe_stone_axe(i0: Item)
+    ##  i0 3,  i_stick 2 -> i_stone_axe 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_stone_tool_materials)
     < has_item(i0)
@@ -3205,15 +3329,18 @@ action recipe_stone_axe(i0: Item)
     => has_item(i_stone_axe)
 
 action recipe_black_dye_from_wither_rose
+    ##  i_wither_rose 1 -> i_black_dye 1
     < has_item(i_wither_rose)
     => has_item(i_black_dye)
 
 action recipe_diorite_stairs_from_diorite_stonecutting
+    ## i_diorite 1 -> i_diorite_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_diorite)
     => has_item(i_diorite_stairs)
 
 action recipe_enchanting_table
+    ##  i_book 1,  i_diamond 2,  i_obsidian 4 -> i_enchanting_table 1
     < near_block(b_crafting_table)
     < has_item(i_book)
     < has_item(i_diamond)
@@ -3221,154 +3348,185 @@ action recipe_enchanting_table
     => has_item(i_enchanting_table)
 
 action recipe_light_blue_dye_from_blue_white_dye
+    ##  i_blue_dye 1,  i_white_dye 1 -> i_light_blue_dye 2
     < has_item(i_blue_dye)
     < has_item(i_white_dye)
     => has_item(i_light_blue_dye)
 
 action recipe_gold_nugget_from_blasting
+    ## i_golden_pickaxe 1 -> i_gold_nugget 1
     < near_block(b_blast_furnace)
     < has_item(i_golden_pickaxe)
     => has_item(i_gold_nugget)
 
 action recipe_black_bed_from_white_bed
+    ##  i_white_bed 1,  i_black_dye 1 -> i_black_bed 1
     < has_item(i_white_bed)
     < has_item(i_black_dye)
     => has_item(i_black_bed)
 
 action recipe_chiseled_nether_bricks
+    ##  i_nether_brick_slab 2 -> i_chiseled_nether_bricks 1
     < has_item(i_nether_brick_slab)
     => has_item(i_chiseled_nether_bricks)
 
 action recipe_golden_helmet
+    ##  i_gold_ingot 5 -> i_golden_helmet 1
     < near_block(b_crafting_table)
     < has_item(i_gold_ingot)
     => has_item(i_golden_helmet)
 
 action recipe_light_blue_stained_glass_pane
+    ##  i_light_blue_stained_glass 6 -> i_light_blue_stained_glass_pane 16
     < near_block(b_crafting_table)
     < has_item(i_light_blue_stained_glass)
     => has_item(i_light_blue_stained_glass_pane)
 
 action recipe_hay_block
+    ##  i_wheat 9 -> i_hay_block 1
     < near_block(b_crafting_table)
     < has_item(i_wheat)
     => has_item(i_hay_block)
 
 action recipe_polished_blackstone_button
+    ##  i_polished_blackstone 1 -> i_polished_blackstone_button 1
     < has_item(i_polished_blackstone)
     => has_item(i_polished_blackstone_button)
 
 action recipe_birch_stairs
+    ##  i_birch_planks 6 -> i_birch_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_birch_planks)
     => has_item(i_birch_stairs)
 
 action recipe_nether_wart_block
+    ##  i_nether_wart 9 -> i_nether_wart_block 1
     < near_block(b_crafting_table)
     < has_item(i_nether_wart)
     => has_item(i_nether_wart_block)
 
 action recipe_dark_oak_boat
+    ##  i_dark_oak_planks 5 -> i_dark_oak_boat 1
     < near_block(b_crafting_table)
     < has_item(i_dark_oak_planks)
     => has_item(i_dark_oak_boat)
 
 action recipe_cooked_cod_from_smoking
+    ## i_cod 1 -> i_cooked_cod 1
     < near_block(b_smoker)
     < has_item(i_cod)
     => has_item(i_cooked_cod)
 
 action recipe_cooked_porkchop
+    ## i_porkchop 1 -> i_cooked_porkchop 1
     < near_block(b_furnace)
     < has_item(i_porkchop)
     => has_item(i_cooked_porkchop)
 
 action recipe_diamond_sword
+    ##  i_diamond 2,  i_stick 1 -> i_diamond_sword 1
     < near_block(b_crafting_table)
     < has_item(i_diamond)
     < has_item(i_stick)
     => has_item(i_diamond_sword)
 
 action recipe_light_blue_glazed_terracotta
+    ## i_light_blue_terracotta 1 -> i_light_blue_glazed_terracotta 1
     < near_block(b_furnace)
     < has_item(i_light_blue_terracotta)
     => has_item(i_light_blue_glazed_terracotta)
 
 action recipe_tnt_minecart
+    ##  i_tnt 1,  i_minecart 1 -> i_tnt_minecart 1
     < has_item(i_tnt)
     < has_item(i_minecart)
     => has_item(i_tnt_minecart)
 
 action recipe_white_glazed_terracotta
+    ## i_white_terracotta 1 -> i_white_glazed_terracotta 1
     < near_block(b_furnace)
     < has_item(i_white_terracotta)
     => has_item(i_white_glazed_terracotta)
 
 action recipe_polished_andesite_from_andesite_stonecutting
+    ## i_andesite 1 -> i_polished_andesite 1
     < near_block(b_stonecutter)
     < has_item(i_andesite)
     => has_item(i_polished_andesite)
 
 action recipe_pink_dye_from_red_white_dye
+    ##  i_red_dye 1,  i_white_dye 1 -> i_pink_dye 2
     < has_item(i_red_dye)
     < has_item(i_white_dye)
     => has_item(i_pink_dye)
 
 action recipe_blackstone_wall_from_blackstone_stonecutting
+    ## i_blackstone 1 -> i_blackstone_wall 1
     < near_block(b_stonecutter)
     < has_item(i_blackstone)
     => has_item(i_blackstone_wall)
 
 action recipe_warped_pressure_plate
+    ##  i_warped_planks 2 -> i_warped_pressure_plate 1
     < has_item(i_warped_planks)
     => has_item(i_warped_pressure_plate)
 
 action recipe_yellow_bed_from_white_bed
+    ##  i_white_bed 1,  i_yellow_dye 1 -> i_yellow_bed 1
     < has_item(i_white_bed)
     < has_item(i_yellow_dye)
     => has_item(i_yellow_bed)
 
 action recipe_iron_nugget
+    ##  i_iron_ingot 1 -> i_iron_nugget 9
     < has_item(i_iron_ingot)
     => has_item(i_iron_nugget)
 
 action recipe_diorite_wall
+    ##  i_diorite 6 -> i_diorite_wall 6
     < near_block(b_crafting_table)
     < has_item(i_diorite)
     => has_item(i_diorite_wall)
 
 action recipe_smooth_red_sandstone_slab
+    ##  i_smooth_red_sandstone 3 -> i_smooth_red_sandstone_slab 6
     < near_block(b_crafting_table)
     < has_item(i_smooth_red_sandstone)
     => has_item(i_smooth_red_sandstone_slab)
 
 action recipe_pink_glazed_terracotta
+    ## i_pink_terracotta 1 -> i_pink_glazed_terracotta 1
     < near_block(b_furnace)
     < has_item(i_pink_terracotta)
     => has_item(i_pink_glazed_terracotta)
 
 action recipe_blackstone_wall
+    ##  i_blackstone 6 -> i_blackstone_wall 6
     < near_block(b_crafting_table)
     < has_item(i_blackstone)
     => has_item(i_blackstone_wall)
 
 action recipe_trapped_chest
+    ##  i_chest 1,  i_tripwire_hook 1 -> i_trapped_chest 1
     < has_item(i_chest)
     < has_item(i_tripwire_hook)
     => has_item(i_trapped_chest)
 
 action recipe_polished_blackstone_brick_slab_from_blackstone_stonecutting
+    ## i_blackstone 1 -> i_polished_blackstone_brick_slab 2
     < near_block(b_stonecutter)
     < has_item(i_blackstone)
     => has_item(i_polished_blackstone_brick_slab)
 
 action recipe_green_carpet_from_white_carpet
+    ##  i_white_carpet 8,  i_green_dye 1 -> i_green_carpet 8
     < near_block(b_crafting_table)
     < has_item(i_white_carpet)
     < has_item(i_green_dye)
     => has_item(i_green_carpet)
 
 action recipe_beacon
+    ##  i_glass 5,  i_nether_star 1,  i_obsidian 3 -> i_beacon 1
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_nether_star)
@@ -3376,10 +3534,12 @@ action recipe_beacon
     => has_item(i_beacon)
 
 action recipe_red_dye_from_poppy
+    ##  i_poppy 1 -> i_red_dye 1
     < has_item(i_poppy)
     => has_item(i_red_dye)
 
 action recipe_red_bed(i0: Item)
+    ##  i_red_wool 3,  i0 3 -> i_red_bed 1
     < near_block(b_crafting_table)
     < has_item(i_red_wool)
     < item_tag(i0, it_planks)
@@ -3387,39 +3547,47 @@ action recipe_red_bed(i0: Item)
     => has_item(i_red_bed)
 
 action recipe_dark_oak_button
+    ##  i_dark_oak_planks 1 -> i_dark_oak_button 1
     < has_item(i_dark_oak_planks)
     => has_item(i_dark_oak_button)
 
 action recipe_yellow_terracotta
+    ##  i_terracotta 8,  i_yellow_dye 1 -> i_yellow_terracotta 8
     < near_block(b_crafting_table)
     < has_item(i_terracotta)
     < has_item(i_yellow_dye)
     => has_item(i_yellow_terracotta)
 
 action recipe_blue_dye_from_cornflower
+    ##  i_cornflower 1 -> i_blue_dye 1
     < has_item(i_cornflower)
     => has_item(i_blue_dye)
 
 action recipe_dried_kelp
+    ##  i_dried_kelp_block 1 -> i_dried_kelp 9
     < has_item(i_dried_kelp_block)
     => has_item(i_dried_kelp)
 
 action recipe_green_banner
+    ##  i_green_wool 6,  i_stick 1 -> i_green_banner 1
     < near_block(b_crafting_table)
     < has_item(i_green_wool)
     < has_item(i_stick)
     => has_item(i_green_banner)
 
 action recipe_red_carpet
+    ##  i_red_wool 2 -> i_red_carpet 3
     < has_item(i_red_wool)
     => has_item(i_red_carpet)
 
 action recipe_end_rod
+    ##  i_blaze_rod 1,  i_popped_chorus_fruit 1 -> i_end_rod 4
     < has_item(i_blaze_rod)
     < has_item(i_popped_chorus_fruit)
     => has_item(i_end_rod)
 
 action recipe_white_concrete_powder
+    ##  i_white_dye 1,  i_sand 4,  i_gravel 4 -> i_white_concrete_powder 8
     < near_block(b_crafting_table)
     < has_item(i_white_dye)
     < has_item(i_sand)
@@ -3427,11 +3595,13 @@ action recipe_white_concrete_powder
     => has_item(i_white_concrete_powder)
 
 action recipe_cooked_mutton
+    ## i_mutton 1 -> i_cooked_mutton 1
     < near_block(b_furnace)
     < has_item(i_mutton)
     => has_item(i_cooked_mutton)
 
 action recipe_magenta_concrete_powder
+    ##  i_magenta_dye 1,  i_sand 4,  i_gravel 4 -> i_magenta_concrete_powder 8
     < near_block(b_crafting_table)
     < has_item(i_magenta_dye)
     < has_item(i_sand)
@@ -3439,32 +3609,38 @@ action recipe_magenta_concrete_powder
     => has_item(i_magenta_concrete_powder)
 
 action recipe_rail
+    ##  i_iron_ingot 6,  i_stick 1 -> i_rail 16
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     < has_item(i_stick)
     => has_item(i_rail)
 
 action recipe_chiseled_stone_bricks_from_stone_bricks_stonecutting
+    ## i_stone_bricks 1 -> i_chiseled_stone_bricks 1
     < near_block(b_stonecutter)
     < has_item(i_stone_bricks)
     => has_item(i_chiseled_stone_bricks)
 
 action recipe_dark_oak_door
+    ##  i_dark_oak_planks 6 -> i_dark_oak_door 3
     < near_block(b_crafting_table)
     < has_item(i_dark_oak_planks)
     => has_item(i_dark_oak_door)
 
 action recipe_gold_ingot(i0: Item)
+    ## i0 1 -> i_gold_ingot 1
     < near_block(b_furnace)
     < item_tag(i0, it_gold_ores)
     < has_item(i0)
     => has_item(i_gold_ingot)
 
 action recipe_honey_block
+    ##  i_honey_bottle 4 -> i_honey_block 1
     < has_item(i_honey_bottle)
     => has_item(i_honey_block)
 
 action recipe_soul_torch(i0: Item)
+    ##  i_coal 1,  i_stick 1,  i0 1 -> i_soul_torch 4
     < near_block(b_crafting_table)
     < has_item(i_coal)
     < has_item(i_stick)
@@ -3473,6 +3649,7 @@ action recipe_soul_torch(i0: Item)
     => has_item(i_soul_torch)
 
 action recipe_tripwire_hook(i0: Item)
+    ##  i_iron_ingot 1,  i_stick 1,  i0 1 -> i_tripwire_hook 2
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     < has_item(i_stick)
@@ -3481,11 +3658,13 @@ action recipe_tripwire_hook(i0: Item)
     => has_item(i_tripwire_hook)
 
 action recipe_gold_ingot_from_nuggets
+    ##  i_gold_nugget 9 -> i_gold_ingot 1
     < near_block(b_crafting_table)
     < has_item(i_gold_nugget)
     => has_item(i_gold_ingot)
 
 action recipe_pink_concrete_powder
+    ##  i_pink_dye 1,  i_sand 4,  i_gravel 4 -> i_pink_concrete_powder 8
     < near_block(b_crafting_table)
     < has_item(i_pink_dye)
     < has_item(i_sand)
@@ -3493,6 +3672,7 @@ action recipe_pink_concrete_powder
     => has_item(i_pink_concrete_powder)
 
 action recipe_magenta_bed(i0: Item)
+    ##  i_magenta_wool 3,  i0 3 -> i_magenta_bed 1
     < near_block(b_crafting_table)
     < has_item(i_magenta_wool)
     < item_tag(i0, it_planks)
@@ -3500,28 +3680,33 @@ action recipe_magenta_bed(i0: Item)
     => has_item(i_magenta_bed)
 
 action recipe_brown_stained_glass
+    ##  i_glass 8,  i_brown_dye 1 -> i_brown_stained_glass 8
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_brown_dye)
     => has_item(i_brown_stained_glass)
 
 action recipe_polished_diorite
+    ##  i_diorite 4 -> i_polished_diorite 4
     < has_item(i_diorite)
     => has_item(i_polished_diorite)
 
 action recipe_furnace(i0: Item)
+    ##  i0 8 -> i_furnace 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_stone_crafting_materials)
     < has_item(i0)
     => has_item(i_furnace)
 
 action recipe_netherite_shovel_smithing
+    ## i_diamond_shovel 1, i_netherite_ingot 1 -> i_netherite_shovel 1
     < near_block(b_smithing_table)
     < has_item(i_diamond_shovel)
     < has_item(i_netherite_ingot)
     => has_item(i_netherite_shovel)
 
 action recipe_rabbit_stew_from_red_mushroom
+    ##  i_baked_potato 1,  i_cooked_rabbit 1,  i_bowl 1,  i_carrot 1,  i_red_mushroom 1 -> i_rabbit_stew 1
     < near_block(b_crafting_table)
     < has_item(i_baked_potato)
     < has_item(i_cooked_rabbit)
@@ -3531,184 +3716,219 @@ action recipe_rabbit_stew_from_red_mushroom
     => has_item(i_rabbit_stew)
 
 action recipe_nether_brick_stairs_from_nether_bricks_stonecutting
+    ## i_nether_bricks 1 -> i_nether_brick_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_nether_bricks)
     => has_item(i_nether_brick_stairs)
 
 action recipe_smooth_sandstone_slab
+    ##  i_smooth_sandstone 3 -> i_smooth_sandstone_slab 6
     < near_block(b_crafting_table)
     < has_item(i_smooth_sandstone)
     => has_item(i_smooth_sandstone_slab)
 
 action recipe_spruce_wood
+    ##  i_spruce_log 4 -> i_spruce_wood 3
     < has_item(i_spruce_log)
     => has_item(i_spruce_wood)
 
 action recipe_end_stone_brick_stairs_from_end_stone_brick_stonecutting
+    ## i_end_stone_bricks 1 -> i_end_stone_brick_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_end_stone_bricks)
     => has_item(i_end_stone_brick_stairs)
 
 action recipe_magenta_stained_glass
+    ##  i_glass 8,  i_magenta_dye 1 -> i_magenta_stained_glass 8
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_magenta_dye)
     => has_item(i_magenta_stained_glass)
 
 action recipe_shulker_box
+    ##  i_shulker_shell 2,  i_chest 1 -> i_shulker_box 1
     < near_block(b_crafting_table)
     < has_item(i_shulker_shell)
     < has_item(i_chest)
     => has_item(i_shulker_box)
 
 action recipe_iron_axe
+    ##  i_iron_ingot 3,  i_stick 2 -> i_iron_axe 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     < has_item(i_stick)
     => has_item(i_iron_axe)
 
 action recipe_polished_granite
+    ##  i_granite 4 -> i_polished_granite 4
     < has_item(i_granite)
     => has_item(i_polished_granite)
 
 action recipe_polished_andesite
+    ##  i_andesite 4 -> i_polished_andesite 4
     < has_item(i_andesite)
     => has_item(i_polished_andesite)
 
 action recipe_cut_red_sandstone_from_red_sandstone_stonecutting
+    ## i_red_sandstone 1 -> i_cut_red_sandstone 1
     < near_block(b_stonecutter)
     < has_item(i_red_sandstone)
     => has_item(i_cut_red_sandstone)
 
 action recipe_red_glazed_terracotta
+    ## i_red_terracotta 1 -> i_red_glazed_terracotta 1
     < near_block(b_furnace)
     < has_item(i_red_terracotta)
     => has_item(i_red_glazed_terracotta)
 
 action recipe_mossy_cobblestone_slab
+    ##  i_mossy_cobblestone 3 -> i_mossy_cobblestone_slab 6
     < near_block(b_crafting_table)
     < has_item(i_mossy_cobblestone)
     => has_item(i_mossy_cobblestone_slab)
 
 action recipe_quartz
+    ## i_nether_quartz_ore 1 -> i_quartz 1
     < near_block(b_furnace)
     < has_item(i_nether_quartz_ore)
     => has_item(i_quartz)
 
 action recipe_flint_and_steel
+    ##  i_iron_ingot 1,  i_flint 1 -> i_flint_and_steel 1
     < has_item(i_iron_ingot)
     < has_item(i_flint)
     => has_item(i_flint_and_steel)
 
 action recipe_golden_sword
+    ##  i_gold_ingot 2,  i_stick 1 -> i_golden_sword 1
     < near_block(b_crafting_table)
     < has_item(i_gold_ingot)
     < has_item(i_stick)
     => has_item(i_golden_sword)
 
 action recipe_sticky_piston
+    ##  i_slime_ball 1,  i_piston 1 -> i_sticky_piston 1
     < has_item(i_slime_ball)
     < has_item(i_piston)
     => has_item(i_sticky_piston)
 
 action recipe_blue_stained_glass_pane
+    ##  i_blue_stained_glass 6 -> i_blue_stained_glass_pane 16
     < near_block(b_crafting_table)
     < has_item(i_blue_stained_glass)
     => has_item(i_blue_stained_glass_pane)
 
 action recipe_cooked_chicken_from_smoking
+    ## i_chicken 1 -> i_cooked_chicken 1
     < near_block(b_smoker)
     < has_item(i_chicken)
     => has_item(i_cooked_chicken)
 
 action recipe_creeper_banner_pattern
+    ##  i_paper 1,  i_creeper_head 1 -> i_creeper_banner_pattern 1
     < has_item(i_paper)
     < has_item(i_creeper_head)
     => has_item(i_creeper_banner_pattern)
 
 action recipe_hopper
+    ##  i_iron_ingot 5,  i_chest 1 -> i_hopper 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     < has_item(i_chest)
     => has_item(i_hopper)
 
 action recipe_white_terracotta
+    ##  i_terracotta 8,  i_white_dye 1 -> i_white_terracotta 8
     < near_block(b_crafting_table)
     < has_item(i_terracotta)
     < has_item(i_white_dye)
     => has_item(i_white_terracotta)
 
 action recipe_light_blue_wool
+    ##  i_light_blue_dye 1,  i_white_wool 1 -> i_light_blue_wool 1
     < has_item(i_light_blue_dye)
     < has_item(i_white_wool)
     => has_item(i_light_blue_wool)
 
 action recipe_birch_fence_gate
+    ##  i_stick 4,  i_birch_planks 2 -> i_birch_fence_gate 1
     < near_block(b_crafting_table)
     < has_item(i_stick)
     < has_item(i_birch_planks)
     => has_item(i_birch_fence_gate)
 
 action recipe_cut_red_sandstone_slab_from_red_sandstone_stonecutting
+    ## i_red_sandstone 1 -> i_cut_red_sandstone_slab 2
     < near_block(b_stonecutter)
     < has_item(i_red_sandstone)
     => has_item(i_cut_red_sandstone_slab)
 
 action recipe_light_gray_dye_from_azure_bluet
+    ##  i_azure_bluet 1 -> i_light_gray_dye 1
     < has_item(i_azure_bluet)
     => has_item(i_light_gray_dye)
 
 action recipe_diamond_shovel
+    ##  i_diamond 1,  i_stick 2 -> i_diamond_shovel 1
     < near_block(b_crafting_table)
     < has_item(i_diamond)
     < has_item(i_stick)
     => has_item(i_diamond_shovel)
 
 action recipe_warped_sign
+    ##  i_warped_planks 6,  i_stick 1 -> i_warped_sign 3
     < near_block(b_crafting_table)
     < has_item(i_warped_planks)
     < has_item(i_stick)
     => has_item(i_warped_sign)
 
 action recipe_magenta_dye_from_blue_red_white_dye
+    ##  i_blue_dye 1,  i_red_dye 2,  i_white_dye 1 -> i_magenta_dye 4
     < has_item(i_blue_dye)
     < has_item(i_red_dye)
     < has_item(i_white_dye)
     => has_item(i_magenta_dye)
 
 action recipe_netherite_boots_smithing
+    ## i_diamond_boots 1, i_netherite_ingot 1 -> i_netherite_boots 1
     < near_block(b_smithing_table)
     < has_item(i_diamond_boots)
     < has_item(i_netherite_ingot)
     => has_item(i_netherite_boots)
 
 action recipe_smooth_stone_slab_from_smooth_stone_stonecutting
+    ## i_smooth_stone 1 -> i_smooth_stone_slab 2
     < near_block(b_stonecutter)
     < has_item(i_smooth_stone)
     => has_item(i_smooth_stone_slab)
 
 action recipe_iron_pickaxe
+    ##  i_iron_ingot 3,  i_stick 2 -> i_iron_pickaxe 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     < has_item(i_stick)
     => has_item(i_iron_pickaxe)
 
 action recipe_hopper_minecart
+    ##  i_hopper 1,  i_minecart 1 -> i_hopper_minecart 1
     < has_item(i_hopper)
     < has_item(i_minecart)
     => has_item(i_hopper_minecart)
 
 action recipe_smooth_quartz_stairs_from_smooth_quartz_stonecutting
+    ## i_smooth_quartz 1 -> i_smooth_quartz_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_smooth_quartz)
     => has_item(i_smooth_quartz_stairs)
 
 action recipe_smooth_quartz_stairs
+    ##  i_smooth_quartz 6 -> i_smooth_quartz_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_smooth_quartz)
     => has_item(i_smooth_quartz_stairs)
 
 action recipe_yellow_concrete_powder
+    ##  i_yellow_dye 1,  i_sand 4,  i_gravel 4 -> i_yellow_concrete_powder 8
     < near_block(b_crafting_table)
     < has_item(i_yellow_dye)
     < has_item(i_sand)
@@ -3716,49 +3936,58 @@ action recipe_yellow_concrete_powder
     => has_item(i_yellow_concrete_powder)
 
 action recipe_white_banner
+    ##  i_white_wool 6,  i_stick 1 -> i_white_banner 1
     < near_block(b_crafting_table)
     < has_item(i_white_wool)
     < has_item(i_stick)
     => has_item(i_white_banner)
 
 action recipe_gold_block
+    ##  i_gold_ingot 9 -> i_gold_block 1
     < near_block(b_crafting_table)
     < has_item(i_gold_ingot)
     => has_item(i_gold_block)
 
 action recipe_gold_ingot_from_gold_block
+    ##  i_gold_block 1 -> i_gold_ingot 9
     < has_item(i_gold_block)
     => has_item(i_gold_ingot)
 
 action recipe_compass
+    ##  i_iron_ingot 4,  i_redstone 1 -> i_compass 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     < has_item(i_redstone)
     => has_item(i_compass)
 
 action recipe_bread
+    ##  i_wheat 3 -> i_bread 1
     < near_block(b_crafting_table)
     < has_item(i_wheat)
     => has_item(i_bread)
 
 action recipe_oak_fence
+    ##  i_oak_planks 4,  i_stick 2 -> i_oak_fence 3
     < near_block(b_crafting_table)
     < has_item(i_oak_planks)
     < has_item(i_stick)
     => has_item(i_oak_fence)
 
 action recipe_smooth_sandstone_slab_from_smooth_sandstone_stonecutting
+    ## i_smooth_sandstone 1 -> i_smooth_sandstone_slab 2
     < near_block(b_stonecutter)
     < has_item(i_smooth_sandstone)
     => has_item(i_smooth_sandstone_slab)
 
 action recipe_mushroom_stew
+    ##  i_brown_mushroom 1,  i_red_mushroom 1,  i_bowl 1 -> i_mushroom_stew 1
     < has_item(i_brown_mushroom)
     < has_item(i_red_mushroom)
     < has_item(i_bowl)
     => has_item(i_mushroom_stew)
 
 action recipe_smoker(i0: Item)
+    ##  i0 4,  i_furnace 1 -> i_smoker 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_logs)
     < has_item(i0)
@@ -3766,98 +3995,117 @@ action recipe_smoker(i0: Item)
     => has_item(i_smoker)
 
 action recipe_loom(i0: Item)
+    ##  i_string 2,  i0 2 -> i_loom 1
     < has_item(i_string)
     < item_tag(i0, it_planks)
     < has_item(i0)
     => has_item(i_loom)
 
 action recipe_brown_carpet
+    ##  i_brown_wool 2 -> i_brown_carpet 3
     < has_item(i_brown_wool)
     => has_item(i_brown_carpet)
 
 action recipe_polished_blackstone_from_blackstone_stonecutting
+    ## i_blackstone 1 -> i_polished_blackstone 1
     < near_block(b_stonecutter)
     < has_item(i_blackstone)
     => has_item(i_polished_blackstone)
 
 action recipe_netherite_hoe_smithing
+    ## i_diamond_hoe 1, i_netherite_ingot 1 -> i_netherite_hoe 1
     < near_block(b_smithing_table)
     < has_item(i_diamond_hoe)
     < has_item(i_netherite_ingot)
     => has_item(i_netherite_hoe)
 
 action recipe_magenta_stained_glass_pane
+    ##  i_magenta_stained_glass 6 -> i_magenta_stained_glass_pane 16
     < near_block(b_crafting_table)
     < has_item(i_magenta_stained_glass)
     => has_item(i_magenta_stained_glass_pane)
 
 action recipe_red_banner
+    ##  i_red_wool 6,  i_stick 1 -> i_red_banner 1
     < near_block(b_crafting_table)
     < has_item(i_red_wool)
     < has_item(i_stick)
     => has_item(i_red_banner)
 
 action recipe_iron_ingot_from_iron_block
+    ##  i_iron_block 1 -> i_iron_ingot 9
     < has_item(i_iron_block)
     => has_item(i_iron_ingot)
 
 action recipe_sandstone_slab_from_sandstone_stonecutting
+    ## i_sandstone 1 -> i_sandstone_slab 2
     < near_block(b_stonecutter)
     < has_item(i_sandstone)
     => has_item(i_sandstone_slab)
 
 action recipe_blaze_powder
+    ##  i_blaze_rod 1 -> i_blaze_powder 2
     < has_item(i_blaze_rod)
     => has_item(i_blaze_powder)
 
 action recipe_cooked_rabbit_from_campfire_cooking
+    ## i_rabbit 1 -> i_cooked_rabbit 1
     < near_block(b_campfire)
     < has_item(i_rabbit)
     => has_item(i_cooked_rabbit)
 
 action recipe_purple_bed_from_white_bed
+    ##  i_white_bed 1,  i_purple_dye 1 -> i_purple_bed 1
     < has_item(i_white_bed)
     < has_item(i_purple_dye)
     => has_item(i_purple_bed)
 
 action recipe_polished_blackstone_brick_slab_from_polished_blackstone_stonecutting
+    ## i_polished_blackstone 1 -> i_polished_blackstone_brick_slab 2
     < near_block(b_stonecutter)
     < has_item(i_polished_blackstone)
     => has_item(i_polished_blackstone_brick_slab)
 
 action recipe_orange_wool
+    ##  i_orange_dye 1,  i_white_wool 1 -> i_orange_wool 1
     < has_item(i_orange_dye)
     < has_item(i_white_wool)
     => has_item(i_orange_wool)
 
 action recipe_cooked_porkchop_from_campfire_cooking
+    ## i_porkchop 1 -> i_cooked_porkchop 1
     < near_block(b_campfire)
     < has_item(i_porkchop)
     => has_item(i_cooked_porkchop)
 
 action recipe_purple_stained_glass_pane_from_glass_pane
+    ##  i_glass_pane 8,  i_purple_dye 1 -> i_purple_stained_glass_pane 8
     < near_block(b_crafting_table)
     < has_item(i_glass_pane)
     < has_item(i_purple_dye)
     => has_item(i_purple_stained_glass_pane)
 
 action recipe_andesite_stairs_from_andesite_stonecutting
+    ## i_andesite 1 -> i_andesite_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_andesite)
     => has_item(i_andesite_stairs)
 
 action recipe_prismarine_stairs
+    ##  i_prismarine 6 -> i_prismarine_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_prismarine)
     => has_item(i_prismarine_stairs)
 
 action recipe_brown_banner
+    ##  i_brown_wool 6,  i_stick 1 -> i_brown_banner 1
     < near_block(b_crafting_table)
     < has_item(i_brown_wool)
     < has_item(i_stick)
     => has_item(i_brown_banner)
 
 action recipe_cartography_table(i0: Item)
+    ##  i_paper 2,  i0 4 -> i_cartography_table 1
     < near_block(b_crafting_table)
     < has_item(i_paper)
     < item_tag(i0, it_planks)
@@ -3865,40 +4113,48 @@ action recipe_cartography_table(i0: Item)
     => has_item(i_cartography_table)
 
 action recipe_golden_axe
+    ##  i_gold_ingot 3,  i_stick 2 -> i_golden_axe 1
     < near_block(b_crafting_table)
     < has_item(i_gold_ingot)
     < has_item(i_stick)
     => has_item(i_golden_axe)
 
 action recipe_netherite_block
+    ##  i_netherite_ingot 9 -> i_netherite_block 1
     < near_block(b_crafting_table)
     < has_item(i_netherite_ingot)
     => has_item(i_netherite_block)
 
 action recipe_spruce_planks(i0: Item)
+    ##  i0 1 -> i_spruce_planks 4
     < item_tag(i0, it_spruce_logs)
     < has_item(i0)
     => has_item(i_spruce_planks)
 
 action recipe_red_sandstone
+    ##  i_red_sand 4 -> i_red_sandstone 1
     < has_item(i_red_sand)
     => has_item(i_red_sandstone)
 
 action recipe_prismarine_slab_from_prismarine_stonecutting
+    ## i_prismarine 1 -> i_prismarine_slab 2
     < near_block(b_stonecutter)
     < has_item(i_prismarine)
     => has_item(i_prismarine_slab)
 
 action recipe_prismarine
+    ##  i_prismarine_shard 4 -> i_prismarine 1
     < has_item(i_prismarine_shard)
     => has_item(i_prismarine)
 
 action recipe_brick_wall
+    ##  i_bricks 6 -> i_brick_wall 6
     < near_block(b_crafting_table)
     < has_item(i_bricks)
     => has_item(i_brick_wall)
 
 action recipe_white_bed(i0: Item)
+    ##  i_white_wool 3,  i0 3 -> i_white_bed 1
     < near_block(b_crafting_table)
     < has_item(i_white_wool)
     < item_tag(i0, it_planks)
@@ -3906,59 +4162,71 @@ action recipe_white_bed(i0: Item)
     => has_item(i_white_bed)
 
 action recipe_stone_pressure_plate
+    ##  i_stone 2 -> i_stone_pressure_plate 1
     < has_item(i_stone)
     => has_item(i_stone_pressure_plate)
 
 action recipe_golden_carrot
+    ##  i_gold_nugget 8,  i_carrot 1 -> i_golden_carrot 1
     < near_block(b_crafting_table)
     < has_item(i_gold_nugget)
     < has_item(i_carrot)
     => has_item(i_golden_carrot)
 
 action recipe_cooked_salmon
+    ## i_salmon 1 -> i_cooked_salmon 1
     < near_block(b_furnace)
     < has_item(i_salmon)
     => has_item(i_cooked_salmon)
 
 action recipe_polished_granite_stairs
+    ##  i_polished_granite 6 -> i_polished_granite_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_polished_granite)
     => has_item(i_polished_granite_stairs)
 
 action recipe_birch_wood
+    ##  i_birch_log 4 -> i_birch_wood 3
     < has_item(i_birch_log)
     => has_item(i_birch_wood)
 
 action recipe_birch_slab
+    ##  i_birch_planks 3 -> i_birch_slab 6
     < near_block(b_crafting_table)
     < has_item(i_birch_planks)
     => has_item(i_birch_slab)
 
 action recipe_brick_slab
+    ##  i_bricks 3 -> i_brick_slab 6
     < near_block(b_crafting_table)
     < has_item(i_bricks)
     => has_item(i_brick_slab)
 
 action recipe_warped_trapdoor
+    ##  i_warped_planks 6 -> i_warped_trapdoor 2
     < near_block(b_crafting_table)
     < has_item(i_warped_planks)
     => has_item(i_warped_trapdoor)
 
 action recipe_cooked_cod_from_campfire_cooking
+    ## i_cod 1 -> i_cooked_cod 1
     < near_block(b_campfire)
     < has_item(i_cod)
     => has_item(i_cooked_cod)
 
 action recipe_bricks
+    ##  i_brick 4 -> i_bricks 1
     < has_item(i_brick)
     => has_item(i_bricks)
 
 action recipe_warped_fungus_on_a_stick
+    ##  i_fishing_rod 1,  i_warped_fungus 1 -> i_warped_fungus_on_a_stick 1
     < has_item(i_fishing_rod)
     < has_item(i_warped_fungus)
     => has_item(i_warped_fungus_on_a_stick)
 
 action recipe_brown_concrete_powder
+    ##  i_brown_dye 1,  i_sand 4,  i_gravel 4 -> i_brown_concrete_powder 8
     < near_block(b_crafting_table)
     < has_item(i_brown_dye)
     < has_item(i_sand)
@@ -3966,97 +4234,116 @@ action recipe_brown_concrete_powder
     => has_item(i_brown_concrete_powder)
 
 action recipe_baked_potato_from_campfire_cooking
+    ## i_potato 1 -> i_baked_potato 1
     < near_block(b_campfire)
     < has_item(i_potato)
     => has_item(i_baked_potato)
 
 action recipe_oak_button
+    ##  i_oak_planks 1 -> i_oak_button 1
     < has_item(i_oak_planks)
     => has_item(i_oak_button)
 
 action recipe_stone_brick_walls_from_stone_stonecutting
+    ## i_stone 1 -> i_stone_brick_wall 1
     < near_block(b_stonecutter)
     < has_item(i_stone)
     => has_item(i_stone_brick_wall)
 
 action recipe_netherite_helmet_smithing
+    ## i_diamond_helmet 1, i_netherite_ingot 1 -> i_netherite_helmet 1
     < near_block(b_smithing_table)
     < has_item(i_diamond_helmet)
     < has_item(i_netherite_ingot)
     => has_item(i_netherite_helmet)
 
 action recipe_magma_block
+    ##  i_magma_cream 4 -> i_magma_block 1
     < has_item(i_magma_cream)
     => has_item(i_magma_block)
 
 action recipe_chiseled_stone_bricks
+    ##  i_stone_brick_slab 2 -> i_chiseled_stone_bricks 1
     < has_item(i_stone_brick_slab)
     => has_item(i_chiseled_stone_bricks)
 
 action recipe_jungle_slab
+    ##  i_jungle_planks 3 -> i_jungle_slab 6
     < near_block(b_crafting_table)
     < has_item(i_jungle_planks)
     => has_item(i_jungle_slab)
 
 action recipe_stone_brick_wall_from_stone_bricks_stonecutting
+    ## i_stone_bricks 1 -> i_stone_brick_wall 1
     < near_block(b_stonecutter)
     < has_item(i_stone_bricks)
     => has_item(i_stone_brick_wall)
 
 action recipe_lime_carpet
+    ##  i_lime_wool 2 -> i_lime_carpet 3
     < has_item(i_lime_wool)
     => has_item(i_lime_carpet)
 
 action recipe_dark_oak_fence
+    ##  i_dark_oak_planks 4,  i_stick 2 -> i_dark_oak_fence 3
     < near_block(b_crafting_table)
     < has_item(i_dark_oak_planks)
     < has_item(i_stick)
     => has_item(i_dark_oak_fence)
 
 action recipe_fermented_spider_eye
+    ##  i_spider_eye 1,  i_brown_mushroom 1,  i_sugar 1 -> i_fermented_spider_eye 1
     < has_item(i_spider_eye)
     < has_item(i_brown_mushroom)
     < has_item(i_sugar)
     => has_item(i_fermented_spider_eye)
 
 action recipe_redstone_from_smelting
+    ## i_redstone_ore 1 -> i_redstone 1
     < near_block(b_furnace)
     < has_item(i_redstone_ore)
     => has_item(i_redstone)
 
 action recipe_sugar_from_sugar_cane
+    ##  i_sugar_cane 1 -> i_sugar 1
     < has_item(i_sugar_cane)
     => has_item(i_sugar)
 
 action recipe_fishing_rod
+    ##  i_stick 3,  i_string 2 -> i_fishing_rod 1
     < near_block(b_crafting_table)
     < has_item(i_stick)
     < has_item(i_string)
     => has_item(i_fishing_rod)
 
 action recipe_composter(i0: Item)
+    ##  i0 7 -> i_composter 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_wooden_slabs)
     < has_item(i0)
     => has_item(i_composter)
 
 action recipe_chiseled_stone_bricks_stone_from_stonecutting
+    ## i_stone 1 -> i_chiseled_stone_bricks 1
     < near_block(b_stonecutter)
     < has_item(i_stone)
     => has_item(i_chiseled_stone_bricks)
 
 action recipe_map
+    ##  i_paper 8,  i_compass 1 -> i_map 1
     < near_block(b_crafting_table)
     < has_item(i_paper)
     < has_item(i_compass)
     => has_item(i_map)
 
 action recipe_red_sandstone_wall
+    ##  i_red_sandstone 6 -> i_red_sandstone_wall 6
     < near_block(b_crafting_table)
     < has_item(i_red_sandstone)
     => has_item(i_red_sandstone_wall)
 
 action recipe_jukebox(i0: Item)
+    ##  i0 8,  i_diamond 1 -> i_jukebox 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_planks)
     < has_item(i0)
@@ -4064,28 +4351,33 @@ action recipe_jukebox(i0: Item)
     => has_item(i_jukebox)
 
 action recipe_blue_banner
+    ##  i_blue_wool 6,  i_stick 1 -> i_blue_banner 1
     < near_block(b_crafting_table)
     < has_item(i_blue_wool)
     < has_item(i_stick)
     => has_item(i_blue_banner)
 
 action recipe_oak_sign
+    ##  i_oak_planks 6,  i_stick 1 -> i_oak_sign 3
     < near_block(b_crafting_table)
     < has_item(i_oak_planks)
     < has_item(i_stick)
     => has_item(i_oak_sign)
 
 action recipe_iron_door
+    ##  i_iron_ingot 6 -> i_iron_door 3
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     => has_item(i_iron_door)
 
 action recipe_purpur_stairs_from_purpur_block_stonecutting
+    ## i_purpur_block 1 -> i_purpur_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_purpur_block)
     => has_item(i_purpur_stairs)
 
 action recipe_stone_hoe(i0: Item)
+    ##  i0 2,  i_stick 2 -> i_stone_hoe 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_stone_tool_materials)
     < has_item(i0)
@@ -4093,102 +4385,122 @@ action recipe_stone_hoe(i0: Item)
     => has_item(i_stone_hoe)
 
 action recipe_diamond_from_blasting
+    ## i_diamond_ore 1 -> i_diamond 1
     < near_block(b_blast_furnace)
     < has_item(i_diamond_ore)
     => has_item(i_diamond)
 
 action recipe_light_gray_carpet_from_white_carpet
+    ##  i_white_carpet 8,  i_light_gray_dye 1 -> i_light_gray_carpet 8
     < near_block(b_crafting_table)
     < has_item(i_white_carpet)
     < has_item(i_light_gray_dye)
     => has_item(i_light_gray_carpet)
 
 action recipe_stripped_acacia_wood
+    ##  i_stripped_acacia_log 4 -> i_stripped_acacia_wood 3
     < has_item(i_stripped_acacia_log)
     => has_item(i_stripped_acacia_wood)
 
 action recipe_fire_charge
+    ##  i_gunpowder 1,  i_blaze_powder 1,  i_coal 1 -> i_fire_charge 3
     < has_item(i_gunpowder)
     < has_item(i_blaze_powder)
     < has_item(i_coal)
     => has_item(i_fire_charge)
 
 action recipe_blackstone_slab_from_blackstone_stonecutting
+    ## i_blackstone 1 -> i_blackstone_slab 2
     < near_block(b_stonecutter)
     < has_item(i_blackstone)
     => has_item(i_blackstone_slab)
 
 action recipe_light_gray_dye_from_white_tulip
+    ##  i_white_tulip 1 -> i_light_gray_dye 1
     < has_item(i_white_tulip)
     => has_item(i_light_gray_dye)
 
 action recipe_red_stained_glass
+    ##  i_glass 8,  i_red_dye 1 -> i_red_stained_glass 8
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_red_dye)
     => has_item(i_red_stained_glass)
 
 action recipe_andesite
+    ##  i_diorite 1,  i_cobblestone 1 -> i_andesite 2
     < has_item(i_diorite)
     < has_item(i_cobblestone)
     => has_item(i_andesite)
 
 action recipe_quartz_slab_from_stonecutting
+    ## i_quartz_block 1 -> i_quartz_slab 2
     < near_block(b_stonecutter)
     < has_item(i_quartz_block)
     => has_item(i_quartz_slab)
 
 action recipe_iron_boots
+    ##  i_iron_ingot 4 -> i_iron_boots 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     => has_item(i_iron_boots)
 
 action recipe_red_nether_brick_wall_from_red_nether_bricks_stonecutting
+    ## i_red_nether_bricks 1 -> i_red_nether_brick_wall 1
     < near_block(b_stonecutter)
     < has_item(i_red_nether_bricks)
     => has_item(i_red_nether_brick_wall)
 
 action recipe_spruce_slab
+    ##  i_spruce_planks 3 -> i_spruce_slab 6
     < near_block(b_crafting_table)
     < has_item(i_spruce_planks)
     => has_item(i_spruce_slab)
 
 action recipe_mossy_cobblestone_stairs_from_mossy_cobblestone_stonecutting
+    ## i_mossy_cobblestone 1 -> i_mossy_cobblestone_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_mossy_cobblestone)
     => has_item(i_mossy_cobblestone_stairs)
 
 action recipe_polished_blackstone_stairs_from_blackstone_stonecutting
+    ## i_blackstone 1 -> i_polished_blackstone_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_blackstone)
     => has_item(i_polished_blackstone_stairs)
 
 action recipe_iron_ingot_from_nuggets
+    ##  i_iron_nugget 9 -> i_iron_ingot 1
     < near_block(b_crafting_table)
     < has_item(i_iron_nugget)
     => has_item(i_iron_ingot)
 
 action recipe_granite
+    ##  i_diorite 1,  i_quartz 1 -> i_granite 1
     < has_item(i_diorite)
     < has_item(i_quartz)
     => has_item(i_granite)
 
 action recipe_pumpkin_pie
+    ##  i_pumpkin 1,  i_sugar 1,  i_egg 1 -> i_pumpkin_pie 1
     < has_item(i_pumpkin)
     < has_item(i_sugar)
     < has_item(i_egg)
     => has_item(i_pumpkin_pie)
 
 action recipe_glowstone
+    ##  i_glowstone_dust 4 -> i_glowstone 1
     < has_item(i_glowstone_dust)
     => has_item(i_glowstone)
 
 action recipe_gold_nugget_from_smelting
+    ## i_golden_pickaxe 1 -> i_gold_nugget 1
     < near_block(b_furnace)
     < has_item(i_golden_pickaxe)
     => has_item(i_gold_nugget)
 
 action recipe_shield(i0: Item)
+    ##  i0 6,  i_iron_ingot 1 -> i_shield 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_planks)
     < has_item(i0)
@@ -4196,62 +4508,74 @@ action recipe_shield(i0: Item)
     => has_item(i_shield)
 
 action recipe_mossy_cobblestone_wall_from_mossy_cobblestone_stonecutting
+    ## i_mossy_cobblestone 1 -> i_mossy_cobblestone_wall 1
     < near_block(b_stonecutter)
     < has_item(i_mossy_cobblestone)
     => has_item(i_mossy_cobblestone_wall)
 
 action recipe_glass_pane
+    ##  i_glass 6 -> i_glass_pane 16
     < near_block(b_crafting_table)
     < has_item(i_glass)
     => has_item(i_glass_pane)
 
 action recipe_lead
+    ##  i_string 4,  i_slime_ball 1 -> i_lead 2
     < near_block(b_crafting_table)
     < has_item(i_string)
     < has_item(i_slime_ball)
     => has_item(i_lead)
 
 action recipe_acacia_button
+    ##  i_acacia_planks 1 -> i_acacia_button 1
     < has_item(i_acacia_planks)
     => has_item(i_acacia_button)
 
 action recipe_smooth_stone_slab
+    ##  i_smooth_stone 3 -> i_smooth_stone_slab 6
     < near_block(b_crafting_table)
     < has_item(i_smooth_stone)
     => has_item(i_smooth_stone_slab)
 
 action recipe_chest(i0: Item)
+    ##  i0 8 -> i_chest 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_planks)
     < has_item(i0)
     => has_item(i_chest)
 
 action recipe_oak_slab
+    ##  i_oak_planks 3 -> i_oak_slab 6
     < near_block(b_crafting_table)
     < has_item(i_oak_planks)
     => has_item(i_oak_slab)
 
 action recipe_coal_from_smelting
+    ## i_coal_ore 1 -> i_coal 1
     < near_block(b_furnace)
     < has_item(i_coal_ore)
     => has_item(i_coal)
 
 action recipe_green_stained_glass_pane
+    ##  i_green_stained_glass 6 -> i_green_stained_glass_pane 16
     < near_block(b_crafting_table)
     < has_item(i_green_stained_glass)
     => has_item(i_green_stained_glass_pane)
 
 action recipe_dark_prismarine_slab_from_dark_prismarine_stonecutting
+    ## i_dark_prismarine 1 -> i_dark_prismarine_slab 2
     < near_block(b_stonecutter)
     < has_item(i_dark_prismarine)
     => has_item(i_dark_prismarine_slab)
 
 action recipe_oak_door
+    ##  i_oak_planks 6 -> i_oak_door 3
     < near_block(b_crafting_table)
     < has_item(i_oak_planks)
     => has_item(i_oak_door)
 
 action recipe_gray_concrete_powder
+    ##  i_gray_dye 1,  i_sand 4,  i_gravel 4 -> i_gray_concrete_powder 8
     < near_block(b_crafting_table)
     < has_item(i_gray_dye)
     < has_item(i_sand)
@@ -4259,89 +4583,107 @@ action recipe_gray_concrete_powder
     => has_item(i_gray_concrete_powder)
 
 action recipe_polished_andesite_stairs_from_polished_andesite_stonecutting
+    ## i_polished_andesite 1 -> i_polished_andesite_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_polished_andesite)
     => has_item(i_polished_andesite_stairs)
 
 action recipe_cooked_salmon_from_campfire_cooking
+    ## i_salmon 1 -> i_cooked_salmon 1
     < near_block(b_campfire)
     < has_item(i_salmon)
     => has_item(i_cooked_salmon)
 
 action recipe_smooth_red_sandstone_stairs_from_smooth_red_sandstone_stonecutting
+    ## i_smooth_red_sandstone 1 -> i_smooth_red_sandstone_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_smooth_red_sandstone)
     => has_item(i_smooth_red_sandstone_stairs)
 
 action recipe_black_dye
+    ##  i_ink_sac 1 -> i_black_dye 1
     < has_item(i_ink_sac)
     => has_item(i_black_dye)
 
 action recipe_smooth_quartz_slab_from_smooth_quartz_stonecutting
+    ## i_smooth_quartz 1 -> i_smooth_quartz_slab 2
     < near_block(b_stonecutter)
     < has_item(i_smooth_quartz)
     => has_item(i_smooth_quartz_slab)
 
 action recipe_brick_slab_from_bricks_stonecutting
+    ## i_bricks 1 -> i_brick_slab 2
     < near_block(b_stonecutter)
     < has_item(i_bricks)
     => has_item(i_brick_slab)
 
 action recipe_cyan_glazed_terracotta
+    ## i_cyan_terracotta 1 -> i_cyan_glazed_terracotta 1
     < near_block(b_furnace)
     < has_item(i_cyan_terracotta)
     => has_item(i_cyan_glazed_terracotta)
 
 action recipe_cut_red_sandstone_slab_from_cut_red_sandstone_stonecutting
+    ## i_cut_red_sandstone 1 -> i_cut_red_sandstone_slab 2
     < near_block(b_stonecutter)
     < has_item(i_cut_red_sandstone)
     => has_item(i_cut_red_sandstone_slab)
 
 action recipe_stone_brick_slab_from_stone_bricks_stonecutting
+    ## i_stone_bricks 1 -> i_stone_brick_slab 2
     < near_block(b_stonecutter)
     < has_item(i_stone_bricks)
     => has_item(i_stone_brick_slab)
 
 action recipe_polished_blackstone_wall_from_polished_blackstone_stonecutting
+    ## i_polished_blackstone 1 -> i_polished_blackstone_wall 1
     < near_block(b_stonecutter)
     < has_item(i_polished_blackstone)
     => has_item(i_polished_blackstone_wall)
 
 action recipe_brown_wool
+    ##  i_brown_dye 1,  i_white_wool 1 -> i_brown_wool 1
     < has_item(i_brown_dye)
     < has_item(i_white_wool)
     => has_item(i_brown_wool)
 
 action recipe_nether_bricks
+    ##  i_nether_brick 4 -> i_nether_bricks 1
     < has_item(i_nether_brick)
     => has_item(i_nether_bricks)
 
 action recipe_red_nether_brick_slab_from_red_nether_bricks_stonecutting
+    ## i_red_nether_bricks 1 -> i_red_nether_brick_slab 2
     < near_block(b_stonecutter)
     < has_item(i_red_nether_bricks)
     => has_item(i_red_nether_brick_slab)
 
 action recipe_sandstone_stairs
+    ##  i_sandstone 6 -> i_sandstone_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_sandstone)
     => has_item(i_sandstone_stairs)
 
 action recipe_blue_glazed_terracotta
+    ## i_blue_terracotta 1 -> i_blue_glazed_terracotta 1
     < near_block(b_furnace)
     < has_item(i_blue_terracotta)
     => has_item(i_blue_glazed_terracotta)
 
 action recipe_dark_oak_pressure_plate
+    ##  i_dark_oak_planks 2 -> i_dark_oak_pressure_plate 1
     < has_item(i_dark_oak_planks)
     => has_item(i_dark_oak_pressure_plate)
 
 action recipe_honey_bottle
+    ##  i_honey_block 1,  i_glass_bottle 4 -> i_honey_bottle 4
     < near_block(b_crafting_table)
     < has_item(i_honey_block)
     < has_item(i_glass_bottle)
     => has_item(i_honey_bottle)
 
 action recipe_stone_pickaxe(i0: Item)
+    ##  i0 3,  i_stick 2 -> i_stone_pickaxe 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_stone_tool_materials)
     < has_item(i0)
@@ -4349,138 +4691,165 @@ action recipe_stone_pickaxe(i0: Item)
     => has_item(i_stone_pickaxe)
 
 action recipe_tnt
+    ##  i_gunpowder 5,  i_sand 4 -> i_tnt 1
     < near_block(b_crafting_table)
     < has_item(i_gunpowder)
     < has_item(i_sand)
     => has_item(i_tnt)
 
 action recipe_gray_terracotta
+    ##  i_terracotta 8,  i_gray_dye 1 -> i_gray_terracotta 8
     < near_block(b_crafting_table)
     < has_item(i_terracotta)
     < has_item(i_gray_dye)
     => has_item(i_gray_terracotta)
 
 action recipe_stick(i0: Item)
+    ##  i0 2 -> i_stick 4
     < item_tag(i0, it_planks)
     < has_item(i0)
     => has_item(i_stick)
 
 action recipe_dark_oak_slab
+    ##  i_dark_oak_planks 3 -> i_dark_oak_slab 6
     < near_block(b_crafting_table)
     < has_item(i_dark_oak_planks)
     => has_item(i_dark_oak_slab)
 
 action recipe_light_weighted_pressure_plate
+    ##  i_gold_ingot 2 -> i_light_weighted_pressure_plate 1
     < has_item(i_gold_ingot)
     => has_item(i_light_weighted_pressure_plate)
 
 action recipe_light_gray_wool
+    ##  i_light_gray_dye 1,  i_white_wool 1 -> i_light_gray_wool 1
     < has_item(i_light_gray_dye)
     < has_item(i_white_wool)
     => has_item(i_light_gray_wool)
 
 action recipe_cookie
+    ##  i_wheat 2,  i_cocoa_beans 1 -> i_cookie 8
     < near_block(b_crafting_table)
     < has_item(i_wheat)
     < has_item(i_cocoa_beans)
     => has_item(i_cookie)
 
 action recipe_jungle_fence_gate
+    ##  i_stick 4,  i_jungle_planks 2 -> i_jungle_fence_gate 1
     < near_block(b_crafting_table)
     < has_item(i_stick)
     < has_item(i_jungle_planks)
     => has_item(i_jungle_fence_gate)
 
 action recipe_iron_nugget_from_blasting
+    ## i_iron_pickaxe 1 -> i_iron_nugget 1
     < near_block(b_blast_furnace)
     < has_item(i_iron_pickaxe)
     => has_item(i_iron_nugget)
 
 action recipe_polished_blackstone_slab_from_blackstone_stonecutting
+    ## i_blackstone 1 -> i_polished_blackstone_slab 2
     < near_block(b_stonecutter)
     < has_item(i_blackstone)
     => has_item(i_polished_blackstone_slab)
 
 action recipe_jungle_fence
+    ##  i_jungle_planks 4,  i_stick 2 -> i_jungle_fence 3
     < near_block(b_crafting_table)
     < has_item(i_jungle_planks)
     < has_item(i_stick)
     => has_item(i_jungle_fence)
 
 action recipe_light_blue_bed_from_white_bed
+    ##  i_white_bed 1,  i_light_blue_dye 1 -> i_light_blue_bed 1
     < has_item(i_white_bed)
     < has_item(i_light_blue_dye)
     => has_item(i_light_blue_bed)
 
 action recipe_cooked_porkchop_from_smoking
+    ## i_porkchop 1 -> i_cooked_porkchop 1
     < near_block(b_smoker)
     < has_item(i_porkchop)
     => has_item(i_cooked_porkchop)
 
 action recipe_snow
+    ##  i_snow_block 3 -> i_snow 6
     < near_block(b_crafting_table)
     < has_item(i_snow_block)
     => has_item(i_snow)
 
 action recipe_andesite_wall
+    ##  i_andesite 6 -> i_andesite_wall 6
     < near_block(b_crafting_table)
     < has_item(i_andesite)
     => has_item(i_andesite_wall)
 
 action recipe_stripped_jungle_wood
+    ##  i_stripped_jungle_log 4 -> i_stripped_jungle_wood 3
     < has_item(i_stripped_jungle_log)
     => has_item(i_stripped_jungle_wood)
 
 action recipe_black_stained_glass_pane
+    ##  i_black_stained_glass 6 -> i_black_stained_glass_pane 16
     < near_block(b_crafting_table)
     < has_item(i_black_stained_glass)
     => has_item(i_black_stained_glass_pane)
 
 action recipe_diamond
+    ##  i_diamond_block 1 -> i_diamond 9
     < has_item(i_diamond_block)
     => has_item(i_diamond)
 
 action recipe_pumpkin_seeds
+    ##  i_pumpkin 1 -> i_pumpkin_seeds 4
     < has_item(i_pumpkin)
     => has_item(i_pumpkin_seeds)
 
 action recipe_stick_from_bamboo_item
+    ##  i_bamboo 2 -> i_stick 1
     < has_item(i_bamboo)
     => has_item(i_stick)
 
 action recipe_light_gray_dye_from_black_white_dye
+    ##  i_black_dye 1,  i_white_dye 2 -> i_light_gray_dye 3
     < has_item(i_black_dye)
     < has_item(i_white_dye)
     => has_item(i_light_gray_dye)
 
 action recipe_cyan_bed_from_white_bed
+    ##  i_white_bed 1,  i_cyan_dye 1 -> i_cyan_bed 1
     < has_item(i_white_bed)
     < has_item(i_cyan_dye)
     => has_item(i_cyan_bed)
 
 action recipe_yellow_stained_glass_pane_from_glass_pane
+    ##  i_glass_pane 8,  i_yellow_dye 1 -> i_yellow_stained_glass_pane 8
     < near_block(b_crafting_table)
     < has_item(i_glass_pane)
     < has_item(i_yellow_dye)
     => has_item(i_yellow_stained_glass_pane)
 
 action recipe_netherite_sword_smithing
+    ## i_diamond_sword 1, i_netherite_ingot 1 -> i_netherite_sword 1
     < near_block(b_smithing_table)
     < has_item(i_diamond_sword)
     < has_item(i_netherite_ingot)
     => has_item(i_netherite_sword)
 
 action recipe_redstone_torch
+    ##  i_redstone 1,  i_stick 1 -> i_redstone_torch 1
     < has_item(i_redstone)
     < has_item(i_stick)
     => has_item(i_redstone_torch)
 
 action recipe_cooked_mutton_from_campfire_cooking
+    ## i_mutton 1 -> i_cooked_mutton 1
     < near_block(b_campfire)
     < has_item(i_mutton)
     => has_item(i_cooked_mutton)
 
 action recipe_stone_shovel(i0: Item)
+    ##  i0 1,  i_stick 2 -> i_stone_shovel 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_stone_tool_materials)
     < has_item(i0)
@@ -4488,16 +4857,19 @@ action recipe_stone_shovel(i0: Item)
     => has_item(i_stone_shovel)
 
 action recipe_lime_glazed_terracotta
+    ## i_lime_terracotta 1 -> i_lime_glazed_terracotta 1
     < near_block(b_furnace)
     < has_item(i_lime_terracotta)
     => has_item(i_lime_glazed_terracotta)
 
 action recipe_polished_andesite_slab_from_andesite_stonecutting
+    ## i_andesite 1 -> i_polished_andesite_slab 2
     < near_block(b_stonecutter)
     < has_item(i_andesite)
     => has_item(i_polished_andesite_slab)
 
 action recipe_detector_rail
+    ##  i_iron_ingot 6,  i_stone_pressure_plate 1,  i_redstone 1 -> i_detector_rail 6
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     < has_item(i_stone_pressure_plate)
@@ -4505,69 +4877,82 @@ action recipe_detector_rail
     => has_item(i_detector_rail)
 
 action recipe_red_terracotta
+    ##  i_terracotta 8,  i_red_dye 1 -> i_red_terracotta 8
     < near_block(b_crafting_table)
     < has_item(i_terracotta)
     < has_item(i_red_dye)
     => has_item(i_red_terracotta)
 
 action recipe_magenta_dye_from_blue_red_pink
+    ##  i_blue_dye 1,  i_red_dye 1,  i_pink_dye 1 -> i_magenta_dye 3
     < has_item(i_blue_dye)
     < has_item(i_red_dye)
     < has_item(i_pink_dye)
     => has_item(i_magenta_dye)
 
 action recipe_spruce_button
+    ##  i_spruce_planks 1 -> i_spruce_button 1
     < has_item(i_spruce_planks)
     => has_item(i_spruce_button)
 
 action recipe_cooked_mutton_from_smoking
+    ## i_mutton 1 -> i_cooked_mutton 1
     < near_block(b_smoker)
     < has_item(i_mutton)
     => has_item(i_cooked_mutton)
 
 action recipe_polished_blackstone_brick_stairs_from_polished_blackstone_bricks_stonecutting
+    ## i_polished_blackstone_bricks 1 -> i_polished_blackstone_brick_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_polished_blackstone_bricks)
     => has_item(i_polished_blackstone_brick_stairs)
 
 action recipe_crimson_door
+    ##  i_crimson_planks 6 -> i_crimson_door 3
     < near_block(b_crafting_table)
     < has_item(i_crimson_planks)
     => has_item(i_crimson_door)
 
 action recipe_yellow_carpet
+    ##  i_yellow_wool 2 -> i_yellow_carpet 3
     < has_item(i_yellow_wool)
     => has_item(i_yellow_carpet)
 
 action recipe_birch_fence
+    ##  i_birch_planks 4,  i_stick 2 -> i_birch_fence 3
     < near_block(b_crafting_table)
     < has_item(i_birch_planks)
     < has_item(i_stick)
     => has_item(i_birch_fence)
 
 action recipe_pink_bed_from_white_bed
+    ##  i_white_bed 1,  i_pink_dye 1 -> i_pink_bed 1
     < has_item(i_white_bed)
     < has_item(i_pink_dye)
     => has_item(i_pink_bed)
 
 action recipe_netherite_leggings_smithing
+    ## i_diamond_leggings 1, i_netherite_ingot 1 -> i_netherite_leggings 1
     < near_block(b_smithing_table)
     < has_item(i_diamond_leggings)
     < has_item(i_netherite_ingot)
     => has_item(i_netherite_leggings)
 
 action recipe_ladder
+    ##  i_stick 7 -> i_ladder 3
     < near_block(b_crafting_table)
     < has_item(i_stick)
     => has_item(i_ladder)
 
 action recipe_stonecutter
+    ##  i_iron_ingot 1,  i_stone 3 -> i_stonecutter 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     < has_item(i_stone)
     => has_item(i_stonecutter)
 
 action recipe_light_gray_bed(i0: Item)
+    ##  i_light_gray_wool 3,  i0 3 -> i_light_gray_bed 1
     < near_block(b_crafting_table)
     < has_item(i_light_gray_wool)
     < item_tag(i0, it_planks)
@@ -4575,6 +4960,7 @@ action recipe_light_gray_bed(i0: Item)
     => has_item(i_light_gray_bed)
 
 action recipe_blue_concrete_powder
+    ##  i_blue_dye 1,  i_sand 4,  i_gravel 4 -> i_blue_concrete_powder 8
     < near_block(b_crafting_table)
     < has_item(i_blue_dye)
     < has_item(i_sand)
@@ -4582,32 +4968,38 @@ action recipe_blue_concrete_powder
     => has_item(i_blue_concrete_powder)
 
 action recipe_red_sandstone_stairs_from_red_sandstone_stonecutting
+    ## i_red_sandstone 1 -> i_red_sandstone_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_red_sandstone)
     => has_item(i_red_sandstone_stairs)
 
 action recipe_red_sandstone_slab_from_red_sandstone_stonecutting
+    ## i_red_sandstone 1 -> i_red_sandstone_slab 2
     < near_block(b_stonecutter)
     < has_item(i_red_sandstone)
     => has_item(i_red_sandstone_slab)
 
 action recipe_white_stained_glass_pane
+    ##  i_white_stained_glass 6 -> i_white_stained_glass_pane 16
     < near_block(b_crafting_table)
     < has_item(i_white_stained_glass)
     => has_item(i_white_stained_glass_pane)
 
 action recipe_black_terracotta
+    ##  i_terracotta 8,  i_black_dye 1 -> i_black_terracotta 8
     < near_block(b_crafting_table)
     < has_item(i_terracotta)
     < has_item(i_black_dye)
     => has_item(i_black_terracotta)
 
 action recipe_magma_cream
+    ##  i_blaze_powder 1,  i_slime_ball 1 -> i_magma_cream 1
     < has_item(i_blaze_powder)
     < has_item(i_slime_ball)
     => has_item(i_magma_cream)
 
 action recipe_green_bed(i0: Item)
+    ##  i_green_wool 3,  i0 3 -> i_green_bed 1
     < near_block(b_crafting_table)
     < has_item(i_green_wool)
     < item_tag(i0, it_planks)
@@ -4615,6 +5007,7 @@ action recipe_green_bed(i0: Item)
     => has_item(i_green_bed)
 
 action recipe_green_concrete_powder
+    ##  i_green_dye 1,  i_sand 4,  i_gravel 4 -> i_green_concrete_powder 8
     < near_block(b_crafting_table)
     < has_item(i_green_dye)
     < has_item(i_sand)
@@ -4622,11 +5015,13 @@ action recipe_green_concrete_powder
     => has_item(i_green_concrete_powder)
 
 action recipe_cut_red_sandstone_slab
+    ##  i_cut_red_sandstone 3 -> i_cut_red_sandstone_slab 6
     < near_block(b_crafting_table)
     < has_item(i_cut_red_sandstone)
     => has_item(i_cut_red_sandstone_slab)
 
 action recipe_purple_concrete_powder
+    ##  i_purple_dye 1,  i_sand 4,  i_gravel 4 -> i_purple_concrete_powder 8
     < near_block(b_crafting_table)
     < has_item(i_purple_dye)
     < has_item(i_sand)
@@ -4634,91 +5029,109 @@ action recipe_purple_concrete_powder
     => has_item(i_purple_concrete_powder)
 
 action recipe_flower_pot
+    ##  i_brick 3 -> i_flower_pot 1
     < near_block(b_crafting_table)
     < has_item(i_brick)
     => has_item(i_flower_pot)
 
 action recipe_pink_dye_from_peony
+    ##  i_peony 1 -> i_pink_dye 2
     < has_item(i_peony)
     => has_item(i_pink_dye)
 
 action recipe_carrot_on_a_stick
+    ##  i_fishing_rod 1,  i_carrot 1 -> i_carrot_on_a_stick 1
     < has_item(i_fishing_rod)
     < has_item(i_carrot)
     => has_item(i_carrot_on_a_stick)
 
 action recipe_diorite_stairs
+    ##  i_diorite 6 -> i_diorite_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_diorite)
     => has_item(i_diorite_stairs)
 
 action recipe_polished_blackstone_brick_wall_from_polished_blackstone_stonecutting
+    ## i_polished_blackstone 1 -> i_polished_blackstone_brick_wall 1
     < near_block(b_stonecutter)
     < has_item(i_polished_blackstone)
     => has_item(i_polished_blackstone_brick_wall)
 
 action recipe_mossy_cobblestone
+    ##  i_cobblestone 1,  i_vine 1 -> i_mossy_cobblestone 1
     < has_item(i_cobblestone)
     < has_item(i_vine)
     => has_item(i_mossy_cobblestone)
 
 action recipe_stone_slab_from_stone_stonecutting
+    ## i_stone 1 -> i_stone_slab 2
     < near_block(b_stonecutter)
     < has_item(i_stone)
     => has_item(i_stone_slab)
 
 action recipe_chain
+    ##  i_iron_nugget 2,  i_iron_ingot 1 -> i_chain 1
     < near_block(b_crafting_table)
     < has_item(i_iron_nugget)
     < has_item(i_iron_ingot)
     => has_item(i_chain)
 
 action recipe_iron_shovel
+    ##  i_iron_ingot 1,  i_stick 2 -> i_iron_shovel 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     < has_item(i_stick)
     => has_item(i_iron_shovel)
 
 action recipe_stone_button
+    ##  i_stone 1 -> i_stone_button 1
     < has_item(i_stone)
     => has_item(i_stone_button)
 
 action recipe_iron_block
+    ##  i_iron_ingot 9 -> i_iron_block 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     => has_item(i_iron_block)
 
 action recipe_honeycomb_block
+    ##  i_honeycomb 4 -> i_honeycomb_block 1
     < has_item(i_honeycomb)
     => has_item(i_honeycomb_block)
 
 action recipe_lodestone
+    ##  i_chiseled_stone_bricks 8,  i_netherite_ingot 1 -> i_lodestone 1
     < near_block(b_crafting_table)
     < has_item(i_chiseled_stone_bricks)
     < has_item(i_netherite_ingot)
     => has_item(i_lodestone)
 
 action recipe_gray_banner
+    ##  i_gray_wool 6,  i_stick 1 -> i_gray_banner 1
     < near_block(b_crafting_table)
     < has_item(i_gray_wool)
     < has_item(i_stick)
     => has_item(i_gray_banner)
 
 action recipe_crimson_trapdoor
+    ##  i_crimson_planks 6 -> i_crimson_trapdoor 2
     < near_block(b_crafting_table)
     < has_item(i_crimson_planks)
     => has_item(i_crimson_trapdoor)
 
 action recipe_nether_brick_stairs
+    ##  i_nether_bricks 6 -> i_nether_brick_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_nether_bricks)
     => has_item(i_nether_brick_stairs)
 
 action recipe_quartz_block
+    ##  i_quartz 4 -> i_quartz_block 1
     < has_item(i_quartz)
     => has_item(i_quartz_block)
 
 action recipe_cyan_concrete_powder
+    ##  i_cyan_dye 1,  i_sand 4,  i_gravel 4 -> i_cyan_concrete_powder 8
     < near_block(b_crafting_table)
     < has_item(i_cyan_dye)
     < has_item(i_sand)
@@ -4726,6 +5139,7 @@ action recipe_cyan_concrete_powder
     => has_item(i_cyan_concrete_powder)
 
 action recipe_cake
+    ##  i_milk_bucket 3,  i_sugar 2,  i_egg 1,  i_wheat 3 -> i_cake 1
     < near_block(b_crafting_table)
     < has_item(i_milk_bucket)
     < has_item(i_sugar)
@@ -4734,17 +5148,20 @@ action recipe_cake
     => has_item(i_cake)
 
 action recipe_skull_banner_pattern
+    ##  i_paper 1,  i_wither_skeleton_skull 1 -> i_skull_banner_pattern 1
     < has_item(i_paper)
     < has_item(i_wither_skeleton_skull)
     => has_item(i_skull_banner_pattern)
 
 action recipe_sea_lantern
+    ##  i_prismarine_shard 4,  i_prismarine_crystals 5 -> i_sea_lantern 1
     < near_block(b_crafting_table)
     < has_item(i_prismarine_shard)
     < has_item(i_prismarine_crystals)
     => has_item(i_sea_lantern)
 
 action recipe_orange_concrete_powder
+    ##  i_orange_dye 1,  i_sand 4,  i_gravel 4 -> i_orange_concrete_powder 8
     < near_block(b_crafting_table)
     < has_item(i_orange_dye)
     < has_item(i_sand)
@@ -4752,22 +5169,26 @@ action recipe_orange_concrete_powder
     => has_item(i_orange_concrete_powder)
 
 action recipe_armor_stand
+    ##  i_stick 6,  i_smooth_stone_slab 1 -> i_armor_stand 1
     < near_block(b_crafting_table)
     < has_item(i_stick)
     < has_item(i_smooth_stone_slab)
     => has_item(i_armor_stand)
 
 action recipe_polished_granite_from_granite_stonecutting
+    ## i_granite 1 -> i_polished_granite 1
     < near_block(b_stonecutter)
     < has_item(i_granite)
     => has_item(i_polished_granite)
 
 action recipe_flower_banner_pattern
+    ##  i_paper 1,  i_oxeye_daisy 1 -> i_flower_banner_pattern 1
     < has_item(i_paper)
     < has_item(i_oxeye_daisy)
     => has_item(i_flower_banner_pattern)
 
 action recipe_smithing_table(i0: Item)
+    ##  i_iron_ingot 2,  i0 4 -> i_smithing_table 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     < item_tag(i0, it_planks)
@@ -4775,6 +5196,7 @@ action recipe_smithing_table(i0: Item)
     => has_item(i_smithing_table)
 
 action recipe_pink_bed(i0: Item)
+    ##  i_pink_wool 3,  i0 3 -> i_pink_bed 1
     < near_block(b_crafting_table)
     < has_item(i_pink_wool)
     < item_tag(i0, it_planks)
@@ -4782,71 +5204,85 @@ action recipe_pink_bed(i0: Item)
     => has_item(i_pink_bed)
 
 action recipe_acacia_slab
+    ##  i_acacia_planks 3 -> i_acacia_slab 6
     < near_block(b_crafting_table)
     < has_item(i_acacia_planks)
     => has_item(i_acacia_slab)
 
 action recipe_brick_stairs_from_bricks_stonecutting
+    ## i_bricks 1 -> i_brick_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_bricks)
     => has_item(i_brick_stairs)
 
 action recipe_book
+    ##  i_paper 3,  i_leather 1 -> i_book 1
     < has_item(i_paper)
     < has_item(i_leather)
     => has_item(i_book)
 
 action recipe_quartz_stairs_from_quartz_block_stonecutting
+    ## i_quartz_block 1 -> i_quartz_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_quartz_block)
     => has_item(i_quartz_stairs)
 
 action recipe_magenta_stained_glass_pane_from_glass_pane
+    ##  i_glass_pane 8,  i_magenta_dye 1 -> i_magenta_stained_glass_pane 8
     < near_block(b_crafting_table)
     < has_item(i_glass_pane)
     < has_item(i_magenta_dye)
     => has_item(i_magenta_stained_glass_pane)
 
 action recipe_purple_stained_glass
+    ##  i_glass 8,  i_purple_dye 1 -> i_purple_stained_glass 8
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_purple_dye)
     => has_item(i_purple_stained_glass)
 
 action recipe_crimson_slab
+    ##  i_crimson_planks 3 -> i_crimson_slab 6
     < near_block(b_crafting_table)
     < has_item(i_crimson_planks)
     => has_item(i_crimson_slab)
 
 action recipe_bone_meal_from_bone_block
+    ##  i_bone_block 1 -> i_bone_meal 9
     < has_item(i_bone_block)
     => has_item(i_bone_meal)
 
 action recipe_crimson_button
+    ##  i_crimson_planks 1 -> i_crimson_button 1
     < has_item(i_crimson_planks)
     => has_item(i_crimson_button)
 
 action recipe_cooked_chicken
+    ## i_chicken 1 -> i_cooked_chicken 1
     < near_block(b_furnace)
     < has_item(i_chicken)
     => has_item(i_cooked_chicken)
 
 action recipe_conduit
+    ##  i_nautilus_shell 8,  i_heart_of_the_sea 1 -> i_conduit 1
     < near_block(b_crafting_table)
     < has_item(i_nautilus_shell)
     < has_item(i_heart_of_the_sea)
     => has_item(i_conduit)
 
 action recipe_purple_stained_glass_pane
+    ##  i_purple_stained_glass 6 -> i_purple_stained_glass_pane 16
     < near_block(b_crafting_table)
     < has_item(i_purple_stained_glass)
     => has_item(i_purple_stained_glass_pane)
 
 action recipe_jungle_pressure_plate
+    ##  i_jungle_planks 2 -> i_jungle_pressure_plate 1
     < has_item(i_jungle_planks)
     => has_item(i_jungle_pressure_plate)
 
 action recipe_comparator
+    ##  i_redstone_torch 3,  i_quartz 1,  i_stone 3 -> i_comparator 1
     < near_block(b_crafting_table)
     < has_item(i_redstone_torch)
     < has_item(i_quartz)
@@ -4854,117 +5290,139 @@ action recipe_comparator
     => has_item(i_comparator)
 
 action recipe_crimson_pressure_plate
+    ##  i_crimson_planks 2 -> i_crimson_pressure_plate 1
     < has_item(i_crimson_planks)
     => has_item(i_crimson_pressure_plate)
 
 action recipe_red_sandstone_slab
+    ##  i_red_sandstone 3 -> i_red_sandstone_slab 6
     < near_block(b_crafting_table)
     < has_item(i_red_sandstone)
     => has_item(i_red_sandstone_slab)
 
 action recipe_blue_bed_from_white_bed
+    ##  i_white_bed 1,  i_blue_dye 1 -> i_blue_bed 1
     < has_item(i_white_bed)
     < has_item(i_blue_dye)
     => has_item(i_blue_bed)
 
 action recipe_magenta_glazed_terracotta
+    ## i_magenta_terracotta 1 -> i_magenta_glazed_terracotta 1
     < near_block(b_furnace)
     < has_item(i_magenta_terracotta)
     => has_item(i_magenta_glazed_terracotta)
 
 action recipe_birch_button
+    ##  i_birch_planks 1 -> i_birch_button 1
     < has_item(i_birch_planks)
     => has_item(i_birch_button)
 
 action recipe_acacia_fence_gate
+    ##  i_stick 4,  i_acacia_planks 2 -> i_acacia_fence_gate 1
     < near_block(b_crafting_table)
     < has_item(i_stick)
     < has_item(i_acacia_planks)
     => has_item(i_acacia_fence_gate)
 
 action recipe_purple_terracotta
+    ##  i_terracotta 8,  i_purple_dye 1 -> i_purple_terracotta 8
     < near_block(b_crafting_table)
     < has_item(i_terracotta)
     < has_item(i_purple_dye)
     => has_item(i_purple_terracotta)
 
 action recipe_red_stained_glass_pane
+    ##  i_red_stained_glass 6 -> i_red_stained_glass_pane 16
     < near_block(b_crafting_table)
     < has_item(i_red_stained_glass)
     => has_item(i_red_stained_glass_pane)
 
 action recipe_green_stained_glass
+    ##  i_glass 8,  i_green_dye 1 -> i_green_stained_glass 8
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_green_dye)
     => has_item(i_green_stained_glass)
 
 action recipe_mossy_stone_brick_stairs_from_mossy_stone_brick_stonecutting
+    ## i_mossy_stone_bricks 1 -> i_mossy_stone_brick_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_mossy_stone_bricks)
     => has_item(i_mossy_stone_brick_stairs)
 
 action recipe_black_carpet_from_white_carpet
+    ##  i_white_carpet 8,  i_black_dye 1 -> i_black_carpet 8
     < near_block(b_crafting_table)
     < has_item(i_white_carpet)
     < has_item(i_black_dye)
     => has_item(i_black_carpet)
 
 action recipe_bowl(i0: Item)
+    ##  i0 3 -> i_bowl 4
     < near_block(b_crafting_table)
     < item_tag(i0, it_planks)
     < has_item(i0)
     => has_item(i_bowl)
 
 action recipe_pink_stained_glass
+    ##  i_glass 8,  i_pink_dye 1 -> i_pink_stained_glass 8
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_pink_dye)
     => has_item(i_pink_stained_glass)
 
 action recipe_cyan_terracotta
+    ##  i_terracotta 8,  i_cyan_dye 1 -> i_cyan_terracotta 8
     < near_block(b_crafting_table)
     < has_item(i_terracotta)
     < has_item(i_cyan_dye)
     => has_item(i_cyan_terracotta)
 
 action recipe_polished_andesite_stairs_from_andesite_stonecutting
+    ## i_andesite 1 -> i_polished_andesite_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_andesite)
     => has_item(i_polished_andesite_stairs)
 
 action recipe_blue_carpet_from_white_carpet
+    ##  i_white_carpet 8,  i_blue_dye 1 -> i_blue_carpet 8
     < near_block(b_crafting_table)
     < has_item(i_white_carpet)
     < has_item(i_blue_dye)
     => has_item(i_blue_carpet)
 
 action recipe_lime_stained_glass_pane
+    ##  i_lime_stained_glass 6 -> i_lime_stained_glass_pane 16
     < near_block(b_crafting_table)
     < has_item(i_lime_stained_glass)
     => has_item(i_lime_stained_glass_pane)
 
 action recipe_brick
+    ## i_clay_ball 1 -> i_brick 1
     < near_block(b_furnace)
     < has_item(i_clay_ball)
     => has_item(i_brick)
 
 action recipe_magenta_bed_from_white_bed
+    ##  i_white_bed 1,  i_magenta_dye 1 -> i_magenta_bed 1
     < has_item(i_white_bed)
     < has_item(i_magenta_dye)
     => has_item(i_magenta_bed)
 
 action recipe_mossy_stone_bricks
+    ##  i_stone_bricks 1,  i_vine 1 -> i_mossy_stone_bricks 1
     < has_item(i_stone_bricks)
     < has_item(i_vine)
     => has_item(i_mossy_stone_bricks)
 
 action recipe_spruce_door
+    ##  i_spruce_planks 6 -> i_spruce_door 3
     < near_block(b_crafting_table)
     < has_item(i_spruce_planks)
     => has_item(i_spruce_door)
 
 action recipe_activator_rail
+    ##  i_iron_ingot 6,  i_stick 2,  i_redstone_torch 1 -> i_activator_rail 6
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     < has_item(i_stick)
@@ -4972,25 +5430,30 @@ action recipe_activator_rail
     => has_item(i_activator_rail)
 
 action recipe_jack_o_lantern
+    ##  i_carved_pumpkin 1,  i_torch 1 -> i_jack_o_lantern 1
     < has_item(i_carved_pumpkin)
     < has_item(i_torch)
     => has_item(i_jack_o_lantern)
 
 action recipe_leather_chestplate
+    ##  i_leather 8 -> i_leather_chestplate 1
     < near_block(b_crafting_table)
     < has_item(i_leather)
     => has_item(i_leather_chestplate)
 
 action recipe_yellow_dye_from_sunflower
+    ##  i_sunflower 1 -> i_yellow_dye 2
     < has_item(i_sunflower)
     => has_item(i_yellow_dye)
 
 action recipe_torch
+    ##  i_coal 1,  i_stick 1 -> i_torch 4
     < has_item(i_coal)
     < has_item(i_stick)
     => has_item(i_torch)
 
 action recipe_light_gray_concrete_powder
+    ##  i_light_gray_dye 1,  i_sand 4,  i_gravel 4 -> i_light_gray_concrete_powder 8
     < near_block(b_crafting_table)
     < has_item(i_light_gray_dye)
     < has_item(i_sand)
@@ -4998,185 +5461,222 @@ action recipe_light_gray_concrete_powder
     => has_item(i_light_gray_concrete_powder)
 
 action recipe_purpur_stairs
+    ##  i_purpur_block 6 -> i_purpur_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_purpur_block)
     => has_item(i_purpur_stairs)
 
 action recipe_purpur_block
+    ##  i_popped_chorus_fruit 4 -> i_purpur_block 4
     < has_item(i_popped_chorus_fruit)
     => has_item(i_purpur_block)
 
 action recipe_lime_carpet_from_white_carpet
+    ##  i_white_carpet 8,  i_lime_dye 1 -> i_lime_carpet 8
     < near_block(b_crafting_table)
     < has_item(i_white_carpet)
     < has_item(i_lime_dye)
     => has_item(i_lime_carpet)
 
 action recipe_cut_sandstone_slab
+    ##  i_cut_sandstone 3 -> i_cut_sandstone_slab 6
     < near_block(b_crafting_table)
     < has_item(i_cut_sandstone)
     => has_item(i_cut_sandstone_slab)
 
 action recipe_orange_dye_from_orange_tulip
+    ##  i_orange_tulip 1 -> i_orange_dye 1
     < has_item(i_orange_tulip)
     => has_item(i_orange_dye)
 
 action recipe_smooth_red_sandstone_stairs
+    ##  i_smooth_red_sandstone 6 -> i_smooth_red_sandstone_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_smooth_red_sandstone)
     => has_item(i_smooth_red_sandstone_stairs)
 
 action recipe_iron_nugget_from_smelting
+    ## i_iron_pickaxe 1 -> i_iron_nugget 1
     < near_block(b_furnace)
     < has_item(i_iron_pickaxe)
     => has_item(i_iron_nugget)
 
 action recipe_beetroot_soup
+    ##  i_bowl 1,  i_beetroot 6 -> i_beetroot_soup 1
     < near_block(b_crafting_table)
     < has_item(i_bowl)
     < has_item(i_beetroot)
     => has_item(i_beetroot_soup)
 
 action recipe_light_blue_banner
+    ##  i_light_blue_wool 6,  i_stick 1 -> i_light_blue_banner 1
     < near_block(b_crafting_table)
     < has_item(i_light_blue_wool)
     < has_item(i_stick)
     => has_item(i_light_blue_banner)
 
 action recipe_end_stone_brick_slab_from_end_stone_stonecutting
+    ## i_end_stone 1 -> i_end_stone_brick_slab 2
     < near_block(b_stonecutter)
     < has_item(i_end_stone)
     => has_item(i_end_stone_brick_slab)
 
 action recipe_golden_boots
+    ##  i_gold_ingot 4 -> i_golden_boots 1
     < near_block(b_crafting_table)
     < has_item(i_gold_ingot)
     => has_item(i_golden_boots)
 
 action recipe_polished_diorite_slab_from_polished_diorite_stonecutting
+    ## i_polished_diorite 1 -> i_polished_diorite_slab 2
     < near_block(b_stonecutter)
     < has_item(i_polished_diorite)
     => has_item(i_polished_diorite_slab)
 
 action recipe_redstone_from_blasting
+    ## i_redstone_ore 1 -> i_redstone 1
     < near_block(b_blast_furnace)
     < has_item(i_redstone_ore)
     => has_item(i_redstone)
 
 action recipe_polished_granite_slab
+    ##  i_polished_granite 3 -> i_polished_granite_slab 6
     < near_block(b_crafting_table)
     < has_item(i_polished_granite)
     => has_item(i_polished_granite_slab)
 
 action recipe_cooked_rabbit
+    ## i_rabbit 1 -> i_cooked_rabbit 1
     < near_block(b_furnace)
     < has_item(i_rabbit)
     => has_item(i_cooked_rabbit)
 
 action recipe_clay
+    ##  i_clay_ball 4 -> i_clay 1
     < has_item(i_clay_ball)
     => has_item(i_clay)
 
 action recipe_cobblestone_stairs
+    ##  i_cobblestone 6 -> i_cobblestone_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_cobblestone)
     => has_item(i_cobblestone_stairs)
 
 action recipe_polished_basalt
+    ##  i_basalt 4 -> i_polished_basalt 4
     < has_item(i_basalt)
     => has_item(i_polished_basalt)
 
 action recipe_dark_oak_planks(i0: Item)
+    ##  i0 1 -> i_dark_oak_planks 4
     < item_tag(i0, it_dark_oak_logs)
     < has_item(i0)
     => has_item(i_dark_oak_planks)
 
 action recipe_red_nether_brick_stairs
+    ##  i_red_nether_bricks 6 -> i_red_nether_brick_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_red_nether_bricks)
     => has_item(i_red_nether_brick_stairs)
 
 action recipe_black_stained_glass_pane_from_glass_pane
+    ##  i_glass_pane 8,  i_black_dye 1 -> i_black_stained_glass_pane 8
     < near_block(b_crafting_table)
     < has_item(i_glass_pane)
     < has_item(i_black_dye)
     => has_item(i_black_stained_glass_pane)
 
 action recipe_clock
+    ##  i_gold_ingot 4,  i_redstone 1 -> i_clock 1
     < near_block(b_crafting_table)
     < has_item(i_gold_ingot)
     < has_item(i_redstone)
     => has_item(i_clock)
 
 action recipe_light_gray_dye_from_oxeye_daisy
+    ##  i_oxeye_daisy 1 -> i_light_gray_dye 1
     < has_item(i_oxeye_daisy)
     => has_item(i_light_gray_dye)
 
 action recipe_brown_glazed_terracotta
+    ## i_brown_terracotta 1 -> i_brown_glazed_terracotta 1
     < near_block(b_furnace)
     < has_item(i_brown_terracotta)
     => has_item(i_brown_glazed_terracotta)
 
 action recipe_red_bed_from_white_bed
+    ##  i_white_bed 1,  i_red_dye 1 -> i_red_bed 1
     < has_item(i_white_bed)
     < has_item(i_red_dye)
     => has_item(i_red_bed)
 
 action recipe_light_gray_stained_glass_pane
+    ##  i_light_gray_stained_glass 6 -> i_light_gray_stained_glass_pane 16
     < near_block(b_crafting_table)
     < has_item(i_light_gray_stained_glass)
     => has_item(i_light_gray_stained_glass_pane)
 
 action recipe_crafting_table(i0: Item)
+    ##  i0 4 -> i_crafting_table 1
     < item_tag(i0, it_planks)
     < has_item(i0)
     => has_item(i_crafting_table)
 
 action recipe_nether_brick_slab
+    ##  i_nether_bricks 3 -> i_nether_brick_slab 6
     < near_block(b_crafting_table)
     < has_item(i_nether_bricks)
     => has_item(i_nether_brick_slab)
 
 action recipe_stone_brick_stairs
+    ##  i_stone_bricks 6 -> i_stone_brick_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_stone_bricks)
     => has_item(i_stone_brick_stairs)
 
 action recipe_purple_dye
+    ##  i_blue_dye 1,  i_red_dye 1 -> i_purple_dye 2
     < has_item(i_blue_dye)
     < has_item(i_red_dye)
     => has_item(i_purple_dye)
 
 action recipe_chiseled_polished_blackstone
+    ##  i_polished_blackstone_slab 2 -> i_chiseled_polished_blackstone 1
     < has_item(i_polished_blackstone_slab)
     => has_item(i_chiseled_polished_blackstone)
 
 action recipe_diamond_block
+    ##  i_diamond 9 -> i_diamond_block 1
     < near_block(b_crafting_table)
     < has_item(i_diamond)
     => has_item(i_diamond_block)
 
 action recipe_pink_carpet_from_white_carpet
+    ##  i_white_carpet 8,  i_pink_dye 1 -> i_pink_carpet 8
     < near_block(b_crafting_table)
     < has_item(i_white_carpet)
     < has_item(i_pink_dye)
     => has_item(i_pink_carpet)
 
 action recipe_prismarine_brick_slab_from_prismarine_stonecutting
+    ## i_prismarine_bricks 1 -> i_prismarine_brick_slab 2
     < near_block(b_stonecutter)
     < has_item(i_prismarine_bricks)
     => has_item(i_prismarine_brick_slab)
 
 action recipe_wheat
+    ##  i_hay_block 1 -> i_wheat 9
     < has_item(i_hay_block)
     => has_item(i_wheat)
 
 action recipe_cooked_beef_from_smoking
+    ## i_beef 1 -> i_cooked_beef 1
     < near_block(b_smoker)
     < has_item(i_beef)
     => has_item(i_cooked_beef)
 
 action recipe_wooden_sword(i0: Item)
+    ##  i0 2,  i_stick 1 -> i_wooden_sword 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_planks)
     < has_item(i0)
@@ -5184,145 +5684,173 @@ action recipe_wooden_sword(i0: Item)
     => has_item(i_wooden_sword)
 
 action recipe_end_stone_bricks_from_end_stone_stonecutting
+    ## i_end_stone 1 -> i_end_stone_bricks 1
     < near_block(b_stonecutter)
     < has_item(i_end_stone)
     => has_item(i_end_stone_bricks)
 
 action recipe_smooth_quartz_slab
+    ##  i_smooth_quartz 3 -> i_smooth_quartz_slab 6
     < near_block(b_crafting_table)
     < has_item(i_smooth_quartz)
     => has_item(i_smooth_quartz_slab)
 
 action recipe_coarse_dirt
+    ##  i_dirt 2,  i_gravel 2 -> i_coarse_dirt 4
     < has_item(i_dirt)
     < has_item(i_gravel)
     => has_item(i_coarse_dirt)
 
 action recipe_jungle_trapdoor
+    ##  i_jungle_planks 6 -> i_jungle_trapdoor 2
     < near_block(b_crafting_table)
     < has_item(i_jungle_planks)
     => has_item(i_jungle_trapdoor)
 
 action recipe_emerald_from_smelting
+    ## i_emerald_ore 1 -> i_emerald 1
     < near_block(b_furnace)
     < has_item(i_emerald_ore)
     => has_item(i_emerald)
 
 action recipe_brown_stained_glass_pane_from_glass_pane
+    ##  i_glass_pane 8,  i_brown_dye 1 -> i_brown_stained_glass_pane 8
     < near_block(b_crafting_table)
     < has_item(i_glass_pane)
     < has_item(i_brown_dye)
     => has_item(i_brown_stained_glass_pane)
 
 action recipe_writable_book
+    ##  i_book 1,  i_ink_sac 1,  i_feather 1 -> i_writable_book 1
     < has_item(i_book)
     < has_item(i_ink_sac)
     < has_item(i_feather)
     => has_item(i_writable_book)
 
 action recipe_blue_ice
+    ##  i_packed_ice 9 -> i_blue_ice 1
     < near_block(b_crafting_table)
     < has_item(i_packed_ice)
     => has_item(i_blue_ice)
 
 action recipe_polished_diorite_slab_from_diorite_stonecutting
+    ## i_diorite 1 -> i_polished_diorite_slab 2
     < near_block(b_stonecutter)
     < has_item(i_diorite)
     => has_item(i_polished_diorite_slab)
 
 action recipe_magenta_terracotta
+    ##  i_terracotta 8,  i_magenta_dye 1 -> i_magenta_terracotta 8
     < near_block(b_crafting_table)
     < has_item(i_terracotta)
     < has_item(i_magenta_dye)
     => has_item(i_magenta_terracotta)
 
 action recipe_birch_pressure_plate
+    ##  i_birch_planks 2 -> i_birch_pressure_plate 1
     < has_item(i_birch_planks)
     => has_item(i_birch_pressure_plate)
 
 action recipe_polished_granite_slab_from_granite_stonecutting
+    ## i_granite 1 -> i_polished_granite_slab 2
     < near_block(b_stonecutter)
     < has_item(i_granite)
     => has_item(i_polished_granite_slab)
 
 action recipe_netherite_pickaxe_smithing
+    ## i_diamond_pickaxe 1, i_netherite_ingot 1 -> i_netherite_pickaxe 1
     < near_block(b_smithing_table)
     < has_item(i_diamond_pickaxe)
     < has_item(i_netherite_ingot)
     => has_item(i_netherite_pickaxe)
 
 action recipe_brown_bed_from_white_bed
+    ##  i_white_bed 1,  i_brown_dye 1 -> i_brown_bed 1
     < has_item(i_white_bed)
     < has_item(i_brown_dye)
     => has_item(i_brown_bed)
 
 action recipe_redstone
+    ##  i_redstone_block 1 -> i_redstone 9
     < has_item(i_redstone_block)
     => has_item(i_redstone)
 
 action recipe_diorite_slab_from_diorite_stonecutting
+    ## i_diorite 1 -> i_diorite_slab 2
     < near_block(b_stonecutter)
     < has_item(i_diorite)
     => has_item(i_diorite_slab)
 
 action recipe_acacia_trapdoor
+    ##  i_acacia_planks 6 -> i_acacia_trapdoor 2
     < near_block(b_crafting_table)
     < has_item(i_acacia_planks)
     => has_item(i_acacia_trapdoor)
 
 action recipe_nether_brick
+    ## i_netherrack 1 -> i_nether_brick 1
     < near_block(b_furnace)
     < has_item(i_netherrack)
     => has_item(i_nether_brick)
 
 action recipe_end_stone_brick_stairs_from_end_stone_stonecutting
+    ## i_end_stone 1 -> i_end_stone_brick_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_end_stone)
     => has_item(i_end_stone_brick_stairs)
 
 action recipe_cracked_stone_bricks
+    ## i_stone_bricks 1 -> i_cracked_stone_bricks 1
     < near_block(b_furnace)
     < has_item(i_stone_bricks)
     => has_item(i_cracked_stone_bricks)
 
 action recipe_prismarine_wall
+    ##  i_prismarine 6 -> i_prismarine_wall 6
     < near_block(b_crafting_table)
     < has_item(i_prismarine)
     => has_item(i_prismarine_wall)
 
 action recipe_red_dye_from_rose_bush
+    ##  i_rose_bush 1 -> i_red_dye 2
     < has_item(i_rose_bush)
     => has_item(i_red_dye)
 
 action recipe_gold_ingot_from_blasting(i0: Item)
+    ## i0 1 -> i_gold_ingot 1
     < near_block(b_blast_furnace)
     < item_tag(i0, it_gold_ores)
     < has_item(i0)
     => has_item(i_gold_ingot)
 
 action recipe_brown_terracotta
+    ##  i_terracotta 8,  i_brown_dye 1 -> i_brown_terracotta 8
     < near_block(b_crafting_table)
     < has_item(i_terracotta)
     < has_item(i_brown_dye)
     => has_item(i_brown_terracotta)
 
 action recipe_magenta_wool
+    ##  i_magenta_dye 1,  i_white_wool 1 -> i_magenta_wool 1
     < has_item(i_magenta_dye)
     < has_item(i_white_wool)
     => has_item(i_magenta_wool)
 
 action recipe_leather_helmet
+    ##  i_leather 5 -> i_leather_helmet 1
     < near_block(b_crafting_table)
     < has_item(i_leather)
     => has_item(i_leather_helmet)
 
 action recipe_red_carpet_from_white_carpet
+    ##  i_white_carpet 8,  i_red_dye 1 -> i_red_carpet 8
     < near_block(b_crafting_table)
     < has_item(i_white_carpet)
     < has_item(i_red_dye)
     => has_item(i_red_carpet)
 
 action recipe_grindstone(i0: Item)
+    ##  i_stick 2,  i_stone_slab 1,  i0 2 -> i_grindstone 1
     < near_block(b_crafting_table)
     < has_item(i_stick)
     < has_item(i_stone_slab)
@@ -5331,127 +5859,151 @@ action recipe_grindstone(i0: Item)
     => has_item(i_grindstone)
 
 action recipe_light_gray_stained_glass
+    ##  i_glass 8,  i_light_gray_dye 1 -> i_light_gray_stained_glass 8
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_light_gray_dye)
     => has_item(i_light_gray_stained_glass)
 
 action recipe_dark_oak_sign
+    ##  i_dark_oak_planks 6,  i_stick 1 -> i_dark_oak_sign 3
     < near_block(b_crafting_table)
     < has_item(i_dark_oak_planks)
     < has_item(i_stick)
     => has_item(i_dark_oak_sign)
 
 action recipe_sandstone_slab
+    ##  i_sandstone 3 -> i_sandstone_slab 6
     < near_block(b_crafting_table)
     < has_item(i_sandstone)
     => has_item(i_sandstone_slab)
 
 action recipe_magenta_banner
+    ##  i_magenta_wool 6,  i_stick 1 -> i_magenta_banner 1
     < near_block(b_crafting_table)
     < has_item(i_magenta_wool)
     < has_item(i_stick)
     => has_item(i_magenta_banner)
 
 action recipe_mossy_cobblestone_wall
+    ##  i_mossy_cobblestone 6 -> i_mossy_cobblestone_wall 6
     < near_block(b_crafting_table)
     < has_item(i_mossy_cobblestone)
     => has_item(i_mossy_cobblestone_wall)
 
 action recipe_gray_stained_glass_pane
+    ##  i_gray_stained_glass 6 -> i_gray_stained_glass_pane 16
     < near_block(b_crafting_table)
     < has_item(i_gray_stained_glass)
     => has_item(i_gray_stained_glass_pane)
 
 action recipe_nether_brick_wall
+    ##  i_nether_bricks 6 -> i_nether_brick_wall 6
     < near_block(b_crafting_table)
     < has_item(i_nether_bricks)
     => has_item(i_nether_brick_wall)
 
 action recipe_brown_carpet_from_white_carpet
+    ##  i_white_carpet 8,  i_brown_dye 1 -> i_brown_carpet 8
     < near_block(b_crafting_table)
     < has_item(i_white_carpet)
     < has_item(i_brown_dye)
     => has_item(i_brown_carpet)
 
 action recipe_stripped_oak_wood
+    ##  i_stripped_oak_log 4 -> i_stripped_oak_wood 3
     < has_item(i_stripped_oak_log)
     => has_item(i_stripped_oak_wood)
 
 action recipe_polished_blackstone_slab_from_polished_blackstone_stonecutting
+    ## i_polished_blackstone 1 -> i_polished_blackstone_slab 2
     < near_block(b_stonecutter)
     < has_item(i_polished_blackstone)
     => has_item(i_polished_blackstone_slab)
 
 action recipe_item_frame
+    ##  i_stick 8,  i_leather 1 -> i_item_frame 1
     < near_block(b_crafting_table)
     < has_item(i_stick)
     < has_item(i_leather)
     => has_item(i_item_frame)
 
 action recipe_quartz_slab
+    ##  i_chiseled_quartz_block 3 -> i_quartz_slab 6
     < near_block(b_crafting_table)
     < has_item(i_chiseled_quartz_block)
     => has_item(i_quartz_slab)
 
 action recipe_polished_blackstone_stairs
+    ##  i_polished_blackstone 6 -> i_polished_blackstone_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_polished_blackstone)
     => has_item(i_polished_blackstone_stairs)
 
 action recipe_quartz_pillar
+    ##  i_quartz_block 2 -> i_quartz_pillar 2
     < has_item(i_quartz_block)
     => has_item(i_quartz_pillar)
 
 action recipe_diorite_wall_from_diorite_stonecutting
+    ## i_diorite 1 -> i_diorite_wall 1
     < near_block(b_stonecutter)
     < has_item(i_diorite)
     => has_item(i_diorite_wall)
 
 action recipe_glistering_melon_slice
+    ##  i_gold_nugget 8,  i_melon_slice 1 -> i_glistering_melon_slice 1
     < near_block(b_crafting_table)
     < has_item(i_gold_nugget)
     < has_item(i_melon_slice)
     => has_item(i_glistering_melon_slice)
 
 action recipe_acacia_stairs
+    ##  i_acacia_planks 6 -> i_acacia_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_acacia_planks)
     => has_item(i_acacia_stairs)
 
 action recipe_polished_basalt_from_basalt_stonecutting
+    ## i_basalt 1 -> i_polished_basalt 1
     < near_block(b_stonecutter)
     < has_item(i_basalt)
     => has_item(i_polished_basalt)
 
 action recipe_golden_pickaxe
+    ##  i_gold_ingot 3,  i_stick 2 -> i_golden_pickaxe 1
     < near_block(b_crafting_table)
     < has_item(i_gold_ingot)
     < has_item(i_stick)
     => has_item(i_golden_pickaxe)
 
 action recipe_green_bed_from_white_bed
+    ##  i_white_bed 1,  i_green_dye 1 -> i_green_bed 1
     < has_item(i_white_bed)
     < has_item(i_green_dye)
     => has_item(i_green_bed)
 
 action recipe_orange_stained_glass
+    ##  i_glass 8,  i_orange_dye 1 -> i_orange_stained_glass 8
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_orange_dye)
     => has_item(i_orange_stained_glass)
 
 action recipe_blue_carpet
+    ##  i_blue_wool 2 -> i_blue_carpet 3
     < has_item(i_blue_wool)
     => has_item(i_blue_carpet)
 
 action recipe_yellow_banner
+    ##  i_yellow_wool 6,  i_stick 1 -> i_yellow_banner 1
     < near_block(b_crafting_table)
     < has_item(i_yellow_wool)
     < has_item(i_stick)
     => has_item(i_yellow_banner)
 
 action recipe_blast_furnace
+    ##  i_iron_ingot 5,  i_furnace 1,  i_smooth_stone 3 -> i_blast_furnace 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     < has_item(i_furnace)
@@ -5459,34 +6011,41 @@ action recipe_blast_furnace
     => has_item(i_blast_furnace)
 
 action recipe_quartz_bricks_from_quartz_block_stonecutting
+    ## i_quartz_block 1 -> i_quartz_bricks 1
     < near_block(b_stonecutter)
     < has_item(i_quartz_block)
     => has_item(i_quartz_bricks)
 
 action recipe_yellow_glazed_terracotta
+    ## i_yellow_terracotta 1 -> i_yellow_glazed_terracotta 1
     < near_block(b_furnace)
     < has_item(i_yellow_terracotta)
     => has_item(i_yellow_glazed_terracotta)
 
 action recipe_mossy_cobblestone_slab_from_mossy_cobblestone_stonecutting
+    ## i_mossy_cobblestone 1 -> i_mossy_cobblestone_slab 2
     < near_block(b_stonecutter)
     < has_item(i_mossy_cobblestone)
     => has_item(i_mossy_cobblestone_slab)
 
 action recipe_cut_red_sandstone
+    ##  i_red_sandstone 4 -> i_cut_red_sandstone 4
     < has_item(i_red_sandstone)
     => has_item(i_cut_red_sandstone)
 
 action recipe_netherite_ingot_from_netherite_block
+    ##  i_netherite_block 1 -> i_netherite_ingot 9
     < has_item(i_netherite_block)
     => has_item(i_netherite_ingot)
 
 action recipe_dark_prismarine_slab
+    ##  i_dark_prismarine 3 -> i_dark_prismarine_slab 6
     < near_block(b_crafting_table)
     < has_item(i_dark_prismarine)
     => has_item(i_dark_prismarine_slab)
 
 action recipe_rabbit_stew_from_brown_mushroom
+    ##  i_baked_potato 1,  i_cooked_rabbit 1,  i_bowl 1,  i_carrot 1,  i_brown_mushroom 1 -> i_rabbit_stew 1
     < near_block(b_crafting_table)
     < has_item(i_baked_potato)
     < has_item(i_cooked_rabbit)
@@ -5496,6 +6055,7 @@ action recipe_rabbit_stew_from_brown_mushroom
     => has_item(i_rabbit_stew)
 
 action recipe_brown_bed(i0: Item)
+    ##  i_brown_wool 3,  i0 3 -> i_brown_bed 1
     < near_block(b_crafting_table)
     < has_item(i_brown_wool)
     < item_tag(i0, it_planks)
@@ -5503,91 +6063,109 @@ action recipe_brown_bed(i0: Item)
     => has_item(i_brown_bed)
 
 action recipe_spruce_fence
+    ##  i_spruce_planks 4,  i_stick 2 -> i_spruce_fence 3
     < near_block(b_crafting_table)
     < has_item(i_spruce_planks)
     < has_item(i_stick)
     => has_item(i_spruce_fence)
 
 action recipe_stone_brick_slab
+    ##  i_stone_bricks 3 -> i_stone_brick_slab 6
     < near_block(b_crafting_table)
     < has_item(i_stone_bricks)
     => has_item(i_stone_brick_slab)
 
 action recipe_magenta_carpet_from_white_carpet
+    ##  i_white_carpet 8,  i_magenta_dye 1 -> i_magenta_carpet 8
     < near_block(b_crafting_table)
     < has_item(i_white_carpet)
     < has_item(i_magenta_dye)
     => has_item(i_magenta_carpet)
 
 action recipe_black_carpet
+    ##  i_black_wool 2 -> i_black_carpet 3
     < has_item(i_black_wool)
     => has_item(i_black_carpet)
 
 action recipe_glass_bottle
+    ##  i_glass 3 -> i_glass_bottle 3
     < near_block(b_crafting_table)
     < has_item(i_glass)
     => has_item(i_glass_bottle)
 
 action recipe_iron_bars
+    ##  i_iron_ingot 6 -> i_iron_bars 16
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     => has_item(i_iron_bars)
 
 action recipe_red_sandstone_stairs
+    ##  i_red_sandstone 6 -> i_red_sandstone_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_red_sandstone)
     => has_item(i_red_sandstone_stairs)
 
 action recipe_cut_sandstone
+    ##  i_sandstone 4 -> i_cut_sandstone 4
     < has_item(i_sandstone)
     => has_item(i_cut_sandstone)
 
 action recipe_crimson_planks(i0: Item)
+    ##  i0 1 -> i_crimson_planks 4
     < item_tag(i0, it_crimson_stems)
     < has_item(i0)
     => has_item(i_crimson_planks)
 
 action recipe_smooth_sandstone_stairs_from_smooth_sandstone_stonecutting
+    ## i_smooth_sandstone 1 -> i_smooth_sandstone_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_smooth_sandstone)
     => has_item(i_smooth_sandstone_stairs)
 
 action recipe_chiseled_sandstone
+    ##  i_sandstone_slab 2 -> i_chiseled_sandstone 1
     < has_item(i_sandstone_slab)
     => has_item(i_chiseled_sandstone)
 
 action recipe_diamond_chestplate
+    ##  i_diamond 8 -> i_diamond_chestplate 1
     < near_block(b_crafting_table)
     < has_item(i_diamond)
     => has_item(i_diamond_chestplate)
 
 action recipe_light_gray_banner
+    ##  i_light_gray_wool 6,  i_stick 1 -> i_light_gray_banner 1
     < near_block(b_crafting_table)
     < has_item(i_light_gray_wool)
     < has_item(i_stick)
     => has_item(i_light_gray_banner)
 
 action recipe_red_nether_brick_wall
+    ##  i_red_nether_bricks 6 -> i_red_nether_brick_wall 6
     < near_block(b_crafting_table)
     < has_item(i_red_nether_bricks)
     => has_item(i_red_nether_brick_wall)
 
 action recipe_granite_slab_from_granite_stonecutting
+    ## i_granite 1 -> i_granite_slab 2
     < near_block(b_stonecutter)
     < has_item(i_granite)
     => has_item(i_granite_slab)
 
 action recipe_stone_brick_stairs_from_stone_bricks_stonecutting
+    ## i_stone_bricks 1 -> i_stone_brick_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_stone_bricks)
     => has_item(i_stone_brick_stairs)
 
 action recipe_polished_granite_stairs_from_polished_granite_stonecutting
+    ## i_polished_granite 1 -> i_polished_granite_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_polished_granite)
     => has_item(i_polished_granite_stairs)
 
 action recipe_stone_sword(i0: Item)
+    ##  i0 2,  i_stick 1 -> i_stone_sword 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_stone_tool_materials)
     < has_item(i0)
@@ -5595,233 +6173,279 @@ action recipe_stone_sword(i0: Item)
     => has_item(i_stone_sword)
 
 action recipe_end_stone_brick_wall_from_end_stone_brick_stonecutting
+    ## i_end_stone_bricks 1 -> i_end_stone_brick_wall 1
     < near_block(b_stonecutter)
     < has_item(i_end_stone_bricks)
     => has_item(i_end_stone_brick_wall)
 
 action recipe_red_nether_brick_slab
+    ##  i_red_nether_bricks 3 -> i_red_nether_brick_slab 6
     < near_block(b_crafting_table)
     < has_item(i_red_nether_bricks)
     => has_item(i_red_nether_brick_slab)
 
 action recipe_spectral_arrow
+    ##  i_glowstone_dust 4,  i_arrow 1 -> i_spectral_arrow 2
     < near_block(b_crafting_table)
     < has_item(i_glowstone_dust)
     < has_item(i_arrow)
     => has_item(i_spectral_arrow)
 
 action recipe_polished_blackstone_brick_slab_from_polished_blackstone_bricks_stonecutting
+    ## i_polished_blackstone_bricks 1 -> i_polished_blackstone_brick_slab 2
     < near_block(b_stonecutter)
     < has_item(i_polished_blackstone_bricks)
     => has_item(i_polished_blackstone_brick_slab)
 
 action recipe_sandstone
+    ##  i_sand 4 -> i_sandstone 1
     < has_item(i_sand)
     => has_item(i_sandstone)
 
 action recipe_melon_seeds
+    ##  i_melon_slice 1 -> i_melon_seeds 1
     < has_item(i_melon_slice)
     => has_item(i_melon_seeds)
 
 action recipe_acacia_pressure_plate
+    ##  i_acacia_planks 2 -> i_acacia_pressure_plate 1
     < has_item(i_acacia_planks)
     => has_item(i_acacia_pressure_plate)
 
 action recipe_magenta_carpet
+    ##  i_magenta_wool 2 -> i_magenta_carpet 3
     < has_item(i_magenta_wool)
     => has_item(i_magenta_carpet)
 
 action recipe_orange_stained_glass_pane_from_glass_pane
+    ##  i_glass_pane 8,  i_orange_dye 1 -> i_orange_stained_glass_pane 8
     < near_block(b_crafting_table)
     < has_item(i_glass_pane)
     < has_item(i_orange_dye)
     => has_item(i_orange_stained_glass_pane)
 
 action recipe_ender_eye
+    ##  i_ender_pearl 1,  i_blaze_powder 1 -> i_ender_eye 1
     < has_item(i_ender_pearl)
     < has_item(i_blaze_powder)
     => has_item(i_ender_eye)
 
 action recipe_lever
+    ##  i_stick 1,  i_cobblestone 1 -> i_lever 1
     < has_item(i_stick)
     < has_item(i_cobblestone)
     => has_item(i_lever)
 
 action recipe_bone_meal
+    ##  i_bone 1 -> i_bone_meal 3
     < has_item(i_bone)
     => has_item(i_bone_meal)
 
 action recipe_andesite_stairs
+    ##  i_andesite 6 -> i_andesite_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_andesite)
     => has_item(i_andesite_stairs)
 
 action recipe_end_stone_brick_stairs
+    ##  i_end_stone_bricks 6 -> i_end_stone_brick_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_end_stone_bricks)
     => has_item(i_end_stone_brick_stairs)
 
 action recipe_end_stone_bricks
+    ##  i_end_stone 4 -> i_end_stone_bricks 4
     < has_item(i_end_stone)
     => has_item(i_end_stone_bricks)
 
 action recipe_furnace_minecart
+    ##  i_furnace 1,  i_minecart 1 -> i_furnace_minecart 1
     < has_item(i_furnace)
     < has_item(i_minecart)
     => has_item(i_furnace_minecart)
 
 action recipe_cyan_stained_glass
+    ##  i_glass 8,  i_cyan_dye 1 -> i_cyan_stained_glass 8
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_cyan_dye)
     => has_item(i_cyan_stained_glass)
 
 action recipe_iron_sword
+    ##  i_iron_ingot 2,  i_stick 1 -> i_iron_sword 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     < has_item(i_stick)
     => has_item(i_iron_sword)
 
 action recipe_red_sandstone_wall_from_red_sandstone_stonecutting
+    ## i_red_sandstone 1 -> i_red_sandstone_wall 1
     < near_block(b_stonecutter)
     < has_item(i_red_sandstone)
     => has_item(i_red_sandstone_wall)
 
 action recipe_lime_terracotta
+    ##  i_terracotta 8,  i_lime_dye 1 -> i_lime_terracotta 8
     < near_block(b_crafting_table)
     < has_item(i_terracotta)
     < has_item(i_lime_dye)
     => has_item(i_lime_terracotta)
 
 action recipe_cobblestone_stairs_from_cobblestone_stonecutting
+    ## i_cobblestone 1 -> i_cobblestone_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_cobblestone)
     => has_item(i_cobblestone_stairs)
 
 action recipe_birch_boat
+    ##  i_birch_planks 5 -> i_birch_boat 1
     < near_block(b_crafting_table)
     < has_item(i_birch_planks)
     => has_item(i_birch_boat)
 
 action recipe_coal_block
+    ##  i_coal 9 -> i_coal_block 1
     < near_block(b_crafting_table)
     < has_item(i_coal)
     => has_item(i_coal_block)
 
 action recipe_blue_stained_glass_pane_from_glass_pane
+    ##  i_glass_pane 8,  i_blue_dye 1 -> i_blue_stained_glass_pane 8
     < near_block(b_crafting_table)
     < has_item(i_glass_pane)
     < has_item(i_blue_dye)
     => has_item(i_blue_stained_glass_pane)
 
 action recipe_white_stained_glass_pane_from_glass_pane
+    ##  i_glass_pane 8,  i_white_dye 1 -> i_white_stained_glass_pane 8
     < near_block(b_crafting_table)
     < has_item(i_glass_pane)
     < has_item(i_white_dye)
     => has_item(i_white_stained_glass_pane)
 
 action recipe_spruce_stairs
+    ##  i_spruce_planks 6 -> i_spruce_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_spruce_planks)
     => has_item(i_spruce_stairs)
 
 action recipe_leather_boots
+    ##  i_leather 4 -> i_leather_boots 1
     < near_block(b_crafting_table)
     < has_item(i_leather)
     => has_item(i_leather_boots)
 
 action recipe_diorite
+    ##  i_cobblestone 2,  i_quartz 2 -> i_diorite 2
     < has_item(i_cobblestone)
     < has_item(i_quartz)
     => has_item(i_diorite)
 
 action recipe_green_wool
+    ##  i_green_dye 1,  i_white_wool 1 -> i_green_wool 1
     < has_item(i_green_dye)
     < has_item(i_white_wool)
     => has_item(i_green_wool)
 
 action recipe_iron_ingot
+    ## i_iron_ore 1 -> i_iron_ingot 1
     < near_block(b_furnace)
     < has_item(i_iron_ore)
     => has_item(i_iron_ingot)
 
 action recipe_charcoal(i0: Item)
+    ## i0 1 -> i_charcoal 1
     < near_block(b_furnace)
     < item_tag(i0, it_logs_that_burn)
     < has_item(i0)
     => has_item(i_charcoal)
 
 action recipe_stone_brick_stairs_from_stone_stonecutting
+    ## i_stone 1 -> i_stone_brick_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_stone)
     => has_item(i_stone_brick_stairs)
 
 action recipe_chiseled_red_sandstone
+    ##  i_red_sandstone_slab 2 -> i_chiseled_red_sandstone 1
     < has_item(i_red_sandstone_slab)
     => has_item(i_chiseled_red_sandstone)
 
 action recipe_emerald
+    ##  i_emerald_block 1 -> i_emerald 9
     < has_item(i_emerald_block)
     => has_item(i_emerald)
 
 action recipe_sandstone_stairs_from_sandstone_stonecutting
+    ## i_sandstone 1 -> i_sandstone_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_sandstone)
     => has_item(i_sandstone_stairs)
 
 action recipe_pink_terracotta
+    ##  i_terracotta 8,  i_pink_dye 1 -> i_pink_terracotta 8
     < near_block(b_crafting_table)
     < has_item(i_terracotta)
     < has_item(i_pink_dye)
     => has_item(i_pink_terracotta)
 
 action recipe_diamond_hoe
+    ##  i_diamond 2,  i_stick 2 -> i_diamond_hoe 1
     < near_block(b_crafting_table)
     < has_item(i_diamond)
     < has_item(i_stick)
     => has_item(i_diamond_hoe)
 
 action recipe_lapis_from_blasting
+    ## i_lapis_ore 1 -> i_lapis_lazuli 1
     < near_block(b_blast_furnace)
     < has_item(i_lapis_ore)
     => has_item(i_lapis_lazuli)
 
 action recipe_polished_blackstone_brick_wall_from_polished_blackstone_bricks_stonecutting
+    ## i_polished_blackstone_bricks 1 -> i_polished_blackstone_brick_wall 1
     < near_block(b_stonecutter)
     < has_item(i_polished_blackstone_bricks)
     => has_item(i_polished_blackstone_brick_wall)
 
 action recipe_purpur_slab
+    ##  i_purpur_block 3 -> i_purpur_slab 6
     < near_block(b_crafting_table)
     < has_item(i_purpur_block)
     => has_item(i_purpur_slab)
 
 action recipe_brown_stained_glass_pane
+    ##  i_brown_stained_glass 6 -> i_brown_stained_glass_pane 16
     < near_block(b_crafting_table)
     < has_item(i_brown_stained_glass)
     => has_item(i_brown_stained_glass_pane)
 
 action recipe_dropper
+    ##  i_cobblestone 7,  i_redstone 1 -> i_dropper 1
     < near_block(b_crafting_table)
     < has_item(i_cobblestone)
     < has_item(i_redstone)
     => has_item(i_dropper)
 
 action recipe_gray_carpet
+    ##  i_gray_wool 2 -> i_gray_carpet 3
     < has_item(i_gray_wool)
     => has_item(i_gray_carpet)
 
 action recipe_cooked_beef
+    ## i_beef 1 -> i_cooked_beef 1
     < near_block(b_furnace)
     < has_item(i_beef)
     => has_item(i_cooked_beef)
 
 action recipe_black_glazed_terracotta
+    ## i_black_terracotta 1 -> i_black_glazed_terracotta 1
     < near_block(b_furnace)
     < has_item(i_black_terracotta)
     => has_item(i_black_glazed_terracotta)
 
 action recipe_powered_rail
+    ##  i_gold_ingot 6,  i_stick 1,  i_redstone 1 -> i_powered_rail 6
     < near_block(b_crafting_table)
     < has_item(i_gold_ingot)
     < has_item(i_stick)
@@ -5829,75 +6453,90 @@ action recipe_powered_rail
     => has_item(i_powered_rail)
 
 action recipe_mossy_cobblestone_stairs
+    ##  i_mossy_cobblestone 6 -> i_mossy_cobblestone_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_mossy_cobblestone)
     => has_item(i_mossy_cobblestone_stairs)
 
 action recipe_stripped_dark_oak_wood
+    ##  i_stripped_dark_oak_log 4 -> i_stripped_dark_oak_wood 3
     < has_item(i_stripped_dark_oak_log)
     => has_item(i_stripped_dark_oak_wood)
 
 action recipe_polished_blackstone
+    ##  i_blackstone 4 -> i_polished_blackstone 4
     < has_item(i_blackstone)
     => has_item(i_polished_blackstone)
 
 action recipe_polished_blackstone_brick_wall_from_blackstone_stonecutting
+    ## i_blackstone 1 -> i_polished_blackstone_brick_wall 1
     < near_block(b_stonecutter)
     < has_item(i_blackstone)
     => has_item(i_polished_blackstone_brick_wall)
 
 action recipe_lime_stained_glass
+    ##  i_glass 8,  i_lime_dye 1 -> i_lime_stained_glass 8
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_lime_dye)
     => has_item(i_lime_stained_glass)
 
 action recipe_leather_horse_armor
+    ##  i_leather 7 -> i_leather_horse_armor 1
     < near_block(b_crafting_table)
     < has_item(i_leather)
     => has_item(i_leather_horse_armor)
 
 action recipe_polished_blackstone_stairs_from_polished_blackstone_stonecutting
+    ## i_polished_blackstone 1 -> i_polished_blackstone_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_polished_blackstone)
     => has_item(i_polished_blackstone_stairs)
 
 action recipe_orange_terracotta
+    ##  i_terracotta 8,  i_orange_dye 1 -> i_orange_terracotta 8
     < near_block(b_crafting_table)
     < has_item(i_terracotta)
     < has_item(i_orange_dye)
     => has_item(i_orange_terracotta)
 
 action recipe_spruce_pressure_plate
+    ##  i_spruce_planks 2 -> i_spruce_pressure_plate 1
     < has_item(i_spruce_planks)
     => has_item(i_spruce_pressure_plate)
 
 action recipe_turtle_helmet
+    ##  i_scute 5 -> i_turtle_helmet 1
     < near_block(b_crafting_table)
     < has_item(i_scute)
     => has_item(i_turtle_helmet)
 
 action recipe_light_blue_stained_glass_pane_from_glass_pane
+    ##  i_glass_pane 8,  i_light_blue_dye 1 -> i_light_blue_stained_glass_pane 8
     < near_block(b_crafting_table)
     < has_item(i_glass_pane)
     < has_item(i_light_blue_dye)
     => has_item(i_light_blue_stained_glass_pane)
 
 action recipe_smooth_sandstone
+    ## i_sandstone 1 -> i_smooth_sandstone 1
     < near_block(b_furnace)
     < has_item(i_sandstone)
     => has_item(i_smooth_sandstone)
 
 action recipe_cobblestone_wall_from_cobblestone_stonecutting
+    ## i_cobblestone 1 -> i_cobblestone_wall 1
     < near_block(b_stonecutter)
     < has_item(i_cobblestone)
     => has_item(i_cobblestone_wall)
 
 action recipe_iron_trapdoor
+    ##  i_iron_ingot 4 -> i_iron_trapdoor 1
     < has_item(i_iron_ingot)
     => has_item(i_iron_trapdoor)
 
 action recipe_yellow_bed(i0: Item)
+    ##  i_yellow_wool 3,  i0 3 -> i_yellow_bed 1
     < near_block(b_crafting_table)
     < has_item(i_yellow_wool)
     < item_tag(i0, it_planks)
@@ -5905,133 +6544,159 @@ action recipe_yellow_bed(i0: Item)
     => has_item(i_yellow_bed)
 
 action recipe_dark_oak_fence_gate
+    ##  i_stick 4,  i_dark_oak_planks 2 -> i_dark_oak_fence_gate 1
     < near_block(b_crafting_table)
     < has_item(i_stick)
     < has_item(i_dark_oak_planks)
     => has_item(i_dark_oak_fence_gate)
 
 action recipe_orange_stained_glass_pane
+    ##  i_orange_stained_glass 6 -> i_orange_stained_glass_pane 16
     < near_block(b_crafting_table)
     < has_item(i_orange_stained_glass)
     => has_item(i_orange_stained_glass_pane)
 
 action recipe_acacia_door
+    ##  i_acacia_planks 6 -> i_acacia_door 3
     < near_block(b_crafting_table)
     < has_item(i_acacia_planks)
     => has_item(i_acacia_door)
 
 action recipe_target
+    ##  i_redstone 4,  i_hay_block 1 -> i_target 1
     < near_block(b_crafting_table)
     < has_item(i_redstone)
     < has_item(i_hay_block)
     => has_item(i_target)
 
 action recipe_golden_hoe
+    ##  i_gold_ingot 2,  i_stick 2 -> i_golden_hoe 1
     < near_block(b_crafting_table)
     < has_item(i_gold_ingot)
     < has_item(i_stick)
     => has_item(i_golden_hoe)
 
 action recipe_golden_shovel
+    ##  i_gold_ingot 1,  i_stick 2 -> i_golden_shovel 1
     < near_block(b_crafting_table)
     < has_item(i_gold_ingot)
     < has_item(i_stick)
     => has_item(i_golden_shovel)
 
 action recipe_birch_sign
+    ##  i_birch_planks 6,  i_stick 1 -> i_birch_sign 3
     < near_block(b_crafting_table)
     < has_item(i_birch_planks)
     < has_item(i_stick)
     => has_item(i_birch_sign)
 
 action recipe_diamond_leggings
+    ##  i_diamond 7 -> i_diamond_leggings 1
     < near_block(b_crafting_table)
     < has_item(i_diamond)
     => has_item(i_diamond_leggings)
 
 action recipe_light_gray_bed_from_white_bed
+    ##  i_white_bed 1,  i_light_gray_dye 1 -> i_light_gray_bed 1
     < has_item(i_white_bed)
     < has_item(i_light_gray_dye)
     => has_item(i_light_gray_bed)
 
 action recipe_cut_sandstone_from_sandstone_stonecutting
+    ## i_sandstone 1 -> i_cut_sandstone 1
     < near_block(b_stonecutter)
     < has_item(i_sandstone)
     => has_item(i_cut_sandstone)
 
 action recipe_polished_blackstone_bricks_from_polished_blackstone_stonecutting
+    ## i_polished_blackstone 1 -> i_polished_blackstone_bricks 1
     < near_block(b_stonecutter)
     < has_item(i_polished_blackstone)
     => has_item(i_polished_blackstone_bricks)
 
 action recipe_acacia_boat
+    ##  i_acacia_planks 5 -> i_acacia_boat 1
     < near_block(b_crafting_table)
     < has_item(i_acacia_planks)
     => has_item(i_acacia_boat)
 
 action recipe_spruce_fence_gate
+    ##  i_stick 4,  i_spruce_planks 2 -> i_spruce_fence_gate 1
     < near_block(b_crafting_table)
     < has_item(i_stick)
     < has_item(i_spruce_planks)
     => has_item(i_spruce_fence_gate)
 
 action recipe_purpur_pillar_from_purpur_block_stonecutting
+    ## i_purpur_block 1 -> i_purpur_pillar 1
     < near_block(b_stonecutter)
     < has_item(i_purpur_block)
     => has_item(i_purpur_pillar)
 
 action recipe_light_blue_carpet_from_white_carpet
+    ##  i_white_carpet 8,  i_light_blue_dye 1 -> i_light_blue_carpet 8
     < near_block(b_crafting_table)
     < has_item(i_white_carpet)
     < has_item(i_light_blue_dye)
     => has_item(i_light_blue_carpet)
 
 action recipe_mossy_stone_brick_slab
+    ##  i_mossy_stone_bricks 3 -> i_mossy_stone_brick_slab 6
     < near_block(b_crafting_table)
     < has_item(i_mossy_stone_bricks)
     => has_item(i_mossy_stone_brick_slab)
 
 action recipe_pink_carpet
+    ##  i_pink_wool 2 -> i_pink_carpet 3
     < has_item(i_pink_wool)
     => has_item(i_pink_carpet)
 
 action recipe_blue_dye
+    ##  i_lapis_lazuli 1 -> i_blue_dye 1
     < has_item(i_lapis_lazuli)
     => has_item(i_blue_dye)
 
 action recipe_shears
+    ##  i_iron_ingot 2 -> i_shears 1
     < has_item(i_iron_ingot)
     => has_item(i_shears)
 
 action recipe_granite_wall
+    ##  i_granite 6 -> i_granite_wall 6
     < near_block(b_crafting_table)
     < has_item(i_granite)
     => has_item(i_granite_wall)
 
 action recipe_crimson_hyphae
+    ##  i_crimson_stem 4 -> i_crimson_hyphae 3
     < has_item(i_crimson_stem)
     => has_item(i_crimson_hyphae)
 
 action recipe_warped_hyphae
+    ##  i_warped_stem 4 -> i_warped_hyphae 3
     < has_item(i_warped_stem)
     => has_item(i_warped_hyphae)
 
 action recipe_red_nether_bricks
+    ##  i_nether_brick 2,  i_nether_wart 2 -> i_red_nether_bricks 1
     < has_item(i_nether_brick)
     < has_item(i_nether_wart)
     => has_item(i_red_nether_bricks)
 
 action recipe_netherite_chestplate_smithing
+    ## i_diamond_chestplate 1, i_netherite_ingot 1 -> i_netherite_chestplate 1
     < near_block(b_smithing_table)
     < has_item(i_diamond_chestplate)
     < has_item(i_netherite_ingot)
     => has_item(i_netherite_chestplate)
 
 action recipe_polished_blackstone_pressure_plate
+    ##  i_polished_blackstone 2 -> i_polished_blackstone_pressure_plate 1
     < has_item(i_polished_blackstone)
     => has_item(i_polished_blackstone_pressure_plate)
 
 action recipe_piston(i0: Item)
+    ##  i0 3,  i_cobblestone 4,  i_iron_ingot 1,  i_redstone 1 -> i_piston 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_planks)
     < has_item(i0)
@@ -6041,68 +6706,81 @@ action recipe_piston(i0: Item)
     => has_item(i_piston)
 
 action recipe_chiseled_sandstone_from_sandstone_stonecutting
+    ## i_sandstone 1 -> i_chiseled_sandstone 1
     < near_block(b_stonecutter)
     < has_item(i_sandstone)
     => has_item(i_chiseled_sandstone)
 
 action recipe_orange_bed_from_white_bed
+    ##  i_white_bed 1,  i_orange_dye 1 -> i_orange_bed 1
     < has_item(i_white_bed)
     < has_item(i_orange_dye)
     => has_item(i_orange_bed)
 
 action recipe_warped_button
+    ##  i_warped_planks 1 -> i_warped_button 1
     < has_item(i_warped_planks)
     => has_item(i_warped_button)
 
 action recipe_green_glazed_terracotta
+    ## i_green_terracotta 1 -> i_green_glazed_terracotta 1
     < near_block(b_furnace)
     < has_item(i_green_terracotta)
     => has_item(i_green_glazed_terracotta)
 
 action recipe_polished_blackstone_slab
+    ##  i_polished_blackstone 3 -> i_polished_blackstone_slab 6
     < near_block(b_crafting_table)
     < has_item(i_polished_blackstone)
     => has_item(i_polished_blackstone_slab)
 
 action recipe_quartz_stairs
+    ##  i_chiseled_quartz_block 6 -> i_quartz_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_chiseled_quartz_block)
     => has_item(i_quartz_stairs)
 
 action recipe_baked_potato_from_smoking
+    ## i_potato 1 -> i_baked_potato 1
     < near_block(b_smoker)
     < has_item(i_potato)
     => has_item(i_baked_potato)
 
 action recipe_green_terracotta
+    ##  i_terracotta 8,  i_green_dye 1 -> i_green_terracotta 8
     < near_block(b_crafting_table)
     < has_item(i_terracotta)
     < has_item(i_green_dye)
     => has_item(i_green_terracotta)
 
 action recipe_purple_wool
+    ##  i_purple_dye 1,  i_white_wool 1 -> i_purple_wool 1
     < has_item(i_purple_dye)
     < has_item(i_white_wool)
     => has_item(i_purple_wool)
 
 action recipe_gray_stained_glass
+    ##  i_glass 8,  i_gray_dye 1 -> i_gray_stained_glass 8
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_gray_dye)
     => has_item(i_gray_stained_glass)
 
 action recipe_glass(i0: Item)
+    ## i0 1 -> i_glass 1
     < near_block(b_furnace)
     < item_tag(i0, it_sand)
     < has_item(i0)
     => has_item(i_glass)
 
 action recipe_mossy_stone_brick_stairs
+    ##  i_mossy_stone_bricks 6 -> i_mossy_stone_brick_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_mossy_stone_bricks)
     => has_item(i_mossy_stone_brick_stairs)
 
 action recipe_lime_bed(i0: Item)
+    ##  i_lime_wool 3,  i0 3 -> i_lime_bed 1
     < near_block(b_crafting_table)
     < has_item(i_lime_wool)
     < item_tag(i0, it_planks)
@@ -6110,15 +6788,18 @@ action recipe_lime_bed(i0: Item)
     => has_item(i_lime_bed)
 
 action recipe_netherite_scrap
+    ## i_ancient_debris 1 -> i_netherite_scrap 1
     < near_block(b_furnace)
     < has_item(i_ancient_debris)
     => has_item(i_netherite_scrap)
 
 action recipe_slime_ball
+    ##  i_slime_block 1 -> i_slime_ball 9
     < has_item(i_slime_block)
     => has_item(i_slime_ball)
 
 action recipe_black_bed(i0: Item)
+    ##  i_black_wool 3,  i0 3 -> i_black_bed 1
     < near_block(b_crafting_table)
     < has_item(i_black_wool)
     < item_tag(i0, it_planks)
@@ -6126,155 +6807,186 @@ action recipe_black_bed(i0: Item)
     => has_item(i_black_bed)
 
 action recipe_cut_sandstone_slab_from_cut_sandstone_stonecutting
+    ## i_cut_sandstone 1 -> i_cut_sandstone_slab 2
     < near_block(b_stonecutter)
     < has_item(i_cut_sandstone)
     => has_item(i_cut_sandstone_slab)
 
 action recipe_diamond_helmet
+    ##  i_diamond 5 -> i_diamond_helmet 1
     < near_block(b_crafting_table)
     < has_item(i_diamond)
     => has_item(i_diamond_helmet)
 
 action recipe_jungle_wood
+    ##  i_jungle_log 4 -> i_jungle_wood 3
     < has_item(i_jungle_log)
     => has_item(i_jungle_wood)
 
 action recipe_cauldron
+    ##  i_iron_ingot 7 -> i_cauldron 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     => has_item(i_cauldron)
 
 action recipe_white_stained_glass
+    ##  i_glass 8,  i_white_dye 1 -> i_white_stained_glass 8
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_white_dye)
     => has_item(i_white_stained_glass)
 
 action recipe_stone
+    ## i_cobblestone 1 -> i_stone 1
     < near_block(b_furnace)
     < has_item(i_cobblestone)
     => has_item(i_stone)
 
 action recipe_mojang_banner_pattern
+    ##  i_paper 1,  i_enchanted_golden_apple 1 -> i_mojang_banner_pattern 1
     < has_item(i_paper)
     < has_item(i_enchanted_golden_apple)
     => has_item(i_mojang_banner_pattern)
 
 action recipe_lantern
+    ##  i_iron_nugget 8,  i_torch 1 -> i_lantern 1
     < near_block(b_crafting_table)
     < has_item(i_iron_nugget)
     < has_item(i_torch)
     => has_item(i_lantern)
 
 action recipe_white_carpet
+    ##  i_white_wool 2 -> i_white_carpet 3
     < has_item(i_white_wool)
     => has_item(i_white_carpet)
 
 action recipe_green_carpet
+    ##  i_green_wool 2 -> i_green_carpet 3
     < has_item(i_green_wool)
     => has_item(i_green_carpet)
 
 action recipe_lime_dye_from_smelting
+    ## i_sea_pickle 1 -> i_lime_dye 1
     < near_block(b_furnace)
     < has_item(i_sea_pickle)
     => has_item(i_lime_dye)
 
 action recipe_orange_glazed_terracotta
+    ## i_orange_terracotta 1 -> i_orange_glazed_terracotta 1
     < near_block(b_furnace)
     < has_item(i_orange_terracotta)
     => has_item(i_orange_glazed_terracotta)
 
 action recipe_jungle_planks(i0: Item)
+    ##  i0 1 -> i_jungle_planks 4
     < item_tag(i0, it_jungle_logs)
     < has_item(i0)
     => has_item(i_jungle_planks)
 
 action recipe_nether_brick_wall_from_nether_bricks_stonecutting
+    ## i_nether_bricks 1 -> i_nether_brick_wall 1
     < near_block(b_stonecutter)
     < has_item(i_nether_bricks)
     => has_item(i_nether_brick_wall)
 
 action recipe_polished_diorite_from_diorite_stonecutting
+    ## i_diorite 1 -> i_polished_diorite 1
     < near_block(b_stonecutter)
     < has_item(i_diorite)
     => has_item(i_polished_diorite)
 
 action recipe_polished_granite_stairs_from_granite_stonecutting
+    ## i_granite 1 -> i_polished_granite_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_granite)
     => has_item(i_polished_granite_stairs)
 
 action recipe_smooth_sandstone_stairs
+    ##  i_smooth_sandstone 6 -> i_smooth_sandstone_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_smooth_sandstone)
     => has_item(i_smooth_sandstone_stairs)
 
 action recipe_gold_nugget
+    ##  i_gold_ingot 1 -> i_gold_nugget 9
     < has_item(i_gold_ingot)
     => has_item(i_gold_nugget)
 
 action recipe_polished_blackstone_bricks_from_blackstone_stonecutting
+    ## i_blackstone 1 -> i_polished_blackstone_bricks 1
     < near_block(b_stonecutter)
     < has_item(i_blackstone)
     => has_item(i_polished_blackstone_bricks)
 
 action recipe_birch_trapdoor
+    ##  i_birch_planks 6 -> i_birch_trapdoor 2
     < near_block(b_crafting_table)
     < has_item(i_birch_planks)
     => has_item(i_birch_trapdoor)
 
 action recipe_acacia_wood
+    ##  i_acacia_log 4 -> i_acacia_wood 3
     < has_item(i_acacia_log)
     => has_item(i_acacia_wood)
 
 action recipe_light_gray_stained_glass_pane_from_glass_pane
+    ##  i_glass_pane 8,  i_light_gray_dye 1 -> i_light_gray_stained_glass_pane 8
     < near_block(b_crafting_table)
     < has_item(i_glass_pane)
     < has_item(i_light_gray_dye)
     => has_item(i_light_gray_stained_glass_pane)
 
 action recipe_mossy_stone_brick_wall_from_mossy_stone_brick_stonecutting
+    ## i_mossy_stone_bricks 1 -> i_mossy_stone_brick_wall 1
     < near_block(b_stonecutter)
     < has_item(i_mossy_stone_bricks)
     => has_item(i_mossy_stone_brick_wall)
 
 action recipe_nether_brick_fence
+    ##  i_nether_bricks 4,  i_nether_brick 2 -> i_nether_brick_fence 6
     < near_block(b_crafting_table)
     < has_item(i_nether_bricks)
     < has_item(i_nether_brick)
     => has_item(i_nether_brick_fence)
 
 action recipe_black_banner
+    ##  i_black_wool 6,  i_stick 1 -> i_black_banner 1
     < near_block(b_crafting_table)
     < has_item(i_black_wool)
     < has_item(i_stick)
     => has_item(i_black_banner)
 
 action recipe_terracotta
+    ## i_clay 1 -> i_terracotta 1
     < near_block(b_furnace)
     < has_item(i_clay)
     => has_item(i_terracotta)
 
 action recipe_yellow_dye_from_dandelion
+    ##  i_dandelion 1 -> i_yellow_dye 1
     < has_item(i_dandelion)
     => has_item(i_yellow_dye)
 
 action recipe_chiseled_polished_blackstone_from_blackstone_stonecutting
+    ## i_blackstone 1 -> i_chiseled_polished_blackstone 1
     < near_block(b_stonecutter)
     < has_item(i_blackstone)
     => has_item(i_chiseled_polished_blackstone)
 
 action recipe_dried_kelp_from_smoking
+    ## i_kelp 1 -> i_dried_kelp 1
     < near_block(b_smoker)
     < has_item(i_kelp)
     => has_item(i_dried_kelp)
 
 action recipe_polished_blackstone_brick_wall
+    ##  i_polished_blackstone_bricks 6 -> i_polished_blackstone_brick_wall 6
     < near_block(b_crafting_table)
     < has_item(i_polished_blackstone_bricks)
     => has_item(i_polished_blackstone_brick_wall)
 
 action recipe_wooden_axe(i0: Item)
+    ##  i0 3,  i_stick 2 -> i_wooden_axe 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_planks)
     < has_item(i0)
@@ -6282,31 +6994,37 @@ action recipe_wooden_axe(i0: Item)
     => has_item(i_wooden_axe)
 
 action recipe_warped_planks(i0: Item)
+    ##  i0 1 -> i_warped_planks 4
     < item_tag(i0, it_warped_stems)
     < has_item(i0)
     => has_item(i_warped_planks)
 
 action recipe_quartz_bricks
+    ##  i_quartz_block 4 -> i_quartz_bricks 4
     < has_item(i_quartz_block)
     => has_item(i_quartz_bricks)
 
 action recipe_dried_kelp_block
+    ##  i_dried_kelp 9 -> i_dried_kelp_block 1
     < near_block(b_crafting_table)
     < has_item(i_dried_kelp)
     => has_item(i_dried_kelp_block)
 
 action recipe_light_blue_terracotta
+    ##  i_terracotta 8,  i_light_blue_dye 1 -> i_light_blue_terracotta 8
     < near_block(b_crafting_table)
     < has_item(i_terracotta)
     < has_item(i_light_blue_dye)
     => has_item(i_light_blue_terracotta)
 
 action recipe_yellow_wool
+    ##  i_yellow_dye 1,  i_white_wool 1 -> i_yellow_wool 1
     < has_item(i_yellow_dye)
     < has_item(i_white_wool)
     => has_item(i_yellow_wool)
 
 action recipe_barrel(i0: Item, i1: Item)
+    ##  i0 6,  i1 2 -> i_barrel 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_planks)
     < has_item(i0)
@@ -6315,6 +7033,7 @@ action recipe_barrel(i0: Item, i1: Item)
     => has_item(i_barrel)
 
 action recipe_light_blue_bed(i0: Item)
+    ##  i_light_blue_wool 3,  i0 3 -> i_light_blue_bed 1
     < near_block(b_crafting_table)
     < has_item(i_light_blue_wool)
     < item_tag(i0, it_planks)
@@ -6322,51 +7041,61 @@ action recipe_light_blue_bed(i0: Item)
     => has_item(i_light_blue_bed)
 
 action recipe_golden_chestplate
+    ##  i_gold_ingot 8 -> i_golden_chestplate 1
     < near_block(b_crafting_table)
     < has_item(i_gold_ingot)
     => has_item(i_golden_chestplate)
 
 action recipe_cooked_salmon_from_smoking
+    ## i_salmon 1 -> i_cooked_salmon 1
     < near_block(b_smoker)
     < has_item(i_salmon)
     => has_item(i_cooked_salmon)
 
 action recipe_yellow_carpet_from_white_carpet
+    ##  i_white_carpet 8,  i_yellow_dye 1 -> i_yellow_carpet 8
     < near_block(b_crafting_table)
     < has_item(i_white_carpet)
     < has_item(i_yellow_dye)
     => has_item(i_yellow_carpet)
 
 action recipe_cyan_stained_glass_pane
+    ##  i_cyan_stained_glass 6 -> i_cyan_stained_glass_pane 16
     < near_block(b_crafting_table)
     < has_item(i_cyan_stained_glass)
     => has_item(i_cyan_stained_glass_pane)
 
 action recipe_snow_block
+    ##  i_snowball 4 -> i_snow_block 1
     < has_item(i_snowball)
     => has_item(i_snow_block)
 
 action recipe_light_gray_carpet
+    ##  i_light_gray_wool 2 -> i_light_gray_carpet 3
     < has_item(i_light_gray_wool)
     => has_item(i_light_gray_carpet)
 
 action recipe_acacia_planks(i0: Item)
+    ##  i0 1 -> i_acacia_planks 4
     < item_tag(i0, it_acacia_logs)
     < has_item(i0)
     => has_item(i_acacia_planks)
 
 action recipe_lapis_block
+    ##  i_lapis_lazuli 9 -> i_lapis_block 1
     < near_block(b_crafting_table)
     < has_item(i_lapis_lazuli)
     => has_item(i_lapis_block)
 
 action recipe_redstone_lamp
+    ##  i_redstone 4,  i_glowstone 1 -> i_redstone_lamp 1
     < near_block(b_crafting_table)
     < has_item(i_redstone)
     < has_item(i_glowstone)
     => has_item(i_redstone_lamp)
 
 action recipe_orange_bed(i0: Item)
+    ##  i_orange_wool 3,  i0 3 -> i_orange_bed 1
     < near_block(b_crafting_table)
     < has_item(i_orange_wool)
     < item_tag(i0, it_planks)
@@ -6374,6 +7103,7 @@ action recipe_orange_bed(i0: Item)
     => has_item(i_orange_bed)
 
 action recipe_red_concrete_powder
+    ##  i_red_dye 1,  i_sand 4,  i_gravel 4 -> i_red_concrete_powder 8
     < near_block(b_crafting_table)
     < has_item(i_red_dye)
     < has_item(i_sand)
@@ -6381,31 +7111,37 @@ action recipe_red_concrete_powder
     => has_item(i_red_concrete_powder)
 
 action recipe_coal_from_blasting
+    ## i_coal_ore 1 -> i_coal 1
     < near_block(b_blast_furnace)
     < has_item(i_coal_ore)
     => has_item(i_coal)
 
 action recipe_warped_door
+    ##  i_warped_planks 6 -> i_warped_door 3
     < near_block(b_crafting_table)
     < has_item(i_warped_planks)
     => has_item(i_warped_door)
 
 action recipe_polished_blackstone_brick_stairs
+    ##  i_polished_blackstone_bricks 6 -> i_polished_blackstone_brick_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_polished_blackstone_bricks)
     => has_item(i_polished_blackstone_brick_stairs)
 
 action recipe_cyan_carpet
+    ##  i_cyan_wool 2 -> i_cyan_carpet 3
     < has_item(i_cyan_wool)
     => has_item(i_cyan_carpet)
 
 action recipe_orange_banner
+    ##  i_orange_wool 6,  i_stick 1 -> i_orange_banner 1
     < near_block(b_crafting_table)
     < has_item(i_orange_wool)
     < has_item(i_stick)
     => has_item(i_orange_banner)
 
 action recipe_dispenser
+    ##  i_cobblestone 7,  i_bow 1,  i_redstone 1 -> i_dispenser 1
     < near_block(b_crafting_table)
     < has_item(i_cobblestone)
     < has_item(i_bow)
@@ -6413,100 +7149,119 @@ action recipe_dispenser
     => has_item(i_dispenser)
 
 action recipe_iron_ingot_from_blasting
+    ## i_iron_ore 1 -> i_iron_ingot 1
     < near_block(b_blast_furnace)
     < has_item(i_iron_ore)
     => has_item(i_iron_ingot)
 
 action recipe_chest_minecart
+    ##  i_chest 1,  i_minecart 1 -> i_chest_minecart 1
     < has_item(i_chest)
     < has_item(i_minecart)
     => has_item(i_chest_minecart)
 
 action recipe_red_dye_from_beetroot
+    ##  i_beetroot 1 -> i_red_dye 1
     < has_item(i_beetroot)
     => has_item(i_red_dye)
 
 action recipe_lapis_from_smelting
+    ## i_lapis_ore 1 -> i_lapis_lazuli 1
     < near_block(b_furnace)
     < has_item(i_lapis_ore)
     => has_item(i_lapis_lazuli)
 
 action recipe_cooked_rabbit_from_smoking
+    ## i_rabbit 1 -> i_cooked_rabbit 1
     < near_block(b_smoker)
     < has_item(i_rabbit)
     => has_item(i_cooked_rabbit)
 
 action recipe_purple_banner
+    ##  i_purple_wool 6,  i_stick 1 -> i_purple_banner 1
     < near_block(b_crafting_table)
     < has_item(i_purple_wool)
     < has_item(i_stick)
     => has_item(i_purple_banner)
 
 action recipe_purpur_slab_from_purpur_block_stonecutting
+    ## i_purpur_block 1 -> i_purpur_slab 2
     < near_block(b_stonecutter)
     < has_item(i_purpur_block)
     => has_item(i_purpur_slab)
 
 action recipe_green_stained_glass_pane_from_glass_pane
+    ##  i_glass_pane 8,  i_green_dye 1 -> i_green_stained_glass_pane 8
     < near_block(b_crafting_table)
     < has_item(i_glass_pane)
     < has_item(i_green_dye)
     => has_item(i_green_stained_glass_pane)
 
 action recipe_andesite_slab
+    ##  i_andesite 3 -> i_andesite_slab 6
     < near_block(b_crafting_table)
     < has_item(i_andesite)
     => has_item(i_andesite_slab)
 
 action recipe_cooked_cod
+    ## i_cod 1 -> i_cooked_cod 1
     < near_block(b_furnace)
     < has_item(i_cod)
     => has_item(i_cooked_cod)
 
 action recipe_polished_diorite_stairs_from_diorite_stonecutting
+    ## i_diorite 1 -> i_polished_diorite_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_diorite)
     => has_item(i_polished_diorite_stairs)
 
 action recipe_acacia_sign
+    ##  i_acacia_planks 6,  i_stick 1 -> i_acacia_sign 3
     < near_block(b_crafting_table)
     < has_item(i_acacia_planks)
     < has_item(i_stick)
     => has_item(i_acacia_sign)
 
 action recipe_prismarine_wall_from_prismarine_stonecutting
+    ## i_prismarine 1 -> i_prismarine_wall 1
     < near_block(b_stonecutter)
     < has_item(i_prismarine)
     => has_item(i_prismarine_wall)
 
 action recipe_emerald_block
+    ##  i_emerald 9 -> i_emerald_block 1
     < near_block(b_crafting_table)
     < has_item(i_emerald)
     => has_item(i_emerald_block)
 
 action recipe_polished_andesite_slab_from_polished_andesite_stonecutting
+    ## i_polished_andesite 1 -> i_polished_andesite_slab 2
     < near_block(b_stonecutter)
     < has_item(i_polished_andesite)
     => has_item(i_polished_andesite_slab)
 
 action recipe_minecart
+    ##  i_iron_ingot 5 -> i_minecart 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     => has_item(i_minecart)
 
 action recipe_crimson_fence
+    ##  i_crimson_planks 4,  i_stick 2 -> i_crimson_fence 3
     < near_block(b_crafting_table)
     < has_item(i_crimson_planks)
     < has_item(i_stick)
     => has_item(i_crimson_fence)
 
 action recipe_ender_chest
+    ##  i_obsidian 8,  i_ender_eye 1 -> i_ender_chest 1
     < near_block(b_crafting_table)
     < has_item(i_obsidian)
     < has_item(i_ender_eye)
     => has_item(i_ender_chest)
 
 action recipe_end_crystal
+    ##  i_glass 7,  i_ender_eye 1,  i_ghast_tear 1 -> i_end_crystal 1
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_ender_eye)
@@ -6514,31 +7269,37 @@ action recipe_end_crystal
     => has_item(i_end_crystal)
 
 action recipe_bucket
+    ##  i_iron_ingot 3 -> i_bucket 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     => has_item(i_bucket)
 
 action recipe_polished_blackstone_brick_slab
+    ##  i_polished_blackstone_bricks 3 -> i_polished_blackstone_brick_slab 6
     < near_block(b_crafting_table)
     < has_item(i_polished_blackstone_bricks)
     => has_item(i_polished_blackstone_brick_slab)
 
 action recipe_polished_blackstone_bricks
+    ##  i_polished_blackstone 4 -> i_polished_blackstone_bricks 4
     < has_item(i_polished_blackstone)
     => has_item(i_polished_blackstone_bricks)
 
 action recipe_dark_prismarine
+    ##  i_prismarine_shard 8,  i_black_dye 1 -> i_dark_prismarine 1
     < near_block(b_crafting_table)
     < has_item(i_prismarine_shard)
     < has_item(i_black_dye)
     => has_item(i_dark_prismarine)
 
 action recipe_blue_wool
+    ##  i_blue_dye 1,  i_white_wool 1 -> i_blue_wool 1
     < has_item(i_blue_dye)
     < has_item(i_white_wool)
     => has_item(i_blue_wool)
 
 action recipe_daylight_detector(i0: Item)
+    ##  i_glass 3,  i_quartz 3,  i0 3 -> i_daylight_detector 1
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_quartz)
@@ -6547,79 +7308,94 @@ action recipe_daylight_detector(i0: Item)
     => has_item(i_daylight_detector)
 
 action recipe_light_gray_glazed_terracotta
+    ## i_light_gray_terracotta 1 -> i_light_gray_glazed_terracotta 1
     < near_block(b_furnace)
     < has_item(i_light_gray_terracotta)
     => has_item(i_light_gray_glazed_terracotta)
 
 action recipe_prismarine_brick_stairs
+    ##  i_prismarine_bricks 6 -> i_prismarine_brick_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_prismarine_bricks)
     => has_item(i_prismarine_brick_stairs)
 
 action recipe_respawn_anchor
+    ##  i_crying_obsidian 6,  i_glowstone 3 -> i_respawn_anchor 1
     < near_block(b_crafting_table)
     < has_item(i_crying_obsidian)
     < has_item(i_glowstone)
     => has_item(i_respawn_anchor)
 
 action recipe_gray_glazed_terracotta
+    ## i_gray_terracotta 1 -> i_gray_glazed_terracotta 1
     < near_block(b_furnace)
     < has_item(i_gray_terracotta)
     => has_item(i_gray_glazed_terracotta)
 
 action recipe_scaffolding
+    ##  i_bamboo 6,  i_string 1 -> i_scaffolding 6
     < near_block(b_crafting_table)
     < has_item(i_bamboo)
     < has_item(i_string)
     => has_item(i_scaffolding)
 
 action recipe_cooked_beef_from_campfire_cooking
+    ## i_beef 1 -> i_cooked_beef 1
     < near_block(b_campfire)
     < has_item(i_beef)
     => has_item(i_cooked_beef)
 
 action recipe_pink_stained_glass_pane
+    ##  i_pink_stained_glass 6 -> i_pink_stained_glass_pane 16
     < near_block(b_crafting_table)
     < has_item(i_pink_stained_glass)
     => has_item(i_pink_stained_glass_pane)
 
 action recipe_lime_stained_glass_pane_from_glass_pane
+    ##  i_glass_pane 8,  i_lime_dye 1 -> i_lime_stained_glass_pane 8
     < near_block(b_crafting_table)
     < has_item(i_glass_pane)
     < has_item(i_lime_dye)
     => has_item(i_lime_stained_glass_pane)
 
 action recipe_red_nether_brick_stairs_from_red_nether_bricks_stonecutting
+    ## i_red_nether_bricks 1 -> i_red_nether_brick_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_red_nether_bricks)
     => has_item(i_red_nether_brick_stairs)
 
 action recipe_red_wool
+    ##  i_red_dye 1,  i_white_wool 1 -> i_red_wool 1
     < has_item(i_red_dye)
     < has_item(i_white_wool)
     => has_item(i_red_wool)
 
 action recipe_prismarine_brick_slab
+    ##  i_prismarine_bricks 3 -> i_prismarine_brick_slab 6
     < near_block(b_crafting_table)
     < has_item(i_prismarine_bricks)
     => has_item(i_prismarine_brick_slab)
 
 action recipe_prismarine_stairs_from_prismarine_stonecutting
+    ## i_prismarine 1 -> i_prismarine_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_prismarine)
     => has_item(i_prismarine_stairs)
 
 action recipe_cobblestone_slab
+    ##  i_cobblestone 3 -> i_cobblestone_slab 6
     < near_block(b_crafting_table)
     < has_item(i_cobblestone)
     => has_item(i_cobblestone_slab)
 
 action recipe_polished_diorite_stairs_from_polished_diorite_stonecutting
+    ## i_polished_diorite 1 -> i_polished_diorite_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_polished_diorite)
     => has_item(i_polished_diorite_stairs)
 
 action recipe_cyan_bed(i0: Item)
+    ##  i_cyan_wool 3,  i0 3 -> i_cyan_bed 1
     < near_block(b_crafting_table)
     < has_item(i_cyan_wool)
     < item_tag(i0, it_planks)
@@ -6627,64 +7403,77 @@ action recipe_cyan_bed(i0: Item)
     => has_item(i_cyan_bed)
 
 action recipe_cobblestone_slab_from_cobblestone_stonecutting
+    ## i_cobblestone 1 -> i_cobblestone_slab 2
     < near_block(b_stonecutter)
     < has_item(i_cobblestone)
     => has_item(i_cobblestone_slab)
 
 action recipe_sugar_from_honey_bottle
+    ##  i_honey_bottle 1 -> i_sugar 3
     < has_item(i_honey_bottle)
     => has_item(i_sugar)
 
 action recipe_white_dye
+    ##  i_bone_meal 1 -> i_white_dye 1
     < has_item(i_bone_meal)
     => has_item(i_white_dye)
 
 action recipe_cyan_dye
+    ##  i_blue_dye 1,  i_green_dye 1 -> i_cyan_dye 2
     < has_item(i_blue_dye)
     < has_item(i_green_dye)
     => has_item(i_cyan_dye)
 
 action recipe_iron_chestplate
+    ##  i_iron_ingot 8 -> i_iron_chestplate 1
     < near_block(b_crafting_table)
     < has_item(i_iron_ingot)
     => has_item(i_iron_chestplate)
 
 action recipe_white_dye_from_lily_of_the_valley
+    ##  i_lily_of_the_valley 1 -> i_white_dye 1
     < has_item(i_lily_of_the_valley)
     => has_item(i_white_dye)
 
 action recipe_gray_dye
+    ##  i_black_dye 1,  i_white_dye 1 -> i_gray_dye 2
     < has_item(i_black_dye)
     < has_item(i_white_dye)
     => has_item(i_gray_dye)
 
 action recipe_brick_wall_from_bricks_stonecutting
+    ## i_bricks 1 -> i_brick_wall 1
     < near_block(b_stonecutter)
     < has_item(i_bricks)
     => has_item(i_brick_wall)
 
 action recipe_end_stone_brick_slab_from_end_stone_brick_stonecutting
+    ## i_end_stone_bricks 1 -> i_end_stone_brick_slab 2
     < near_block(b_stonecutter)
     < has_item(i_end_stone_bricks)
     => has_item(i_end_stone_brick_slab)
 
 action recipe_blue_terracotta
+    ##  i_terracotta 8,  i_blue_dye 1 -> i_blue_terracotta 8
     < near_block(b_crafting_table)
     < has_item(i_terracotta)
     < has_item(i_blue_dye)
     => has_item(i_blue_terracotta)
 
 action recipe_dried_kelp_from_smelting
+    ## i_kelp 1 -> i_dried_kelp 1
     < near_block(b_furnace)
     < has_item(i_kelp)
     => has_item(i_dried_kelp)
 
 action recipe_jungle_door
+    ##  i_jungle_planks 6 -> i_jungle_door 3
     < near_block(b_crafting_table)
     < has_item(i_jungle_planks)
     => has_item(i_jungle_door)
 
 action recipe_brewing_stand(i0: Item)
+    ##  i_blaze_rod 1,  i0 3 -> i_brewing_stand 1
     < near_block(b_crafting_table)
     < has_item(i_blaze_rod)
     < item_tag(i0, it_stone_crafting_materials)
@@ -6692,26 +7481,31 @@ action recipe_brewing_stand(i0: Item)
     => has_item(i_brewing_stand)
 
 action recipe_magenta_dye_from_lilac
+    ##  i_lilac 1 -> i_magenta_dye 2
     < has_item(i_lilac)
     => has_item(i_magenta_dye)
 
 action recipe_spruce_boat
+    ##  i_spruce_planks 5 -> i_spruce_boat 1
     < near_block(b_crafting_table)
     < has_item(i_spruce_planks)
     => has_item(i_spruce_boat)
 
 action recipe_blue_stained_glass
+    ##  i_glass 8,  i_blue_dye 1 -> i_blue_stained_glass 8
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_blue_dye)
     => has_item(i_blue_stained_glass)
 
 action recipe_polished_blackstone_wall
+    ##  i_polished_blackstone 6 -> i_polished_blackstone_wall 6
     < near_block(b_crafting_table)
     < has_item(i_polished_blackstone)
     => has_item(i_polished_blackstone_wall)
 
 action recipe_bookshelf(i0: Item)
+    ##  i0 6,  i_book 3 -> i_bookshelf 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_planks)
     < has_item(i0)
@@ -6719,77 +7513,92 @@ action recipe_bookshelf(i0: Item)
     => has_item(i_bookshelf)
 
 action recipe_chiseled_polished_blackstone_from_polished_blackstone_stonecutting
+    ## i_polished_blackstone 1 -> i_chiseled_polished_blackstone 1
     < near_block(b_stonecutter)
     < has_item(i_polished_blackstone)
     => has_item(i_chiseled_polished_blackstone)
 
 action recipe_lime_bed_from_white_bed
+    ##  i_white_bed 1,  i_lime_dye 1 -> i_lime_bed 1
     < has_item(i_white_bed)
     < has_item(i_lime_dye)
     => has_item(i_lime_bed)
 
 action recipe_stone_bricks
+    ##  i_stone 4 -> i_stone_bricks 4
     < has_item(i_stone)
     => has_item(i_stone_bricks)
 
 action recipe_packed_ice
+    ##  i_ice 9 -> i_packed_ice 1
     < near_block(b_crafting_table)
     < has_item(i_ice)
     => has_item(i_packed_ice)
 
 action recipe_andesite_wall_from_andesite_stonecutting
+    ## i_andesite 1 -> i_andesite_wall 1
     < near_block(b_stonecutter)
     < has_item(i_andesite)
     => has_item(i_andesite_wall)
 
 action recipe_purple_carpet
+    ##  i_purple_wool 2 -> i_purple_carpet 3
     < has_item(i_purple_wool)
     => has_item(i_purple_carpet)
 
 action recipe_spruce_sign
+    ##  i_spruce_planks 6,  i_stick 1 -> i_spruce_sign 3
     < near_block(b_crafting_table)
     < has_item(i_spruce_planks)
     < has_item(i_stick)
     => has_item(i_spruce_sign)
 
 action recipe_white_wool_from_string
+    ##  i_string 4 -> i_white_wool 1
     < has_item(i_string)
     => has_item(i_white_wool)
 
 action recipe_smooth_red_sandstone_slab_from_smooth_red_sandstone_stonecutting
+    ## i_smooth_red_sandstone 1 -> i_smooth_red_sandstone_slab 2
     < near_block(b_stonecutter)
     < has_item(i_smooth_red_sandstone)
     => has_item(i_smooth_red_sandstone_slab)
 
 action recipe_pink_wool
+    ##  i_pink_dye 1,  i_white_wool 1 -> i_pink_wool 1
     < has_item(i_pink_dye)
     < has_item(i_white_wool)
     => has_item(i_pink_wool)
 
 action recipe_diamond_axe
+    ##  i_diamond 3,  i_stick 2 -> i_diamond_axe 1
     < near_block(b_crafting_table)
     < has_item(i_diamond)
     < has_item(i_stick)
     => has_item(i_diamond_axe)
 
 action recipe_sandstone_wall
+    ##  i_sandstone 6 -> i_sandstone_wall 6
     < near_block(b_crafting_table)
     < has_item(i_sandstone)
     => has_item(i_sandstone_wall)
 
 action recipe_crimson_fence_gate
+    ##  i_stick 4,  i_crimson_planks 2 -> i_crimson_fence_gate 1
     < near_block(b_crafting_table)
     < has_item(i_stick)
     < has_item(i_crimson_planks)
     => has_item(i_crimson_fence_gate)
 
 action recipe_bow
+    ##  i_stick 3,  i_string 3 -> i_bow 1
     < near_block(b_crafting_table)
     < has_item(i_stick)
     < has_item(i_string)
     => has_item(i_bow)
 
 action recipe_light_blue_concrete_powder
+    ##  i_light_blue_dye 1,  i_sand 4,  i_gravel 4 -> i_light_blue_concrete_powder 8
     < near_block(b_crafting_table)
     < has_item(i_light_blue_dye)
     < has_item(i_sand)
@@ -6797,11 +7606,13 @@ action recipe_light_blue_concrete_powder
     => has_item(i_light_blue_concrete_powder)
 
 action recipe_yellow_stained_glass_pane
+    ##  i_yellow_stained_glass 6 -> i_yellow_stained_glass_pane 16
     < near_block(b_crafting_table)
     < has_item(i_yellow_stained_glass)
     => has_item(i_yellow_stained_glass_pane)
 
 action recipe_wooden_hoe(i0: Item)
+    ##  i0 2,  i_stick 2 -> i_wooden_hoe 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_planks)
     < has_item(i0)
@@ -6809,51 +7620,61 @@ action recipe_wooden_hoe(i0: Item)
     => has_item(i_wooden_hoe)
 
 action recipe_cyan_banner
+    ##  i_cyan_wool 6,  i_stick 1 -> i_cyan_banner 1
     < near_block(b_crafting_table)
     < has_item(i_cyan_wool)
     < has_item(i_stick)
     => has_item(i_cyan_banner)
 
 action recipe_soul_lantern
+    ##  i_iron_nugget 8,  i_soul_torch 1 -> i_soul_lantern 1
     < near_block(b_crafting_table)
     < has_item(i_iron_nugget)
     < has_item(i_soul_torch)
     => has_item(i_soul_lantern)
 
 action recipe_polished_blackstone_brick_stairs_from_blackstone_stonecutting
+    ## i_blackstone 1 -> i_polished_blackstone_brick_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_blackstone)
     => has_item(i_polished_blackstone_brick_stairs)
 
 action recipe_chiseled_nether_bricks_from_nether_bricks_stonecutting
+    ## i_nether_bricks 1 -> i_chiseled_nether_bricks 1
     < near_block(b_stonecutter)
     < has_item(i_nether_bricks)
     => has_item(i_chiseled_nether_bricks)
 
 action recipe_dark_oak_stairs
+    ##  i_dark_oak_planks 6 -> i_dark_oak_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_dark_oak_planks)
     => has_item(i_dark_oak_stairs)
 
 action recipe_polished_blackstone_brick_stairs_from_polished_blackstone_stonecutting
+    ## i_polished_blackstone 1 -> i_polished_blackstone_brick_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_polished_blackstone)
     => has_item(i_polished_blackstone_brick_stairs)
 
 action recipe_stone_brick_wall
+    ##  i_stone_bricks 6 -> i_stone_brick_wall 6
     < near_block(b_crafting_table)
     < has_item(i_stone_bricks)
     => has_item(i_stone_brick_wall)
 
 action recipe_dark_oak_wood
+    ##  i_dark_oak_log 4 -> i_dark_oak_wood 3
     < has_item(i_dark_oak_log)
     => has_item(i_dark_oak_wood)
 
 action recipe_magenta_dye_from_allium
+    ##  i_allium 1 -> i_magenta_dye 1
     < has_item(i_allium)
     => has_item(i_magenta_dye)
 
 action recipe_campfire(i0: Item, i1: Item)
+    ##  i_stick 3,  i0 1,  i1 3 -> i_campfire 1
     < near_block(b_crafting_table)
     < has_item(i_stick)
     < item_tag(i0, it_coals)
@@ -6863,25 +7684,30 @@ action recipe_campfire(i0: Item, i1: Item)
     => has_item(i_campfire)
 
 action recipe_granite_stairs_from_granite_stonecutting
+    ## i_granite 1 -> i_granite_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_granite)
     => has_item(i_granite_stairs)
 
 action recipe_prismarine_brick_stairs_from_prismarine_stonecutting
+    ## i_prismarine_bricks 1 -> i_prismarine_brick_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_prismarine_bricks)
     => has_item(i_prismarine_brick_stairs)
 
 action recipe_stone_stairs_from_stone_stonecutting
+    ## i_stone 1 -> i_stone_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_stone)
     => has_item(i_stone_stairs)
 
 action recipe_heavy_weighted_pressure_plate
+    ##  i_iron_ingot 2 -> i_heavy_weighted_pressure_plate 1
     < has_item(i_iron_ingot)
     => has_item(i_heavy_weighted_pressure_plate)
 
 action recipe_observer
+    ##  i_cobblestone 6,  i_redstone 2,  i_quartz 1 -> i_observer 1
     < near_block(b_crafting_table)
     < has_item(i_cobblestone)
     < has_item(i_redstone)
@@ -6889,52 +7715,62 @@ action recipe_observer
     => has_item(i_observer)
 
 action recipe_magenta_dye_from_purple_and_pink
+    ##  i_purple_dye 1,  i_pink_dye 1 -> i_magenta_dye 2
     < has_item(i_purple_dye)
     < has_item(i_pink_dye)
     => has_item(i_magenta_dye)
 
 action recipe_yellow_stained_glass
+    ##  i_glass 8,  i_yellow_dye 1 -> i_yellow_stained_glass 8
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_yellow_dye)
     => has_item(i_yellow_stained_glass)
 
 action recipe_smooth_red_sandstone
+    ## i_red_sandstone 1 -> i_smooth_red_sandstone 1
     < near_block(b_furnace)
     < has_item(i_red_sandstone)
     => has_item(i_smooth_red_sandstone)
 
 action recipe_oak_pressure_plate
+    ##  i_oak_planks 2 -> i_oak_pressure_plate 1
     < has_item(i_oak_planks)
     => has_item(i_oak_pressure_plate)
 
 action recipe_gray_bed_from_white_bed
+    ##  i_white_bed 1,  i_gray_dye 1 -> i_gray_bed 1
     < has_item(i_white_bed)
     < has_item(i_gray_dye)
     => has_item(i_gray_bed)
 
 action recipe_birch_planks(i0: Item)
+    ##  i0 1 -> i_birch_planks 4
     < item_tag(i0, it_birch_logs)
     < has_item(i0)
     => has_item(i_birch_planks)
 
 action recipe_jungle_boat
+    ##  i_jungle_planks 5 -> i_jungle_boat 1
     < near_block(b_crafting_table)
     < has_item(i_jungle_planks)
     => has_item(i_jungle_boat)
 
 action recipe_stone_bricks_from_stone_stonecutting
+    ## i_stone 1 -> i_stone_bricks 1
     < near_block(b_stonecutter)
     < has_item(i_stone)
     => has_item(i_stone_bricks)
 
 action recipe_golden_apple
+    ##  i_gold_ingot 8,  i_apple 1 -> i_golden_apple 1
     < near_block(b_crafting_table)
     < has_item(i_gold_ingot)
     < has_item(i_apple)
     => has_item(i_golden_apple)
 
 action recipe_note_block(i0: Item)
+    ##  i0 8,  i_redstone 1 -> i_note_block 1
     < near_block(b_crafting_table)
     < item_tag(i0, it_planks)
     < has_item(i0)
@@ -6942,54 +7778,64 @@ action recipe_note_block(i0: Item)
     => has_item(i_note_block)
 
 action recipe_polished_diorite_stairs
+    ##  i_polished_diorite 6 -> i_polished_diorite_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_polished_diorite)
     => has_item(i_polished_diorite_stairs)
 
 action recipe_cyan_carpet_from_white_carpet
+    ##  i_white_carpet 8,  i_cyan_dye 1 -> i_cyan_carpet 8
     < near_block(b_crafting_table)
     < has_item(i_white_carpet)
     < has_item(i_cyan_dye)
     => has_item(i_cyan_carpet)
 
 action recipe_pink_stained_glass_pane_from_glass_pane
+    ##  i_glass_pane 8,  i_pink_dye 1 -> i_pink_stained_glass_pane 8
     < near_block(b_crafting_table)
     < has_item(i_glass_pane)
     < has_item(i_pink_dye)
     => has_item(i_pink_stained_glass_pane)
 
 action recipe_lime_wool
+    ##  i_lime_dye 1,  i_white_wool 1 -> i_lime_wool 1
     < has_item(i_lime_dye)
     < has_item(i_white_wool)
     => has_item(i_lime_wool)
 
 action recipe_blackstone_stairs_from_blackstone_stonecutting
+    ## i_blackstone 1 -> i_blackstone_stairs 1
     < near_block(b_stonecutter)
     < has_item(i_blackstone)
     => has_item(i_blackstone_stairs)
 
 action recipe_cracked_nether_bricks
+    ## i_nether_bricks 1 -> i_cracked_nether_bricks 1
     < near_block(b_furnace)
     < has_item(i_nether_bricks)
     => has_item(i_cracked_nether_bricks)
 
 action recipe_black_stained_glass
+    ##  i_glass 8,  i_black_dye 1 -> i_black_stained_glass 8
     < near_block(b_crafting_table)
     < has_item(i_glass)
     < has_item(i_black_dye)
     => has_item(i_black_stained_glass)
 
 action recipe_bone_block
+    ##  i_bone_meal 9 -> i_bone_block 1
     < near_block(b_crafting_table)
     < has_item(i_bone_meal)
     => has_item(i_bone_block)
 
 action recipe_warped_stairs
+    ##  i_warped_planks 6 -> i_warped_stairs 4
     < near_block(b_crafting_table)
     < has_item(i_warped_planks)
     => has_item(i_warped_stairs)
 
 action recipe_sandstone_wall_from_sandstone_stonecutting
+    ## i_sandstone 1 -> i_sandstone_wall 1
     < near_block(b_stonecutter)
     < has_item(i_sandstone)
     => has_item(i_sandstone_wall)
