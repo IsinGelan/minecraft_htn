@@ -12,6 +12,7 @@ from shitlang.shit_objs import (
     ShitObject,
     FactExpr,
     ShitPredicate,
+    SubtasksWithOrdering,
     Task,
     TaskCall,
     TopLevelComment)
@@ -136,10 +137,18 @@ def proxy_method(
     action_params = action.params
     proxy_task_name = f"proxy-{action.action_name}"
 
-    subtasks = SequencedSubtasks(
-        subtasks=[fact_to_prec_task_call(fact) for fact in replace_facts]
-        + [TaskCall(task_name=action.action_name, args=args_from_params(action_params))]
-        )
+    # subtasks = SequencedSubtasks(
+    #     subtasks=[fact_to_prec_task_call(fact) for fact in replace_facts]
+    #     + [TaskCall(task_name=action.action_name, args=args_from_params(action_params))]
+    #     )
+    fulfillment_indeces = set(range(1, len(replace_facts)+1))
+    subtasks = SubtasksWithOrdering(
+        subtasks={
+            i: fact_to_prec_task_call(fact)
+            for i, fact in enumerate(replace_facts, start=1)
+        } | {0: TaskCall(task_name=action.action_name, args=args_from_params(action_params))},
+        orderings=[[fulfillment_indeces, {0}]] # all fulfillments before the wrapped action
+    )
 
     method = Method(
         task_name=proxy_task_name,

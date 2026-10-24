@@ -138,7 +138,8 @@ def main(
     in_problem: str = None, *,
     out_domain: str = "temp/domain.hddl",
     out_problem: str = "temp/problem.hddl",
-    show_macro_result: bool = False
+    show_macro_result: bool = False,
+    optimize: bool = True
     )-> tuple[DomainFile | None, ProblemFile | None, bool | None]:
     """Transpiles domain and problem files to HDDL files.
     If both are provided, the domain is optimized based on the problem.\n
@@ -148,7 +149,8 @@ def main(
         print("Transpiling domain and problem and optimizing domain based on problem")
         domain = prepare_domain(in_domain, show_macro_result=show_macro_result)
         problem = prepare_problem(in_problem, show_macro_result=show_macro_result)
-        opt_success = optimize_domain(domain, problem, recompile_pro_domain=True, false_preds=FALSE_PREDS)
+        opt_success = (optimize_domain(domain, problem, recompile_pro_domain=True, false_preds=FALSE_PREDS)
+                       if optimize else None)
         domain.export_hddl(out_domain)
         problem.export_hddl(out_problem)
         return (domain, problem, opt_success)
