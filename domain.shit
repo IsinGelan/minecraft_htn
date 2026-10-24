@@ -83,6 +83,12 @@ find-block : find(btype: Block, dim: Dim)
 ## a can_mine(tool: Tool, btype: Block) entry
 task mine-block(btype: Block, res_item: Item) # remove tool here maybe?
 
+mine-block : no-pickaxe(btype: Block, tool: Tool, res_item: Item)
+    < ~mining_requires_tier(btype, tool_tier_3)
+    < ~mining_requires_tier(btype, tool_tier_2)
+    < ~mining_requires_tier(btype, tool_tier_1)
+    < ~mining_requires_tier(btype, tool_tier_0)
+    - mine-block-directly(btype, tool, res_item)
 mine-block : pickaxe-0(btype: Block, tool: Tool, res_item: Item)
     < can_mine_tier(tool, tool_tier_0)
     < mining_requires_tier(btype, tool_tier_0)
@@ -99,18 +105,14 @@ mine-block : pickaxe-3(btype: Block, tool: Tool, res_item: Item)
     < can_mine_tier(tool, tool_tier_3)
     < mining_requires_tier(btype, tool_tier_3)
     - mine-block-directly(btype, tool, res_item)
-mine-block : no-pickaxe(btype: Block, tool: Tool, res_item: Item)
-    < ~mining_requires_tier(btype, tool_tier_3)
-    < ~mining_requires_tier(btype, tool_tier_2)
-    < ~mining_requires_tier(btype, tool_tier_1)
-    < ~mining_requires_tier(btype, tool_tier_0)
-    - mine-block-directly(btype, tool, res_item)
+
 
 action mine-block-directly(btype: Block, tool: Tool, res_item: Item)
     ## btype 1 -> res_item 1
     < near_block(btype)
     < has_item(tool)
     < mined_becomes(btype, res_item)
+    => ~near_block(btype)
     => has_item(res_item)
 
 action reap-block(btype: Block, tool: Tool, res_item: Item)
@@ -131,6 +133,9 @@ action place-block(btype: Block, item: Item)
 action find-block-in-dim(btype: Block, dim: Dim)
     ## -> btype 1
     < in_dim(dim)
+    => (all b: Block) ~near_block(b)
+    => (all e: Entity) ~near_entity(e)
+    => (all s: Structure) ~near_structure(s)
     => near_block(btype)
 
 action container-put(ctype: Container, item: Item)
@@ -163,11 +168,13 @@ kill-entity-for-item : kill(entity: Entity, res_item: Item)
 ## TODO: e_ender_dragon: lit_center_portal activates
 action kill-entity-directly(entity: Entity)
     < near_entity(entity)
+    => ~near_entity(entity)
 
 action kill-entity-directly-for-item(entity: Entity, res_item: Item)
     ## entity 1 -> res_item 1
     < near_entity(entity)
     < killed_becomes(entity, res_item)
+    => ~near_entity(entity)
     => has_item(res_item)
 
 action reap-entity(entity: Entity, tool: Tool, res_item: Item)
@@ -188,6 +195,9 @@ find-entity : find(etype: Entity, dim: Dim)
 action find-entity-in-dim(etype: Entity, dim: Dim)
     ## -> etype 1
     < in_dim(dim)
+    => (all b: Block) ~near_block(b)
+    => (all e: Entity) ~near_entity(e)
+    => (all s: Structure) ~near_structure(s)
     => near_entity(etype)
 
 
@@ -226,24 +236,28 @@ enter-portal : po(portal_type: Portal, dim: Dim)
 action enter-portal-dim(portal_type: Portal, dim: Dim)
     < near_structure(portal_type)
     < leads_to(portal_type, dim)
+    => (all b: Block) ~near_block(b)
+    => (all e: Entity) ~near_entity(e)
+    => (all s: Structure) ~near_structure(s)
+    => (all d: Dim) ~in_dim(d)
     => in_dim(dim)
 
 
 
 ## Structures
 
-task reach-structure(s: Structure)
+task reach-structure(struc: Structure)
 
-reach-structure : revisit(s: Structure)
-    - goto-memorized-structure(s)
-reach-structure : build(s: Building)
-    - build-building(s)
-reach-structure : find(s: Structure)
-    - find-structure(s)
+reach-structure : revisit(struc: Structure)
+    - goto-memorized-structure(struc)
+reach-structure : build(struc: Building)
+    - build-building(struc)
+reach-structure : find(struc: Structure)
+    - find-structure(struc)
 
-action goto-memorized-structure(s: Structure)
-    < structure_memorized(s)
-    => near_structure(s)
+action goto-memorized-structure(struc: Structure)
+    < structure_memorized(struc)
+    => near_structure(struc)
 
 task build-building(b: Building)
 
@@ -281,19 +295,22 @@ action build-lit-end-portal
     => near_structure(lit_end_portal)
     => structure_memorized(lit_end_portal)
 
-task find-structure(s: Structure)
+task find-structure(struc: Structure)
 
-find-structure : dono(s: Structure)
-    < near_structure(s)
+find-structure : dono(struc: Structure)
+    < near_structure(struc)
     - dono
-find-structure : find(s: Structure, dim: Dim)
-    < findable_structure_in_dim(s, dim)
+find-structure : find(struc: Structure, dim: Dim)
+    < findable_structure_in_dim(struc, dim)
     - goto-dim(dim)
-    - find-structure-in-dim(s, dim)
+    - find-structure-in-dim(struc, dim)
 
-action find-structure-in-dim(s: Structure, dim: Dim)
+action find-structure-in-dim(struc: Structure, dim: Dim)
     < in_dim(dim)
-    => near_structure(s)
+    => (all b: Block) ~near_block(b)
+    => (all e: Entity) ~near_entity(e)
+    => (all s: Structure) ~near_structure(s)
+    => near_structure(struc)
 
 
 ## Items
@@ -310,6 +327,7 @@ acquire-item : pickup(item: Item)
 action pickup-item(item: Item)
     ## -> item 1
     < near_item_entity(item)
+    => ~near_item_entity(item)
     => has_item(item)
 
 acquire-item : mine-block(item: Item, block: Block)
@@ -333,5 +351,6 @@ acquire-item : kill-entity(item: Item, entity: Entity)
 acquire-item : craft(item: Item)
     - craft-item(item)
 
+## task craft-item(item: Item)
 
 # MACRO CRAFTING

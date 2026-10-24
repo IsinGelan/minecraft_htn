@@ -95,7 +95,7 @@ def action_count_provides(action_numbering: ActionNumbering, resources: dict[Ide
 def numbered_plan(plan: list[TaskCall], domain: DomainFile) -> list[tuple[TaskCall, int]]:
     """Compute how many times each annotated action needs to be called
     to satisfy the action numbering annotations"""
-    print(">> Computing action counts for plan")
+    print(">> Computing action repetitions for plan")
     get_action = lambda name: next(
         el for el in domain.top_level_elements
         if isinstance(el, Action) and el.action_name == name)

@@ -49,7 +49,7 @@ def process_failure(process: subprocess.CompletedProcess, command: str):
     print("ERROR: Process failed with return code", process.returncode)
     print("Command:", command)
     print("------------------------------")
-    print(process.stdout.decode())
+    print(process.stderr)
 
 def main():
     domain, _, _ = compile_main(
