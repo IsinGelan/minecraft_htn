@@ -4,8 +4,10 @@ from math import ceil
 import re
 from typing import Any, NamedTuple, Self
 
+from pydantic import BaseModel
+
 from shitlang.shit_objs import Action, FactExpr, Identifier, IdentifierParam, TaskCall, DomainFile, IdentifierConst
-from tools.helpers import shared_keys, subdict, subdict_without
+from tools.helpers import as_list, connected_components, find, is_consecutive, reverse_enumerated, shared_keys, subdict, subdict_without
 
 ITEM_PRED_NAME = "has_item"
 NUMBERING_ANNOTATION_PATTERN = r"((,|^)\s*([\w\d_-]+\s+\d+))*\s*->\s*(\s*([\w\d_-]+\s+\d+)(,|$))*"
@@ -84,49 +86,130 @@ def add_numbering_to_domain(domain: DomainFile):
         add_numbering_to_action(action)
 
 # ================================
-def action_count_provides(action_numbering: ActionNumbering, resources: dict[Identifier, int]) -> int:
+# {ressource : [number, {consumers}]}
+class CountAndConsumers(BaseModel):
+    count: int
+    consumers: set[int] 
+    def __list__(self):
+        return [self.count, self.consumers]
+    def __iter__(self):
+        return iter((self.count, self.consumers))
+RessourceDict = dict[IdentifierConst, CountAndConsumers]
+
+
+
+class NumberedPlan(BaseModel):
+    calls_reps: list[tuple[TaskCall, int]]
+    provider_consumer: set[tuple[int, int, IdentifierConst]]
+
+    @property
+    def call_ids(self) -> set[int]:
+        return set(range(len(self.calls_reps)))
+
+    def _grouped_plan(self, groups: list[set[int]]):
+        """groups of task call groups of local resources"""
+        grouped_plan: list[tuple[int, list[TaskCall]]] = []
+        skip_until = -1
+        for i, (call, count) in enumerate(self.calls_reps):
+            if i <= skip_until:
+                grouped_plan[-1][1].append(call)
+                assert count == grouped_plan[-1][0]
+            else:
+                grouped_plan.append((count, [call]))
+                group = find(groups, lambda gr: i in gr)
+                assert group
+                skip_until = max(group)
+        return grouped_plan
+
+    @as_list
+    def expanded_plan(self, domain: DomainFile, local_resource_types: set[str]):
+        """Expand the numbered plan into a concrete plan.\n
+        local_ressource_types: Typenames for local ressources\n
+        local ressources are those that cannot be acquired, so the consumer has to directly follow the provider"""
+        # 1. Identify groups
+        # Links providing local ressources
+        local_resource_links = {
+            (p_id, c_id)
+            for p_id, c_id, res
+            in self.provider_consumer if domain.type_of(res) in local_resource_types}
+        groups = connected_components(self.call_ids, local_resource_links)
+        assert all(is_consecutive(group) for group in groups)
+        # 2. Group the plan
+        grouped_plan = self._grouped_plan(groups)
+        # 3. yield groups repeated 
+        for count, group in grouped_plan:
+            for _ in range(count):
+                yield from group
+
+# ================================
+def action_count_provides(action_numbering: ActionNumbering, resources: RessourceDict) -> int:
     """Returns how many times the action needs to be called to provide the resources"""
     return max(
         # How many times the action would need to be called for this resource
         ceil(count / action_numbering.output[resource])
-        for resource, count in resources.items()
+        for resource, (count, _) in resources.items()
     )
 
-def numbered_plan(plan: list[TaskCall], domain: DomainFile) -> list[tuple[TaskCall, int]]:
+def numbered_plan(plan: list[TaskCall], domain: DomainFile) -> NumberedPlan:
     """Compute how many times each annotated action needs to be called
     to satisfy the action numbering annotations"""
     print(">> Computing action repetitions for plan")
-    get_action = lambda name: next(
-        el for el in domain.top_level_elements
-        if isinstance(el, Action) and el.action_name == name)
-    
     # Numberings for task calls of numbered actions
+    # TODO: use task indices as keys 
     fixed_numberings: dict[TaskCall, ActionNumbering] = {
-        tc: get_action(tc.task_name)._item_numbering.fix_params(tc)
+        tc: action._item_numbering.fix_params(tc)
         for tc in plan
-        if hasattr(get_action(tc.task_name), "_item_numbering")
+        if hasattr(
+            action := domain.get_tle(Action, tc.task_name),
+            "_item_numbering")
     }
 
-    action_counts = {tc: 1 for tc in fixed_numberings.keys()}
-
+    # Repetitions for the calls
+    call_reps = {tc: 1 for tc in fixed_numberings.keys()}
+    # {(provider, consumer, ressource_name)}
+    provider_consumer: set[tuple[int, int, IdentifierConst]] = set()
     # Resources that are not yet provided by any TaskCall
-    open_resources: dict[IdentifierConst, int] = {}
+    open_resources: dict[IdentifierConst, CountAndConsumers] = {}
+
     # Find the number of times each action needs to be executed
-    for tc in plan[::-1]:
+    for call_index, tc in reverse_enumerated(plan):
         if tc not in fixed_numberings:
+            # Actions without numbering annotations do not provide or consume
             continue
+
         numbering = fixed_numberings[tc]
         satisfies = shared_keys(open_resources, numbering.output)
+
         if satisfies:
-            action_counts[tc] = action_count_provides(
-                numbering, subdict(open_resources, satisfies))
+            provided = subdict(open_resources, satisfies)
+            # satisfied_consumers: set[int] = set.union(*(cc.consumers for cc in provided.values()))
+            provider_consumer.update(
+                (call_index, consumer_index, res)
+                for res, cc in provided.items()
+                for consumer_index in cc.consumers)
+            call_reps[tc] = action_count_provides(numbering, provided)
             open_resources = subdict_without(open_resources, satisfies)
+        
         for resource, count in numbering.input.items():
-            open_resources[resource] = open_resources.get(resource, 0) + count * action_counts[tc]
+            if resource not in open_resources:
+                open_resources[resource] = CountAndConsumers(count=0, consumers=set())
+            open_resources[resource].count += count * call_reps[tc]
+            open_resources[resource].consumers.add(call_index)
 
     if open_resources:
         print("Warning: Some resources are not provided by any action in the plan:")
         for resource, count in open_resources.items():
             print(f"- {resource}: {count}")
 
-    return [(tc, action_counts.get(tc, 1)) for tc in plan]
+    return NumberedPlan(
+        calls_reps=[(tc, call_reps.get(tc, 1)) for tc in plan],
+        provider_consumer=provider_consumer
+    )
+
+# def expand_numbered_plan(
+#         num_plan: list[tuple[TaskCall, int]],
+#         domain: DomainFile,
+#         local_ressource_types: list[str]) -> list[TaskCall]:
+#     """Expand the numbered plan into a concrete plan with repeated actions.\n
+#     local_ressource_types: Typenames for local ressources\n
+#     local ressources are those that cannot be acquired, so the consumer has to directly follow the provider"""

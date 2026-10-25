@@ -1,6 +1,6 @@
 
 from os import path
-from typing import Any, Callable, Iterable, Iterator, Optional
+from typing import Any, Callable, Iterable, Iterator, Optional, ParamSpec
 
 from pydantic import BaseModel
 
@@ -32,6 +32,49 @@ def subdict_without[K, V](dic: dict[K, V], without_keys: set[K]) -> dict[K, V]:
     """Returns a subdictionary without the specified keys"""
     return {k: dic[k] for k in dic.keys() if k not in without_keys}
 
+def reverse_enumerated[T](it: list[T]) -> Iterator[tuple[int, T]]:
+    """reversed iterable with correct enumeration (counting down to 0)"""
+    i = len(it)
+    for obj in reversed(it):
+        i -= 1
+        yield i, obj
+
+
+# ================================
+def get_index_links(nodes: set[int], links: set[tuple[int, int]]) -> dict[int, set[int]]:
+    """all indices an index is connected to directly"""
+    index_links: dict[int, set[int]] = {node: set() for node in nodes}
+    for a, b in links:
+        index_links[a].add(b)
+        index_links[b].add(a)
+    return index_links
+
+def connected_components(nodes: set[int], links: set[tuple[int, int]]) -> list[set[int]]:
+    """Get connected components (groups where all indices are connected by a set of connections)"""
+    index_links = get_index_links(nodes, links)
+
+    components: list[set[int]] = []
+    unchecked_nodes = nodes.copy()
+
+    while unchecked_nodes:
+        node = unchecked_nodes.pop()
+        component = {node}
+        check_next = [node]
+
+        while check_next:
+            current = check_next.pop()
+
+            new_nodes = index_links[current] & unchecked_nodes
+            unchecked_nodes.difference_update(new_nodes)
+            component.update(new_nodes)
+            check_next.extend(new_nodes)
+
+        components.append(component)
+
+    return components
+
+def is_consecutive(group: set[int]) -> bool:
+    return not group or max(group) - min(group) == len(group) - 1
 
 # ================================
 def split_into_lines(text: str, line_length: int) -> Iterator[str]:
@@ -56,7 +99,10 @@ def split_into_lines(text: str, line_length: int) -> Iterator[str]:
 
 # ================================
 # Decorators
-def as_list[T](fun: Callable[..., Iterable[T]]) -> Callable[..., list[T]]:
+P1 = ParamSpec("P")
+P2 = ParamSpec("P")
+
+def as_list[T](fun: Callable[P1, Iterable[T]]) -> Callable[P1, list[T]]:
     def wrapper(*args, **kwargs):
         res = fun(*args, **kwargs)
         if not isinstance(res, list):
@@ -64,7 +110,7 @@ def as_list[T](fun: Callable[..., Iterable[T]]) -> Callable[..., list[T]]:
         return res
     return wrapper
 
-def as_dict[T1, T2](fun: Callable[..., Iterable[tuple[T1, T2]]]) -> Callable[..., dict[T1, T2]]:
+def as_dict[T1, T2](fun: Callable[P2, Iterable[tuple[T1, T2]]]) -> Callable[P2, dict[T1, T2]]:
     def wrapper(*args, **kwargs):
         res = fun(*args, **kwargs)
         if not isinstance(res, dict):
@@ -81,6 +127,18 @@ def remember[T](fun: Callable[[], T]) -> Callable[[], T]:
         if res == ...:
             res = fun(*args, **kwargs)
         return res
+    return wrapper
+
+def timed[C: Callable](func: C) -> C:
+    """Decorator to time a function and print its execution time."""
+    import time
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+        print(f"Function '{func.__name__}' executed in {elapsed_time:.4f} seconds.")
+        return result
     return wrapper
 
 # ================================

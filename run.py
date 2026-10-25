@@ -3,6 +3,7 @@ import subprocess
 
 from compile import main as compile_main
 from shitlang.shit_objs import IdentifierConst, TaskCall
+from tools.helpers import timed
 from tools.number_annotations import numbered_plan
 
 IN_DOMAIN = "domain.shit"
@@ -11,6 +12,9 @@ IN_PROBLEM = "problem.shit"
 COMMAND_PARSER = "./panda/pandaPIparser/pandaPIparser temp/domain.hddl temp/problem.hddl temp/res.htn"
 COMMAND_GROUNDER = "./panda/pandaPIgrounder/pandaPIgrounder temp/res.htn temp/res.sas"
 COMMAND_ENGINE = "./panda/pandaPIengine/build/pandaPIengine temp/res.sas"
+
+# Resources that can not be taken anywhere but have to be consumed locally
+LOCAL_RESOURCE_TYPES = {"Block", "Entity", "Structure"}
 
 # ================================
 def parse_call_line(line: str, exclude_tasks: set[str] = {"dono"}) -> TaskCall | None:
@@ -51,12 +55,8 @@ def process_failure(process: subprocess.CompletedProcess, command: str):
     print("------------------------------")
     print(process.stderr)
 
-def main():
-    domain, _, _ = compile_main(
-        in_domain=IN_DOMAIN,
-        in_problem=IN_PROBLEM
-    )
-
+@timed
+def run_planner() -> None | str:
     print("\n>> Running planner...")
     print("----------------------")
     process_parser = subprocess.run(COMMAND_PARSER,shell=True,capture_output=True,text=True)
@@ -69,9 +69,31 @@ def main():
     if process_engine.returncode != 0:
         return process_failure(process_engine, COMMAND_ENGINE)
 
-    plan = extract_plan(process_engine.stdout)
+    return process_engine.stdout
+
+
+def main():
+    domain, _, _ = compile_main(
+        in_domain=IN_DOMAIN,
+        in_problem=IN_PROBLEM
+    )
+
+    planner_res = run_planner()
+    if planner_res is None:
+        return
+    
+    plan = extract_plan(planner_res)
+    assert plan is not None
+
     num_plan = numbered_plan(plan, domain)
-    print(*(f"{num:>2}x {tc}" for tc, num in num_plan), sep='\n')
+    print("\n# Numbered plan:")
+    print(*(f"{num:>2}x {tc}" for tc, num in num_plan.calls_reps), sep='\n')
+    # print(*(f"{p_id} -> {c_id}  ({res})" for p_id, c_id, res in num_plan.provider_consumer), sep="\n")
+
+    exp_plan = num_plan.expanded_plan(domain, LOCAL_RESOURCE_TYPES)
+    print("\n# Expanded plan:")
+    print(*exp_plan, sep="\n")
+
 
 if __name__ == "__main__":
     main()
