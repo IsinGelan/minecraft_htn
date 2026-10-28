@@ -25,30 +25,30 @@ const tool_tier_0 tool_tier_1 tool_tier_2 tool_tier_3 : ToolTier
 const e_ender_dragon : Entity
 # MACRO CONSTS
 
-pred in_dim(dim: Dim)                               # state
-pred has_item(item: Item)                           # state
-pred near_block(btype: Block)                       # state
-pred near_entity(entity: Entity)                    # state
-pred near_item_entity(item: Item)                   # state
-pred near_structure(structure: Structure)           # state
-pred near_container_containing(ctype: Container, item: Item) # state
-pred structure_memorized(stype: Structure)          # state
-pred findable_block_in_dim(btype: Block, dim: Dim)  # domain
-pred can_reap_block(tool: Tool, btype: Block)       # domain
-pred can_reap_entity(tool: Tool, etype: Entity)     # domain
-pred reaped_block_becomes(btype: Block, item: Item) # domain
-pred reaped_entity_becomes(etype: Entity, item: Item) # domain
-pred mined_becomes(btype: Block, item: Item)        # domain
-pred placed_becomes(item: Item, btype: Block)       # domain
-pred leads_to(portal: Portal, dim: Dim)             # domain
-pred recipe_produces(recipe: Recipe, item: Item)    # domain
-pred killed_becomes(entity: Entity, item: Item)     # domain
-pred findable_structure_in_dim(structure: Structure, dim: Dim)  # domain
-pred findable_entity_in_dim(entity: Entity, dim: Dim) # domain
-pred can_mine_tier(tool: Tool, tier: ToolTier)      # domain
-pred mining_requires_tier(btype: Block, tier: ToolTier) # domain
-pred item_tag(item: Item, tag: ItemTag)             # domain
-pred block_tag(btype: Item, tag: BlockTag)          # domain
+pred in_dim(dim: Dim)                               # dynamic
+pred has_item(item: Item)                           # dynamic
+pred near_block(btype: Block)                       # dynamic
+pred near_entity(entity: Entity)                    # dynamic
+pred near_item_entity(item: Item)                   # dynamic
+pred near_structure(structure: Structure)           # dynamic
+pred near_container_containing(ctype: Container, item: Item) # dynamic
+pred structure_memorized(stype: Structure)          # dynamic
+pred findable_block_in_dim(btype: Block, dim: Dim)  # static
+pred can_reap_block(tool: Tool, btype: Block)       # static
+pred can_reap_entity(tool: Tool, etype: Entity)     # static
+pred reaped_block_becomes(btype: Block, item: Item) # static
+pred reaped_entity_becomes(etype: Entity, item: Item) # static
+pred mined_becomes(btype: Block, item: Item)        # static
+pred placed_becomes(item: Item, btype: Block)       # static
+pred leads_to(portal: Portal, dim: Dim)             # static
+pred recipe_produces(recipe: Recipe, item: Item)    # static
+pred killed_becomes(entity: Entity, item: Item)     # static
+pred findable_structure_in_dim(structure: Structure, dim: Dim)  # static
+pred findable_entity_in_dim(entity: Entity, dim: Dim) # static
+pred can_mine_tier(tool: Tool, tier: ToolTier)      # static
+pred mining_requires_tier(btype: Block, tier: ToolTier) # static
+pred item_tag(item: Item, tag: ItemTag)             # static
+pred block_tag(btype: Item, tag: BlockTag)          # static
 
 
 action dono
@@ -60,8 +60,10 @@ task reach-block(btype: Block)
 
 reach-block : find(btype: Block)
     - find-block(btype)
-##reach-block : place(btype: Block, item: Item)
-##    - place-block(btype, item)
+reach-block : place(btype: Block, item: Item)
+    < placed_becomes(item, btype)
+    < has_item(item)
+    - place-block(btype, item)
 reach-block : craft-n-place(btype: Block, item: Item)
     - craft-item(item)
     - place-block(btype, item)
@@ -122,14 +124,12 @@ action reap-block(btype: Block, tool: Tool, res_item: Item)
     < reaped_block_becomes(btype, res_item)
     => has_item(res_item)
 
-## integrate the effect of reduction in the item nr
 action place-block(btype: Block, item: Item)
     ## item 1 -> btype 1
     < has_item(item)
     < placed_becomes(item, btype)
     => near_block(btype)
 
-## move precondition from task find-block?
 action find-block-in-dim(btype: Block, dim: Dim)
     ## -> btype 1
     < in_dim(dim)
@@ -164,8 +164,6 @@ kill-entity-for-item : kill(entity: Entity, res_item: Item)
     - find-entity(entity)
     - kill-entity-directly-for-item(entity, res_item)
 
-## TODO: implement drops
-## TODO: e_ender_dragon: lit_center_portal activates
 action kill-entity-directly(entity: Entity)
     < near_entity(entity)
     => ~near_entity(entity)
@@ -334,19 +332,9 @@ acquire-item : mine-block(item: Item, block: Block)
     < mined_becomes(block, item)
     - mine-block(block, item)
 
-## acquire-item : reap-block(item: Item, block: Block, tool: Tool)
-##     - reap-block(block, tool, item)
-
-## acquire-item : container-take(item: Item, ctype: Container)
-##     - container-take(ctype, item)
-
 acquire-item : kill-entity(item: Item, entity: Entity)
     < killed_becomes(entity, item)
     - kill-entity-for-item(entity, item)
-
-## acquire-item : reap-entity(item: Item, tool: Tool, entity: Entity)
-##     < reaped_entity_becomes(entity, item)
-##     - reap-entity(entity, tool, item)
 
 acquire-item : craft(item: Item)
     - craft-item(item)
