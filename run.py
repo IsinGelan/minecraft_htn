@@ -71,9 +71,14 @@ def run_planner() -> None | str:
 
     return process_engine.stdout
 
+def export_plan(plan: list[TaskCall], plan_name: str, goal: TaskCall, *, filename: str = "plan.txt"):
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(f"# {plan_name} : {goal}\n")
+        f.writelines(map(lambda c: f"{c}\n", plan))
+
 
 def main():
-    domain, _, _ = compile_main(
+    domain, problem, _ = compile_main(
         in_domain=IN_DOMAIN,
         in_problem=IN_PROBLEM
     )
@@ -93,6 +98,7 @@ def main():
     exp_plan = num_plan.expanded_plan(domain, LOCAL_RESOURCE_TYPES)
     print("\n# Expanded plan:")
     print(*exp_plan, sep="\n")
+    export_plan(exp_plan, problem.problem_name, problem.goal)
 
 
 if __name__ == "__main__":
